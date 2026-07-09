@@ -4,197 +4,223 @@
 <script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Node-Six Cybernetics — N6C</title>
-<meta name="description" content="Node-Six Cybernetics (N6C) — the technology division of A.R.C.A. Computational intelligence, secure infrastructure, and automation for frontier research.">
+<title>N6C</title>
+<meta name="description" content="Node-Six Cybernetics (N6C) is a small engineering group building machine intelligence, secure infrastructure, and automation for problems that don't have an off-the-shelf answer.">
+<link rel="icon" href="brand/n6c-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#090b10; --bg2:#0c0f16; --panel:#11151d; --line:rgba(233,238,245,.08);
-  --ink:#eef2f8; --dim:#9aa2ad; --faint:#5c646f;
-  --steel:#6d93bf; --steel-deep:#3f5f88; --steel-soft:rgba(109,147,191,.12);
+  --paper:#f4f6f9; --surface:#ffffff; --surface-2:#e9edf2;
+  --ink:#16202e; --body:#3b4755; --muted:#5b6775; --faint:#8a95a2;
+  --line:#dce2e9; --line-2:#cad2dc;
+  --steel:#2f5c8f; --steel-bright:#4f7bab; --steel-soft:#eaf0f7;
+  --navy:#121c28; --navy-2:#0e1621; --on-navy:#e9eef4; --on-navy-dim:#9fb1c4;
+  --z-base:0; --z-nav:50; --z-menu:49;
+  --ease:cubic-bezier(.22,.61,.24,1);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
-.mono{font-family:'IBM Plex Mono',monospace}
+body{background:var(--paper);color:var(--body);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{color:var(--ink)}
+.serif{font-family:'Spectral',Georgia,serif}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
 a{color:inherit;text-decoration:none}
-::selection{background:var(--steel);color:#090b10}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.28em;color:var(--steel);text-transform:uppercase}
+img{display:block;max-width:100%}
+::selection{background:var(--steel);color:#fff}
+.wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.22em;color:var(--steel);text-transform:uppercase}
 
-/* header */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:64px;display:flex;align-items:center;
-  background:rgba(9,11,16,.72);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
-.nav.scrolled{border-bottom-color:var(--line);background:rgba(9,11,16,.9)}
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);height:68px;display:flex;align-items:center;
+  background:rgba(244,246,249,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.nav.scrolled{border-bottom-color:var(--line);background:rgba(244,246,249,.94)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
 .brand{display:flex;align-items:center;gap:11px}
-.brand svg{width:28px;height:28px;display:block}
-.brand b{font-weight:700;font-size:15px;letter-spacing:.14em}
-.navlinks{display:flex;gap:34px;align-items:center}
-.navlinks a{font-size:13.5px;color:var(--dim);transition:color .2s}
+.brand img{width:30px;height:30px}
+.brand b{font-weight:600;font-size:15px;letter-spacing:.16em;color:var(--ink)}
+.navlinks{display:flex;gap:36px;align-items:center}
+.navlinks a{font-size:14px;color:var(--muted);transition:color .2s}
 .navlinks a:hover{color:var(--ink)}
-.navcta{font-size:13px;font-weight:500;padding:8px 16px;border:1px solid var(--line);border-radius:8px;color:var(--ink);transition:.2s}
-.navcta:hover{border-color:var(--steel-deep);background:var(--steel-soft)}
-.burger{display:none;background:none;border:1px solid var(--line);border-radius:7px;width:38px;height:38px;color:var(--ink);font-size:16px;cursor:pointer}
+.navcta{font-size:13.5px;font-weight:500;padding:9px 18px;border:1px solid var(--line-2);border-radius:7px;color:var(--ink)!important;transition:.2s}
+.navcta:hover{border-color:var(--steel);background:var(--surface)}
+.burger{display:none;background:var(--surface);border:1px solid var(--line-2);border-radius:8px;width:40px;height:40px;color:var(--ink);cursor:pointer;align-items:center;justify-content:center}
+.burger svg{width:18px;height:18px}
 
 /* hero */
-.hero{position:relative;padding:190px 0 130px;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;z-index:-2;
-  background:radial-gradient(60vw 60vh at 30% -10%, rgba(109,147,191,.10), transparent 60%),
-             radial-gradient(55vw 55vh at 75% 0%, rgba(63,95,136,.10), transparent 58%)}
-.hero::after{content:'';position:absolute;inset:0;z-index:-1;opacity:.5;pointer-events:none;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:64px 64px;mask-image:radial-gradient(70vw 70vh at 50% 0%, #000, transparent 75%)}
-.hero-mark{width:60px;height:60px;margin-bottom:30px;opacity:.95}
-.hero h1{font-size:clamp(2.4rem,6vw,4.3rem);font-weight:700;letter-spacing:-.03em;line-height:1.02;max-width:16ch;text-wrap:balance}
-.hero .lede{margin-top:26px;max-width:56ch;font-size:clamp(1rem,1.6vw,1.18rem);color:var(--dim);line-height:1.65}
+.hero{position:relative;padding:180px 0 128px;overflow:hidden}
+.hero-mark-bg{position:absolute;top:-40px;right:-120px;width:560px;opacity:.05;z-index:var(--z-base);pointer-events:none;filter:grayscale(.2)}
+.hero .wrap{position:relative;z-index:1}
+.hero-lockup{display:flex;align-items:center;gap:14px;margin-bottom:34px}
+.hero-lockup img{width:52px;height:52px}
+.hero-lockup .label{color:var(--muted)}
+.hero h1{font-family:'Spectral',serif;font-weight:500;font-size:clamp(2.35rem,5.2vw,3.9rem);letter-spacing:-.012em;line-height:1.06;color:var(--ink);max-width:19ch;text-wrap:balance}
+.hero .lede{margin-top:28px;max-width:60ch;font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--body);line-height:1.66;text-wrap:pretty}
 .hero .lede b{color:var(--ink);font-weight:600}
-.hero-actions{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:500;padding:12px 22px;border-radius:9px;transition:.2s}
-.btn-p{background:var(--steel);color:#080a0e;font-weight:600}
-.btn-p:hover{background:#82a6cf;transform:translateY(-1px)}
-.btn-g{border:1px solid var(--line);color:var(--ink)}
-.btn-g:hover{border-color:var(--steel-deep);background:var(--steel-soft)}
-.hero-meta{margin-top:64px;display:flex;gap:40px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:26px}
-.hero-meta div{display:flex;flex-direction:column;gap:3px}
-.hero-meta .k{font-size:26px;font-weight:700;letter-spacing:-.02em}
-.hero-meta .v{font-size:12px;color:var(--faint);letter-spacing:.04em}
+.hero-actions{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:500;padding:13px 24px;border-radius:8px;transition:.2s var(--ease);cursor:pointer}
+.btn svg{width:15px;height:15px}
+.btn-p{background:var(--navy);color:#fff}
+.btn-p:hover{background:var(--steel);transform:translateY(-1px)}
+.btn-g{border:1px solid var(--line-2);color:var(--ink);background:var(--surface)}
+.btn-g:hover{border-color:var(--steel);color:var(--steel)}
+.hero-foot{margin-top:70px;display:flex;gap:44px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:26px;max-width:760px}
+.hero-foot div{max-width:220px}
+.hero-foot dt{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:7px}
+.hero-foot dd{font-size:14px;color:var(--muted);line-height:1.5}
 
-/* sections */
-.section{padding:100px 0;border-top:1px solid var(--line)}
-.sec-head{max-width:60ch;margin-bottom:52px}
-.sec-head h2{margin-top:14px;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;letter-spacing:-.025em;line-height:1.08;text-wrap:balance}
-.sec-head p{margin-top:16px;color:var(--dim);font-size:1.05rem;line-height:1.6}
+/* section shell */
+.section{padding:104px 0;border-top:1px solid var(--line)}
+.sec-h2{font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.75rem,3.4vw,2.5rem);letter-spacing:-.015em;line-height:1.1;color:var(--ink);text-wrap:balance}
 
-/* capabilities — numbered list, not an identical card grid */
-.caps{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.cap{background:var(--bg2);padding:32px 30px;transition:background .25s}
-.cap:hover{background:var(--panel)}
-.cap-n{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--steel);letter-spacing:.1em}
-.cap h3{margin-top:16px;font-size:1.22rem;font-weight:600;letter-spacing:-.01em}
-.cap p{margin-top:9px;color:var(--dim);font-size:.96rem;line-height:1.6}
+/* capabilities — sticky title + hairline index (no cards, no numbers) */
+.split{display:grid;grid-template-columns:0.82fr 1.18fr;gap:64px;align-items:start}
+.split-head{position:sticky;top:104px}
+.split-head p{margin-top:18px;color:var(--muted);font-size:1rem;line-height:1.62;max-width:34ch}
+.index{border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:auto 1fr;gap:26px;padding:26px 0;border-bottom:1px solid var(--line);transition:padding-left .3s var(--ease)}
+.item:hover{padding-left:8px}
+.item .ix{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);padding-top:5px}
+.item h3{font-size:1.16rem;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.item p{margin-top:8px;color:var(--muted);font-size:.99rem;line-height:1.62;max-width:52ch}
 
-/* approach — principles */
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
-.principle{border-top:2px solid var(--steel-deep);padding-top:22px}
-.principle h3{font-size:1.12rem;font-weight:600;letter-spacing:-.01em}
-.principle p{margin-top:10px;color:var(--dim);font-size:.95rem;line-height:1.6}
+/* approach */
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:56px}
+.principle{padding-top:24px;border-top:1px solid var(--line-2)}
+.principle h3{font-size:1.18rem;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.principle p{margin-top:12px;color:var(--muted);font-size:.98rem;line-height:1.64;max-width:34ch}
 
 /* about */
-.about{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:start}
-.about .body p{color:var(--dim);font-size:1.08rem;line-height:1.75;margin-bottom:18px}
-.about .body b{color:var(--ink);font-weight:600}
-.about-side{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--bg2)}
-.about-side .row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}
-.about-side .row:last-child{border-bottom:none}
-.about-side .row span:first-child{color:var(--faint)}
-.about-side .row span:last-child{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-align:right}
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:66px;align-items:start}
+.about .lead{font-family:'Spectral',serif;font-weight:400;font-size:1.5rem;line-height:1.5;color:var(--ink);letter-spacing:-.008em;margin-bottom:26px;text-wrap:pretty}
+.about .body p{color:var(--body);font-size:1.05rem;line-height:1.72;margin-bottom:16px;max-width:60ch}
+.record{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.record .row{display:flex;justify-content:space-between;gap:18px;padding:15px 22px;border-bottom:1px solid var(--line);font-size:13.5px}
+.record .row:last-child{border-bottom:none}
+.record .row span:first-child{color:var(--faint)}
+.record .row span:last-child{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-align:right}
 
-/* contact */
-.contact{text-align:center;padding:120px 0}
-.contact h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
-.contact p{margin:20px auto 0;max-width:48ch;color:var(--dim);font-size:1.1rem}
-.contact .btn{margin-top:36px}
+/* contact — the one dark moment */
+.contact{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.contact::after{content:'';position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;
+  background:radial-gradient(circle,rgba(79,123,171,.10),transparent 68%);pointer-events:none}
+.contact .wrap{padding:118px 32px;position:relative;text-align:center}
+.contact .label{color:var(--steel-bright)}
+.contact h2{font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.9rem,4.4vw,3.1rem);letter-spacing:-.02em;line-height:1.1;color:#fff;margin-top:18px;max-width:20ch;margin-inline:auto;text-wrap:balance}
+.contact p{margin:20px auto 0;max-width:52ch;color:var(--on-navy-dim);font-size:1.08rem;line-height:1.6}
+.btn-navy{margin-top:36px;background:var(--steel-bright);color:#0c1420;font-weight:600}
+.btn-navy:hover{background:#68a0d6;transform:translateY(-1px)}
 
 /* footer */
-footer{border-top:1px solid var(--line);padding:44px 0}
-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.foot-brand{display:flex;align-items:center;gap:11px}
-.foot-brand svg{width:24px;height:24px}
-.foot-brand div b{display:block;font-size:13px;letter-spacing:.12em}
-.foot-brand div span{font-size:11px;color:var(--faint)}
-.foot-legal{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:.04em;text-align:right}
+footer{background:var(--paper);border-top:1px solid var(--line);padding:48px 0}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-brand{display:flex;align-items:center;gap:12px}
+.foot-brand img{width:26px;height:26px}
+.foot-brand b{display:block;font-size:13px;letter-spacing:.14em;color:var(--ink)}
+.foot-brand span{font-size:12px;color:var(--faint)}
+.foot-right{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.foot-right a{font-size:13px;color:var(--muted);transition:color .2s}
+.foot-right a:hover{color:var(--ink)}
+.foot-legal{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:.03em}
 
-/* reveal */
+/* reveal (visible without JS) */
 .reveal{opacity:1;transform:none}
-.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.btn-p:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .btn-p:hover,.btn-navy:hover{transform:none}
+  html{scroll-behavior:auto}
+}
 
-@media(max-width:860px){
+@media(max-width:900px){
+  .split{grid-template-columns:1fr;gap:40px}
+  .split-head{position:static}
+  .about{grid-template-columns:1fr;gap:40px}
+  .principles{grid-template-columns:1fr}
+}
+@media(max-width:720px){
   .navlinks,.navcta{display:none}
-  .burger{display:inline-flex;align-items:center;justify-content:center}
-  .navlinks.open{display:flex;position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg2);border-bottom:1px solid var(--line);padding:8px 0}
-  .navlinks.open a{padding:14px 28px;font-size:15px}
-  .caps,.principles,.about{grid-template-columns:1fr}
-  .hero{padding:150px 0 90px}
+  .burger{display:flex}
+  .navlinks.open{display:flex;position:fixed;top:68px;left:0;right:0;z-index:var(--z-menu);flex-direction:column;gap:0;
+    background:var(--surface);border-bottom:1px solid var(--line);padding:6px 0;box-shadow:0 12px 24px rgba(18,28,40,.06)}
+  .navlinks.open a{padding:15px 32px;font-size:15px}
+  .navlinks.open .navcta{display:block;margin:8px 32px;text-align:center}
+  .hero{padding:140px 0 84px}
   .section{padding:76px 0}
+  .contact .wrap{padding:84px 32px}
+  .hero-foot{gap:28px}
 }
 </style>
 </head>
 <body>
 
-<script>
-  // hexagon mark, reused
-  function hexMark(id){return '<svg viewBox="0 0 100 100" fill="none">'+
-    '<path d="M50 5 L88 27 V73 L50 95 L12 73 V27 Z" fill="#16202e" stroke="#3f5f88" stroke-width="2"/>'+
-    '<path d="M50 5 L88 27 L50 49 Z" fill="rgba(109,147,191,.22)"/>'+
-    '<path d="M50 49 L88 73 L50 95 Z" fill="rgba(0,0,0,.2)"/>'+
-    '<circle cx="50" cy="49" r="15" fill="#090b10" stroke="#8fb0d6" stroke-width="2"/>'+
-    '<text x="50" y="55" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="15" fill="#eef2f8">N6C</text></svg>';}
-</script>
-
 <nav class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><span id="navmark"></span><b>N6C</b></a>
+    <a class="brand" href="#top"><img src="brand/n6c-mark.png" alt="N6C mark" width="30" height="30"><b>N6C</b></a>
     <div class="navlinks" id="navlinks">
-      <a href="#capabilities">Capabilities</a>
+      <a href="#work">Work</a>
       <a href="#approach">Approach</a>
       <a href="#about">About</a>
       <a class="navcta" href="#contact">Contact</a>
     </div>
-    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
 </nav>
 
 <header class="hero" id="top">
+  <img class="hero-mark-bg" src="brand/n6c-mark.png" alt="" aria-hidden="true">
   <div class="wrap">
-    <div class="hero-mark" id="heromark"></div>
-    <div class="eyebrow reveal">Node-Six Cybernetics</div>
-    <h1 class="reveal">We build the systems frontier research runs on.</h1>
-    <p class="lede reveal">Node-Six Cybernetics is the technology division of <b>A.R.C.A.</b> — computational intelligence, secure infrastructure, and automation for research that cannot afford to be wrong.</p>
+    <div class="hero-lockup reveal">
+      <img src="brand/n6c-mark.png" alt="Node-Six Cybernetics" width="52" height="52">
+      <span class="label">Node-Six Cybernetics</span>
+    </div>
+    <h1 class="reveal">Engineering for problems without an off-the-shelf answer.</h1>
+    <p class="lede reveal">A small engineering group building <b>machine intelligence, secure infrastructure, and automation</b> — the computational core of hard problems, built to hold up the second time it runs, and the hundredth.</p>
     <div class="hero-actions reveal">
-      <a class="btn btn-p" href="#capabilities">What we build →</a>
+      <a class="btn btn-p" href="#work">See what we build
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-g" href="#contact">Get in touch</a>
     </div>
-    <div class="hero-meta reveal">
-      <div><span class="k">6</span><span class="v mono">CORE DOMAINS</span></div>
-      <div><span class="k">Secure</span><span class="v mono">BY DESIGN</span></div>
-      <div><span class="k">A.R.C.A.</span><span class="v mono">TECHNOLOGY DIVISION</span></div>
-    </div>
+    <dl class="hero-foot reveal">
+      <div><dt>Discipline</dt><dd>Applied systems, computation, and security</dd></div>
+      <div><dt>Posture</dt><dd>Private, and selective about the work we take</dd></div>
+      <div><dt>Standard</dt><dd>Reproducible, signed, built to be defended</dd></div>
+    </dl>
   </div>
 </header>
 
-<section class="section" id="capabilities">
+<section class="section" id="work">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Capabilities</div>
-      <h2>The engineering behind the science.</h2>
-      <p>We turn frontier research questions into systems that can actually be run — at scale, reproducibly, and in confidence.</p>
-    </div>
-    <div class="caps">
-      <div class="cap reveal"><div class="cap-n">01</div><h3>Machine Intelligence</h3><p>Models and inference pipelines built for research data, not demos — trained, evaluated, and shipped with the rigor the work demands.</p></div>
-      <div class="cap reveal"><div class="cap-n">02</div><h3>Computational Biology</h3><p>Sequence, structure, and imaging analysis at the scale real experiments produce, from raw signal to a result you can defend.</p></div>
-      <div class="cap reveal"><div class="cap-n">03</div><h3>Research Infrastructure</h3><p>Compute orchestration and reproducible pipelines, so a result holds up the second time it is run — and the hundredth.</p></div>
-      <div class="cap reveal"><div class="cap-n">04</div><h3>Secure Systems</h3><p>Cryptographic identity, signed provenance, and access control for work that cannot leak — protection from the first commit, not the last audit.</p></div>
-      <div class="cap reveal"><div class="cap-n">05</div><h3>Simulation &amp; Modeling</h3><p>In-silico models for the experiments that are too slow, too costly, or too dangerous to run on the bench.</p></div>
-      <div class="cap reveal"><div class="cap-n">06</div><h3>Automation &amp; Instrumentation</h3><p>Control software and instrumentation that runs the bench while people do the thinking that can't be automated.</p></div>
+    <div class="split">
+      <div class="split-head reveal">
+        <div class="label">What we build</div>
+        <h2 class="sec-h2" style="margin-top:16px">Six things, done properly.</h2>
+        <p>We keep the surface area small on purpose. Each of these is something we build end to end — not a slide, a running system.</p>
+      </div>
+      <div class="index">
+        <div class="item reveal"><div class="ix">01</div><div><h3>Machine intelligence</h3><p>Models and inference pipelines built for real data and real constraints, trained and evaluated on what they'll actually see in production.</p></div></div>
+        <div class="item reveal"><div class="ix">02</div><div><h3>Secure systems</h3><p>Cryptographic identity, signed provenance, and access control designed in from the first commit and carried through every layer beneath it.</p></div></div>
+        <div class="item reveal"><div class="ix">03</div><div><h3>Research infrastructure</h3><p>Compute orchestration and reproducible pipelines, so a result holds the second time it runs, and the hundredth, by someone who wasn't in the room.</p></div></div>
+        <div class="item reveal"><div class="ix">04</div><div><h3>Simulation &amp; modeling</h3><p>In-silico models for the experiments that are too slow, too costly, or too risky to run for real, tuned against the ground truth you do have.</p></div></div>
+        <div class="item reveal"><div class="ix">05</div><div><h3>Data &amp; analysis at scale</h3><p>Signal, structure, and imaging pipelines that take raw instrument output through to a result you can put your name on.</p></div></div>
+        <div class="item reveal"><div class="ix">06</div><div><h3>Automation &amp; instrumentation</h3><p>Control software that runs the apparatus around the clock, freeing people for the part of the work that can't be automated.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section" id="approach">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Approach</div>
-      <h2>How we work.</h2>
-    </div>
+    <h2 class="sec-h2 reveal" style="max-width:20ch">How we work is most of what we sell.</h2>
     <div class="principles">
-      <div class="principle reveal"><h3>Rigor over noise</h3><p>We measure before we claim. Nothing ships on a hunch, and every result is built to be reproduced.</p></div>
-      <div class="principle reveal"><h3>Security by design</h3><p>Sensitive work is protected from the first line of code. Provenance is signed; access is earned, not assumed.</p></div>
-      <div class="principle reveal"><h3>Systems, not scripts</h3><p>We build things meant to run for years, not once. Infrastructure that outlives the experiment it was built for.</p></div>
+      <div class="principle reveal"><h3>Measure, then claim</h3><p>Nothing ships on a hunch. Every result is built so a stranger can reproduce it and reach the same number.</p></div>
+      <div class="principle reveal"><h3>Secure by construction</h3><p>Sensitive work is protected from the first line of code. Provenance is signed, access is earned, and confidentiality is a default rather than a setting.</p></div>
+      <div class="principle reveal"><h3>Systems, not scripts</h3><p>We build for the long run: infrastructure meant to outlive the experiment it was written for, and the person who wrote it.</p></div>
     </div>
   </div>
 </section>
@@ -202,17 +228,21 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 <section class="section" id="about">
   <div class="wrap">
     <div class="about">
-      <div class="body reveal">
-        <div class="eyebrow" style="margin-bottom:14px">About</div>
-        <p>Node-Six Cybernetics is the <b>technology division of A.R.C.A.</b>, a private research group. We exist to make hard research tractable — turning questions at the frontier into systems that can be run at scale, and kept in confidence.</p>
-        <p>We are deliberately quiet. Much of what we build supports work that is not ours to disclose. What we can say is this: the science moves faster when the computation, the infrastructure, and the security are handled by people who take them as seriously as the research itself.</p>
+      <div class="reveal">
+        <div class="label" style="margin-bottom:20px">About</div>
+        <p class="lead">Node-Six Cybernetics is a small, privately held engineering group. We go deep on a handful of problems where the hard part is the computation.</p>
+        <div class="body">
+          <p>We take on work where the technology is the bottleneck — the model that has to be right, the system that can't leak, the pipeline that has to run unattended for a year. Then we build it, carefully, and stand behind it.</p>
+          <p>Much of what we do supports work that isn't ours to disclose, so we stay quiet by default. What we'll say is this: the technical foundation deserves the same seriousness as the result it's meant to hold up.</p>
+        </div>
       </div>
-      <div class="about-side reveal">
+      <div class="record reveal">
         <div class="row"><span>Entity</span><span>Node-Six Cybernetics</span></div>
         <div class="row"><span>Designation</span><span>N6C</span></div>
-        <div class="row"><span>Parent</span><span>A.R.C.A.</span></div>
-        <div class="row"><span>Focus</span><span>Applied · Research Tech</span></div>
-        <div class="row"><span>Posture</span><span>Private · Selective</span></div>
+        <div class="row"><span>Disciplines</span><span>Systems · Computation · Security</span></div>
+        <div class="row"><span>Engagements</span><span>Selective</span></div>
+        <div class="row"><span>Posture</span><span>Private</span></div>
+        <div class="row"><span>Contact</span><span>hello@n6c.org</span></div>
       </div>
     </div>
   </div>
@@ -220,33 +250,39 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 
 <section class="contact" id="contact">
   <div class="wrap reveal">
-    <div class="eyebrow">Contact</div>
-    <h2>If the problem is hard enough, we should talk.</h2>
-    <p>We work with a small number of partners on research where the technology is the bottleneck.</p>
-    <a class="btn btn-p" href="mailto:hello@n6c.org">hello@n6c.org</a>
+    <div class="label">Contact</div>
+    <h2>Bring us the part that doesn't have an answer yet.</h2>
+    <p>We take on a small number of engagements at a time, where the technology is the thing standing in the way. If that sounds like your problem, say hello.</p>
+    <a class="btn btn-navy" href="mailto:hello@n6c.org">hello@n6c.org</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="foot-brand"><span id="footmark"></span><div><b>NODE-SIX CYBERNETICS</b><span>A technology division of A.R.C.A.</span></div></div>
-    <div class="foot-legal">© 2026 Node-Six Cybernetics · All rights reserved</div>
+    <div class="foot-brand">
+      <img src="brand/n6c-mark.png" alt="N6C" width="26" height="26">
+      <div><b>NODE-SIX CYBERNETICS</b><span>Applied systems, computation, and security</span></div>
+    </div>
+    <div class="foot-right">
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a href="mailto:hello@n6c.org">hello@n6c.org</a>
+      <span class="foot-legal">© 2026 N6C</span>
+    </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('navmark').innerHTML=hexMark();
-  document.getElementById('heromark').innerHTML=hexMark();
-  document.getElementById('footmark').innerHTML=hexMark();
   const nav=document.getElementById('nav');
-  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8),{passive:true});
   const links=document.getElementById('navlinks'), burger=document.getElementById('burger');
-  burger.onclick=()=>links.classList.toggle('open');
-  links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+  burger.onclick=()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+  links.querySelectorAll('a').forEach(a=>a.onclick=()=>{links.classList.remove('open');burger.setAttribute('aria-expanded','false')});
   const rev=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
     const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-    rev.forEach((el,i)=>{el.style.transitionDelay=(i%6*45)+'ms';io.observe(el)});
+    rev.forEach((el,i)=>{el.style.transitionDelay=((i%5)*50)+'ms';io.observe(el)});
   } else rev.forEach(el=>el.classList.add('in'));
 </script>
 </body>
