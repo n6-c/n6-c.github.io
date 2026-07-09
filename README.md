@@ -1,16 +1,20 @@
 # n6-c.github.io
 
-The public website for **Node-Six Cybernetics (N6C)** — the technology division of A.R.C.A.
+The public website for **Node-Six Cybernetics (N6C)**.
 
-Static single-page site, served by GitHub Pages at **https://n6-c.github.io**.
+Static single-page site, published by GitHub Pages (via GitHub Actions) at **https://n6c.org**.
 
-- `index.html` — the site (self-contained; Inter + IBM Plex Mono via Google Fonts; no build step).
-- `.nojekyll` — serve files as-is (skip Jekyll processing).
+- `index.html` — the site (self-contained; Spectral + Inter + IBM Plex Mono via Google Fonts; no build step).
+- `brand/n6c-mark.png` — the N6C hexagon mark (logo, favicon, hero watermark).
+- `CNAME` — custom domain (`n6c.org`).
+- `.github/workflows/pages.yml` — the deploy workflow (`upload-pages-artifact` + `deploy-pages`).
 
 ## Edit
 
-Edit `index.html` and push to `main`; GitHub Pages redeploys automatically (~1 minute).
+Edit `index.html` and push to `main`. The **Deploy Pages** Action rebuilds and publishes automatically (~1 minute).
 
-## Custom domain
+Preview locally without deploying:
 
-Add a `CNAME` file containing the domain (e.g. `node-six.dev`) and point DNS at GitHub Pages. Also update the placeholder contact email in `index.html`.
+```sh
+python3 -m http.server 4747   # then open http://localhost:4747
+```
