@@ -1,189 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-<script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>N6C — Node-Six Cybernetics</title>
-<meta name="description" content="Node-Six Cybernetics (N6C) builds applied artificial intelligence for the real world — systems that perceive, decide, and act. From autonomous drones to medical monitoring, and wherever intelligent systems are needed next.">
+<title>Node-Six Cybernetics — N6C</title>
+<meta name="description" content="Node-Six Cybernetics builds applied artificial intelligence for the real world — systems that perceive, decide, and act. Tartu, Estonia.">
 <link rel="icon" href="brand/n6c-mark.png">
-<link rel="canonical" href="https://n6c.org/">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#121c28">
-<meta name="author" content="Node-Six Cybernetics">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Node-Six Cybernetics">
-<meta property="og:title" content="Node-Six Cybernetics — N6C">
-<meta property="og:description" content="Applied artificial intelligence for the real world — systems that perceive, decide, and act. From autonomous drones to medical monitoring.">
-<meta property="og:url" content="https://n6c.org/">
-<meta property="og:image" content="https://n6c.org/brand/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Node-Six Cybernetics — AI systems that perceive, decide, and act.">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Node-Six Cybernetics — N6C">
-<meta name="twitter:description" content="Applied artificial intelligence for the real world — systems that perceive, decide, and act.">
-<meta name="twitter:image" content="https://n6c.org/brand/og.png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Node-Six Cybernetics",
-  "alternateName": "N6C",
-  "url": "https://n6c.org/",
-  "logo": "https://n6c.org/brand/n6c-mark.png",
-  "image": "https://n6c.org/brand/og.png",
-  "email": "hello@n6c.org",
-  "description": "Node-Six Cybernetics (N6C) builds applied artificial intelligence for the real world — systems that perceive, decide, and act. From autonomous drones to medical monitoring, and wherever intelligent systems are needed next.",
-  "founder": { "@type": "Person", "name": "Anderson Silva" }
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* ---------- theme tokens: light is default, dark via [data-theme=dark] ---------- */
 :root{
-  --paper:#f4f6f9; --surface:#ffffff; --surface-2:#e9edf2;
-  --ink:#16202e; --body:#3b4755; --muted:#5b6775; --faint:#8a95a2;
-  --line:#dce2e9; --line-2:#cad2dc;
-  --steel:#2f5c8f; --steel-bright:#4f7bab; --steel-soft:#eaf0f7;
-  --navy:#121c28; --navy-2:#0e1621; --on-navy:#e9eef4; --on-navy-dim:#9fb1c4;
-  --z-base:0; --z-nav:50; --z-menu:49;
+  --bg:#f5f7f9; --surface:#ffffff; --surface-2:#eef2f6;
+  --ink:#171b1f; --body:#4d565f; --muted:#7c858d; --faint:#b0b8bf;
+  --line:rgba(20,26,32,.10); --line-2:rgba(20,26,32,.16);
+  --accent:#2f6f9c; --accent-2:#3f83b3; --accent-ink:#ffffff;
+  --btn-ink:#ffffff;
+  --shadow:0 24px 60px -34px rgba(20,40,60,.35);
   --ease:cubic-bezier(.22,.61,.24,1);
 }
+:root[data-theme="dark"]{
+  --bg:#0d0f12; --surface:#161a1e; --surface-2:#1b2025;
+  --ink:#eef1f4; --body:#aeb7bf; --muted:#7c858e; --faint:#49515a;
+  --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.17);
+  --accent:#7fa8cc; --accent-2:#9cbfdc; --accent-ink:#0d0f12;
+  --btn-ink:#0d0f12;
+  --shadow:0 30px 70px -40px rgba(0,0,0,.8);
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--body);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
-h1,h2,h3{color:var(--ink)}
-.serif{font-family:'Spectral',Georgia,serif}
-.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:74px}
+body{background:var(--bg);color:var(--body);font-family:'Inter',system-ui,sans-serif;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .5s var(--ease),color .5s var(--ease)}
+h1,h2,h3,h4{color:var(--ink);font-weight:400}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-::selection{background:var(--steel);color:#fff}
-.wrap{max-width:1160px;margin:0 auto;padding:0 32px}
-.label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.22em;color:var(--steel);text-transform:uppercase}
+::selection{background:var(--accent);color:var(--accent-ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(22px,4vw,48px)}
+.arch{font-family:'Archivo',sans-serif}
 
-/* nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);height:68px;display:flex;align-items:center;
-  background:rgba(244,246,249,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
-.nav.scrolled{border-bottom-color:var(--line);background:rgba(244,246,249,.94)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
-.brand{display:flex;align-items:center;gap:11px}
-.brand img{width:30px;height:30px}
-.brand b{font-weight:600;font-size:15px;letter-spacing:.16em;color:var(--ink)}
-.navlinks{display:flex;gap:36px;align-items:center}
-.navlinks a{font-size:14px;color:var(--muted);transition:color .2s}
-.navlinks a:hover{color:var(--ink)}
-.navcta{font-size:13.5px;font-weight:500;padding:9px 18px;border:1px solid var(--line-2);border-radius:7px;color:var(--ink)!important;transition:.2s}
-.navcta:hover{border-color:var(--steel);background:var(--surface)}
-.burger{display:none;background:var(--surface);border:1px solid var(--line-2);border-radius:8px;width:40px;height:40px;color:var(--ink);cursor:pointer;align-items:center;justify-content:center}
-.burger svg{width:18px;height:18px}
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:74px;display:flex;align-items:center;
+  transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand .mark{width:30px;height:30px;flex:0 0 auto;color:var(--ink)}
+.brand b{font-family:'Archivo';font-weight:600;font-size:15px;letter-spacing:-.005em;color:var(--ink)}
+.navlinks{display:flex;gap:34px;align-items:center;margin-left:auto}
+.navlinks a{font-size:14.5px;color:var(--muted);transition:color .25s;position:relative}
+.navlinks a:not(.navcta)::after{content:'';position:absolute;left:0;bottom:-5px;height:1.5px;width:0;background:var(--accent);transition:width .3s var(--ease)}
+.navlinks a:hover{color:var(--ink)}.navlinks a:hover:not(.navcta)::after{width:100%}
+.navcta{padding:9px 18px;border:1px solid var(--line-2);border-radius:8px;color:var(--ink)!important;transition:.25s}
+.navcta:hover{background:var(--ink);color:var(--bg)!important;border-color:var(--ink)}
+.tools{display:flex;align-items:center;gap:14px;margin-left:8px}
+.tt{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:9px;
+  border:1px solid var(--line-2);background:transparent;color:var(--body);cursor:pointer;transition:.25s}
+.tt:hover{color:var(--ink);border-color:var(--ink)}
+.tt svg{width:17px;height:17px}
+.tt .i-sun{display:none}.tt .i-moon{display:block}
+:root[data-theme="dark"] .tt .i-sun{display:block}:root[data-theme="dark"] .tt .i-moon{display:none}
+.burger{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;width:40px;height:40px;color:var(--ink);align-items:center;justify-content:center;cursor:pointer}
 
-/* hero */
-.hero{position:relative;padding:180px 0 128px;overflow:hidden}
-.hero-mark-bg{position:absolute;top:-40px;right:-120px;width:560px;opacity:.05;z-index:var(--z-base);pointer-events:none;filter:grayscale(.2)}
-.hero .wrap{position:relative;z-index:1}
-.hero-lockup{display:flex;align-items:center;gap:14px;margin-bottom:34px}
-.hero-lockup img{width:52px;height:52px}
-.hero-lockup .label{color:var(--muted)}
-.hero h1{font-family:'Spectral',serif;font-weight:500;font-size:clamp(2.35rem,5.2vw,3.9rem);letter-spacing:-.012em;line-height:1.06;color:var(--ink);max-width:19ch;text-wrap:balance}
-.hero .lede{margin-top:28px;max-width:60ch;font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--body);line-height:1.66;text-wrap:pretty}
-.hero .lede b{color:var(--ink);font-weight:600}
-.hero-actions{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:500;padding:13px 24px;border-radius:8px;transition:.2s var(--ease);cursor:pointer}
-.btn svg{width:15px;height:15px}
-.btn-p{background:var(--navy);color:#fff}
-.btn-p:hover{background:var(--steel);transform:translateY(-1px)}
-.btn-g{border:1px solid var(--line-2);color:var(--ink);background:var(--surface)}
-.btn-g:hover{border-color:var(--steel);color:var(--steel)}
-.hero-foot{margin-top:70px;display:flex;gap:44px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:26px;max-width:760px}
-.hero-foot div{max-width:220px}
-.hero-foot dt{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:7px}
-.hero-foot dd{font-size:14px;color:var(--muted);line-height:1.5}
+/* guided-tour prev/next control — quietly present, bottom-right */
+.tourctl{position:fixed;right:26px;bottom:26px;z-index:90;display:flex;flex-direction:column;
+  border-radius:13px;overflow:hidden;border:1px solid var(--line);
+  background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+  box-shadow:var(--shadow);opacity:.62;transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.tourctl:hover{opacity:1}
+.tc-btn{width:46px;height:42px;display:flex;align-items:center;justify-content:center;background:transparent;border:0;cursor:pointer;color:var(--body);transition:background .2s,color .2s}
+.tc-btn:hover:not(:disabled){background:color-mix(in srgb,var(--accent) 13%,transparent);color:var(--accent)}
+.tc-btn:disabled{opacity:.26;cursor:default}
+.tc-btn svg{width:19px;height:19px}
+.tc-btn+.tc-btn{border-top:1px solid var(--line)}
+@media(max-width:920px){.tourctl{display:none}}
 
-/* section shell */
-.section{padding:104px 0;border-top:1px solid var(--line)}
-.sec-h2{font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.75rem,3.4vw,2.5rem);letter-spacing:-.015em;line-height:1.1;color:var(--ink);text-wrap:balance}
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  overflow:hidden;scroll-snap-align:start;padding-top:74px}
+#gl{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(80% 62% at 50% 40%, color-mix(in srgb,var(--bg) 55%,transparent), transparent 78%),
+    linear-gradient(180deg, color-mix(in srgb,var(--bg) 45%,transparent), transparent 20%, transparent 60%, var(--bg))}
+.hero .wrap{position:relative;z-index:2;text-align:center}
+.hero h1{font-family:'Inter';font-weight:300;font-size:clamp(2.4rem,6.2vw,5.1rem);line-height:1.04;letter-spacing:-.026em;color:var(--ink);max-width:16ch;margin:0 auto}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l>span{display:inline-block}
+.hero h1 b{font-weight:500}
+.hero h1 .em{font-weight:300;color:var(--accent)}
+.hero .sub{margin:30px auto 0;max-width:56ch;font-size:1.1rem;line-height:1.62;color:var(--body)}
+.hero .sub b{color:var(--ink);font-weight:500}
+.pillars{margin:54px auto 0;max-width:900px;display:grid;grid-template-columns:repeat(3,1fr);text-align:left;
+  background:color-mix(in srgb,var(--surface) 60%,transparent);border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.pillar{padding:22px 26px;border-left:1px solid var(--line)}
+.pillar:first-child{border-left:0}
+.pillar .pn{font-family:'Archivo';font-weight:600;font-size:12px;color:var(--accent);letter-spacing:.02em}
+.pillar h3{font-family:'Archivo';font-weight:600;font-size:1.02rem;letter-spacing:.005em;margin:10px 0 7px;color:var(--ink)}
+.pillar p{font-size:.9rem;line-height:1.5;color:var(--muted)}
 
-/* capabilities — sticky title + hairline index (no cards, no numbers) */
-.split{display:grid;grid-template-columns:0.82fr 1.18fr;gap:64px;align-items:start}
-.split-head{position:sticky;top:104px}
-.split-head p{margin-top:18px;color:var(--muted);font-size:1rem;line-height:1.62;max-width:34ch}
-.index{border-top:1px solid var(--line)}
-.item{display:grid;grid-template-columns:auto 1fr;gap:26px;padding:26px 0;border-bottom:1px solid var(--line);transition:padding-left .3s var(--ease)}
-.item:hover{padding-left:8px}
-.item .ix{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);padding-top:5px}
-.item h3{font-size:1.16rem;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
-.item p{margin-top:8px;color:var(--muted);font-size:.99rem;line-height:1.62;max-width:52ch}
+/* ---------- section shell (each section fills the viewport, gentle snap) ---------- */
+section{position:relative;z-index:2;background:var(--bg)}
+.hero,.band,.contact{scroll-snap-align:start;scroll-snap-stop:always}
+.band{min-height:100vh;display:flex;align-items:center;padding:96px 0 60px;border-top:1px solid var(--line)}
+.band>.wrap{width:100%}
+.lead-label{font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+.h2{font-family:'Inter';font-weight:300;font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.1;letter-spacing:-.02em;color:var(--ink);max-width:20ch}
+.h2 b{font-weight:500}
 
-/* approach */
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:56px}
-.principle{padding-top:24px;border-top:1px solid var(--line-2)}
-.principle h3{font-size:1.18rem;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
-.principle p{margin-top:12px;color:var(--muted);font-size:.98rem;line-height:1.64;max-width:34ch}
+/* thesis */
+.thesis-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start}
+.thesis-grid .lead{font-family:'Inter';font-weight:300;font-size:1.6rem;line-height:1.4;color:var(--ink);letter-spacing:-.01em}
+.thesis-grid .lead b{font-weight:500}
+.thesis-grid .body p{font-size:1.02rem;line-height:1.75;color:var(--body);margin-bottom:18px}
+.thesis-grid .body p strong{color:var(--ink);font-weight:600}
+.metrics{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.metric{padding:24px 22px;border-left:1px solid var(--line)}
+.metric:first-child{border-left:0;padding-left:2px}
+.metric .v{font-family:'Archivo';font-weight:700;font-size:2.1rem;color:var(--ink);line-height:1;letter-spacing:-.01em}
+.metric .k{margin-top:9px;font-size:12.5px;letter-spacing:.01em;color:var(--muted)}
 
-/* about */
-.about{display:grid;grid-template-columns:1.15fr .85fr;gap:66px;align-items:start}
-.about .lead{font-family:'Spectral',serif;font-weight:400;font-size:1.5rem;line-height:1.5;color:var(--ink);letter-spacing:-.008em;margin-bottom:26px;text-wrap:pretty}
-.about .body p{color:var(--body);font-size:1.05rem;line-height:1.72;margin-bottom:16px;max-width:60ch}
-.record{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
-.record .row{display:flex;justify-content:space-between;gap:18px;padding:15px 22px;border-bottom:1px solid var(--line);font-size:13.5px}
-.record .row:last-child{border-bottom:none}
-.record .row span:first-child{color:var(--faint)}
-.record .row span:last-child{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-align:right}
+/* core */
+.core-head{max-width:36ch;margin-bottom:8px}
+.core-head .note{font-size:1rem;line-height:1.6;color:var(--body);margin-top:16px}
+.core{display:grid;grid-template-columns:1fr 1fr;column-gap:60px;margin-top:34px;border-top:1px solid var(--line)}
+.node{padding:22px 0;border-bottom:1px solid var(--line)}
+.node h3{font-family:'Archivo';font-weight:600;font-size:1.04rem;letter-spacing:.005em;color:var(--ink);margin-bottom:7px}
+.node p{font-size:.92rem;line-height:1.55;color:var(--muted)}
 
-/* contact — the one dark moment */
-.contact{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
-.contact::after{content:'';position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;
-  background:radial-gradient(circle,rgba(79,123,171,.10),transparent 68%);pointer-events:none}
-.contact .wrap{padding:118px 32px;position:relative;text-align:center}
-.contact .label{color:var(--steel-bright)}
-.contact h2{font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.9rem,4.4vw,3.1rem);letter-spacing:-.02em;line-height:1.1;color:#fff;margin-top:18px;max-width:20ch;margin-inline:auto;text-wrap:balance}
-.contact p{margin:20px auto 0;max-width:52ch;color:var(--on-navy-dim);font-size:1.08rem;line-height:1.6}
-.btn-navy{margin-top:36px;background:var(--steel-bright);color:#0c1420;font-weight:600}
-.btn-navy:hover{background:#68a0d6;transform:translateY(-1px)}
+/* stance */
+.stance{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
+.stance .s h3{font-family:'Archivo';font-weight:600;font-size:1.12rem;color:var(--ink);margin:0 0 12px;padding-top:20px;border-top:1px solid var(--line-2)}
+.stance .s p{font-size:.98rem;line-height:1.65;color:var(--body)}
+
+/* contact */
+.contact{text-align:center;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:96px 0;border-top:1px solid var(--line)}
+.contact h2{font-family:'Inter';font-weight:300;font-size:clamp(2rem,4.6vw,3.2rem);letter-spacing:-.022em;color:var(--ink);max-width:20ch;margin:0 auto;line-height:1.1}
+.contact p{margin:22px auto 38px;max-width:50ch;font-size:1.08rem;color:var(--body)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo';font-weight:600;font-size:14.5px;
+  padding:15px 30px;border-radius:10px;transition:.25s var(--ease)}
+.btn-p{background:var(--accent);color:var(--btn-ink)}
+.btn-p:hover{background:var(--accent-2);transform:translateY(-2px)}
 
 /* footer */
-footer{background:var(--paper);border-top:1px solid var(--line);padding:48px 0}
-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.foot-brand{display:flex;align-items:center;gap:12px}
-.foot-brand img{width:26px;height:26px}
-.foot-brand b{display:block;font-size:13px;letter-spacing:.14em;color:var(--ink)}
-.foot-brand span{font-size:12px;color:var(--faint)}
-.foot-right{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-.foot-right a{font-size:13px;color:var(--muted);transition:color .2s}
-.foot-right a:hover{color:var(--ink)}
-.foot-legal{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:.03em}
+footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+.foot-b .mark{width:30px;height:30px;color:var(--ink);margin-bottom:14px}
+.foot-b p{font-size:13.5px;line-height:1.7;color:var(--muted);max-width:32ch}
+.foot-col h4{font-family:'Archivo';font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin-bottom:15px}
+.foot-col a{display:block;font-size:14px;color:var(--body);margin-bottom:10px;transition:color .2s}
+.foot-col a:hover{color:var(--ink)}
+.foot-col address{font-style:normal;font-size:13.5px;line-height:1.75;color:var(--muted)}
+.foot-bot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:24px}
+.foot-bot span{font-size:12.5px;color:var(--faint)}
 
-/* reveal (visible without JS) */
-.reveal{opacity:1;transform:none}
-.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.js .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  .js .reveal{opacity:1;transform:none;transition:none}
-  .btn-p:hover,.btn-navy:hover{transform:none}
-  html{scroll-behavior:auto}
-}
-
-@media(max-width:900px){
-  .split{grid-template-columns:1fr;gap:40px}
-  .split-head{position:static}
-  .about{grid-template-columns:1fr;gap:40px}
-  .principles{grid-template-columns:1fr}
-}
-@media(max-width:720px){
-  .navlinks,.navcta{display:none}
-  .burger{display:flex}
-  .navlinks.open{display:flex;position:fixed;top:68px;left:0;right:0;z-index:var(--z-menu);flex-direction:column;gap:0;
-    background:var(--surface);border-bottom:1px solid var(--line);padding:6px 0;box-shadow:0 12px 24px rgba(18,28,40,.06)}
-  .navlinks.open a{padding:15px 32px;font-size:15px}
-  .navlinks.open .navcta{display:block;margin:8px 32px;text-align:center}
-  .hero{padding:140px 0 84px}
-  .section{padding:76px 0}
-  .contact .wrap{padding:84px 32px}
-  .hero-foot{gap:28px}
+.reveal{opacity:0;transform:translateY(20px)}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .reveal{opacity:1!important;transform:none!important}}
+@media(max-width:920px){
+  html{scroll-snap-type:none;scroll-padding-top:64px}
+  .band,.contact{min-height:auto;display:block;padding:72px 0}
+  .thesis-grid{grid-template-columns:1fr;gap:36px}
+  .thesis-grid .lead{font-size:1.4rem}
+  .stance,.core,.pillars{grid-template-columns:1fr}
+  .pillar{border-left:0;border-top:1px solid var(--line)}.pillar:first-child{border-top:0}
+  .metrics{grid-template-columns:1fr 1fr}
+  .metric{border-left:0;padding-left:2px}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .navlinks{display:none}.burger{display:flex}
+  .navlinks.open{display:flex;position:fixed;top:74px;left:0;right:0;flex-direction:column;gap:0;
+    background:var(--surface);border-bottom:1px solid var(--line);padding:6px 0;margin:0}
+  .navlinks.open a{padding:15px 32px}.navlinks.open .navcta{margin:10px 32px;text-align:center}
 }
 </style>
 </head>
@@ -191,134 +179,343 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 
 <nav class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="brand/n6c-mark.png" alt="N6C mark" width="30" height="30"><b>N6C</b></a>
+    <a class="brand" href="#top" aria-label="Node-Six Cybernetics home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <polygon points="20,4 33.86,12 33.86,28 20,36 6.14,28 6.14,12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <g stroke="currentColor" stroke-width="1" opacity="0.32">
+          <line x1="20" y1="20" x2="20" y2="4"/><line x1="20" y1="20" x2="33.86" y2="12"/><line x1="20" y1="20" x2="33.86" y2="28"/>
+          <line x1="20" y1="20" x2="20" y2="36"/><line x1="20" y1="20" x2="6.14" y2="28"/><line x1="20" y1="20" x2="6.14" y2="12"/>
+        </g>
+        <g fill="currentColor">
+          <circle cx="20" cy="4" r="1.7"/><circle cx="33.86" cy="12" r="1.7"/><circle cx="33.86" cy="28" r="1.7"/>
+          <circle cx="20" cy="36" r="1.7"/><circle cx="6.14" cy="28" r="1.7"/><circle cx="6.14" cy="12" r="1.7"/>
+        </g>
+        <circle cx="20" cy="20" r="3" fill="var(--accent)"/>
+      </svg>
+      <b>Node-Six Cybernetics</b>
+    </a>
     <div class="navlinks" id="navlinks">
-      <a href="#work">Work</a>
-      <a href="#approach">Approach</a>
-      <a href="#about">About</a>
-      <a href="founder.html">Founder</a>
+      <a href="#core">Core</a>
+      <a href="#stance">Stance</a>
+      <a href="team.html">Team</a>
       <a class="navcta" href="#contact">Contact</a>
     </div>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
+    <div class="tools">
+      <button class="tt" id="themeBtn" aria-label="Toggle light or dark theme" title="Toggle theme">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
   </div>
 </nav>
 
 <header class="hero" id="top">
-  <img class="hero-mark-bg" src="brand/n6c-mark.png" alt="" aria-hidden="true">
+  <canvas id="gl"></canvas>
   <div class="wrap">
-    <div class="hero-lockup reveal">
-      <img src="brand/n6c-mark.png" alt="Node-Six Cybernetics" width="52" height="52">
-      <span class="label">Node-Six Cybernetics</span>
+    <h1>
+      <span class="l"><span>Intelligence that <b>perceives,</b></span></span>
+      <span class="l"><span><b>decides,</b> and <span class="em">acts</span></span></span>
+      <span class="l"><span>on the real world.</span></span>
+    </h1>
+    <p class="sub">N6C builds one applied-AI core that sees, understands, and acts on its own — put wherever it earns its place, from an autonomous drone to a monitored patient, and problems that look nothing like either.</p>
+    <div class="pillars">
+      <div class="pillar reveal"><div class="pn">01</div><h3>Perceive</h3><p>Turn raw cameras and sensors into an understanding a machine can act on.</p></div>
+      <div class="pillar reveal"><div class="pn">02</div><h3>Decide</h3><p>Choose the right action inside a real deadline — not after the fact.</p></div>
+      <div class="pillar reveal"><div class="pn">03</div><h3>Act</h3><p>Carry it out on its own, safely, where being wrong carries a cost.</p></div>
     </div>
-    <h1 class="reveal">AI systems that perceive, decide, and act.</h1>
-    <p class="lede reveal">Node-Six Cybernetics builds artificial intelligence for the real world — systems that <b>see, understand, and act on their own</b>. We put that core wherever it earns its place: guiding an autonomous drone, watching over a patient, and plenty of problems that look nothing like either.</p>
-    <div class="hero-actions reveal">
-      <a class="btn btn-p" href="#work">See what we build
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-g" href="#contact">Get in touch</a>
-    </div>
-    <dl class="hero-foot reveal">
-      <div><dt>Perception</dt><dd>Vision and recognition that turn raw sensors into understanding</dd></div>
-      <div><dt>Autonomy</dt><dd>Systems that decide and act with no hand on the controls</dd></div>
-      <div><dt>Applied broadly</dt><dd>From aircraft to medicine to whatever needs it next</dd></div>
-    </dl>
   </div>
 </header>
 
-<section class="section" id="work">
+<section class="band" id="thesis">
   <div class="wrap">
-    <div class="split">
-      <div class="split-head reveal">
-        <div class="label">What we build</div>
-        <h2 class="sec-h2" style="margin-top:16px">Six capabilities. One core.</h2>
-        <p>These are capabilities, not a list of industries. We build one AI core — perception, autonomy, analysis — and apply it wherever it earns its place. Drones and medical monitoring are where we're starting, not where it stops.</p>
+    <div class="thesis-grid">
+      <p class="lead reveal">A demonstration only has to convince a room. A system that flies on its own, or watches a patient through the night, has to hold up against <b>everything a controlled room leaves out.</b></p>
+      <div class="body reveal">
+        <p>Most artificial intelligence is judged where it's flattered: clean inputs, a forgiving benchmark, a human standing by to intervene. The field offers none of that. It's <strong>noisy, adversarial, incomplete, and indifferent to how a model scored in the lab.</strong></p>
+        <p>Applied autonomy isn't a larger model. It's the discipline of staying correct, and staying safe, when the ground truth stops cooperating. That gap between a system that demonstrates and a system that holds is the whole problem. It's the one N6C exists to close.</p>
       </div>
-      <div class="index">
-        <div class="item reveal"><div class="ix">01</div><div><h3>Perception &amp; recognition</h3><p>Image, object, and people recognition that turns a raw camera or sensor feed into something a machine can understand and act on.</p></div></div>
-        <div class="item reveal"><div class="ix">02</div><div><h3>Autonomy &amp; navigation</h3><p>Systems that plan, navigate, and carry out a directive on their own — an aircraft in flight, or any process that has to run with no hand on the controls.</p></div></div>
-        <div class="item reveal"><div class="ix">03</div><div><h3>Real-time decisioning</h3><p>Turning what a system perceives into the right action in the moment it matters, not after the fact.</p></div></div>
-        <div class="item reveal"><div class="ix">04</div><div><h3>Monitoring &amp; analysis</h3><p>Watching a stream of real-world data continuously — from a patient, a machine, an environment — and turning it into detailed, defensible insight.</p></div></div>
-        <div class="item reveal"><div class="ix">05</div><div><h3>Learning from real data</h3><p>Models that improve on the data they actually meet in the field, and hold up in conditions no lab rehearses.</p></div></div>
-        <div class="item reveal"><div class="ix">06</div><div><h3>Secure systems at scale</h3><p>The infrastructure to run all of it reliably and privately — ready to grow across domains, partners, and borders.</p></div></div>
-      </div>
+    </div>
+    <div class="metrics reveal">
+      <div class="metric"><div class="v">10+</div><div class="k">Years engineering</div></div>
+      <div class="metric"><div class="v">6</div><div class="k">Core capabilities</div></div>
+      <div class="metric"><div class="v">2</div><div class="k">Proving grounds</div></div>
+      <div class="metric"><div class="v">∞</div><div class="k">Domains it extends to</div></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="approach">
+<section class="band" id="core">
   <div class="wrap">
-    <h2 class="sec-h2 reveal" style="max-width:22ch">How we build matters as much as what.</h2>
-    <div class="principles">
-      <div class="principle reveal"><h3>Built for the real world</h3><p>Our systems run in the field, on real data and under real conditions, not in a demo — where the margin for error is thin.</p></div>
-      <div class="principle reveal"><h3>Safe and secure by construction</h3><p>When a system acts on its own or handles sensitive data, safety and privacy can't be bolted on. They're designed in from the first line of code.</p></div>
-      <div class="principle reveal"><h3>Built to grow</h3><p>The same core, extended into new domains, partners, and countries. Range is the point, not a stretch goal.</p></div>
+    <div class="core-head reveal">
+      <div class="lead-label">The core</div>
+      <h2 class="h2">One core. <b>Six capabilities.</b></h2>
+      <p class="note">Not a list of industries — a single system, extended into new domains rather than rebuilt for each.</p>
+    </div>
+    <div class="core">
+      <div class="node reveal"><h3>Perception &amp; recognition</h3><p>Vision, object, and people recognition that turns a raw feed into something a machine can understand and act on.</p></div>
+      <div class="node reveal"><h3>Autonomy &amp; navigation</h3><p>Systems that plan, navigate, and carry out a directive on their own — an aircraft in flight, or any process that runs with no hand on the controls.</p></div>
+      <div class="node reveal"><h3>Real-time decisioning</h3><p>Turning what a system perceives into the right action in the moment it matters, inside a real deadline.</p></div>
+      <div class="node reveal"><h3>Monitoring &amp; analysis</h3><p>Watching a stream of real-world data continuously — a patient, a machine, an environment — and turning it into defensible insight.</p></div>
+      <div class="node reveal"><h3>Learning from real data</h3><p>Models that improve on the data they actually meet in the field, and hold up in conditions no lab rehearses.</p></div>
+      <div class="node reveal"><h3>Secure systems at scale</h3><p>The infrastructure to run all of it reliably and privately — designed to grow across domains, partners, and borders.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="about">
+<section class="band" id="stance">
   <div class="wrap">
-    <div class="about">
-      <div class="reveal">
-        <div class="label" style="margin-bottom:20px">About</div>
-        <p class="lead">Node-Six Cybernetics builds artificial intelligence for the real world — systems that see, understand, and act — and puts them wherever they're needed.</p>
-        <div class="body">
-          <p>We're not a one-industry company, and we're not trying to be. The core we build — perception, autonomy, analysis — is the same whether it's flying a drone, watching over a patient, or a problem we haven't taken on yet. We follow it wherever AI changes what's possible.</p>
-          <p>The aim is to grow N6C worldwide, working with partners across many fields: the engineers, operators, clinicians, and companies who need intelligent systems and want them built well. We're early, and we're building broad.</p>
-        </div>
-        <a href="founder.html" style="display:inline-block;margin-top:24px;font-size:14.5px;font-weight:600;color:var(--steel)">Meet the founder — Anderson Silva →</a>
-      </div>
-      <div class="record reveal">
-        <div class="row"><span>Entity</span><span>Node-Six Cybernetics</span></div>
-        <div class="row"><span>Designation</span><span>N6C</span></div>
-        <div class="row"><span>Core</span><span>Perception · Autonomy · Analysis</span></div>
-        <div class="row"><span>Applications</span><span>Drones · Medical · Beyond</span></div>
-        <div class="row"><span>Aim</span><span>Worldwide, with partners</span></div>
-        <div class="row"><span>Contact</span><span>hello@n6c.org</span></div>
-      </div>
+    <div class="reveal">
+      <div class="lead-label">The stance</div>
+      <h2 class="h2">How we build matters as much as <b>what.</b></h2>
+    </div>
+    <div class="stance">
+      <div class="s reveal"><h3>Built for the field, not the demo</h3><p>Our systems run on real data under real conditions, where the margin for error is thin — not in a rehearsal arranged to succeed.</p></div>
+      <div class="s reveal"><h3>Safe by construction</h3><p>A system that acts on its own, or handles sensitive data, can't have safety and privacy bolted on. They're designed in from the first line — hard to fool, impossible to quietly misuse.</p></div>
+      <div class="s reveal"><h3>Built to grow</h3><p>The same core, extended into new domains, partners, and countries. Range is the point, not a stretch goal.</p></div>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap reveal">
-    <div class="label">Contact</div>
+    <div class="lead-label" style="text-align:center">Contact</div>
     <h2>If you're building toward the same future, let's talk.</h2>
-    <p>We're looking for partners and clients who want to put AI to work — in any field where an intelligent system changes what's possible. If that's you, say hello.</p>
-    <a class="btn btn-navy" href="mailto:hello@n6c.org">hello@n6c.org</a>
+    <p>Partners and clients who want to put AI to work — in any field where an intelligent system changes what's possible.</p>
+    <a class="btn btn-p" href="mailto:hello@n6c.org">hello@n6c.org</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="foot-brand">
-      <img src="brand/n6c-mark.png" alt="N6C" width="26" height="26">
-      <div><b>NODE-SIX CYBERNETICS</b><span>Applied artificial intelligence for the real world</span></div>
+    <div class="foot-top">
+      <div class="foot-b">
+        <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <polygon points="20,4 33.86,12 33.86,28 20,36 6.14,28 6.14,12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <g fill="currentColor"><circle cx="20" cy="4" r="1.7"/><circle cx="33.86" cy="12" r="1.7"/><circle cx="33.86" cy="28" r="1.7"/><circle cx="20" cy="36" r="1.7"/><circle cx="6.14" cy="28" r="1.7"/><circle cx="6.14" cy="12" r="1.7"/></g>
+          <circle cx="20" cy="20" r="3" fill="var(--accent)"/>
+        </svg>
+        <p>Applied artificial intelligence for the real world — systems that perceive, decide, and act.</p>
+      </div>
+      <div class="foot-col"><h4>Navigate</h4><a href="#core">Core</a><a href="#stance">Stance</a><a href="team.html">Team</a><a href="#contact">Contact</a></div>
+      <div class="foot-col"><h4>Node-Six Cybernetics</h4><address>Paju tn 1a<br>50603 Tartu, Tartu Maakond<br>Estonia<br><br><a href="mailto:hello@n6c.org">hello@n6c.org</a></address></div>
     </div>
-    <div class="foot-right">
-      <a href="#work">Work</a>
-      <a href="#approach">Approach</a>
-      <a href="#about">About</a>
-      <a href="founder.html">Founder</a>
-      <a href="mailto:hello@n6c.org">hello@n6c.org</a>
-      <span class="foot-legal">© 2026 N6C</span>
+    <div class="foot-bot">
+      <span>© 2026 Node-Six Cybernetics · Tartu, Estonia</span>
+      <span>Applied AI · Perceive · Decide · Act</span>
     </div>
   </div>
 </footer>
 
+<div class="tourctl" id="tourctl">
+  <button class="tc-btn" id="tcUp" aria-label="Previous section"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></button>
+  <button class="tc-btn" id="tcDown" aria-label="Next section"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-  const nav=document.getElementById('nav');
-  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8),{passive:true});
-  const links=document.getElementById('navlinks'), burger=document.getElementById('burger');
-  burger.onclick=()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
-  links.querySelectorAll('a').forEach(a=>a.onclick=()=>{links.classList.remove('open');burger.setAttribute('aria-expanded','false')});
-  const rev=document.querySelectorAll('.reveal');
+const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* ---------- theme (light default, remembers choice) ---------- */
+const root=document.documentElement;
+try{ const saved=localStorage.getItem('n6c-theme'); if(saved) root.dataset.theme=saved; }catch(e){}
+document.getElementById('themeBtn').addEventListener('click',()=>{
+  const next = root.dataset.theme==='dark' ? 'light' : 'dark';
+  root.dataset.theme=next;
+  try{ localStorage.setItem('n6c-theme',next); }catch(e){}
+  if(window.__setFieldTheme) window.__setFieldTheme(next);
+});
+
+/* ---------- nav + progress ---------- */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',(scrollY||0)>12); },{passive:true});
+const links=document.getElementById('navlinks'),burger=document.getElementById('burger');
+burger.onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+
+/* ---------- guided-tour scroll: one section per gesture, footer as final stop ---------- */
+(function(){
+  const getSecs=()=>[...document.querySelectorAll('.hero,.band,.contact')];
+  let els=getSecs(), active=false, idx=0, animating=false, raf=0;
+  const maxScroll=()=>Math.max(0, document.documentElement.scrollHeight - innerHeight);
+  const stopCount=()=>els.length+1;                 // +1 = footer / page bottom
+  const targetY=(i)=> i>=els.length ? maxScroll() : Math.min(maxScroll(), Math.round(els[i].offsetTop));
+  const ease=(p)=> 1-Math.pow(1-p,3);   // ease-out: moves immediately, settles softly
+  function animateTo(y,dur){ dur=dur||430; const start=scrollY, dist=y-start;
+    if(Math.abs(dist)<2){ return; } animating=true; const t0=performance.now(); cancelAnimationFrame(raf);
+    function step(now){ const p=Math.min(1,(now-t0)/dur); scrollTo(0, start+dist*ease(p));
+      if(p<1){ raf=requestAnimationFrame(step); } else { setTimeout(()=>{animating=false;},70); } }
+    raf=requestAnimationFrame(step);
+  }
+  function nearest(){ const y=scrollY; let b=0,bd=1e9; for(let i=0;i<stopCount();i++){ const d=Math.abs(targetY(i)-y); if(d<bd){bd=d;b=i;} } return b; }
+  function recompute(){ els=getSecs(); active = !reduce && matchMedia('(min-width:921px) and (min-height:560px)').matches; }
+  const tcUp=document.getElementById('tcUp'), tcDown=document.getElementById('tcDown');
+  function updateCtl(){ if(tcUp) tcUp.disabled = idx<=0; if(tcDown) tcDown.disabled = idx>=stopCount()-1; }
+  function step(dir){ const ni=Math.max(0,Math.min(stopCount()-1, idx+dir)); if(ni!==idx){ idx=ni; animateTo(targetY(ni)); } updateCtl(); }
+  function goto(i){ idx=Math.max(0,Math.min(stopCount()-1,i)); animateTo(targetY(idx)); updateCtl(); }
+  if(tcUp) tcUp.addEventListener('click',()=>step(-1));
+  if(tcDown) tcDown.addEventListener('click',()=>step(1));
+  recompute(); idx=nearest(); updateCtl();
+  addEventListener('resize',()=>{ recompute(); if(!animating){ idx=nearest(); updateCtl(); } });
+  /* one flick = one section: hold a lock until the wheel goes quiet, so momentum can't double-step */
+  /* trackpad/mouse aware: move on a fresh or accelerating gesture; ignore the decaying inertia tail */
+  let scrollings=[], canScroll=true, lastWheelT=0;
+  const avg=(arr,n)=>{ const c=Math.min(n,arr.length); if(!c) return 0; let s=0; for(let i=arr.length-c;i<arr.length;i++) s+=arr[i]; return s/c; };
+  addEventListener('wheel',e=>{ if(!active) return; e.preventDefault();
+    if(Math.abs(e.deltaY)<3) return;
+    const now=performance.now();
+    if(now-lastWheelT>250) scrollings=[];               // gap between gestures -> fresh history
+    lastWheelT=now;
+    scrollings.push(Math.abs(e.deltaY)); if(scrollings.length>80) scrollings.shift();
+    if(!canScroll) return;
+    if(avg(scrollings,10) >= avg(scrollings,70)){        // accelerating/fresh (not the decaying tail)
+      canScroll=false; step(e.deltaY>0?1:-1);
+      setTimeout(()=>{ canScroll=true; }, 480);
+    } },{passive:false});
+  addEventListener('keydown',e=>{ if(!active) return; if(e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){ e.preventDefault(); step(1); }
+    else if(e.key==='ArrowUp'||e.key==='PageUp'){ e.preventDefault(); step(-1); }
+    else if(e.key==='Home'){ e.preventDefault(); goto(0); }
+    else if(e.key==='End'){ e.preventDefault(); goto(stopCount()-1); } });
+  addEventListener('scroll',()=>{ if(!animating){ idx=nearest(); updateCtl(); } },{passive:true});
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    const id=a.getAttribute('href').slice(1);
+    const el=id?document.getElementById(id):null;
+    e.preventDefault(); let si = el ? els.findIndex(s=>s===el||s.contains(el)) : 0; if(si<0) si=0;
+    goto(si); links.classList.remove('open');
+  }));
+})();
+
+/* ---------- gentle reveals (content visible by default; JS only enhances) ---------- */
+if(window.gsap && window.ScrollTrigger && !reduce){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set('.hero h1 .l>span',{yPercent:110});
+  gsap.set('.hero .sub',{opacity:0,y:16});
+  const tl=gsap.timeline({delay:.15});
+  tl.to('.hero h1 .l>span',{yPercent:0,duration:1.0,ease:'power4.out',stagger:.1})
+    .to('.hero .sub',{opacity:1,y:0,duration:.8,ease:'power3.out'},'-=.6');
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+} else {
+  document.querySelectorAll('.reveal').forEach(e=>{e.style.opacity=1;e.style.transform='none';});
+}
+
+/* ---------- muted, theme-aware flow field ---------- */
+(function(){
+  const cv=document.getElementById('gl'); if(!window.THREE||!cv)return;
+  let renderer; try{ renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true,powerPreference:'high-performance'}); }catch(e){ return; }
+  renderer.setClearColor(0x000000,0);
+  const scene=new THREE.Scene();
+  const cam=new THREE.PerspectiveCamera(52,1,.1,300);
+  cam.position.set(0,7.2,27); cam.lookAt(0,-2,-16);
+
+  const SEGX=200, SEGZ=140, W=170, D=120, nx=SEGX+1, nz=SEGZ+1;
+  const verts=new Float32Array(nx*nz*3); let v=0;
+  for(let j=0;j<nz;j++)for(let i=0;i<nx;i++){ verts[v++]=(i/SEGX-0.5)*W; verts[v++]=0; verts[v++]=(j/SEGZ-0.5)*D; }
+  const idx=[]; for(let j=0;j<SEGZ;j++)for(let i=0;i<SEGX;i++){ const a=j*nx+i,b=a+1,c=a+nx,d=c+1; idx.push(a,c,b,b,c,d); }
+  const geo=new THREE.BufferGeometry();
+  geo.setAttribute('position',new THREE.BufferAttribute(verts,3)); geo.setIndex(idx);
+
+  const PAL={
+    light:{deep:[0.90,0.93,0.96],mid:[0.70,0.80,0.88],hot:[0.50,0.66,0.79],bg:[0.961,0.969,0.976]},
+    dark: {deep:[0.07,0.10,0.12],mid:[0.16,0.26,0.32],hot:[0.42,0.58,0.71],bg:[0.051,0.059,0.071]}
+  };
+  const uniforms={ uTime:{value:0}, uAmp:{value:2.5},
+    uDeep:{value:new THREE.Vector3()}, uMid:{value:new THREE.Vector3()}, uHot:{value:new THREE.Vector3()}, uBg:{value:new THREE.Vector3()} };
+  function apply(t){ const p=PAL[t==='dark'?'dark':'light'];
+    uniforms.uDeep.value.fromArray(p.deep); uniforms.uMid.value.fromArray(p.mid);
+    uniforms.uHot.value.fromArray(p.hot); uniforms.uBg.value.fromArray(p.bg); }
+  apply(root.dataset.theme||'light');
+  window.__setFieldTheme=apply;
+
+  const SNOISE=`
+    vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
+    vec4 mod289(vec4 x){return x-floor(x*(1.0/289.0))*289.0;}
+    vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
+    vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
+    float snoise(vec3 v){
+      const vec2 C=vec2(1.0/6.0,1.0/3.0); const vec4 D=vec4(0.0,0.5,1.0,2.0);
+      vec3 i=floor(v+dot(v,C.yyy)); vec3 x0=v-i+dot(i,C.xxx);
+      vec3 g=step(x0.yzx,x0.xyz); vec3 l=1.0-g; vec3 i1=min(g.xyz,l.zxy); vec3 i2=max(g.xyz,l.zxy);
+      vec3 x1=x0-i1+C.xxx; vec3 x2=x0-i2+C.yyy; vec3 x3=x0-D.yyy;
+      i=mod289(i);
+      vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));
+      float n_=0.142857142857; vec3 ns=n_*D.wyz-D.xzx;
+      vec4 j=p-49.0*floor(p*ns.z*ns.z);
+      vec4 x_=floor(j*ns.z); vec4 y_=floor(j-7.0*x_);
+      vec4 x=x_*ns.x+ns.yyyy; vec4 y=y_*ns.x+ns.yyyy; vec4 h=1.0-abs(x)-abs(y);
+      vec4 b0=vec4(x.xy,y.xy); vec4 b1=vec4(x.zw,y.zw);
+      vec4 s0=floor(b0)*2.0+1.0; vec4 s1=floor(b1)*2.0+1.0; vec4 sh=-step(h,vec4(0.0));
+      vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy; vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
+      vec3 p0=vec3(a0.xy,h.x); vec3 p1=vec3(a0.zw,h.y); vec3 p2=vec3(a1.xy,h.z); vec3 p3=vec3(a1.zw,h.w);
+      vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
+      p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;
+      vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0); m=m*m;
+      return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));
+    }
+    float flow(vec2 P,float t){
+      float h=snoise(vec3(P*0.040, t*0.5));
+      h+=0.5*snoise(vec3(P*0.10+7.0, t*0.7));
+      h+=0.20*snoise(vec3(P*0.22+3.0, t*1.0));
+      return h;
+    }`;
+  const vert=`
+    uniform float uTime; uniform float uAmp;
+    varying float vH; varying float vFog; varying float vFres;
+    ${SNOISE}
+    void main(){
+      vec3 p=position; float t=uTime;
+      float h=flow(p.xz,t); p.y=h*uAmp;
+      float e=0.8;
+      float hL=flow(p.xz+vec2(-e,0.0),t), hR=flow(p.xz+vec2(e,0.0),t);
+      float hD=flow(p.xz+vec2(0.0,-e),t), hU=flow(p.xz+vec2(0.0,e),t);
+      vec3 nrm=normalize(vec3((hL-hR)*uAmp, 2.0*e, (hD-hU)*uAmp));
+      vec4 world=modelMatrix*vec4(p,1.0);
+      vec3 viewDir=normalize(cameraPosition-world.xyz);
+      vFres=pow(1.0-clamp(dot(nrm,viewDir),0.0,1.0),3.0);
+      vH=clamp(h*0.5+0.5,0.0,1.0);
+      vec4 mv=modelViewMatrix*vec4(p,1.0);
+      vFog=smoothstep(120.0,10.0,-mv.z);
+      gl_Position=projectionMatrix*mv;
+    }`;
+  const frag=`
+    precision highp float;
+    varying float vH; varying float vFog; varying float vFres;
+    uniform vec3 uDeep; uniform vec3 uMid; uniform vec3 uHot; uniform vec3 uBg;
+    void main(){
+      vec3 col=mix(uDeep,uMid,smoothstep(0.32,0.62,vH));
+      col=mix(col,uHot,smoothstep(0.68,0.98,vH));
+      col=mix(col, uHot, vFres*0.18);
+      col=mix(uBg,col,vFog);
+      gl_FragColor=vec4(col,1.0);
+    }`;
+  const mat=new THREE.ShaderMaterial({uniforms,vertexShader:vert,fragmentShader:frag,depthWrite:true,side:THREE.DoubleSide});
+  const surf=new THREE.Mesh(geo,mat); scene.add(surf);
+
+  function resize(){
+    let w=cv.clientWidth,h=cv.clientHeight;
+    if(!w||!h){ const r=cv.getBoundingClientRect(); w=Math.round(r.width)||innerWidth; h=Math.round(r.height)||innerHeight; }
+    renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+    renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix();
+  }
+  addEventListener('resize',resize); resize(); requestAnimationFrame(resize);
+  if(window.ResizeObserver){ try{ new ResizeObserver(resize).observe(cv); }catch(e){} }
+  const clock=new THREE.Clock(); let running=true,rafId=0;
+  function anim(){ if(!running){rafId=0;return;}
+    uniforms.uTime.value=reduce?4.0:clock.getElapsedTime()*0.55;
+    cam.lookAt(0,-2,-16); renderer.render(scene,cam); rafId=requestAnimationFrame(anim); }
+  anim();
+  if(reduce){ running=false; renderer.render(scene,cam); }
   if('IntersectionObserver' in window){
-    const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-    rev.forEach((el,i)=>{el.style.transitionDelay=((i%5)*50)+'ms';io.observe(el)});
-  } else rev.forEach(el=>el.classList.add('in'));
+    const hero=document.querySelector('.hero');
+    if(hero) new IntersectionObserver(es=>{ const vis=es[0].isIntersecting;
+      if(vis){ if(!running && !reduce){ running=true; clock.start(); if(!rafId) anim(); } }
+      else if(running){ running=false; clock.stop(); } },{threshold:0}).observe(hero);
+  }
+})();
 </script>
 </body>
 </html>
