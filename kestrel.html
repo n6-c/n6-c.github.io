@@ -122,6 +122,15 @@ section{border-top:1px solid var(--line);background:var(--bg)}
 .feat .f h3{font-family:'Archivo';font-weight:600;font-size:1.04rem;color:var(--ink);margin:12px 0 8px}
 .feat .f p{font-size:.92rem;line-height:1.55;color:var(--muted)}
 
+/* in brief */
+.brief{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);margin-top:32px;align-items:start}
+.brief-lead{font-family:'Inter';font-weight:300;font-size:1.5rem;line-height:1.4;color:var(--ink);letter-spacing:-.01em;margin:0}
+.brief-lead b{font-weight:500}
+.brief-body p{font-size:1.02rem;line-height:1.75;color:var(--body);margin-bottom:16px}
+.brief-body p:last-child{margin-bottom:0}
+.brief-body p strong{color:var(--ink);font-weight:600}
+@media(max-width:760px){.brief{grid-template-columns:1fr;gap:26px}.brief-lead{font-size:1.3rem}}
+
 /* footer */
 footer{border-top:1px solid var(--line);padding:52px 0 40px;background:var(--bg)}
 .foot-bot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
@@ -183,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 40px;background:var(--bg)
         <span class="eyebrow">N6C · Applied AI in the field</span>
         <div style="margin-bottom:18px"><span class="dev-pill"><span class="dot"></span> Project in development</span></div>
         <h1>Kestrel</h1>
-        <p class="lead">Real-time perception for cameras and drones. Kestrel <b>detects, identifies, and tracks</b> objects and people on a live feed — and it runs on a <b>totally independent machine</b>: fully local, offline, air-gapped. No cloud, no connectivity, nothing leaves the device.</p>
+        <p class="lead">Real-time perception for cameras and drones. Kestrel <b>detects, identifies, and tracks</b> objects and people on a live feed, and runs on a <b>totally independent machine</b> — fully local and air-gapped by default, so nothing leaves the device. Connectivity is a choice, never a requirement.</p>
         <div class="kchips"><span class="kchip">Fully local</span><span class="kchip">Offline</span><span class="kchip">Air-gapped</span><span class="kchip">Edge-ready</span></div>
         <div class="kbtns">
           <a class="btn btn-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fn6c.org%2Fkestrel.html" target="_blank" rel="noopener" aria-label="Share Kestrel on LinkedIn">
@@ -240,6 +249,19 @@ footer{border-top:1px solid var(--line);padding:52px 0 40px;background:var(--bg)
     </div>
   </div>
 </header>
+
+<section class="band">
+  <div class="wrap">
+    <div class="lead-label">In brief</div>
+    <div class="brief">
+      <p class="brief-lead">A camera should be able to <b>understand what it sees</b>, and act on it, without handing a single frame to someone else's computer.</p>
+      <div class="brief-body">
+        <p>Kestrel is that understanding, built to run at the edge: it reads a live feed, finds and follows what matters, and turns it into a decision in the moment it counts — on a drone, a fixed camera, or a laptop, the same core behind each.</p>
+        <p>Because it runs on its own hardware, it holds up where connected systems don't: <strong>remote sites, sensitive facilities, and anywhere the link is thin or simply not wanted.</strong> Where a deployment calls for more reach, it scales up to meet it.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="band">
   <div class="wrap">
