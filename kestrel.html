@@ -195,9 +195,9 @@ footer{border-top:1px solid var(--line);padding:52px 0 40px;background:var(--bg)
         <p class="lead">Real-time perception for cameras and drones. Kestrel <b>detects, identifies, and tracks</b> objects and people on a live feed, and runs on a <b>totally independent machine</b> — fully local and air-gapped by default, so nothing leaves the device. Connectivity is a choice, never a requirement.</p>
         <div class="kchips"><span class="kchip">Fully local</span><span class="kchip">Offline</span><span class="kchip">Air-gapped</span><span class="kchip">Edge-ready</span></div>
         <div class="kbtns">
-          <a class="btn btn-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fn6c.org%2Fkestrel.html" target="_blank" rel="noopener" aria-label="Share Kestrel on LinkedIn">
+          <a class="btn btn-li" id="shareLi" href="https://www.linkedin.com/feed/?shareActive=true&url=https%3A%2F%2Fn6c.org%2Fkestrel.html&shareUrl=https%3A%2F%2Fn6c.org%2Fkestrel.html" target="_blank" rel="noopener" aria-label="Copy the caption and open LinkedIn to share Kestrel">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-            Share on LinkedIn
+            <span class="li-label">Share on LinkedIn</span>
           </a>
           <a class="btn btn-ghost" href="index.html">Back to N6C</a>
         </div>
@@ -301,6 +301,27 @@ document.getElementById('themeBtn').addEventListener('click',()=>{
 });
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',(scrollY||0)>12); },{passive:true});
+
+/* Share: copy a ready caption (intro + hashtags) to the clipboard; the link opens the LinkedIn
+   composer with the image preview, so you just paste. LinkedIn no longer lets a link pre-fill text. */
+(function(){
+  var a=document.getElementById('shareLi'); if(!a) return;
+  var caption=[
+    "Introducing Kestrel: real-time perception for cameras and drones.",
+    "",
+    "It detects, identifies, and tracks on a live feed, running on a totally independent machine that is fully local and air-gapped by default. A new project in development at N6 Cybernetics.",
+    "",
+    "#EdgeAI #ComputerVision #Drones #AI #Autonomy"
+  ].join("\n");
+  var lbl=a.querySelector('.li-label');
+  a.addEventListener('click',function(){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(caption).then(function(){
+        if(lbl){ var t=lbl.textContent; lbl.textContent='Caption copied. Paste it in.'; setTimeout(function(){ lbl.textContent=t; },2600); }
+      }).catch(function(){});
+    }
+  });
+})();
 </script>
 </body>
 </html>
