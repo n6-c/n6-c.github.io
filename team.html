@@ -240,10 +240,10 @@ burger.onclick=()=>links.classList.toggle('open');
 const TEAM=[
   { name:'Anderson Silva', role:'Founder · Applied AI & Security', img:'brand/founder.jpg', center:true,
     bio:'A software engineer with <b>10+ years building production systems</b>, working today in applied and generative AI and system architecture. Running alongside that is a decade in information security and strategic intelligence — as consultant and instructor — so he builds autonomous systems and then sets out to break them, and only ships what survives.',
-    facts:['Applied &amp; generative AI','Information security','Strategic intelligence'] },
+    facts:['Applied &amp; generative AI','Information security','Strategic intelligence'], linkedin:'https://www.linkedin.com/in/oriontis/' },
   { name:'Joaquim Pedro de Morais Filho', role:'Engineer · Software & Security', img:'brand/joaquim.jpg', initials:'J',
     bio:'An engineer with a cross-disciplinary base: <b>software engineering and advanced IT</b>, alongside formal training in public-security management and criminology. He builds systems and thinks about how they get misused — a natural fit for N6C’s security-first work.',
-    facts:['Software engineering','IT systems','Information security','Criminology'] },
+    facts:['Software engineering','IT systems','Information security','Criminology'], linkedin:'https://www.linkedin.com/in/joaquim-pedro-de-morais-filho-17aa09216/' },
 ];
 function avatarInner(m){ return m.img ? `<img src="${m.img}" alt="">` : `<span class="ini">${m.initials||m.name[0]}</span>`; }
 
@@ -258,9 +258,10 @@ function renderDetail(m){
     ? `<div class="dframe"><img src="${m.img}" alt="${m.name}"></div>`
     : `<div class="dframe ph"><span class="ini">${m.initials||m.name[0]}</span></div>`;
   const tail = m.facts ? `<div class="dfacts">${m.facts.map(f=>`<span>${f}</span>`).join('')}</div>` : '';
+  const link = m.linkedin ? `<div class="dcta"><a href="${m.linkedin}" target="_blank" rel="noopener" aria-label="${m.name} on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a></div>` : '';
   detail.innerHTML = `<div class="dcard">${portrait}<div class="dinfo">
     <div class="drole">${m.role}</div><div class="dname">${m.name}</div>
-    <p class="dbio">${m.bio}</p>${tail}</div></div>`;
+    <p class="dbio">${m.bio}</p>${tail}${link}</div></div>`;
 }
 function clearActive(){ cluster.querySelectorAll('.active').forEach(n=>n.classList.remove('active'));
   linksSvg.querySelectorAll('line').forEach(l=>l.classList.remove('on')); }
