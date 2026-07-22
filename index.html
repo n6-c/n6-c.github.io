@@ -167,6 +167,26 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 .foot-bot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:24px}
 .foot-bot span{font-size:12.5px;color:var(--faint)}
 
+/* work / in development */
+.proj{display:grid;grid-template-columns:.92fr 1.08fr;gap:0;margin-top:44px;border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;background:var(--surface);transition:transform .3s var(--ease),border-color .3s;box-shadow:var(--shadow)}
+.proj:hover{transform:translateY(-3px);border-color:var(--line-2)}
+.proj-visual{position:relative;min-height:300px;
+  background:radial-gradient(120% 100% at 74% 26%,rgba(63,131,179,.22),transparent 55%),linear-gradient(155deg,#0c1015,#0f151b 55%,#0b0e12)}
+.proj-visual .g{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#8fb6d6 1px,transparent 1px),linear-gradient(90deg,#8fb6d6 1px,transparent 1px);background-size:40px 40px}
+.proj-visual svg{position:absolute;inset:0;width:100%;height:100%}
+.proj-body{padding:42px 46px;display:flex;flex-direction:column;justify-content:center}
+.proj-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.proj-name{font-family:'Archivo';font-weight:700;font-size:1.95rem;letter-spacing:-.01em;color:var(--ink)}
+.proj-badge{display:inline-flex;align-items:center;gap:7px;font-family:'Archivo';font-weight:600;font-size:11px;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--body);border:1px solid var(--line-2);border-radius:999px;padding:4px 11px}
+.proj-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.proj-desc{font-size:1.02rem;line-height:1.6;color:var(--body);max-width:46ch}
+.proj-chips{margin-top:15px;font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.02em;color:var(--muted)}
+.proj-link{margin-top:24px;display:inline-flex;align-items:center;gap:8px;font-family:'Archivo';font-weight:600;font-size:14.5px;color:var(--accent)}
+.proj-link svg{width:16px;height:16px;transition:transform .25s}
+.proj:hover .proj-link svg{transform:translateX(4px)}
+@media(max-width:760px){.proj{grid-template-columns:1fr}.proj-visual{min-height:230px}.proj-body{padding:32px 26px}}
 .reveal{opacity:0;transform:translateY(20px)}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .reveal{opacity:1!important;transform:none!important}}
@@ -209,6 +229,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
     <div class="navlinks" id="navlinks">
       <a href="#core">Core</a>
       <a href="#stance">Stance</a>
+      <a href="#work">Work</a>
       <a href="team.html">Team</a>
       <a class="navcta" href="#contact">Contact</a>
     </div>
@@ -289,6 +310,43 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
   </div>
 </section>
 
+<section class="band" id="work">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="lead-label">In development</div>
+      <h2 class="h2">The core, taking its <b>first shape.</b></h2>
+    </div>
+    <a class="proj reveal" href="kestrel.html" aria-label="Kestrel — real-time perception for cameras and drones (in development)">
+      <div class="proj-visual">
+        <div class="g"></div>
+        <svg viewBox="0 0 560 560" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <linearGradient id="wcone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b9bc8" stop-opacity="0.30"/><stop offset="1" stop-color="#5b9bc8" stop-opacity="0"/></linearGradient>
+            <radialGradient id="whalo" cx="50%" cy="34%" r="52%"><stop offset="0" stop-color="#5b9bc8" stop-opacity="0.22"/><stop offset="1" stop-color="#5b9bc8" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="280" cy="192" r="200" fill="url(#whalo)"/>
+          <path d="M280 196 L120 486 L440 486 Z" fill="url(#wcone)"/>
+          <g stroke="#7fc0ea" stroke-width="1.2" opacity="0.5" stroke-dasharray="2 9" stroke-linecap="round"><path d="M280 210 L176 470"/><path d="M280 210 L280 476"/><path d="M280 210 L384 470"/></g>
+          <g stroke="#79c6f2" stroke-width="2.4" stroke-linecap="round" fill="none"><path d="M196 430 v-16 h16 M300 430 h16 v-16 M300 486 h16 v16 M196 486 v16 h16" opacity="0.95"/></g>
+          <g stroke="#eaf4fb" stroke-width="1.6" opacity="0.9"><circle cx="256" cy="458" r="17" fill="none"/><path d="M256 433 v10 M256 473 v10 M231 458 h10 M281 458 h-10"/></g>
+          <g fill="#eef4f9">
+            <path d="M280 140 C 296 142, 304 163, 305 190 C 306 226, 302 270, 292 300 C 288 313, 284 323, 280 330 C 276 323, 272 313, 268 300 C 258 270, 254 226, 255 190 C 256 163, 264 142, 280 140 Z"/>
+            <circle cx="280" cy="152" r="13"/>
+            <path d="M285 176 C 356 155, 448 176, 506 249 C 458 243, 402 249, 356 269 C 330 281, 308 289, 288 293 C 298 255, 300 208, 285 176 Z"/>
+            <path d="M275 176 C 204 155, 112 176, 54 249 C 102 243, 158 249, 204 269 C 230 281, 252 289, 272 293 C 262 255, 260 208, 275 176 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="proj-body">
+        <div class="proj-top"><span class="proj-name">Kestrel</span><span class="proj-badge">In development</span></div>
+        <p class="proj-desc">Real-time perception for cameras and drones — detect, identify, and track on the fly. Built to run on a totally independent machine: fully local, offline, air-gapped.</p>
+        <div class="proj-chips">Fully local · Offline · Air-gapped · Edge-ready</div>
+        <span class="proj-link">Explore Kestrel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="wrap reveal">
     <div class="lead-label" style="text-align:center">Contact</div>
@@ -309,7 +367,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
         </svg>
         <p>Applied artificial intelligence for the real world — systems that perceive, decide, and act.</p>
       </div>
-      <div class="foot-col"><h4>Navigate</h4><a href="#core">Core</a><a href="#stance">Stance</a><a href="team.html">Team</a><a href="#contact">Contact</a></div>
+      <div class="foot-col"><h4>Navigate</h4><a href="#core">Core</a><a href="#stance">Stance</a><a href="#work">Work</a><a href="team.html">Team</a><a href="#contact">Contact</a></div>
       <div class="foot-col"><h4>Node-Six Cybernetics</h4><address>Paju tn 1a<br>50603 Tartu, Tartu Maakond<br>Estonia<br><br><a href="mailto:hello@n6c.org">hello@n6c.org</a></address></div>
     </div>
     <div class="foot-bot">
