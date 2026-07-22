@@ -167,26 +167,25 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 .foot-bot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:24px}
 .foot-bot span{font-size:12.5px;color:var(--faint)}
 
-/* work / in development */
-.proj{display:grid;grid-template-columns:.92fr 1.08fr;gap:0;margin-top:44px;border:1px solid var(--line);
-  border-radius:16px;overflow:hidden;background:var(--surface);transition:transform .3s var(--ease),border-color .3s;box-shadow:var(--shadow)}
-.proj:hover{transform:translateY(-3px);border-color:var(--line-2)}
-.proj-visual{position:relative;min-height:300px;
-  background:radial-gradient(120% 100% at 74% 26%,rgba(63,131,179,.22),transparent 55%),linear-gradient(155deg,#0c1015,#0f151b 55%,#0b0e12)}
+/* work / in development — editorial split, not a card */
+.proj{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,4.5vw,64px);align-items:center;margin-top:46px}
+.proj-visual{display:block;position:relative;aspect-ratio:16/11;border-radius:14px;overflow:hidden;
+  background:radial-gradient(120% 100% at 74% 26%,rgba(63,131,179,.22),transparent 55%),linear-gradient(155deg,#0c1015,#0f151b 55%,#0b0e12);
+  transition:transform .3s var(--ease)}
+.proj-visual:hover{transform:translateY(-3px)}
 .proj-visual .g{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#8fb6d6 1px,transparent 1px),linear-gradient(90deg,#8fb6d6 1px,transparent 1px);background-size:40px 40px}
 .proj-visual svg{position:absolute;inset:0;width:100%;height:100%}
-.proj-body{padding:42px 46px;display:flex;flex-direction:column;justify-content:center}
 .proj-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.proj-name{font-family:'Archivo';font-weight:700;font-size:1.95rem;letter-spacing:-.01em;color:var(--ink)}
+.proj-name{font-family:'Archivo';font-weight:700;font-size:2.05rem;letter-spacing:-.01em;color:var(--ink)}
 .proj-badge{display:inline-flex;align-items:center;gap:7px;font-family:'Archivo';font-weight:600;font-size:11px;
   letter-spacing:.04em;text-transform:uppercase;color:var(--body);border:1px solid var(--line-2);border-radius:999px;padding:4px 11px}
 .proj-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
-.proj-desc{font-size:1.02rem;line-height:1.6;color:var(--body);max-width:46ch}
-.proj-chips{margin-top:15px;font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.02em;color:var(--muted)}
-.proj-link{margin-top:24px;display:inline-flex;align-items:center;gap:8px;font-family:'Archivo';font-weight:600;font-size:14.5px;color:var(--accent)}
+.proj-desc{font-size:1.06rem;line-height:1.65;color:var(--body);max-width:44ch}
+.proj-chips{margin-top:16px;font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.02em;color:var(--muted)}
+.proj-link{margin-top:26px;display:inline-flex;align-items:center;gap:8px;font-family:'Archivo';font-weight:600;font-size:14.5px;color:var(--accent)}
 .proj-link svg{width:16px;height:16px;transition:transform .25s}
-.proj:hover .proj-link svg{transform:translateX(4px)}
-@media(max-width:760px){.proj{grid-template-columns:1fr}.proj-visual{min-height:230px}.proj-body{padding:32px 26px}}
+.proj-link:hover svg{transform:translateX(4px)}
+@media(max-width:760px){.proj{grid-template-columns:1fr;gap:28px}}
 .reveal{opacity:0;transform:translateY(20px)}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .reveal{opacity:1!important;transform:none!important}}
@@ -316,8 +315,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
       <div class="lead-label">In development</div>
       <h2 class="h2">The core, taking its <b>first shape.</b></h2>
     </div>
-    <a class="proj reveal" href="kestrel.html" aria-label="Kestrel — real-time perception for cameras and drones (in development)">
-      <div class="proj-visual">
+    <div class="proj reveal">
+      <a class="proj-visual" href="kestrel.html" aria-label="Explore Kestrel">
         <div class="g"></div>
         <svg viewBox="0 0 560 560" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
           <defs>
@@ -327,7 +326,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
           <circle cx="280" cy="192" r="200" fill="url(#whalo)"/>
           <path d="M280 196 L120 486 L440 486 Z" fill="url(#wcone)"/>
           <g stroke="#7fc0ea" stroke-width="1.2" opacity="0.5" stroke-dasharray="2 9" stroke-linecap="round"><path d="M280 210 L176 470"/><path d="M280 210 L280 476"/><path d="M280 210 L384 470"/></g>
-          <g stroke="#79c6f2" stroke-width="2.4" stroke-linecap="round" fill="none"><path d="M196 430 v-16 h16 M300 430 h16 v-16 M300 486 h16 v16 M196 486 v16 h16" opacity="0.95"/></g>
+          <g stroke="#79c6f2" stroke-width="2.4" stroke-linecap="round" fill="none"><path d="M196 430 v-16 h16 M316 430 v-16 h-16 M316 486 v16 h-16 M196 486 v16 h16" opacity="0.95"/></g>
           <g stroke="#eaf4fb" stroke-width="1.6" opacity="0.9"><circle cx="256" cy="458" r="17" fill="none"/><path d="M256 433 v10 M256 473 v10 M231 458 h10 M281 458 h-10"/></g>
           <g fill="#eef4f9">
   <path d="M265 276 L256 342 L269 334 L280 343 L291 334 L304 342 L295 276 C 286 281, 274 281, 265 276 Z"/>
@@ -338,14 +337,14 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
   <path d="M266 176 C 208 158, 130 146, 56 160 C 48 161, 46 168, 54 172 C 74 178, 100 186, 124 196 C 108 198, 94 202, 84 208 C 80 211, 82 216, 88 216 C 112 216, 142 220, 168 232 C 198 246, 226 258, 248 262 C 255 232, 255 202, 266 176 Z"/>
 </g>
         </svg>
-      </div>
+      </a>
       <div class="proj-body">
         <div class="proj-top"><span class="proj-name">Kestrel</span><span class="proj-badge">In development</span></div>
         <p class="proj-desc">Real-time perception for cameras and drones — detect, identify, and track on the fly. Built to run on a totally independent machine: fully local, offline, air-gapped.</p>
         <div class="proj-chips">Fully local · Offline · Air-gapped · Edge-ready</div>
-        <span class="proj-link">Explore Kestrel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="proj-link" href="kestrel.html">Explore Kestrel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-    </a>
+    </div>
   </div>
 </section>
 

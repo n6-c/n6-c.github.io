@@ -121,13 +121,6 @@ section{border-top:1px solid var(--line);background:var(--bg)}
 .feat .f .fn{font-family:'Archivo';font-weight:600;font-size:12px;color:var(--accent);letter-spacing:.02em}
 .feat .f h3{font-family:'Archivo';font-weight:600;font-size:1.04rem;color:var(--ink);margin:12px 0 8px}
 .feat .f p{font-size:.92rem;line-height:1.55;color:var(--muted)}
-.ladder{margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.rung{border:1px solid var(--line);border-radius:13px;padding:24px 24px;background:var(--surface)}
-.rung .rn{font-family:'Archivo';font-weight:700;font-size:13px;color:var(--accent)}
-.rung h4{font-family:'Archivo';font-weight:600;font-size:1.06rem;color:var(--ink);margin:9px 0 8px}
-.rung p{font-size:.94rem;line-height:1.6;color:var(--body)}
-.note-line{margin-top:26px;font-size:.98rem;color:var(--muted);max-width:70ch}
-.note-line b{color:var(--body);font-weight:500}
 
 /* footer */
 footer{border-top:1px solid var(--line);padding:52px 0 40px;background:var(--bg)}
@@ -222,8 +215,8 @@ footer{border-top:1px solid var(--line);padding:52px 0 40px;background:var(--bg)
             <path d="M280 210 L176 470"/><path d="M280 210 L280 476"/><path d="M280 210 L384 470"/>
           </g>
           <g stroke="#79c6f2" stroke-width="2.4" stroke-linecap="round" fill="none">
-            <path d="M196 430 v-16 h16 M300 430 h16 v-16 M300 486 h16 v16 M196 486 v16 h16" opacity="0.95"/>
-            <path d="M356 456 v-11 h11 M420 456 h11 v-11 M420 496 h11 v11 M356 496 v11 h11" opacity="0.8"/>
+            <path d="M196 430 v-16 h16 M316 430 v-16 h-16 M316 486 v16 h-16 M196 486 v16 h16" opacity="0.95"/>
+            <path d="M356 456 v-11 h11 M431 456 v-11 h-11 M431 496 v11 h-11 M356 496 v11 h11" opacity="0.8"/>
           </g>
           <g font-family="Archivo, sans-serif" font-weight="600" font-size="13" fill="#a9d6f4">
             <text x="196" y="406">TARGET · 0.98</text>
@@ -258,19 +251,6 @@ footer{border-top:1px solid var(--line);padding:52px 0 40px;background:var(--bg)
       <div class="f"><div class="fn">03</div><h3>Recognize</h3><p>Opt-in, consent-based face recognition against an enrolled roster — for access and search, never mass surveillance.</p></div>
       <div class="f"><div class="fn">04</div><h3>Act</h3><p>Autonomous drone behaviors on top of what it sees — orbit, follow, or center on a tracked target.</p></div>
     </div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <div class="lead-label">How it's built</div>
-    <h2 class="h2">Camera-first. <b>Hardware-last.</b></h2>
-    <div class="ladder">
-      <div class="rung"><div class="rn">Rung 1</div><h4>Webcam</h4><p>The whole perception stack builds and demos on a laptop camera today — no drone, no rig, no cloud.</p></div>
-      <div class="rung"><div class="rn">Rung 2</div><h4>Simulated drone</h4><p>A virtual camera and telemetry from a flight simulator feed the exact same pipeline — autonomy, proven before hardware.</p></div>
-      <div class="rung"><div class="rn">Rung 3</div><h4>Real drone</h4><p>Swap in a real airframe's video stream and flight link. The engine never changes — only the source behind it.</p></div>
-    </div>
-    <p class="note-line">The perception engine is decoupled from the camera, so the same code runs on all three — and all of it runs <b>on a totally independent machine</b>: no internet, no cloud, nothing to intercept. That's the moat, and the compliance story, in one decision.</p>
   </div>
 </section>
 
