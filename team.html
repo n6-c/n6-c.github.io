@@ -289,7 +289,7 @@ orbit.forEach((m,i)=>{
   const btn=document.createElement('button'); btn.className='node';
   btn.style.left=bx.toFixed(2)+'%'; btn.style.top=by.toFixed(2)+'%';
   btn.setAttribute('aria-label', m.name+' · '+m.role);
-  btn.innerHTML=`<span class="av">${avatarInner(m)}</span><span class="nlab">${m.name.split(' ')[0]}</span>`;
+  btn.innerHTML=`<span class="av">${avatarInner(m)}</span><span class="nlab">${m.name.split(' ')[0]} · ${m.role.split(' · ')[0]}</span>`;
   btn.addEventListener('mouseenter',()=>select(m)); btn.addEventListener('focus',()=>select(m));
   btn.addEventListener('click',()=>select(m));
   cluster.appendChild(btn); m._btn=btn;
