@@ -72,14 +72,25 @@ img{display:block;max-width:100%}
 .lang{display:flex;align-items:center;gap:7px;font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.05em}
 .lang a{color:var(--muted);transition:color .25s}.lang a:hover{color:var(--ink)}
 .lang a[aria-current]{color:var(--ink)}.lang span{color:var(--faint);font-weight:500}
-.langhint{position:fixed;left:26px;bottom:26px;z-index:95;display:flex;align-items:center;gap:14px;padding:11px 12px 11px 18px;
-  border-radius:13px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 88%,transparent);
-  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:var(--shadow);font-size:13.5px;color:var(--body)}
+/* PT suggestion: a slim strip under the nav that pushes the page down, never covers it */
+.langhint{position:absolute;top:74px;left:0;right:0;z-index:99;height:46px;display:flex;align-items:center;
+  background:color-mix(in srgb,var(--surface) 90%,transparent);border-bottom:1px solid var(--line);
+  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);font-size:13.5px;color:var(--body);
+  opacity:0;transform:translateY(-8px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.langhint.in{opacity:1;transform:none}
 .langhint[hidden]{display:none}
-.langhint a{font-family:'Archivo';font-weight:600;color:var(--accent)}.langhint a:hover{color:var(--accent-2)}
-.langhint button{width:28px;height:28px;border:0;border-radius:7px;background:transparent;color:var(--muted);cursor:pointer;font-size:18px;line-height:1}
+.langhint .wrap{display:grid;grid-template-columns:28px 1fr 28px;align-items:center;width:100%}
+.langhint .row{grid-column:2;display:flex;align-items:center;justify-content:center;gap:14px;white-space:nowrap;min-width:0}
+.langhint a{display:inline-flex;align-items:center;gap:7px;padding:6px 15px;border-radius:999px;background:var(--accent);color:var(--accent-ink);
+  font-family:'Archivo';font-weight:600;font-size:13px;letter-spacing:.01em;transition:background .25s}
+.langhint a:hover{background:var(--accent-2)}
+.langhint a:focus-visible,.langhint button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.langhint button{grid-column:3;width:28px;height:28px;border:0;border-radius:7px;background:transparent;color:var(--muted);cursor:pointer;font-size:18px;line-height:1}
 .langhint button:hover{color:var(--ink);background:var(--surface-2)}
-@media(max-width:560px){.langhint{left:14px;right:14px;bottom:14px;flex-wrap:wrap;gap:6px 14px}
+main{transition:padding-top .5s var(--ease)}
+html.lh-on main{padding-top:120px}
+@media(prefers-reduced-motion:reduce){.langhint,main{transition:none}}
+@media(max-width:560px){.langhint .row>span{display:none}
   .nav .wrap{gap:12px}.brand{gap:9px}.brand b{font-size:14px;white-space:nowrap}
   .tools{gap:8px;margin-left:0}.lang{gap:5px;font-size:12px}.tt,.burger{width:36px;height:36px}}
 
@@ -243,7 +254,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 40px;background:var(--bg)
   </div>
 </footer>
 
-<div class="langhint" id="langhint" lang="pt-BR" hidden><span>Prefere ler em português?</span><a href="/pt/team.html" hreflang="pt-BR">Ver em português</a><button type="button" aria-label="Fechar">×</button></div>
+<div class="langhint" id="langhint" lang="pt-BR" role="region" aria-label="Versão em português" hidden><div class="wrap"><div class="row"><span>Prefere ler em português?</span><a href="/pt/team.html" hreflang="pt-BR"><span aria-hidden="true">🇧🇷</span> Ver o site em português</a></div><button type="button" aria-label="Fechar">×</button></div></div>
 
 <script>
 const root=document.documentElement;
@@ -267,9 +278,14 @@ document.querySelectorAll('.lang a').forEach(a=>a.addEventListener('click',()=>{
   let chosen=null; try{ chosen=localStorage.getItem('n6c-lang'); }catch(e){}
   const langs=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];
   if(chosen || !langs.some(l=>/^pt\b/i.test(l))) return;
-  hint.hidden=false;
+  const root=document.documentElement;
+  setTimeout(()=>{ hint.hidden=false; root.classList.add('lh-on'); requestAnimationFrame(()=>requestAnimationFrame(()=>hint.classList.add('in'))); },1000);
   hint.querySelector('a').addEventListener('click',()=>{ try{ localStorage.setItem('n6c-lang','pt'); }catch(e){} });
-  hint.querySelector('button').addEventListener('click',()=>{ hint.hidden=true; try{ localStorage.setItem('n6c-lang','en'); }catch(e){} });
+  hint.querySelector('button').addEventListener('click',()=>{
+    hint.classList.remove('in'); root.classList.remove('lh-on');
+    setTimeout(()=>{ hint.hidden=true; },matchMedia('(prefers-reduced-motion:reduce)').matches?0:500);
+    try{ localStorage.setItem('n6c-lang','en'); }catch(e){}
+  });
 })();
 
 /* ---------- the team network (founder at the core, real people only) ---------- */
