@@ -187,7 +187,22 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 .proj-link:hover svg{transform:translateX(4px)}
 .stance.more{margin-top:56px}
 .stance.more .proj-link{margin-top:14px}
-@media(max-width:760px){.proj{grid-template-columns:1fr;gap:28px}}
+.stance.solo{grid-template-columns:1fr}
+.stance.solo .s{display:grid;grid-template-columns:1fr 2fr;column-gap:40px;border-top:1px solid var(--line-2);padding-top:20px}
+.stance.solo .s h3{border-top:0;padding-top:0}
+.stance.solo .s p{max-width:62ch}
+.stance .s .chips{margin-top:12px;font-family:'Archivo';font-weight:600;font-size:12px;letter-spacing:.02em;color:var(--muted)}
+/* founder's previous work: set apart from the studio's own work */
+.prev{margin-top:clamp(80px,9vw,120px);padding-top:clamp(40px,5vw,56px);border-top:1px solid var(--line)}
+.prev-h{font-family:'Inter';font-weight:300;font-size:clamp(1.55rem,2.8vw,2.2rem);line-height:1.15;letter-spacing:-.015em;color:var(--ink)}
+.prev-h b{font-weight:500}
+.prev-intro{margin-top:16px;font-size:1.02rem;line-height:1.65;color:var(--body);max-width:62ch}
+.proj.flip{grid-template-columns:.98fr 1.02fr}
+.proj.flip .proj-visual{order:2}
+.sub-label{margin-top:64px;font-family:'Archivo';font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sub-label+.stance{margin-top:8px}
+@media(max-width:760px){.proj,.proj.flip{grid-template-columns:1fr;gap:28px}.proj.flip .proj-visual{order:0}
+  .stance.solo .s{grid-template-columns:1fr}.stance.solo .s h3{margin-bottom:12px}}
 .reveal{opacity:0;transform:translateY(20px)}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .reveal{opacity:1!important;transform:none!important}}
@@ -362,10 +377,77 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
         <div class="proj-chips">Text · Voice notes · Files · Any AI model</div>
       </div>
     </div>
-    <div class="stance more">
-      <div class="s reveal"><h3>Acesa · 3D showcase</h3><p>An interactive apartment showcase that runs in the browser, built with Hendril Lara. We worked on the furniture, the day and night lighting, the neighbourhood around the building and the guided tour.</p><a class="proj-link" href="https://hendril.dev/acesa/" target="_blank" rel="noopener">Open the showcase <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-      <div class="s reveal"><h3>Retrofone · Android app</h3><p>A retro phone simulator with twelve small games, a virtual pet and its own pixel font, published on itch.io under our games label, Kölja Games.</p><a class="proj-link" href="https://koljagames.itch.io/retrofone" target="_blank" rel="noopener">See it on itch.io <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-      <div class="s reveal"><h3>Salt Meridian · Multiplayer game</h3><p>A pirate game made in Godot, with real sailing physics and up to eight players. We show the games because they're the hardest software we've made, not because we sell games.</p><a class="proj-link" href="https://koljagames.itch.io/salt-meridian" target="_blank" rel="noopener">See it on itch.io <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="stance more solo">
+      <div class="s reveal"><h3>Acesa · 3D showcase</h3><div><p>An interactive apartment showcase that runs in the browser, built with Hendril Lara. We worked on the furniture, the day and night lighting, the neighbourhood around the building and the guided tour.</p><a class="proj-link" href="https://hendril.dev/acesa/" target="_blank" rel="noopener">Open the showcase <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+
+    <div class="prev">
+      <div class="reveal">
+        <div class="lead-label">Before N6C</div>
+        <h3 class="prev-h">Anderson's <b>previous work.</b></h3>
+        <p class="prev-intro">Selected work by our founder, Anderson Silva. The first four are from his time as AI and Systems Engineer at Lucentive (remote, April to September 2026). They were built for Lucentive, not for N6C clients, and everything here is already public on his portfolio.</p>
+      </div>
+      <div class="proj flip reveal">
+        <div class="proj-visual" aria-hidden="true">
+          <div class="g"></div>
+          <svg viewBox="0 0 640 440" fill="none" preserveAspectRatio="xMidYMid meet" font-family="Inter, system-ui, sans-serif">
+            <defs>
+              <radialGradient id="ihalo" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#5b9bc8" stop-opacity="0.16"/><stop offset="1" stop-color="#5b9bc8" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="640" height="440" fill="url(#ihalo)"/>
+            <g stroke="#3a4e60" stroke-width="1.5">
+              <path d="M150 220 H196"/>
+              <path d="M300 220 C320 220 320 120 344 120"/><path d="M300 220 H344"/><path d="M300 220 C320 220 320 320 344 320"/>
+              <path d="M456 120 C476 120 476 190 492 200"/><path d="M456 220 H492"/><path d="M456 320 C476 320 476 250 492 240"/>
+            </g>
+            <g>
+              <rect x="50" y="192" width="100" height="56" rx="12" fill="#1c252e" stroke="#2b3742"/>
+              <text x="100" y="216" font-size="13" fill="#8a99a6" text-anchor="middle">idea</text>
+              <text x="100" y="235" font-size="15" fill="#dfe8ef" text-anchor="middle">Request</text>
+            </g>
+            <g>
+              <rect x="196" y="188" width="104" height="64" rx="12" fill="#2f6f9c"/>
+              <text x="248" y="215" font-size="12.5" fill="#cfe2f0" text-anchor="middle">orchestrator</text>
+              <text x="248" y="236" font-size="15" fill="#ffffff" text-anchor="middle">Icarus</text>
+            </g>
+            <g font-size="14" fill="#dfe8ef" text-anchor="middle">
+              <rect x="344" y="96" width="112" height="48" rx="12" fill="#1c252e" stroke="#2b3742"/><text x="400" y="125">Model A</text>
+              <rect x="344" y="196" width="112" height="48" rx="12" fill="#1c252e" stroke="#2b3742"/><text x="400" y="225">Model B</text>
+              <rect x="344" y="296" width="112" height="48" rx="12" fill="#1c252e" stroke="#2b3742"/><text x="400" y="325">Model C</text>
+            </g>
+            <g>
+              <rect x="492" y="172" width="104" height="96" rx="12" fill="#1c252e" stroke="#2b3742"/>
+              <text x="544" y="198" font-size="14" fill="#dfe8ef" text-anchor="middle">Build</text>
+              <path d="M510 210 H578" stroke="#2b3742"/>
+              <circle cx="520" cy="236" r="9" fill="#7fa8cc"/>
+              <path d="M515.5 236 l3.2 3.2 6-6.4" stroke="#1c252e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="536" y="241" font-size="14" fill="#dfe8ef">Verify</text>
+            </g>
+            <g>
+              <path d="M544 268 V318" stroke="#3a4e60" stroke-width="1.5"/>
+              <rect x="486" y="318" width="116" height="44" rx="12" fill="#2f6f9c"/>
+              <text x="544" y="345" font-size="14" fill="#ffffff" text-anchor="middle">App delivered</text>
+            </g>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top"><span class="proj-name">Icarus</span><span class="proj-badge">Lucentive · 2026</span></div>
+          <p class="proj-desc">An AI platform that generates complete applications. Anderson built its core: orchestration that works with models from different providers, and build and verify gates, so whatever the models generate is checked before it's delivered.</p>
+          <div class="proj-chips">AI and Systems Engineer · Multi-model orchestration · LLM systems · Quality gates</div>
+        </div>
+      </div>
+      <div class="stance more">
+        <div class="s reveal"><h3>Aura · Agent-to-agent client</h3><p>Lets AI agents find each other, prove who they are and talk over a live stream. Anderson built the signed discovery, the JWS and JWKS checks that refuse anything they can't verify, and JSON-RPC over SSE. The protocol checks are covered by 33 adversarial tests.</p><div class="chips">TypeScript · JWS / JWKS · JSON-RPC · SSE</div></div>
+        <div class="s reveal"><h3>Lucentive One · Identity</h3><p>The identity provider for Lucentive's family of apps, which Anderson designed: one sign-in across all of them with OIDC, and passwordless login with passkeys.</p><div class="chips">OIDC · SSO · WebAuthn · Passkeys</div></div>
+        <div class="s reveal"><h3>Lucentive Loop · Campaigns</h3><p>AI-assisted campaign production, from the brief through content generation, review and approval to social publishing. Anderson worked on the pipeline, where preview and dry-run modes keep a generated draft apart from what actually goes live.</p><div class="chips">TypeScript · Next.js · AI orchestration</div></div>
+      </div>
+      <div class="sub-label reveal">Other engineering</div>
+      <div class="stance more">
+        <div class="s reveal"><h3>TagSmith · macOS app</h3><p>A native editor for media metadata that never re-encodes the file. It plans each write for the format, protects the audio, video or image data and reads the result back to check it, updating in place where the container allows and rebuilding the file atomically where it doesn't.</p><div class="chips">Swift · macOS · Binary formats</div></div>
+        <div class="s reveal"><h3>LucidMatch · Web product</h3><p>An AI-assisted coach for dating profiles: photos, profile prompts and practical next steps. Anderson worked on the web product and its AI workflows, including the frontend and the sign-in, data and payment integrations. It started out as UpMatch.</p><div class="chips">JavaScript · TypeScript · Supabase</div></div>
+        <div class="s reveal"><h3>Lua · Voice assistant</h3><p>A private voice assistant for the Mac. The language model and the text-to-speech both run on the machine itself, offline.</p><div class="chips">Local LLM · Text-to-speech · macOS</div></div>
+      </div>
+      <a class="proj-link reveal" href="https://koljacria.github.io/" target="_blank" rel="noopener">See all his projects on his portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
