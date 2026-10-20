@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Node-Six Cybernetics — N6C</title>
-<meta name="description" content="Node-Six Cybernetics builds applied artificial intelligence for the real world — systems that perceive, decide, and act. Tartu, Estonia.">
+<title>Node-Six Cybernetics · a small AI-powered studio</title>
+<meta name="description" content="N6C is a small AI-powered studio. Tell us what's costing you time or money and we build the fix: WhatsApp assistants, custom software, 3D site models and written security reviews.">
 <link rel="canonical" href="https://n6c.org/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Node-Six Cybernetics">
-<meta property="og:title" content="Node-Six Cybernetics — applied AI for the real world">
-<meta property="og:description" content="One applied-AI core that perceives, decides, and acts — put wherever it earns its place, from an autonomous drone to a monitored patient.">
+<meta property="og:title" content="Node-Six Cybernetics · a small AI-powered studio">
+<meta property="og:description" content="Tell us what's costing you time or money. We build the fix, with AI agents doing the work and a person directing it.">
 <meta property="og:url" content="https://n6c.org/">
 <meta property="og:image" content="https://n6c.org/brand/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Node-Six Cybernetics — applied AI for the real world">
-<meta name="twitter:description" content="One applied-AI core that perceives, decides, and acts.">
+<meta name="twitter:title" content="Node-Six Cybernetics · a small AI-powered studio">
+<meta name="twitter:description" content="Tell us what's costing you time or money. We build the fix.">
 <meta name="twitter:image" content="https://n6c.org/brand/og.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Node-Six Cybernetics","alternateName":"N6C","url":"https://n6c.org/","logo":"https://n6c.org/brand/n6c-mark.png","email":"hello@n6c.org","description":"Applied artificial intelligence for the real world — systems that perceive, decide, and act.","address":{"@type":"PostalAddress","streetAddress":"Paju tn 1a","addressLocality":"Tartu","postalCode":"50603","addressRegion":"Tartu Maakond","addressCountry":"EE"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Node-Six Cybernetics","alternateName":"N6C","url":"https://n6c.org/","logo":"https://n6c.org/brand/n6c-mark.png","email":"anderson@n6c.org","founder":{"@type":"Person","name":"Anderson Silva"},"description":"A small AI-powered studio: WhatsApp assistants and automations, custom software and dashboards, 3D site models and showcases, written security reviews.","address":{"@type":"PostalAddress","streetAddress":"Paju tn 1a","addressLocality":"Tartu","postalCode":"50603","addressRegion":"Tartu Maakond","addressCountry":"EE"}}</script>
 <link rel="icon" href="brand/n6c-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,7 +175,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 .proj-visual:hover{transform:translateY(-3px)}
 .proj-visual .g{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#8fb6d6 1px,transparent 1px),linear-gradient(90deg,#8fb6d6 1px,transparent 1px);background-size:40px 40px}
 .proj-visual svg{position:absolute;inset:0;width:100%;height:100%}
-.proj-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.proj-top{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin-bottom:16px}
 .proj-name{font-family:'Archivo';font-weight:700;font-size:2.05rem;letter-spacing:-.01em;color:var(--ink)}
 .proj-badge{display:inline-flex;align-items:center;gap:7px;font-family:'Archivo';font-weight:600;font-size:11px;
   letter-spacing:.04em;text-transform:uppercase;color:var(--body);border:1px solid var(--line-2);border-radius:999px;padding:4px 11px}
@@ -185,10 +185,13 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 .proj-link{margin-top:26px;display:inline-flex;align-items:center;gap:8px;font-family:'Archivo';font-weight:600;font-size:14.5px;color:var(--accent)}
 .proj-link svg{width:16px;height:16px;transition:transform .25s}
 .proj-link:hover svg{transform:translateX(4px)}
+.stance.more{margin-top:56px}
+.stance.more .proj-link{margin-top:14px}
 @media(max-width:760px){.proj{grid-template-columns:1fr;gap:28px}}
 .reveal{opacity:0;transform:translateY(20px)}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .reveal{opacity:1!important;transform:none!important}}
+@media(max-width:560px){.hero h1 .l,.hero h1 .l>span{display:inline}}
 @media(max-width:920px){
   html{scroll-snap-type:none;scroll-padding-top:64px}
   .band,.contact{min-height:auto;display:block;padding:72px 0}
@@ -226,8 +229,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
       <b>Node-Six Cybernetics</b>
     </a>
     <div class="navlinks" id="navlinks">
-      <a href="#core">Core</a>
-      <a href="#stance">Stance</a>
+      <a href="#services">Services</a>
+      <a href="#how">How we work</a>
       <a href="#work">Work</a>
       <a href="team.html">Team</a>
       <a class="navcta" href="#contact">Contact</a>
@@ -246,15 +249,15 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
   <canvas id="gl"></canvas>
   <div class="wrap">
     <h1>
-      <span class="l"><span>Intelligence that <b>perceives,</b></span></span>
-      <span class="l"><span><b>decides,</b> and <span class="em">acts</span></span></span>
-      <span class="l"><span>on the real world.</span></span>
+      <span class="l"><span>Tell us what's costing</span></span>
+      <span class="l"><span>you <b>time</b> or <b>money.</b></span></span>
+      <span class="l"><span>We build the <span class="em">fix.</span></span></span>
     </h1>
-    <p class="sub">N6C builds one applied-AI core that sees, understands, and acts on its own — put wherever it earns its place, from an autonomous drone to a monitored patient, and problems that look nothing like either.</p>
+    <p class="sub">N6C is a small <b>AI-powered studio.</b> AI agents do most of the building, and a person directs and checks every job. That's how we move fast and keep prices within reach of a small business.</p>
     <div class="pillars">
-      <div class="pillar reveal"><div class="pn">01</div><h3>Perceive</h3><p>Turn raw cameras and sensors into an understanding a machine can act on.</p></div>
-      <div class="pillar reveal"><div class="pn">02</div><h3>Decide</h3><p>Choose the right action inside a real deadline — not after the fact.</p></div>
-      <div class="pillar reveal"><div class="pn">03</div><h3>Act</h3><p>Carry it out on its own, safely, where being wrong carries a cost.</p></div>
+      <div class="pillar reveal"><div class="pn">01</div><h3>Tell us the problem</h3><p>A few lines by email are enough. You don't need to know the technology, that's our part.</p></div>
+      <div class="pillar reveal"><div class="pn">02</div><h3>Get a fixed price</h3><p>We reply with a short written plan and a price, agreed before any work starts.</p></div>
+      <div class="pillar reveal"><div class="pn">03</div><h3>We build and stay on it</h3><p>Delivered, tested and explained in writing, with support afterwards if you want it.</p></div>
     </div>
   </div>
 </header>
@@ -262,49 +265,47 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 <section class="band" id="thesis">
   <div class="wrap">
     <div class="thesis-grid">
-      <p class="lead reveal">A demonstration only has to convince a room. A system that flies on its own, or watches a patient through the night, has to hold up against <b>everything a controlled room leaves out.</b></p>
+      <p class="lead reveal">We're open about it: most of our work is done by AI agents. <b>A person decides what gets built and checks it before it reaches you.</b></p>
       <div class="body reveal">
-        <p>Most artificial intelligence is judged where it's flattered: clean inputs, a forgiving benchmark, a human standing by to intervene. The field offers none of that. It's <strong>noisy, adversarial, incomplete, and indifferent to how a model scored in the lab.</strong></p>
-        <p>Applied autonomy isn't a larger model. It's the discipline of staying correct, and staying safe, when the ground truth stops cooperating. That gap between a system that demonstrates and a system that holds is the whole problem. It's the one N6C exists to close.</p>
+        <p>That split is what makes a small studio practical. The agents write the code, model the buildings, draft the reports and test their own work. Anderson, who founded N6C after more than ten years in software and security, sets the direction, reviews the results and answers for them.</p>
+        <p>For you it means <strong>shorter waits and lower prices</strong> than a traditional agency, a fixed quote before anything starts, and every step written down so nothing depends on a meeting you missed.</p>
       </div>
     </div>
     <div class="metrics reveal">
-      <div class="metric"><div class="v">10+</div><div class="k">Years engineering</div></div>
-      <div class="metric"><div class="v">6</div><div class="k">Core capabilities</div></div>
-      <div class="metric"><div class="v">2</div><div class="k">Proving grounds</div></div>
-      <div class="metric"><div class="v">∞</div><div class="k">Domains it extends to</div></div>
+      <div class="metric"><div class="v">10+</div><div class="k">Years in software and security</div></div>
+      <div class="metric"><div class="v">4</div><div class="k">Services we deliver</div></div>
+      <div class="metric"><div class="v">Fixed</div><div class="k">Price agreed up front</div></div>
+      <div class="metric"><div class="v">Written</div><div class="k">Plans, reports and handover</div></div>
     </div>
   </div>
 </section>
 
-<section class="band" id="core">
+<section class="band" id="services">
   <div class="wrap">
     <div class="core-head reveal">
-      <div class="lead-label">The core</div>
-      <h2 class="h2">One core. <b>Six capabilities.</b></h2>
-      <p class="note">Not a list of industries — a single system, extended into new domains rather than rebuilt for each.</p>
+      <div class="lead-label">What we do</div>
+      <h2 class="h2">Four things we do <b>well.</b></h2>
+      <p class="note">Not sure which one you need? Describe the problem and we'll tell you honestly whether we can help.</p>
     </div>
     <div class="core">
-      <div class="node reveal"><h3>Perception &amp; recognition</h3><p>Vision, object, and people recognition that turns a raw feed into something a machine can understand and act on.</p></div>
-      <div class="node reveal"><h3>Autonomy &amp; navigation</h3><p>Systems that plan, navigate, and carry out a directive on their own — an aircraft in flight, or any process that runs with no hand on the controls.</p></div>
-      <div class="node reveal"><h3>Real-time decisioning</h3><p>Turning what a system perceives into the right action in the moment it matters, inside a real deadline.</p></div>
-      <div class="node reveal"><h3>Monitoring &amp; analysis</h3><p>Watching a stream of real-world data continuously — a patient, a machine, an environment — and turning it into defensible insight.</p></div>
-      <div class="node reveal"><h3>Learning from real data</h3><p>Models that improve on the data they actually meet in the field, and hold up in conditions no lab rehearses.</p></div>
-      <div class="node reveal"><h3>Secure systems at scale</h3><p>The infrastructure to run all of it reliably and privately — designed to grow across domains, partners, and borders.</p></div>
+      <div class="node reveal"><h3>WhatsApp assistants and automations</h3><p>An assistant on your WhatsApp or website that answers the common questions, understands voice notes, takes files and passes the rest to someone on your team. Behind it, automations for the dull steps between the tools you already use: sorting email, filling sheets, sending reports.</p></div>
+      <div class="node reveal"><h3>Custom software and dashboards</h3><p>Internal tools, client portals, websites, Android and Mac apps. Dashboards that turn your spreadsheets or ERP exports into something you can read at a glance, updated on their own.</p></div>
+      <div class="node reveal"><h3>3D site models and showcases</h3><p>For developers and architects. We turn your CAD or DWG drawings into a 3D model of the site with renders, or into an interactive showcase buyers can walk through in the browser.</p></div>
+      <div class="node reveal"><h3>Written security reviews</h3><p>With your written permission, we check whether your email domain can be spoofed, test your website or web app for the common weaknesses, and look at what anyone can find about your company online. You get a plain-language report with the fixes. It's a review, not a certified pentest.</p></div>
     </div>
   </div>
 </section>
 
-<section class="band" id="stance">
+<section class="band" id="how">
   <div class="wrap">
     <div class="reveal">
-      <div class="lead-label">The stance</div>
-      <h2 class="h2">How we build matters as much as <b>what.</b></h2>
+      <div class="lead-label">How we work</div>
+      <h2 class="h2">No meetings to sit through. <b>Everything in writing.</b></h2>
     </div>
     <div class="stance">
-      <div class="s reveal"><h3>Built for the field, not the demo</h3><p>Our systems run on real data under real conditions, where the margin for error is thin — not in a rehearsal arranged to succeed.</p></div>
-      <div class="s reveal"><h3>Safe by construction</h3><p>A system that acts on its own, or handles sensitive data, can't have safety and privacy bolted on. They're designed in from the first line — hard to fool, impossible to quietly misuse.</p></div>
-      <div class="s reveal"><h3>Built to grow</h3><p>The same core, extended into new domains, partners, and countries. Range is the point, not a stretch goal.</p></div>
+      <div class="s reveal"><h3>Start with the problem</h3><p>Tell us what happens today and what you'd like to stop doing. The clearer the headache, the better the fix, and you don't have to name a technology.</p></div>
+      <div class="s reveal"><h3>A fixed price first</h3><p>You get a short plan and one price before we start. Half up front, half on delivery. If the scope changes, we agree the change in writing first.</p></div>
+      <div class="s reveal"><h3>Systems that keep running</h3><p>What we build doesn't end at delivery. We can look after it for a monthly fee, and you always know who to write to when something needs changing.</p></div>
     </div>
   </div>
 </section>
@@ -312,38 +313,59 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 <section class="band" id="work">
   <div class="wrap">
     <div class="reveal">
-      <div class="lead-label">In development</div>
-      <h2 class="h2">The core, taking its <b>first shape.</b></h2>
+      <div class="lead-label">Work</div>
+      <h2 class="h2">Things we've <b>built and run.</b></h2>
     </div>
     <div class="proj reveal">
-      <a class="proj-visual" href="kestrel.html" aria-label="Explore Kestrel">
+      <div class="proj-visual" aria-hidden="true">
         <div class="g"></div>
-        <svg viewBox="0 0 560 560" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <svg viewBox="0 0 640 440" fill="none" preserveAspectRatio="xMidYMid meet" font-family="Inter, system-ui, sans-serif">
           <defs>
-            <linearGradient id="wcone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b9bc8" stop-opacity="0.30"/><stop offset="1" stop-color="#5b9bc8" stop-opacity="0"/></linearGradient>
-            <radialGradient id="whalo" cx="50%" cy="34%" r="52%"><stop offset="0" stop-color="#5b9bc8" stop-opacity="0.22"/><stop offset="1" stop-color="#5b9bc8" stop-opacity="0"/></radialGradient>
+            <radialGradient id="chalo" cx="62%" cy="30%" r="60%"><stop offset="0" stop-color="#5b9bc8" stop-opacity="0.18"/><stop offset="1" stop-color="#5b9bc8" stop-opacity="0"/></radialGradient>
           </defs>
-          <circle cx="280" cy="192" r="200" fill="url(#whalo)"/>
-          <path d="M280 196 L120 486 L440 486 Z" fill="url(#wcone)"/>
-          <g stroke="#7fc0ea" stroke-width="1.2" opacity="0.5" stroke-dasharray="2 9" stroke-linecap="round"><path d="M280 210 L176 470"/><path d="M280 210 L280 476"/><path d="M280 210 L384 470"/></g>
-          <g stroke="#79c6f2" stroke-width="2.4" stroke-linecap="round" fill="none"><path d="M196 430 v-16 h16 M316 430 v-16 h-16 M316 486 v16 h-16 M196 486 v16 h16" opacity="0.95"/></g>
-          <g stroke="#eaf4fb" stroke-width="1.6" opacity="0.9"><circle cx="256" cy="458" r="17" fill="none"/><path d="M256 433 v10 M256 473 v10 M231 458 h10 M281 458 h-10"/></g>
-          <g fill="#eef4f9">
-  <path d="M265 276 L256 342 L269 334 L280 343 L291 334 L304 342 L295 276 C 286 281, 274 281, 265 276 Z"/>
-  <path d="M280 150 C 292 151, 299 168, 300 190 C 301 216, 299 250, 294 280 C 288 278, 272 278, 266 280 C 261 250, 259 216, 260 190 C 261 168, 268 151, 280 150 Z"/>
-  <circle cx="280" cy="150" r="13"/>
-  <path d="M280 161 c 7 3 6 12 1 15 c 1 -4 -1 -6 -1 -6 c 0 0 -2 2 -1 6 c -5 -3 -6 -12 1 -15 Z"/>
-  <path d="M294 176 C 352 158, 430 146, 504 160 C 512 161, 514 168, 506 172 C 486 178, 460 186, 436 196 C 452 198, 466 202, 476 208 C 480 211, 478 216, 472 216 C 448 216, 418 220, 392 232 C 362 246, 334 258, 312 262 C 305 232, 305 202, 294 176 Z"/>
-  <path d="M266 176 C 208 158, 130 146, 56 160 C 48 161, 46 168, 54 172 C 74 178, 100 186, 124 196 C 108 198, 94 202, 84 208 C 80 211, 82 216, 88 216 C 112 216, 142 220, 168 232 C 198 246, 226 258, 248 262 C 255 232, 255 202, 266 176 Z"/>
-</g>
+          <rect width="640" height="440" fill="url(#chalo)"/>
+          <g>
+            <rect x="96" y="58" width="300" height="58" rx="16" fill="#1c252e" stroke="#2b3742"/>
+            <text x="118" y="84" font-size="15" fill="#dfe8ef">Hi! Is the two-bedroom unit</text>
+            <text x="118" y="104" font-size="15" fill="#dfe8ef">still available?</text>
+          </g>
+          <g>
+            <rect x="248" y="134" width="296" height="58" rx="16" fill="#2f6f9c"/>
+            <text x="270" y="160" font-size="15" fill="#ffffff">Yes, unit 704 is free. Shall I</text>
+            <text x="270" y="180" font-size="15" fill="#ffffff">send you the floor plan?</text>
+          </g>
+          <g>
+            <rect x="96" y="210" width="236" height="50" rx="16" fill="#1c252e" stroke="#2b3742"/>
+            <circle cx="122" cy="235" r="11" fill="#7fa8cc"/>
+            <path d="M119 230 l8 5 -8 5 z" fill="#1c252e"/>
+            <g stroke="#9cbfdc" stroke-width="3" stroke-linecap="round">
+              <path d="M146 235 v0"/><path d="M154 231 v8"/><path d="M162 227 v16"/><path d="M170 230 v10"/><path d="M178 224 v22"/><path d="M186 229 v12"/><path d="M194 232 v6"/><path d="M202 227 v16"/><path d="M210 230 v10"/><path d="M218 233 v4"/><path d="M226 229 v12"/><path d="M234 231 v8"/><path d="M242 234 v2"/>
+            </g>
+            <text x="262" y="240" font-size="13" fill="#8a99a6">0:12</text>
+          </g>
+          <g>
+            <rect x="300" y="278" width="244" height="58" rx="16" fill="#2f6f9c"/>
+            <rect x="318" y="292" width="24" height="30" rx="4" fill="#ffffff" fill-opacity="0.92"/>
+            <path d="M323 302 h14 M323 308 h14 M323 314 h9" stroke="#2f6f9c" stroke-width="2" stroke-linecap="round"/>
+            <text x="354" y="304" font-size="15" fill="#ffffff">floor-plan-704.pdf</text>
+            <text x="354" y="323" font-size="12.5" fill="#cfe2f0">PDF · 1.2 MB</text>
+          </g>
+          <g>
+            <rect x="96" y="354" width="268" height="40" rx="14" fill="#1c252e" stroke="#2b3742"/>
+            <text x="118" y="379" font-size="15" fill="#dfe8ef">Perfect, thank you!</text>
+          </g>
         </svg>
-      </a>
-      <div class="proj-body">
-        <div class="proj-top"><span class="proj-name">Kestrel</span><span class="proj-badge">In development</span></div>
-        <p class="proj-desc">Real-time perception for cameras and drones — detect, identify, and track on the fly. Built to run on a totally independent machine: fully local, offline, air-gapped.</p>
-        <div class="proj-chips">Fully local · Offline · Air-gapped · Edge-ready</div>
-        <a class="proj-link" href="kestrel.html">Explore Kestrel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
+      <div class="proj-body">
+        <div class="proj-top"><span class="proj-name">WhatsApp assistant</span><span class="proj-badge">In daily use</span></div>
+        <p class="proj-desc">Our own WhatsApp line runs on an assistant we built. It answers text, understands and sends voice notes, sends files and passes longer jobs to the agents behind it. The studio runs on it every day. For clients we set it up on the official WhatsApp Business API, so your number stays safe.</p>
+        <div class="proj-chips">Text · Voice notes · Files · Any AI model</div>
+      </div>
+    </div>
+    <div class="stance more">
+      <div class="s reveal"><h3>Acesa · 3D showcase</h3><p>An interactive apartment showcase that runs in the browser, built with Hendril Lara. We worked on the furniture, the day and night lighting, the neighbourhood around the building and the guided tour.</p><a class="proj-link" href="https://hendril.dev/acesa/" target="_blank" rel="noopener">Open the showcase <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="s reveal"><h3>Retrofone · Android app</h3><p>A retro phone simulator with twelve small games, a virtual pet and its own pixel font, published on itch.io under our games label, Kölja Games.</p><a class="proj-link" href="https://koljagames.itch.io/retrofone" target="_blank" rel="noopener">See it on itch.io <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="s reveal"><h3>Salt Meridian · Multiplayer game</h3><p>A pirate game made in Godot, with real sailing physics and up to eight players. We show the games because they're the hardest software we've made, not because we sell games.</p><a class="proj-link" href="https://koljagames.itch.io/salt-meridian" target="_blank" rel="noopener">See it on itch.io <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -351,9 +373,9 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 <section class="contact" id="contact">
   <div class="wrap reveal">
     <div class="lead-label" style="text-align:center">Contact</div>
-    <h2>If you're building toward the same future, let's talk.</h2>
-    <p>Partners and clients who want to put AI to work — in any field where an intelligent system changes what's possible.</p>
-    <a class="btn btn-p" href="mailto:hello@n6c.org">hello@n6c.org</a>
+    <h2>What's costing you time or money?</h2>
+    <p>A few lines are enough: what happens today, and what you'd like to stop doing. We reply in writing with what we'd build and what it costs, in English or Portuguese.</p>
+    <a class="btn btn-p" href="mailto:anderson@n6c.org">anderson@n6c.org</a>
   </div>
 </section>
 
@@ -366,14 +388,14 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
           <g fill="currentColor"><circle cx="20" cy="4" r="1.7"/><circle cx="33.86" cy="12" r="1.7"/><circle cx="33.86" cy="28" r="1.7"/><circle cx="20" cy="36" r="1.7"/><circle cx="6.14" cy="28" r="1.7"/><circle cx="6.14" cy="12" r="1.7"/></g>
           <circle cx="20" cy="20" r="3" fill="var(--accent)"/>
         </svg>
-        <p>Applied artificial intelligence for the real world — systems that perceive, decide, and act.</p>
+        <p>A small AI-powered studio. AI agents do the work, a person directs and checks it.</p>
       </div>
-      <div class="foot-col"><h4>Navigate</h4><a href="#core">Core</a><a href="#stance">Stance</a><a href="#work">Work</a><a href="team.html">Team</a><a href="#contact">Contact</a></div>
-      <div class="foot-col"><h4>Node-Six Cybernetics</h4><address>Paju tn 1a<br>50603 Tartu, Tartu Maakond<br>Estonia<br><br><a href="mailto:hello@n6c.org">hello@n6c.org</a></address></div>
+      <div class="foot-col"><h4>Navigate</h4><a href="#services">Services</a><a href="#how">How we work</a><a href="#work">Work</a><a href="team.html">Team</a><a href="#contact">Contact</a></div>
+      <div class="foot-col"><h4>Node-Six Cybernetics</h4><address>Paju tn 1a<br>50603 Tartu, Tartu Maakond<br>Estonia<br><br><a href="mailto:anderson@n6c.org">anderson@n6c.org</a></address></div>
     </div>
     <div class="foot-bot">
       <span>© 2026 Node-Six Cybernetics · Tartu, Estonia</span>
-      <span>Applied AI · Perceive · Decide · Act</span>
+      <span>Assistants · Software · 3D · Security reviews</span>
     </div>
   </div>
 </footer>
