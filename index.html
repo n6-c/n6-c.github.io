@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Node-Six Cybernetics · a small AI-powered studio</title>
-<meta name="description" content="N6C is a small AI-powered studio. Tell us what's costing you time or money and we build the fix: WhatsApp assistants, custom software, 3D site models and written security reviews.">
+<title>Node-Six Cybernetics · software, AI and security engineering</title>
+<meta name="description" content="N6C is a small engineering team led by its founder, Anderson Silva. Tell us what's costing you time or money and we build the fix: WhatsApp assistants, custom software, 3D site models and written security reviews.">
 <link rel="canonical" href="https://n6c.org/">
 <link rel="alternate" hreflang="en" href="https://n6c.org/">
 <link rel="alternate" hreflang="pt-BR" href="https://n6c.org/pt/">
@@ -13,15 +13,15 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="pt_BR">
 <meta property="og:site_name" content="Node-Six Cybernetics">
-<meta property="og:title" content="Node-Six Cybernetics · a small AI-powered studio">
-<meta property="og:description" content="Tell us what's costing you time or money. We build the fix, with AI agents doing the work and a person directing it.">
+<meta property="og:title" content="Node-Six Cybernetics · software, AI and security engineering">
+<meta property="og:description" content="Tell us what's costing you time or money. We build the fix: a small engineering team led by Anderson Silva, with AI teammates we name openly.">
 <meta property="og:url" content="https://n6c.org/">
 <meta property="og:image" content="https://n6c.org/brand/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Node-Six Cybernetics · a small AI-powered studio">
+<meta name="twitter:title" content="Node-Six Cybernetics · software, AI and security engineering">
 <meta name="twitter:description" content="Tell us what's costing you time or money. We build the fix.">
 <meta name="twitter:image" content="https://n6c.org/brand/og.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Node-Six Cybernetics","alternateName":"N6C","url":"https://n6c.org/","logo":"https://n6c.org/brand/n6c-mark.png","email":"anderson@n6c.org","founder":{"@type":"Person","name":"Anderson Silva"},"description":"A small AI-powered studio: WhatsApp assistants and automations, custom software and dashboards, 3D site models and showcases, written security reviews.","address":{"@type":"PostalAddress","streetAddress":"Paju tn 1a","addressLocality":"Tartu","postalCode":"50603","addressRegion":"Tartu Maakond","addressCountry":"EE"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Node-Six Cybernetics","alternateName":"N6C","url":"https://n6c.org/","logo":"https://n6c.org/brand/n6c-mark.png","email":"hello@n6c.org","founder":{"@type":"Person","name":"Anderson Silva","jobTitle":"Founder and Lead Engineer"},"description":"A small engineering team led by Anderson Silva: WhatsApp assistants and automations, custom software and dashboards, 3D site models and showcases, written security reviews.","address":{"@type":"PostalAddress","streetAddress":"Paju tn 1a","addressLocality":"Tartu","postalCode":"50603","addressRegion":"Tartu Maakond","addressCountry":"EE"}}</script>
 <link rel="icon" href="brand/n6c-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,7 @@ img{display:block;max-width:100%}
 .brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
 .brand .mark{width:30px;height:30px;flex:0 0 auto;color:var(--ink)}
 .brand b{font-family:'Archivo';font-weight:600;font-size:15px;letter-spacing:-.005em;color:var(--ink)}
-.navlinks{display:flex;gap:34px;align-items:center;margin-left:auto}
+.navlinks{display:flex;gap:28px;align-items:center;margin-left:auto}
 .navlinks a{font-size:14.5px;color:var(--muted);transition:color .25s;position:relative}
 .navlinks a:not(.navcta)::after{content:'';position:absolute;left:0;bottom:-5px;height:1.5px;width:0;background:var(--accent);transition:width .3s var(--ease)}
 .navlinks a:hover{color:var(--ink)}.navlinks a:hover:not(.navcta)::after{width:100%}
@@ -100,11 +100,12 @@ img{display:block;max-width:100%}
 .langhint button:hover{color:var(--ink);background:var(--surface-2)}
 .hero{transition:padding-top .5s var(--ease)}
 html.lh-on .hero{padding-top:140px}
+@media(max-width:560px){.langhint{top:60px}html.lh-on .hero{padding-top:126px}}
 @media(prefers-reduced-motion:reduce){.langhint,.hero{transition:none}}
 @media(max-width:560px){.langhint .row>span{display:none}
   .nav .wrap{gap:12px}.brand{gap:9px}.brand b{font-size:14px;white-space:nowrap}
   .tools{gap:8px;margin-left:0}.lang{gap:5px;font-size:12px}.tt,.burger{width:36px;height:36px}}
-/* guided-tour prev/next control — quietly present, bottom-right */
+/* guided-tour prev/next control: quietly present, bottom-right */
 .tourctl{position:fixed;right:26px;bottom:26px;z-index:90;display:flex;flex-direction:column;
   border-radius:13px;overflow:hidden;border:1px solid var(--line);
   background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
@@ -141,10 +142,10 @@ html.lh-on .hero{padding-top:140px}
 .pillar h3{font-family:'Archivo';font-weight:600;font-size:1.02rem;letter-spacing:.005em;margin:10px 0 7px;color:var(--ink)}
 .pillar p{font-size:.9rem;line-height:1.5;color:var(--muted)}
 
-/* ---------- section shell (each section fills the viewport, gentle snap) ---------- */
+/* ---------- section shell ---------- */
 section{position:relative;z-index:2;background:var(--bg)}
 .hero,.band,.contact{scroll-snap-align:start;scroll-snap-stop:always}
-.band{min-height:100vh;display:flex;align-items:center;padding:96px 0 60px;border-top:1px solid var(--line)}
+.band{padding:clamp(72px,8vw,104px) 0;border-top:1px solid var(--line)}
 .band>.wrap{width:100%}
 .lead-label{font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
 .h2{font-family:'Inter';font-weight:300;font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.1;letter-spacing:-.02em;color:var(--ink);max-width:20ch}
@@ -164,6 +165,11 @@ section{position:relative;z-index:2;background:var(--bg)}
 
 /* core */
 .core-head{max-width:36ch;margin-bottom:8px}
+.core-top{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,72px);align-items:end}
+.core-fig{margin:0}
+.core-fig img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:50% 70%;border-radius:14px;border:1px solid var(--line)}
+.core-fig figcaption{margin-top:9px;font-size:12.5px;color:var(--muted)}
+@media(max-width:760px){.core-top{grid-template-columns:1fr;gap:26px}}
 .core-head .note{font-size:1rem;line-height:1.6;color:var(--body);margin-top:16px}
 .core{display:grid;grid-template-columns:1fr 1fr;column-gap:60px;margin-top:34px;border-top:1px solid var(--line)}
 .node{padding:22px 0;border-bottom:1px solid var(--line)}
@@ -176,7 +182,7 @@ section{position:relative;z-index:2;background:var(--bg)}
 .stance .s p{font-size:.98rem;line-height:1.65;color:var(--body)}
 
 /* contact */
-.contact{text-align:center;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:96px 0;border-top:1px solid var(--line)}
+.contact{text-align:center;padding:clamp(96px,11vw,150px) 0;border-top:1px solid var(--line)}
 .contact h2{font-family:'Inter';font-weight:300;font-size:clamp(2rem,4.6vw,3.2rem);letter-spacing:-.022em;color:var(--ink);max-width:20ch;margin:0 auto;line-height:1.1}
 .contact p{margin:22px auto 38px;max-width:50ch;font-size:1.08rem;color:var(--body)}
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo';font-weight:600;font-size:14.5px;
@@ -196,7 +202,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 .foot-bot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:24px}
 .foot-bot span{font-size:12.5px;color:var(--faint)}
 
-/* work / in development — editorial split, not a card */
+/* work / in development: editorial split, not a card */
 .proj{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,4.5vw,64px);align-items:center;margin-top:46px}
 .proj-visual{display:block;position:relative;aspect-ratio:16/11;border-radius:14px;overflow:hidden;
   background:radial-gradient(120% 100% at 74% 26%,rgba(63,131,179,.22),transparent 55%),linear-gradient(155deg,#0c1015,#0f151b 55%,#0b0e12);
@@ -230,6 +236,23 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 .proj.flip .proj-visual{order:2}
 .sub-label{margin-top:64px;font-family:'Archivo';font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .sub-label+.stance{margin-top:8px}
+/* real screenshots inside the work frames */
+.proj-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.proj-visual .cap{position:absolute;left:14px;bottom:12px;z-index:2;font-family:'Archivo';font-weight:600;font-size:11.5px;letter-spacing:.03em;
+  color:#e9f1f7;background:rgba(10,14,18,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5px 10px;border-radius:7px}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;max-width:520px}
+.shots figure{margin:0}
+.shots img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.shots figcaption{margin-top:7px;font-size:12.5px;color:var(--muted)}
+/* who's on the work: Anderson leads, the AI teammates work with him */
+.crew{margin-top:30px;display:grid;grid-template-columns:1fr;gap:10px;max-width:360px}
+.mate{display:flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border:1px solid var(--line);border-radius:14px;background:var(--surface);transition:border-color .25s,transform .25s var(--ease)}
+.mate:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.mate img,.mate .k{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}
+.mate .k{display:flex;align-items:center;justify-content:center;font-family:'Archivo';font-weight:700;font-size:17px;color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+.mate b{display:block;font-family:'Archivo';font-weight:600;font-size:14.5px;color:var(--ink)}
+.mate span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
 @media(max-width:760px){.proj,.proj.flip{grid-template-columns:1fr;gap:28px}.proj.flip .proj-visual{order:0}
   .stance.solo .s{grid-template-columns:1fr}.stance.solo .s h3{margin-bottom:12px}}
 .reveal{opacity:0;transform:translateY(20px)}
@@ -238,7 +261,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 @media(max-width:560px){.hero h1 .l,.hero h1 .l>span{display:inline}}
 @media(max-width:920px){
   html{scroll-snap-type:none;scroll-padding-top:64px}
-  .band,.contact{min-height:auto;display:block;padding:72px 0}
+  .band,.contact{padding:72px 0}
   .thesis-grid{grid-template-columns:1fr;gap:36px}
   .thesis-grid .lead{font-size:1.4rem}
   .stance,.core,.pillars{grid-template-columns:1fr}
@@ -246,11 +269,23 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
   .metrics{grid-template-columns:1fr 1fr}
   .metric{border-left:0;padding-left:2px}
   .foot-top{grid-template-columns:1fr 1fr}
-  .navlinks{display:none}.burger{display:flex}
-  .navlinks.open{display:flex;position:fixed;top:74px;left:0;right:0;flex-direction:column;gap:0;
-    background:var(--surface);border-bottom:1px solid var(--line);padding:6px 0;margin:0}
-  .navlinks.open a{padding:15px 32px}.navlinks.open .navcta{margin:10px 32px;text-align:center}
 }
+/* compact header: brand, EN | PT, theme and a menu button; the links open from the menu */
+@media(max-width:1080px){
+  .navlinks{display:none}.burger{display:flex}
+  .navlinks.open{display:flex;position:fixed;top:68px;right:clamp(14px,4vw,48px);left:auto;flex-direction:column;align-items:stretch;gap:2px;
+    min-width:230px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;margin:0}
+  .navlinks.open a{padding:11px 14px;border-radius:8px;font-size:15px}
+  .navlinks.open a::after{display:none}
+  .navlinks.open a:not(.navcta):hover{background:var(--surface-2)}
+  .navlinks.open .navcta{margin:6px 0 0;text-align:center}
+}
+@media(max-width:560px){
+  .nav{height:60px}.hero{padding-top:60px}
+  .navlinks.open{top:56px;left:14px;right:14px;min-width:0}
+  .brand .mark{width:26px;height:26px}
+}
+@media(max-width:350px){.brand b{display:none}}
 </style>
 </head>
 <body>
@@ -285,7 +320,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
         <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
-      <button class="burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </nav>
@@ -298,7 +333,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
       <span class="l"><span>you <b>time</b> or <b>money.</b></span></span>
       <span class="l"><span>We build the <span class="em">fix.</span></span></span>
     </h1>
-    <p class="sub">N6C is a small <b>AI-powered studio.</b> AI agents do most of the building, and a person directs and checks every job. That's how we move fast and keep prices within reach of a small business.</p>
+    <p class="sub">N6C is a small engineering team. Our founder, <b>Anderson Silva, designs and builds the systems</b> and leads every job, together with teammates who are AI, and we tell you that up front. Staying small is how we move fast and keep prices within reach of a small business.</p>
     <div class="pillars">
       <div class="pillar reveal"><div class="pn">01</div><h3>Tell us the problem</h3><p>A few lines by email are enough. You don't need to know the technology, that's our part.</p></div>
       <div class="pillar reveal"><div class="pn">02</div><h3>Get a fixed price</h3><p>We reply with a short written plan and a price, agreed before any work starts.</p></div>
@@ -310,27 +345,37 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
 <section class="band" id="thesis">
   <div class="wrap">
     <div class="thesis-grid">
-      <p class="lead reveal">We're open about it: most of our work is done by AI agents. <b>A person decides what gets built and checks it before it reaches you.</b></p>
+      <div class="reveal">
+        <p class="lead">Every job is led by an engineer who has built production systems for more than ten years. <b>Anderson designs the system, builds its core and answers for what we deliver.</b></p>
+        <div class="crew">
+          <a class="mate" href="team.html"><img src="brand/founder.jpg" width="92" height="92" alt="Anderson Silva"><span><b>Anderson Silva</b><span>Founder · Lead Engineer</span></span></a>
+          <a class="mate" href="team.html"><span class="k" aria-hidden="true">K</span><span><b>Kaia</b><span>AI Partner · Operations &amp; Engineering</span></span></a>
+        </div>
+      </div>
       <div class="body reveal">
-        <p>That split is what makes a small studio practical. The agents write the code, model the buildings, draft the reports and test their own work. Anderson, who founded N6C after more than ten years in software and security, sets the direction, reviews the results and answers for them.</p>
+        <p>He works with a small team, and we're open about who is on it. Kaia, our AI partner, and our other AI teammates work alongside him on the code, the 3D models, the reports and the testing, each with a clear role. They're colleagues on the work, and we name them as AI because you should know who you're working with.</p>
+        <p>Anderson also brings close to a decade in information security and strategic intelligence, as a consultant and instructor, which is where our security reviews come from.</p>
         <p>For you it means <strong>shorter waits and lower prices</strong> than a traditional agency, a fixed quote before anything starts, and every step written down so nothing depends on a meeting you missed.</p>
       </div>
     </div>
     <div class="metrics reveal">
-      <div class="metric"><div class="v">10+</div><div class="k">Years in software and security</div></div>
+      <div class="metric"><div class="v">10+</div><div class="k">Years engineering production systems</div></div>
+      <div class="metric"><div class="v">9</div><div class="k">Years in security and intelligence</div></div>
+      <div class="metric"><div class="v">7</div><div class="k">Lucentive products he worked across</div></div>
       <div class="metric"><div class="v">4</div><div class="k">Services we deliver</div></div>
-      <div class="metric"><div class="v">Fixed</div><div class="k">Price agreed up front</div></div>
-      <div class="metric"><div class="v">Written</div><div class="k">Plans, reports and handover</div></div>
     </div>
   </div>
 </section>
 
 <section class="band" id="services">
   <div class="wrap">
-    <div class="core-head reveal">
-      <div class="lead-label">What we do</div>
-      <h2 class="h2">Four things we do <b>well.</b></h2>
-      <p class="note">Not sure which one you need? Describe the problem and we'll tell you honestly whether we can help.</p>
+    <div class="core-top">
+      <div class="core-head reveal">
+        <div class="lead-label">What we do</div>
+        <h2 class="h2">Four things we do <b>well.</b></h2>
+        <p class="note">Not sure which one you need? Describe the problem and we'll tell you honestly whether we can help.</p>
+      </div>
+      <figure class="core-fig reveal"><img src="brand/work/acesa-day.jpg" width="1600" height="770" loading="lazy" alt="Acesa render: the Boa Viagem seafront in the afternoon, with the 3D-modelled towers, palm trees and the promenade"><figcaption>Acesa 3D site model by day · with the Kanzen team</figcaption></figure>
     </div>
     <div class="core">
       <div class="node reveal"><h3>WhatsApp assistants and automations</h3><p>An assistant on your WhatsApp or website that answers the common questions, understands voice notes, takes files and passes the rest to someone on your team. Behind it, automations for the dull steps between the tools you already use: sorting email, filling sheets, sending reports.</p></div>
@@ -403,19 +448,31 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
       </div>
       <div class="proj-body">
         <div class="proj-top"><span class="proj-name">WhatsApp assistant</span><span class="proj-badge">In daily use</span></div>
-        <p class="proj-desc">Our own WhatsApp line runs on an assistant we built. It answers text, understands and sends voice notes, sends files and passes longer jobs to the agents behind it. The studio runs on it every day. For clients we set it up on the official WhatsApp Business API, so your number stays safe.</p>
+        <p class="proj-desc">Our own WhatsApp line runs on an assistant we built. It answers text, understands and sends voice notes, sends files and hands longer jobs to the rest of the team. We run our own day on it. For clients we set it up on the official WhatsApp Business API, so your number stays safe.</p>
         <div class="proj-chips">Text · Voice notes · Files · Any AI model</div>
       </div>
     </div>
-    <div class="stance more solo">
-      <div class="s reveal"><h3>Acesa · 3D showcase</h3><div><p>An interactive apartment showcase that runs in the browser, built in partnership with the Kanzen team. We built the furniture, the day and night lighting, the neighbourhood around the building and the guided tour.</p><a class="proj-link" href="https://hendril.dev/acesa/" target="_blank" rel="noopener">Open the showcase <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    <div class="proj flip reveal">
+      <a class="proj-visual" href="https://hendril.dev/acesa/" target="_blank" rel="noopener" aria-label="Open the Acesa showcase">
+        <img src="brand/work/acesa-night.jpg" width="1400" height="970" loading="lazy" alt="The Acesa showcase at dusk: the Maré Alta tower with its available apartments lit in warm light among the Boa Viagem skyline">
+        <span class="cap">Live in the browser · dusk lighting</span>
+      </a>
+      <div class="proj-body">
+        <div class="proj-top"><span class="proj-name">Acesa</span><span class="proj-badge">3D showcase</span></div>
+        <p class="proj-desc">An interactive apartment showcase that runs in the browser, built in partnership with the Kanzen team. We built the furniture, the day and night lighting, the neighbourhood around the building and the guided tour.</p>
+        <div class="shots">
+          <figure><img src="brand/work/acesa-suite.jpg" width="1200" height="789" loading="lazy" alt="Inside the guided tour: the main bedroom with a sea view"><figcaption>Guided tour, main bedroom</figcaption></figure>
+          <figure><img src="brand/work/acesa-balcony.jpg" width="1200" height="789" loading="lazy" alt="Inside the guided tour: the balcony looking over the beach"><figcaption>The balcony, late morning</figcaption></figure>
+        </div>
+        <a class="proj-link" href="https://hendril.dev/acesa/" target="_blank" rel="noopener">Open the showcase <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
     </div>
 
     <div class="prev">
       <div class="reveal">
         <div class="lead-label">Before N6C</div>
         <h3 class="prev-h">Anderson's <b>previous work.</b></h3>
-        <p class="prev-intro">Selected work by our founder, Anderson Silva. The first four are from his time as AI and Systems Engineer at Lucentive (remote, April to September 2026). They were built for Lucentive, not for N6C clients, and everything here is already public on his portfolio.</p>
+        <p class="prev-intro">Before N6C, Anderson was the lead backend engineer at Lucentive (remote, April to September 2026), working across the whole product line: Icarus, which he conceived and built, the Intuitive Agent System (IAS), Aura, Lucentive One, Lucentive Spaces, LucidMatch and Loop. Four of them are below. They were built for Lucentive, not for N6C clients, and everything here is already public on his portfolio.</p>
       </div>
       <div class="proj flip reveal">
         <div class="proj-visual" aria-hidden="true">
@@ -463,7 +520,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
         <div class="proj-body">
           <div class="proj-top"><span class="proj-name">Icarus</span><span class="proj-badge">Lucentive · 2026</span></div>
           <p class="proj-desc">An AI platform that generates complete applications. The idea and the build are Anderson's, in partnership with the Lucentive team. He built its core: orchestration that works with models from different providers, and build and verify gates, so whatever the models generate is checked before it's delivered. The repository history backs this up: Anderson made its first commit on 29 May 2026 and wrote 72 of its 74 commits.</p>
-          <div class="proj-chips">AI and Systems Engineer · Multi-model orchestration · LLM systems · Quality gates</div>
+          <div class="proj-chips">Lead backend engineer · Multi-model orchestration · LLM systems · Quality gates</div>
         </div>
       </div>
       <div class="stance more">
@@ -486,7 +543,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
     <div class="lead-label" style="text-align:center">Contact</div>
     <h2>What's costing you time or money?</h2>
     <p>A few lines are enough: what happens today, and what you'd like to stop doing. We reply in writing with what we'd build and what it costs, in English or Portuguese.</p>
-    <a class="btn btn-p" href="mailto:anderson@n6c.org">anderson@n6c.org</a>
+    <a class="btn btn-p" href="mailto:hello@n6c.org">hello@n6c.org</a>
   </div>
 </section>
 
@@ -499,10 +556,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)
           <g fill="currentColor"><circle cx="20" cy="4" r="1.7"/><circle cx="33.86" cy="12" r="1.7"/><circle cx="33.86" cy="28" r="1.7"/><circle cx="20" cy="36" r="1.7"/><circle cx="6.14" cy="28" r="1.7"/><circle cx="6.14" cy="12" r="1.7"/></g>
           <circle cx="20" cy="20" r="3" fill="var(--accent)"/>
         </svg>
-        <p>A small AI-powered studio. AI agents do the work, a person directs and checks it.</p>
+        <p>A small engineering team led by Anderson Silva. Some of our teammates are AI, and we say so.</p>
       </div>
       <div class="foot-col"><h4>Navigate</h4><a href="#services">Services</a><a href="#how">How we work</a><a href="#work">Work</a><a href="team.html">Team</a><a href="#contact">Contact</a></div>
-      <div class="foot-col"><h4>Node-Six Cybernetics</h4><address>Paju tn 1a<br>50603 Tartu, Tartu Maakond<br>Estonia<br><br><a href="mailto:anderson@n6c.org">anderson@n6c.org</a></address></div>
+      <div class="foot-col"><h4>Node-Six Cybernetics</h4><address>Paju tn 1a<br>50603 Tartu, Tartu Maakond<br>Estonia<br><br><a href="mailto:hello@n6c.org">hello@n6c.org</a></address></div>
     </div>
     <div class="foot-bot">
       <span>© 2026 Node-Six Cybernetics · Tartu, Estonia</span>
@@ -538,7 +595,8 @@ document.getElementById('themeBtn').addEventListener('click',()=>{
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',(scrollY||0)>12); },{passive:true});
 const links=document.getElementById('navlinks'),burger=document.getElementById('burger');
-burger.onclick=()=>links.classList.toggle('open');
+burger.onclick=()=>{ const o=links.classList.toggle('open'); burger.setAttribute('aria-expanded',o); };
+document.addEventListener('click',e=>{ if(links.classList.contains('open') && !links.contains(e.target) && !burger.contains(e.target)){ links.classList.remove('open'); burger.setAttribute('aria-expanded',false); } });
 links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
 
 /* ---------- guided-tour scroll: one section per gesture, footer as final stop ---------- */
@@ -546,8 +604,17 @@ links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('ope
   const getSecs=()=>[...document.querySelectorAll('.hero,.band,.contact')];
   let els=getSecs(), active=false, idx=0, animating=false, raf=0;
   const maxScroll=()=>Math.max(0, document.documentElement.scrollHeight - innerHeight);
-  const stopCount=()=>els.length+1;                 // +1 = footer / page bottom
-  const targetY=(i)=> i>=els.length ? maxScroll() : Math.min(maxScroll(), Math.round(els[i].offsetTop));
+  /* stops: each section's top, extra stops inside sections taller than the screen, then the page bottom */
+  let stops=[0];
+  function buildStops(){ const vh=innerHeight, m=maxScroll(), stp=Math.round(vh*.8), s=[];
+    els.forEach(el=>{ const top=Math.min(m,Math.round(el.offsetTop)), end=Math.min(m,top+el.offsetHeight-vh);
+      s.push(top);
+      for(let y=top+stp; y<end; y+=stp) s.push(y);
+      if(end>top){ if(end-s[s.length-1]>=vh*.25) s.push(end); else if(s[s.length-1]!==top) s[s.length-1]=end; } });
+    s.push(m); stops=[...new Set(s)].sort((a,b)=>a-b); }
+  const stopCount=()=>stops.length;
+  const targetY=(i)=> stops[Math.max(0,Math.min(stops.length-1,i))];
+  const stopFor=(y)=>{ let b=0,bd=1e9; stops.forEach((v,i)=>{ const d=Math.abs(v-y); if(d<bd){bd=d;b=i;} }); return b; };
   const ease=(p)=> 1-Math.pow(1-p,3);   // ease-out: moves immediately, settles softly
   function animateTo(y,dur){ dur=dur||430; const start=scrollY, dist=y-start;
     if(Math.abs(dist)<2){ return; } animating=true; const t0=performance.now(); cancelAnimationFrame(raf);
@@ -556,7 +623,7 @@ links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('ope
     raf=requestAnimationFrame(step);
   }
   function nearest(){ const y=scrollY; let b=0,bd=1e9; for(let i=0;i<stopCount();i++){ const d=Math.abs(targetY(i)-y); if(d<bd){bd=d;b=i;} } return b; }
-  function recompute(){ els=getSecs(); active = !reduce && matchMedia('(min-width:921px) and (min-height:560px)').matches; }
+  function recompute(){ els=getSecs(); active = !reduce && matchMedia('(min-width:921px) and (min-height:560px)').matches; buildStops(); }
   const tcUp=document.getElementById('tcUp'), tcDown=document.getElementById('tcDown');
   function updateCtl(){ if(tcUp) tcUp.disabled = idx<=0; if(tcDown) tcDown.disabled = idx>=stopCount()-1; }
   function step(dir){ const ni=Math.max(0,Math.min(stopCount()-1, idx+dir)); if(ni!==idx){ idx=ni; animateTo(targetY(ni)); } updateCtl(); }
@@ -565,6 +632,7 @@ links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('ope
   if(tcDown) tcDown.addEventListener('click',()=>step(1));
   recompute(); idx=nearest(); updateCtl();
   addEventListener('resize',()=>{ recompute(); if(!animating){ idx=nearest(); updateCtl(); } });
+  addEventListener('load',()=>{ recompute(); if(!animating){ idx=nearest(); updateCtl(); } });
   /* one flick = one section: hold a lock until the wheel goes quiet, so momentum can't double-step */
   /* trackpad/mouse aware: move on a fresh or accelerating gesture; ignore the decaying inertia tail */
   let scrollings=[], canScroll=true, lastWheelT=0;
@@ -590,7 +658,7 @@ links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('ope
     const id=a.getAttribute('href').slice(1);
     const el=id?document.getElementById(id):null;
     e.preventDefault(); let si = el ? els.findIndex(s=>s===el||s.contains(el)) : 0; if(si<0) si=0;
-    goto(si); links.classList.remove('open');
+    goto(stopFor(Math.round(els[si].offsetTop))); links.classList.remove('open');
   }));
 })();
 
