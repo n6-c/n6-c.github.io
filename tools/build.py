@@ -8,7 +8,7 @@ from content import PT, EN, wa, PHONE, EMAIL, SITE, PRICES_PUBLIC
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 E = html.escape
 A = '/assets/'
-V = '24'  # bump to bust caches of site.css / site.js / tl.*
+V = '27'  # bump to bust caches of site.css / site.js / tl.*
 TL = json.load(open(os.path.join(ROOT, 'assets/tl/data.json')))
 DATA = json.load(open(os.path.join(ROOT, 'demos/espelho-de-vendas/data/vale-do-araca.json')))
 OTHER = {'pt': EN, 'en': PT}
@@ -188,6 +188,59 @@ def picture(base, sizes, alt, cls='', w=None, h=None, lazy=True, sz='100vw'):
     src = f'{A}img/{base}-{sizes[-1]}.webp'
     return (f'<img class="{cls}" src="{src}" srcset="{srcset}" sizes="{sz}" alt="{E(alt)}"'
             f'{f" width={w} height={h}" if w else ""}{" loading=lazy decoding=async" if lazy else " fetchpriority=high"}>')
+
+def founder_pic(c, lazy=True):
+    """The founder portrait in colour: webp with a jpg fallback, 3:4, never wider than the 688 px source."""
+    sz = '(max-width: 900px) 420px, 384px'
+    ws = ''.join(f'{A}img/founder-{w}.webp {w}w, ' for w in (480, 688))[:-2]
+    js = ''.join(f'{A}img/founder-{w}.jpg {w}w, ' for w in (480, 688))[:-2]
+    ld = ' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high"'
+    return (f'<picture><source type="image/webp" srcset="{ws}" sizes="{sz}">'
+            f'<img src="{A}img/founder-688.jpg" srcset="{js}" sizes="{sz}" width="688" height="917" alt="{E(c["founder_alt"])}"{ld}></picture>')
+
+def brand_pic(c):
+    """The low-res 'brand moment' photo; kept small on purpose (384 px source)."""
+    ws = f'{A}img/anderson-n6c-256.webp 256w, {A}img/anderson-n6c-384.webp 384w'
+    js = f'{A}img/anderson-n6c-256.jpg 256w, {A}img/anderson-n6c-384.jpg 384w'
+    sz = '(max-width: 900px) 280px, 320px'
+    return (f'<figure class="brand-ph" data-reveal><picture><source type="image/webp" srcset="{ws}" sizes="{sz}">'
+            f'<img src="{A}img/anderson-n6c-384.jpg" srcset="{js}" sizes="{sz}" width="384" height="384" alt="{E(c["brand_alt"])}" loading="lazy" decoding="async"></picture>'
+            f'<figcaption>{E(c["brand_cap"])}</figcaption></figure>')
+
+def icarus_svg(F):
+    """Icarus flow as a drawing sheet: request, orchestrator, three models fanned out, build, verify, delivery.
+    The accent pulse travels down the connectors (CSS; stops under reduced motion)."""
+    f = F['flow']; cx = 194
+    def node(x, y, w, h, label, cls=''):
+        return (f'<g class="ic-n {cls}"><rect x="{x - w / 2:g}" y="{y - h / 2:g}" width="{w}" height="{h}" rx="2"/>'
+                f'<text x="{x:g}" y="{y + 4.5:g}" text-anchor="middle">{E(label)}</text></g>')
+    mx = (cx - 96, cx, cx + 96)
+    links = [f'M{cx} 110V147']
+    links += [f'M{cx} 189C{cx} 216 {x} 214 {x} 243' for x in mx]
+    links += [f'M{x} 280C{x} 308 {cx} 306 {cx} 333' for x in mx]
+    links += [f'M{cx} 370V409', f'M{cx} 446V482']
+    stage = [0, 1, 1, 1, 2, 2, 2, 3, 4]
+    lines = ''.join(f'<path d="{d}" marker-end="url(#ic-a)"/>' for d in links)
+    pulse = ''.join(f'<path d="{d}" pathLength="100" style="animation-delay:{stage[k] * .55:.2f}s"/>' for k, d in enumerate(links))
+    rows = [92, 168, 262, 352, 428, 504]
+    ticks = ''.join(f'<line x1="24" y1="{y}" x2="30" y2="{y}"/><text x="36" y="{y + 3.5}">{k + 1:02d}</text>' for k, y in enumerate(rows))
+    grid = ''.join(f'<line x1="{x}" y1="60" x2="{x}" y2="532"/>' for x in range(56, 340, 24)) + ''.join(f'<line x1="52" y1="{y}" x2="336" y2="{y}"/>' for y in range(68, 532, 24))
+    return f'''<svg class="ic" viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{E(F["name"] + ": " + " → ".join(f))}">
+<defs><marker id="ic-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1.2 7 4 1 6.8" fill="none" stroke="#141c26" stroke-width="1.1"/></marker></defs>
+<rect class="ic-p" x=".5" y=".5" width="359" height="539"/>
+<g class="ic-g">{grid}</g>
+<g class="ic-t"><rect x="24" y="20" width="312" height="28"/><line x1="268" y1="20" x2="268" y2="48"/><text x="34" y="38.5">{E(F["flow_title"].upper())}</text><text x="302" y="38.5" text-anchor="middle">FIG. 1</text></g>
+<g class="ic-r"><line x1="24" y1="72" x2="24" y2="524"/>{ticks}</g>
+<g class="ic-l">{lines}</g>
+<g class="ic-pl">{pulse}</g>
+{node(cx, 92, 150, 36, f[0])}
+{node(cx, 168, 204, 42, f[1], 'is-core')}<rect class="ic-dot" x="{cx - 90}" y="165" width="6" height="6"/>
+{''.join(node(x, 262, 84, 36, f[2 + k], 'is-m') for k, x in enumerate(mx))}
+{node(cx, 352, 150, 36, f[5])}
+{node(cx, 428, 150, 36, f[6])}<g class="ic-ok"><circle cx="{cx + 75 + 20}" cy="428" r="9"/><path d="M{cx + 90.5} 428.2l3 3 5.5-6"/></g>
+<rect class="ic-ring" x="{cx - 108}" y="479" width="216" height="50" rx="4"/>
+{node(cx, 504, 204, 42, f[7], 'is-out')}
+</svg>'''
 
 def service_media(s, c):
     m = s['media']
@@ -374,7 +427,7 @@ def home(c):
 <section class="team wrap" id="equipe" aria-labelledby="tm-h">
   <div class="sec-h"><p class="label">{E(c["tm_label"])}</p><h2 id="tm-h" class="h2">{E(c["tm_h"])}</h2></div>
   <div class="team-g">
-    <figure class="founder" data-reveal><img src="{A}img/founder-768.webp" width="768" height="960" alt="{E(c["founder_alt"])}" loading="lazy" decoding="async">
+    <figure class="founder" data-reveal>{founder_pic(c)}
       <figcaption><b>{E(c["founder_name"])}</b><span>{E(c["founder_role"])}</span></figcaption></figure>
     <div class="team-t"><p>{E(c["founder_short"])}</p><ul class="facts three">{"".join(f"<li><b>{E(a)}</b><span>{E(b)}</span></li>" for a, b in c["founder_facts"])}</ul><a class="tlink" href="{c["pages"]["sobre"]}">{E(c["tm_more"])} {arrow()}</a></div>
   </div>
@@ -438,7 +491,6 @@ def about_page(c):
     ff = ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in c['founder_facts'])
     roles = ''.join(f'<li><span class="svc-n">{k + 1:02d}</span><h3>{E(t)}</h3><p>{E(b)}</p></li>' for k, (t, b) in enumerate(c['roles']))
     F = c['work_feat']
-    flow = ''.join(f'<li>{E(x)}</li>' for x in F['flow'])
     items = ''.join(f'<li class="wk"><p class="svc-n">{E(m)}</p><h3>{E(t)}</h3><p>{E(b)}</p><p class="tags">{E(g)}</p></li>' for t, m, b, g in c['work_items'])
     co = ''.join(f'<div><dt>{E(a)}</dt><dd>{f"<a href=mailto:{EMAIL}>{EMAIL}</a>" if b == EMAIL else E(b)}</dd></div>' for a, b in c['co_rows'])
     return f'''<main id="main">
@@ -448,7 +500,7 @@ def about_page(c):
 </section>
 
 <section class="wrap ab-founder" id="anderson" aria-labelledby="an-h">
-  <figure class="founder" data-reveal><img src="{A}img/founder-768.webp" width="768" height="960" alt="{E(c["founder_alt"])}" fetchpriority="high">
+  <figure class="founder" data-reveal>{founder_pic(c, lazy=False)}
     <figcaption><b>{E(c["founder_name"])}</b><span>{E(c["founder_role"])}</span></figcaption></figure>
   <div class="team-t"><h2 class="vh" id="an-h">{E(c["founder_name"])}</h2>{fb}<ul class="facts three">{ff}</ul></div>
 </section>
@@ -461,7 +513,7 @@ def about_page(c):
 <section class="wrap ab-work" id="trabalhos" aria-labelledby="wk-h">
   <div class="sec-h"><p class="label">{E(c["work_label"])}</p><h2 id="wk-h" class="h2">{E(c["work_h"])}</h2><p class="body-l">{E(c["work_body"])}</p></div>
   <article class="wk-feat" data-reveal>
-    <div class="wk-flow" aria-hidden="true"><ol>{flow}</ol></div>
+    <figure class="wk-flow">{icarus_svg(F)}</figure>
     <div><p class="svc-n">{E(F["meta"])}</p><h3 class="h2s">{E(F["name"])}</h3><p class="body-l">{E(F["body"])}</p><p class="tags">{E(F["tags"])}</p></div>
   </article>
   <ul class="wk-g">{items}</ul>
@@ -469,7 +521,7 @@ def about_page(c):
 
 <section class="wrap ab-co" id="empresa" aria-labelledby="co-h">
   <div class="sec-h"><p class="label">{E(c["co_label"])}</p><h2 id="co-h" class="h2">{E(c["co_h"])}</h2></div>
-  <dl class="sheet">{co}</dl>
+  <div class="co-g"><dl class="sheet">{co}</dl>{brand_pic(c)}</div>
 </section>
 {cta_band(c)}
 </main>'''
