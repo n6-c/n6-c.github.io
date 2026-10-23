@@ -468,3 +468,6 @@ h4 { margin: 0; }
 .svc-m.m-chat::after { height: 16%; }
 .foot .btn-wa { background: transparent; color: var(--foot-ink); box-shadow: inset 0 0 0 1px var(--foot-rule); }
 .foot .btn-wa:hover { background: rgba(233, 230, 223, .08); }
+
+/* the floating WhatsApp button sits inside .foot: keep footer link padding/display off it so the icon stays centred */
+.foot a.wa-float, a.wa-float { display: grid; place-items: center; padding: 0; }
