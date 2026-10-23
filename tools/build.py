@@ -8,7 +8,7 @@ from content import PT, EN, wa, PHONE, EMAIL, SITE, PRICES_PUBLIC
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 E = html.escape
 A = '/assets/'
-V = '27'  # bump to bust caches of site.css / site.js / tl.*
+V = '28'  # bump to bust caches of site.css / site.js / tl.*
 TL = json.load(open(os.path.join(ROOT, 'assets/tl/data.json')))
 DATA = json.load(open(os.path.join(ROOT, 'demos/espelho-de-vendas/data/vale-do-araca.json')))
 OTHER = {'pt': EN, 'en': PT}
@@ -207,7 +207,7 @@ def brand_pic(c):
             f'<img src="{A}img/anderson-n6c-384.jpg" srcset="{js}" sizes="{sz}" width="384" height="384" alt="{E(c["brand_alt"])}" loading="lazy" decoding="async"></picture>'
             f'<figcaption>{E(c["brand_cap"])}</figcaption></figure>')
 
-def icarus_svg(F):
+def icarus_svg(F, fig=1):
     """Icarus flow as a drawing sheet: request, orchestrator, three models fanned out, build, verify, delivery.
     The accent pulse travels down the connectors (CSS; stops under reduced motion)."""
     f = F['flow']; cx = 194
@@ -229,7 +229,7 @@ def icarus_svg(F):
 <defs><marker id="ic-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1.2 7 4 1 6.8" fill="none" stroke="#141c26" stroke-width="1.1"/></marker></defs>
 <rect class="ic-p" x=".5" y=".5" width="359" height="539"/>
 <g class="ic-g">{grid}</g>
-<g class="ic-t"><rect x="24" y="20" width="312" height="28"/><line x1="268" y1="20" x2="268" y2="48"/><text x="34" y="38.5">{E(F["flow_title"].upper())}</text><text x="302" y="38.5" text-anchor="middle">FIG. 1</text></g>
+<g class="ic-t"><rect x="24" y="20" width="312" height="28"/><line x1="268" y1="20" x2="268" y2="48"/><text x="34" y="38.5">{E(F["flow_title"].upper())}</text><text x="302" y="38.5" text-anchor="middle">FIG. {fig}</text></g>
 <g class="ic-r"><line x1="24" y1="72" x2="24" y2="524"/>{ticks}</g>
 <g class="ic-l">{lines}</g>
 <g class="ic-pl">{pulse}</g>
@@ -240,6 +240,67 @@ def icarus_svg(F):
 {node(cx, 428, 150, 36, f[6])}<g class="ic-ok"><circle cx="{cx + 75 + 20}" cy="428" r="9"/><path d="M{cx + 90.5} 428.2l3 3 5.5-6"/></g>
 <rect class="ic-ring" x="{cx - 108}" y="479" width="216" height="50" rx="4"/>
 {node(cx, 504, 204, 42, f[7], 'is-out')}
+</svg>'''
+
+def acesa_svg(F, fig=1):
+    """Acesa as a drawing sheet in the same lines as Icarus: the city map, the lit facade, the apartment plan
+    with the guided-tour route. The pulse runs down the connectors and along the route (CSS; stops under reduced motion)."""
+    f = F['flow']
+    def panel(y, h, label):
+        return (f'<g class="ac-pn"><rect x="52" y="{y}" width="284" height="{h}" rx="2"/>'
+                f'<text x="64" y="{y + 20}">{E(label)}</text></g>')
+    # 01 map: streets, blocks, coast and sea, the building marked
+    cols = [(53, 100), (108, 160), (168, 220), (228, 262)]
+    rows = [(114, 144), (152, 185)]
+    blocks = ''.join(f'<rect x="{a}" y="{b}" width="{c - a}" height="{d - b}"/>' for a, c in cols for b, d in rows if not (a == 168 and b == 114))
+    streets = ''.join(f'<line x1="53" y1="{y}" x2="{x2}" y2="{y}"/>' for y, x2 in ((110, 266), (148, 270))) + \
+              ''.join(f'<line x1="{x}" y1="100" x2="{x}" y2="185"/>' for x in (104, 164, 224))
+    sea = ''.join(f'<path d="M{x} {y}q4-3 8 0t8 0"/>' for x, y in ((290, 104), (304, 122), (288, 140), (302, 158), (290, 176)))
+    mp = (f'<g class="ac-bk">{blocks}<rect class="is-on" x="168" y="114" width="52" height="30"/></g>'
+          f'<g class="ac-st">{streets}</g><path class="ac-cs" d="M266 67C258 104 284 132 274 185"/><g class="ac-sea">{sea}</g>'
+          f'<path class="ac-pin" d="M194 126c-5.5-6.5-8-10.6-8-14a8 8 0 0 1 16 0c0 3.4-2.5 7.5-8 14Z"/><circle class="ac-pinc" cx="194" cy="112" r="2.6"/>')
+    # 02 facade: neighbours, the tower with its storeys and balconies, a few lit windows
+    fl = list(range(254, 350, 8))
+    lit = {(1, 0), (2, 1), (4, 0), (5, 1), (7, 0), (8, 1), (10, 0), (3, 0)}
+    win = ''.join(f'<rect class="{"is-on" if (k, j) in lit else ""}" x="{166 + j * 30}" y="{y + 2}" width="26" height="5"/>' for k, y in enumerate(fl) for j in range(2))
+    slabs = ''.join(f'<line x1="155" y1="{y}" x2="233" y2="{y}"/>' for y in fl[1:])
+    nb = ('<rect x="86" y="300" width="52" height="50"/><rect x="250" y="284" width="56" height="66"/>' +
+          ''.join(f'<line x1="92" y1="{y}" x2="132" y2="{y}"/>' for y in range(310, 350, 10)) +
+          ''.join(f'<line x1="256" y1="{y}" x2="300" y2="{y}"/>' for y in range(294, 350, 10)))
+    fc = (f'<g class="ac-nb">{nb}</g><rect class="ac-tw" x="160" y="246" width="68" height="104"/><g class="ac-sl">{slabs}</g>'
+          f'<g class="ac-w">{win}</g><line class="ac-gd" x1="64" y1="350" x2="324" y2="350"/>'
+          f'<g class="ac-sun"><circle cx="300" cy="252" r="9"/><path d="M300 243a9 9 0 0 1 0 18Z"/></g>')
+    # 03 apartment plan: walls, windows, doors, and the tour route with its stops
+    walls = ('<rect x="80" y="412" width="230" height="104"/>'
+             '<path d="M170 412V420M170 436V516M80 462H130M146 462H170M240 412V452"/>')
+    wins = ''.join(f'<rect x="{a}" y="410" width="{b - a}" height="4"/>' for a, b in ((96, 150), (186, 226), (256, 296))) + \
+           '<rect x="308" y="440" width="4" height="40"/>'
+    doors = ('<path d="M170 420H186M186 420A16 16 0 0 1 170 436"/><path d="M146 462V446M146 446A16 16 0 0 0 130 462"/>'
+             '<path d="M270 516V500M270 500A16 16 0 0 1 286 516"/>')
+    route = 'M278 508C278 492 272 486 262 486C238 486 210 470 206 444C204 432 196 428 180 428C150 428 128 432 124 438'
+    stops = [(262, 486), (206, 444), (124, 438)]
+    st = ''.join(f'<circle cx="{x}" cy="{y}" r="4.5"/>' for x, y in stops[:-1])
+    ap = (f'<g class="ac-wl">{walls}</g><g class="ac-wn">{wins}</g><g class="ac-dr">{doors}</g>'
+          f'<path class="ac-rt" d="{route}"/><path class="ac-rp" d="{route}" pathLength="100"/>'
+          f'<g class="ac-stp">{st}</g><circle class="ac-end" cx="{stops[-1][0]}" cy="{stops[-1][1]}" r="5.5"/>'
+          f'<circle class="ic-ring ac-ring" cx="{stops[-1][0]}" cy="{stops[-1][1]}" r="11"/>')
+    links = ['M194 187V209', 'M194 361V383']
+    lines = ''.join(f'<path d="{d}" marker-end="url(#ac-a)"/>' for d in links)
+    pulse = ''.join(f'<path d="{d}" pathLength="100" style="animation-delay:{k * .7:.2f}s"/>' for k, d in enumerate(links))
+    rows_y = [126, 286, 450]
+    ticks = ''.join(f'<line x1="24" y1="{y}" x2="30" y2="{y}"/><text x="36" y="{y + 3.5}">{k + 1:02d}</text>' for k, y in enumerate(rows_y))
+    grid = ''.join(f'<line x1="{x}" y1="60" x2="{x}" y2="532"/>' for x in range(56, 340, 24)) + ''.join(f'<line x1="52" y1="{y}" x2="336" y2="{y}"/>' for y in range(68, 532, 24))
+    return f'''<svg class="ic ac" viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{E(F["name"] + ": " + " → ".join(f))}">
+<defs><marker id="ac-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1.2 7 4 1 6.8" fill="none" stroke="#141c26" stroke-width="1.1"/></marker></defs>
+<rect class="ic-p" x=".5" y=".5" width="359" height="539"/>
+<g class="ic-g">{grid}</g>
+<g class="ic-t"><rect x="24" y="20" width="312" height="28"/><line x1="268" y1="20" x2="268" y2="48"/><text x="34" y="38.5">{E(F["flow_title"].upper())}</text><text x="302" y="38.5" text-anchor="middle">FIG. {fig}</text></g>
+<g class="ic-r"><line x1="24" y1="72" x2="24" y2="524"/>{ticks}</g>
+{panel(66, 121, f[0])}{mp}
+{panel(210, 151, f[1])}{fc}
+{panel(384, 140, f[2])}{ap}
+<g class="ic-l">{lines}</g>
+<g class="ic-pl">{pulse}</g>
 </svg>'''
 
 def service_media(s, c):
@@ -490,7 +551,7 @@ def about_page(c):
     fb = ''.join(f'<p>{E(p)}</p>' for p in c['founder_body'])
     ff = ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in c['founder_facts'])
     roles = ''.join(f'<li><span class="svc-n">{k + 1:02d}</span><h3>{E(t)}</h3><p>{E(b)}</p></li>' for k, (t, b) in enumerate(c['roles']))
-    F = c['work_feat']
+    F = c['work_feat']; K = c['work_kanzen']
     items = ''.join(f'<li class="wk"><p class="svc-n">{E(m)}</p><h3>{E(t)}</h3><p>{E(b)}</p><p class="tags">{E(g)}</p></li>' for t, m, b, g in c['work_items'])
     co = ''.join(f'<div><dt>{E(a)}</dt><dd>{f"<a href=mailto:{EMAIL}>{EMAIL}</a>" if b == EMAIL else E(b)}</dd></div>' for a, b in c['co_rows'])
     return f'''<main id="main">
@@ -513,7 +574,11 @@ def about_page(c):
 <section class="wrap ab-work" id="trabalhos" aria-labelledby="wk-h">
   <div class="sec-h"><p class="label">{E(c["work_label"])}</p><h2 id="wk-h" class="h2">{E(c["work_h"])}</h2><p class="body-l">{E(c["work_body"])}</p></div>
   <article class="wk-feat" data-reveal>
-    <figure class="wk-flow">{icarus_svg(F)}</figure>
+    <figure class="wk-flow">{acesa_svg(K, 1)}</figure>
+    <div><p class="svc-n">{E(K["meta"])}</p><h3 class="h2s">{E(K["name"])}</h3><p class="body-l">{E(K["body"])}</p><p class="tags">{E(K["tags"])}</p></div>
+  </article>
+  <article class="wk-feat" data-reveal>
+    <figure class="wk-flow">{icarus_svg(F, 2)}</figure>
     <div><p class="svc-n">{E(F["meta"])}</p><h3 class="h2s">{E(F["name"])}</h3><p class="body-l">{E(F["body"])}</p><p class="tags">{E(F["tags"])}</p></div>
   </article>
   <ul class="wk-g">{items}</ul>
