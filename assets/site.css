@@ -314,7 +314,7 @@ address { font-style: normal; color: var(--ink2); line-height: 1.6; }
 
 /* floating WhatsApp */
 .wa-float { position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: 40; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--wa); color: #fff; box-shadow: 0 6px 22px rgba(0,0,0,.25); opacity: 0; transform: translateY(14px) scale(.92); pointer-events: none; transition: opacity .3s, transform .3s var(--ease); }
-.wa-float .ico { width: 27px; height: 27px; }
+.wa-float .ico { width: 33px; height: 33px; }
 .wa-float.show { opacity: 1; transform: none; pointer-events: auto; }
 .wa-float:hover { background: #18663f; }
 
