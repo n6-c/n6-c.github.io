@@ -168,3 +168,5 @@
 .tl .tl-hint { max-width: none; }
 @media (max-width: 560px) { .tl-skipv { min-height: 44px; } }
 @media (max-width: 560px) { .tl-skipv { top: calc(84px + env(safe-area-inset-top)); } .tl-hero .tl-loading { top: calc(92px + env(safe-area-inset-top)); } }
+.tl-hero .tl-cap.on-paper { width: max-content; max-width: min(640px, 52vw); background: rgba(243, 241, 236, .94); padding: 14px 20px 16px; margin-left: -20px; box-shadow: 0 1px 0 rgba(20, 28, 38, .08); }
+@media (max-width: 899px) { .tl-hero .tl-cap.on-paper { max-width: calc(100vw - 2 * var(--tl-m) + 20px); } }
