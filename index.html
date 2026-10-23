@@ -1,803 +1,250 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="pt-BR" data-alt="/en/">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Node-Six Cybernetics · software, AI and security engineering</title>
-<meta name="description" content="N6C is a small engineering team led by its founder, Anderson Silva. Tell us what's costing you time or money and we build the fix: WhatsApp assistants, custom software, 3D site models and written security reviews.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>N6C · Estúdio de engenharia e design</title>
+<meta name="description" content="Espelhos de vendas, maquetes digitais e imagens a partir do seu DWG, atendimento no WhatsApp, sites e sistemas, revisão de projetos e de segurança. Preço fechado antes de começar.">
 <link rel="canonical" href="https://n6c.org/">
-<link rel="alternate" hreflang="en" href="https://n6c.org/">
-<link rel="alternate" hreflang="pt-BR" href="https://n6c.org/pt/">
-<link rel="alternate" hreflang="x-default" href="https://n6c.org/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="pt_BR">
-<meta property="og:site_name" content="Node-Six Cybernetics">
-<meta property="og:title" content="Node-Six Cybernetics · software, AI and security engineering">
-<meta property="og:description" content="Tell us what's costing you time or money. We build the fix: a small engineering team led by Anderson Silva, with AI teammates we name openly.">
-<meta property="og:url" content="https://n6c.org/">
-<meta property="og:image" content="https://n6c.org/brand/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Node-Six Cybernetics · software, AI and security engineering">
-<meta name="twitter:description" content="Tell us what's costing you time or money. We build the fix.">
-<meta name="twitter:image" content="https://n6c.org/brand/og.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Node-Six Cybernetics","alternateName":"N6C","url":"https://n6c.org/","logo":"https://n6c.org/brand/n6c-mark.png","email":"hello@n6c.org","founder":{"@type":"Person","name":"Anderson Silva","jobTitle":"Founder and Lead Engineer"},"description":"A small engineering team led by Anderson Silva: WhatsApp assistants and automations, custom software and dashboards, 3D site models and showcases, written security reviews.","address":{"@type":"PostalAddress","streetAddress":"Paju tn 1a","addressLocality":"Tartu","postalCode":"50603","addressRegion":"Tartu Maakond","addressCountry":"EE"}}</script>
-<link rel="icon" href="brand/n6c-mark.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ---------- theme tokens: light is default, dark via [data-theme=dark] ---------- */
-:root{
-  --bg:#f5f7f9; --surface:#ffffff; --surface-2:#eef2f6;
-  --ink:#171b1f; --body:#4d565f; --muted:#7c858d; --faint:#b0b8bf;
-  --line:rgba(20,26,32,.10); --line-2:rgba(20,26,32,.16);
-  --accent:#2f6f9c; --accent-2:#3f83b3; --accent-ink:#ffffff;
-  --btn-ink:#ffffff;
-  --shadow:0 24px 60px -34px rgba(20,40,60,.35);
-  --ease:cubic-bezier(.22,.61,.24,1);
-}
-:root[data-theme="dark"]{
-  --bg:#0d0f12; --surface:#161a1e; --surface-2:#1b2025;
-  --ink:#eef1f4; --body:#aeb7bf; --muted:#7c858e; --faint:#49515a;
-  --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.17);
-  --accent:#7fa8cc; --accent-2:#9cbfdc; --accent-ink:#0d0f12;
-  --btn-ink:#0d0f12;
-  --shadow:0 30px 70px -40px rgba(0,0,0,.8);
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:74px}
-body{background:var(--bg);color:var(--body);font-family:'Inter',system-ui,sans-serif;line-height:1.65;
-  -webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .5s var(--ease),color .5s var(--ease)}
-h1,h2,h3,h4{color:var(--ink);font-weight:400}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-::selection{background:var(--accent);color:var(--accent-ink)}
-.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(22px,4vw,48px)}
-.arch{font-family:'Archivo',sans-serif}
-
-/* ---------- nav ---------- */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:74px;display:flex;align-items:center;
-  transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
-.nav.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;gap:24px}
-.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
-.brand .mark{width:30px;height:30px;flex:0 0 auto;color:var(--ink)}
-.brand b{font-family:'Archivo';font-weight:600;font-size:15px;letter-spacing:-.005em;color:var(--ink)}
-.navlinks{display:flex;gap:34px;align-items:center;margin-left:auto}
-.navlinks a{font-size:14.5px;color:var(--muted);transition:color .25s;position:relative}
-.navlinks a:not(.navcta)::after{content:'';position:absolute;left:0;bottom:-5px;height:1.5px;width:0;background:var(--accent);transition:width .3s var(--ease)}
-.navlinks a:hover{color:var(--ink)}.navlinks a:hover:not(.navcta)::after{width:100%}
-.navcta{padding:9px 18px;border:1px solid var(--line-2);border-radius:8px;color:var(--ink)!important;transition:.25s}
-.navcta:hover{background:var(--ink);color:var(--bg)!important;border-color:var(--ink)}
-.tools{display:flex;align-items:center;gap:14px;margin-left:8px}
-.tt{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:9px;
-  border:1px solid var(--line-2);background:transparent;color:var(--body);cursor:pointer;transition:.25s}
-.tt:hover{color:var(--ink);border-color:var(--ink)}
-.tt svg{width:17px;height:17px}
-.tt .i-sun{display:none}.tt .i-moon{display:block}
-:root[data-theme="dark"] .tt .i-sun{display:block}:root[data-theme="dark"] .tt .i-moon{display:none}
-.burger{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;width:40px;height:40px;color:var(--ink);align-items:center;justify-content:center;cursor:pointer}
-
-.lang{display:flex;align-items:center;gap:7px;font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.05em}
-.lang a{color:var(--muted);transition:color .25s}.lang a:hover{color:var(--ink)}
-.lang a[aria-current]{color:var(--ink)}.lang span{color:var(--faint);font-weight:500}
-/* PT suggestion: a slim strip under the nav that pushes the page down, never covers it */
-.langhint{position:absolute;top:74px;left:0;right:0;z-index:99;height:46px;display:flex;align-items:center;
-  background:color-mix(in srgb,var(--surface) 90%,transparent);border-bottom:1px solid var(--line);
-  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);font-size:13.5px;color:var(--body);
-  opacity:0;transform:translateY(-8px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.langhint.in{opacity:1;transform:none}
-.langhint[hidden]{display:none}
-.langhint .wrap{display:grid;grid-template-columns:28px 1fr 28px;align-items:center;width:100%}
-.langhint .row{grid-column:2;display:flex;align-items:center;justify-content:center;gap:14px;white-space:nowrap;min-width:0}
-.langhint a{display:inline-flex;align-items:center;gap:7px;padding:6px 15px;border-radius:999px;background:var(--accent);color:var(--accent-ink);
-  font-family:'Archivo';font-weight:600;font-size:13px;letter-spacing:.01em;transition:background .25s}
-.langhint a:hover{background:var(--accent-2)}
-.langhint a:focus-visible,.langhint button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.langhint button{grid-column:3;width:28px;height:28px;border:0;border-radius:7px;background:transparent;color:var(--muted);cursor:pointer;font-size:18px;line-height:1}
-.langhint button:hover{color:var(--ink);background:var(--surface-2)}
-.hero{transition:padding-top .5s var(--ease)}
-html.lh-on .hero{padding-top:140px}
-@media(prefers-reduced-motion:reduce){.langhint,.hero{transition:none}}
-@media(max-width:560px){.langhint .row>span{display:none}
-  .nav .wrap{gap:12px}.brand{gap:9px}.brand b{font-size:14px;white-space:nowrap}
-  .tools{gap:8px;margin-left:0}.lang{gap:5px;font-size:12px}.tt,.burger{width:36px;height:36px}}
-/* guided-tour prev/next control: quietly present, bottom-right */
-.tourctl{position:fixed;right:26px;bottom:26px;z-index:90;display:flex;flex-direction:column;
-  border-radius:13px;overflow:hidden;border:1px solid var(--line);
-  background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
-  box-shadow:var(--shadow);opacity:.62;transition:opacity .3s var(--ease),transform .3s var(--ease)}
-.tourctl:hover{opacity:1}
-.tc-btn{width:46px;height:42px;display:flex;align-items:center;justify-content:center;background:transparent;border:0;cursor:pointer;color:var(--body);transition:background .2s,color .2s}
-.tc-btn:hover:not(:disabled){background:color-mix(in srgb,var(--accent) 13%,transparent);color:var(--accent)}
-.tc-btn:disabled{opacity:.26;cursor:default}
-.tc-btn svg{width:19px;height:19px}
-.tc-btn+.tc-btn{border-top:1px solid var(--line)}
-@media(max-width:920px){.tourctl{display:none}}
-
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
-  overflow:hidden;scroll-snap-align:start;padding-top:74px}
-#gl{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
-.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(80% 62% at 50% 40%, color-mix(in srgb,var(--bg) 55%,transparent), transparent 78%),
-    linear-gradient(180deg, color-mix(in srgb,var(--bg) 45%,transparent), transparent 20%, transparent 60%, var(--bg))}
-.hero .wrap{position:relative;z-index:2;text-align:center}
-.hero h1{font-family:'Inter';font-weight:300;font-size:clamp(2.4rem,6.2vw,5.1rem);line-height:1.04;letter-spacing:-.026em;color:var(--ink);max-width:16ch;margin:0 auto}
-.hero h1 .l{display:block;overflow:hidden}
-.hero h1 .l>span{display:inline-block}
-.hero h1 b{font-weight:500}
-.hero h1 .em{font-weight:300;color:var(--accent)}
-.hero .sub{margin:30px auto 0;max-width:56ch;font-size:1.1rem;line-height:1.62;color:var(--body)}
-.hero .sub b{color:var(--ink);font-weight:500}
-.pillars{margin:54px auto 0;max-width:900px;display:grid;grid-template-columns:repeat(3,1fr);text-align:left;
-  background:color-mix(in srgb,var(--surface) 60%,transparent);border:1px solid var(--line);border-radius:14px;
-  overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.pillar{padding:22px 26px;border-left:1px solid var(--line)}
-.pillar:first-child{border-left:0}
-.pillar .pn{font-family:'Archivo';font-weight:600;font-size:12px;color:var(--accent);letter-spacing:.02em}
-.pillar h3{font-family:'Archivo';font-weight:600;font-size:1.02rem;letter-spacing:.005em;margin:10px 0 7px;color:var(--ink)}
-.pillar p{font-size:.9rem;line-height:1.5;color:var(--muted)}
-
-/* ---------- section shell ---------- */
-section{position:relative;z-index:2;background:var(--bg)}
-.hero,.band,.contact{scroll-snap-align:start;scroll-snap-stop:always}
-.band{padding:clamp(72px,8vw,104px) 0;border-top:1px solid var(--line)}
-.band>.wrap{width:100%}
-.lead-label{font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
-.h2{font-family:'Inter';font-weight:300;font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.1;letter-spacing:-.02em;color:var(--ink);max-width:20ch}
-.h2 b{font-weight:500}
-
-/* thesis */
-.thesis-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start}
-.thesis-grid .lead{font-family:'Inter';font-weight:300;font-size:1.6rem;line-height:1.4;color:var(--ink);letter-spacing:-.01em}
-.thesis-grid .lead b{font-weight:500}
-.thesis-grid .body p{font-size:1.02rem;line-height:1.75;color:var(--body);margin-bottom:18px}
-.thesis-grid .body p strong{color:var(--ink);font-weight:600}
-.metrics{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
-.metric{padding:24px 22px;border-left:1px solid var(--line)}
-.metric:first-child{border-left:0;padding-left:2px}
-.metric .v{font-family:'Archivo';font-weight:700;font-size:2.1rem;color:var(--ink);line-height:1;letter-spacing:-.01em}
-.metric .k{margin-top:9px;font-size:12.5px;letter-spacing:.01em;color:var(--muted)}
-
-/* core */
-.core-head{max-width:36ch;margin-bottom:8px}
-.core-top{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,72px);align-items:end}
-.core-fig{margin:0}
-.core-fig img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:50% 70%;border-radius:14px;border:1px solid var(--line)}
-.core-fig figcaption{margin-top:9px;font-size:12.5px;color:var(--muted)}
-@media(max-width:760px){.core-top{grid-template-columns:1fr;gap:26px}}
-.core-head .note{font-size:1rem;line-height:1.6;color:var(--body);margin-top:16px}
-.core{display:grid;grid-template-columns:1fr 1fr;column-gap:60px;margin-top:34px;border-top:1px solid var(--line)}
-.node{padding:22px 0;border-bottom:1px solid var(--line)}
-.node h3{font-family:'Archivo';font-weight:600;font-size:1.04rem;letter-spacing:.005em;color:var(--ink);margin-bottom:7px}
-.node p{font-size:.92rem;line-height:1.55;color:var(--muted)}
-
-/* stance */
-.stance{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
-.stance .s h3{font-family:'Archivo';font-weight:600;font-size:1.12rem;color:var(--ink);margin:0 0 12px;padding-top:20px;border-top:1px solid var(--line-2)}
-.stance .s p{font-size:.98rem;line-height:1.65;color:var(--body)}
-
-/* contact */
-.contact{text-align:center;padding:clamp(96px,11vw,150px) 0;border-top:1px solid var(--line)}
-.contact h2{font-family:'Inter';font-weight:300;font-size:clamp(2rem,4.6vw,3.2rem);letter-spacing:-.022em;color:var(--ink);max-width:20ch;margin:0 auto;line-height:1.1}
-.contact p{margin:22px auto 38px;max-width:50ch;font-size:1.08rem;color:var(--body)}
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo';font-weight:600;font-size:14.5px;
-  padding:15px 30px;border-radius:10px;transition:.25s var(--ease)}
-.btn-p{background:var(--accent);color:var(--btn-ink)}
-.btn-p:hover{background:var(--accent-2);transform:translateY(-2px)}
-
-/* footer */
-footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg)}
-.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid var(--line)}
-.foot-b .mark{width:30px;height:30px;color:var(--ink);margin-bottom:14px}
-.foot-b p{font-size:13.5px;line-height:1.7;color:var(--muted);max-width:32ch}
-.foot-col h4{font-family:'Archivo';font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin-bottom:15px}
-.foot-col a{display:block;font-size:14px;color:var(--body);margin-bottom:10px;transition:color .2s}
-.foot-col a:hover{color:var(--ink)}
-.foot-col address{font-style:normal;font-size:13.5px;line-height:1.75;color:var(--muted)}
-.foot-bot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:24px}
-.foot-bot span{font-size:12.5px;color:var(--faint)}
-
-/* work / in development: editorial split, not a card */
-.proj{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,4.5vw,64px);align-items:center;margin-top:46px}
-.proj-visual{display:block;position:relative;aspect-ratio:16/11;border-radius:14px;overflow:hidden;
-  background:radial-gradient(120% 100% at 74% 26%,rgba(63,131,179,.22),transparent 55%),linear-gradient(155deg,#0c1015,#0f151b 55%,#0b0e12);
-  transition:transform .3s var(--ease)}
-.proj-visual:hover{transform:translateY(-3px)}
-.proj-visual .g{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#8fb6d6 1px,transparent 1px),linear-gradient(90deg,#8fb6d6 1px,transparent 1px);background-size:40px 40px}
-.proj-visual svg{position:absolute;inset:0;width:100%;height:100%}
-.proj-top{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin-bottom:16px}
-.proj-name{font-family:'Archivo';font-weight:700;font-size:2.05rem;letter-spacing:-.01em;color:var(--ink)}
-.proj-badge{display:inline-flex;align-items:center;gap:7px;font-family:'Archivo';font-weight:600;font-size:11px;
-  letter-spacing:.04em;text-transform:uppercase;color:var(--body);border:1px solid var(--line-2);border-radius:999px;padding:4px 11px}
-.proj-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
-.proj-desc{font-size:1.06rem;line-height:1.65;color:var(--body);max-width:44ch}
-.proj-chips{margin-top:16px;font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.02em;color:var(--muted)}
-.proj-link{margin-top:26px;display:inline-flex;align-items:center;gap:8px;font-family:'Archivo';font-weight:600;font-size:14.5px;color:var(--accent)}
-.proj-link svg{width:16px;height:16px;transition:transform .25s}
-.proj-link:hover svg{transform:translateX(4px)}
-.stance.more{margin-top:56px}
-.stance.more .proj-link{margin-top:14px}
-.stance.solo{grid-template-columns:1fr}
-.stance.solo .s{display:grid;grid-template-columns:1fr 2fr;column-gap:40px;border-top:1px solid var(--line-2);padding-top:20px}
-.stance.solo .s h3{border-top:0;padding-top:0}
-.stance.solo .s p{max-width:62ch}
-.stance .s .chips{margin-top:12px;font-family:'Archivo';font-weight:600;font-size:12px;letter-spacing:.02em;color:var(--muted)}
-/* founder's previous work: set apart from the studio's own work */
-.prev{margin-top:clamp(80px,9vw,120px);padding-top:clamp(40px,5vw,56px);border-top:1px solid var(--line)}
-.prev-h{font-family:'Inter';font-weight:300;font-size:clamp(1.55rem,2.8vw,2.2rem);line-height:1.15;letter-spacing:-.015em;color:var(--ink)}
-.prev-h b{font-weight:500}
-.prev-intro{margin-top:16px;font-size:1.02rem;line-height:1.65;color:var(--body);max-width:62ch}
-.proj.flip{grid-template-columns:.98fr 1.02fr}
-.proj.flip .proj-visual{order:2}
-.sub-label{margin-top:64px;font-family:'Archivo';font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.sub-label+.stance{margin-top:8px}
-/* real screenshots inside the work frames */
-.proj-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.proj-visual .cap{position:absolute;left:14px;bottom:12px;z-index:2;font-family:'Archivo';font-weight:600;font-size:11.5px;letter-spacing:.03em;
-  color:#e9f1f7;background:rgba(10,14,18,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5px 10px;border-radius:7px}
-.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;max-width:520px}
-.shots figure{margin:0}
-.shots img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
-.shots figcaption{margin-top:7px;font-size:12.5px;color:var(--muted)}
-/* who's on the work: Anderson leads, the AI teammates work with him */
-.crew{margin-top:30px;display:grid;grid-template-columns:1fr;gap:10px;max-width:360px}
-.mate{display:flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border:1px solid var(--line);border-radius:14px;background:var(--surface);transition:border-color .25s,transform .25s var(--ease)}
-.mate:hover{border-color:var(--line-2);transform:translateY(-2px)}
-.mate img,.mate .k{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}
-.mate .k{display:flex;align-items:center;justify-content:center;font-family:'Archivo';font-weight:700;font-size:17px;color:var(--accent);
-  background:color-mix(in srgb,var(--accent) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
-.mate b{display:block;font-family:'Archivo';font-weight:600;font-size:14.5px;color:var(--ink)}
-.mate span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
-@media(max-width:760px){.proj,.proj.flip{grid-template-columns:1fr;gap:28px}.proj.flip .proj-visual{order:0}
-  .stance.solo .s{grid-template-columns:1fr}.stance.solo .s h3{margin-bottom:12px}}
-.reveal{opacity:0;transform:translateY(20px)}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}
-  .reveal{opacity:1!important;transform:none!important}}
-@media(max-width:560px){.hero h1 .l,.hero h1 .l>span{display:inline}}
-@media(max-width:920px){
-  html{scroll-snap-type:none;scroll-padding-top:64px}
-  .band,.contact{padding:72px 0}
-  .thesis-grid{grid-template-columns:1fr;gap:36px}
-  .thesis-grid .lead{font-size:1.4rem}
-  .stance,.core,.pillars{grid-template-columns:1fr}
-  .pillar{border-left:0;border-top:1px solid var(--line)}.pillar:first-child{border-top:0}
-  .metrics{grid-template-columns:1fr 1fr}
-  .metric{border-left:0;padding-left:2px}
-  .foot-top{grid-template-columns:1fr 1fr}
-}
-@media(max-width:920px){
-  .navlinks{display:none}.burger{display:flex}
-  .navlinks.open{display:flex;position:fixed;top:74px;left:0;right:0;flex-direction:column;gap:0;
-    background:var(--surface);border-bottom:1px solid var(--line);padding:6px 0;margin:0}
-  .navlinks.open a{padding:15px 32px}.navlinks.open .navcta{margin:10px 32px;text-align:center}
-}
-</style>
+<link rel="alternate" hreflang="pt-BR" href="https://n6c.org/"><link rel="alternate" hreflang="en" href="https://n6c.org/en/"><link rel="alternate" hreflang="x-default" href="https://n6c.org/">
+<meta property="og:title" content="N6C · Estúdio de engenharia e design"><meta property="og:description" content="Espelhos de vendas, maquetes digitais e imagens a partir do seu DWG, atendimento no WhatsApp, sites e sistemas, revisão de projetos e de segurança. Preço fechado antes de começar."><meta property="og:type" content="website">
+<meta property="og:url" content="https://n6c.org/"><meta property="og:image" content="https://n6c.org/brand/og.png"><meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f3f1ec">
+<link rel="icon" href="/assets/img/n6c-mark-128.png"><link rel="apple-touch-icon" href="/assets/img/n6c-mark-128.png">
+<script>(function(){var d=document.documentElement;d.className+=' js';var L={"services":"#servicos","how":"#como","work":"/sobre#trabalhos","contact":"/contato","thesis":"#servicos"},h=location.hash.slice(1);if(L[h]){if(L[h][0]==='#')history.replaceState(null,'',L[h]);else{location.replace(L[h]);return}}var cur=d.lang.slice(0,2),alt=d.getAttribute('data-alt'),s=null;try{s=localStorage.getItem('n6c-lang')}catch(_){}if(!s&&cur==='pt'&&!/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)){var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];if(ls[0]&&!ls.some(function(l){return /^pt/i.test(l)}))s='en'}if(s&&s!==cur&&alt){location.replace(alt+location.hash)}})();</script>
+<link rel="preload" href="/assets/fonts/fraunces-normal-300-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-normal-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fraunces.css"><link rel="stylesheet" href="/assets/fonts/instrument-sans.css">
+<link rel="stylesheet" href="/assets/site.css?v=24"><link rel="stylesheet" href="/assets/tl/tl.css?v=24"><link rel="preload" href="/assets/tl/data.json" as="fetch" crossorigin><link rel="preload" as="image" href="/assets/tl/sheets/02-planta-tipo.svg" fetchpriority="high">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Node-Six Cybernetics", "alternateName": "N6C", "url": "https://n6c.org/", "logo": "https://n6c.org/assets/img/n6c-mark-128.png", "email": "hello@n6c.org", "telephone": "+55 11 92766-6162", "founder": {"@type": "Person", "name": "Anderson Silva"}, "address": {"@type": "PostalAddress", "streetAddress": "Paju tn 1a", "postalCode": "50603", "addressLocality": "Tartu", "addressCountry": "EE"}}</script>
 </head>
-<body>
-
-<nav class="nav" id="nav">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Node-Six Cybernetics home">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <polygon points="20,4 33.86,12 33.86,28 20,36 6.14,28 6.14,12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-        <g stroke="currentColor" stroke-width="1" opacity="0.32">
-          <line x1="20" y1="20" x2="20" y2="4"/><line x1="20" y1="20" x2="33.86" y2="12"/><line x1="20" y1="20" x2="33.86" y2="28"/>
-          <line x1="20" y1="20" x2="20" y2="36"/><line x1="20" y1="20" x2="6.14" y2="28"/><line x1="20" y1="20" x2="6.14" y2="12"/>
-        </g>
-        <g fill="currentColor">
-          <circle cx="20" cy="4" r="1.7"/><circle cx="33.86" cy="12" r="1.7"/><circle cx="33.86" cy="28" r="1.7"/>
-          <circle cx="20" cy="36" r="1.7"/><circle cx="6.14" cy="28" r="1.7"/><circle cx="6.14" cy="12" r="1.7"/>
-        </g>
-        <circle cx="20" cy="20" r="3" fill="var(--accent)"/>
-      </svg>
-      <b>Node-Six Cybernetics</b>
-    </a>
-    <div class="navlinks" id="navlinks">
-      <a href="#services">Services</a>
-      <a href="#how">How we work</a>
-      <a href="#work">Work</a>
-      <a href="team.html">Team</a>
-      <a class="navcta" href="#contact">Contact</a>
-    </div>
-    <div class="tools">
-      <div class="lang" role="group" aria-label="Language"><a href="/" lang="en" hreflang="en" aria-current="true">EN</a><span aria-hidden="true">|</span><a href="/pt/" lang="pt-BR" hreflang="pt-BR">PT</a></div>
-      <button class="tt" id="themeBtn" aria-label="Toggle light or dark theme" title="Toggle theme">
-        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-      <button class="burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </div>
+<body class="v-maquete p-index"><a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="top" data-top>
+  <a class="brand" href="/" aria-label="N6C, Node-Six Cybernetics"><img src="/assets/img/n6c-mark-128.png" width="30" height="30" alt=""><span>N6C</span></a>
+  <nav class="nav" aria-label="Principal"><a href="/servicos">Serviços</a><a href="/#demos">Demonstrações</a><a href="/#como">Como trabalhamos</a><a href="/sobre">Sobre</a><a href="/contato">Contato</a></nav>
+  <div class="top-r"><div class="lang" role="group" aria-label="Idioma"><a href="#" data-setlang="pt" lang="pt-BR" hreflang="pt-BR" aria-current="true">PT</a><a href="/en/" data-setlang="en" lang="en" hreflang="en">EN</a></div><a class="btn btn-solid btn-sm top-wa" href="https://wa.me/5511927666162?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20N6C%20e%20queria%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg><span>Conversar no WhatsApp</span><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="vh"> (abre em nova aba)</span></a><a class="top-wa-i" href="https://wa.me/5511927666162?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20N6C%20e%20queria%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp (abre em nova aba)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg></a>
+    <button class="menu-b" type="button" data-menu aria-expanded="false" aria-controls="mnav"><span class="vh">Menu</span><i></i><i></i></button></div>
+  <nav class="mnav" id="mnav" hidden aria-label="Menu"><a href="/servicos">Serviços</a><a href="/#demos">Demonstrações</a><a href="/#como">Como trabalhamos</a><a href="/sobre">Sobre</a><a href="/contato">Contato</a><a class="btn btn-solid" href="https://wa.me/5511927666162?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20N6C%20e%20queria%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg><span>Conversar no WhatsApp</span><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="vh"> (abre em nova aba)</span></a></nav>
+</header><main id="main">
+<section class="tl tl-hero" id="obra" aria-labelledby="hero-h">
+  <div class="tl-intro" data-hero>
+    <div class="wrap tl-intro-in"><div class="tl-copy" data-tl-copy>
+      <p class="label">Estúdio de engenharia e design</p>
+      <h1 class="d1" id="hero-h">Do desenho técnico ao que o seu cliente vê.</h1>
+      <p class="lead">Maquetes, imagens e espelhos de vendas a partir do seu DWG. Atendimento no WhatsApp, sites e sistemas, revisão de projeto e de segurança. Um time pequeno, liderado por Anderson Silva, com preço fechado antes de começar.</p>
+      <div class="ctas"><a class="btn btn-solid" href="https://wa.me/5511927666162?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20N6C%20e%20queria%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg><span>Conversar no WhatsApp</span><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="vh"> (abre em nova aba)</span></a><a class="btn btn-line" href="/servicos">Ver serviços</a></div>
+      <p class="tl-hint"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Role a página: a obra sai da prancha e chega ao prédio entregue.</span></p>
+    </div></div>
   </div>
-</nav>
-
-<header class="hero" id="top">
-  <canvas id="gl"></canvas>
-  <div class="wrap">
-    <h1>
-      <span class="l"><span>Tell us what's costing</span></span>
-      <span class="l"><span>you <b>time</b> or <b>money.</b></span></span>
-      <span class="l"><span>We build the <span class="em">fix.</span></span></span>
-    </h1>
-    <p class="sub">N6C is a small engineering team. Our founder, <b>Anderson Silva, designs and builds the systems</b> and leads every job, together with teammates who are AI, and we tell you that up front. Staying small is how we move fast and keep prices within reach of a small business.</p>
-    <div class="pillars">
-      <div class="pillar reveal"><div class="pn">01</div><h3>Tell us the problem</h3><p>A few lines by email are enough. You don't need to know the technology, that's our part.</p></div>
-      <div class="pillar reveal"><div class="pn">02</div><h3>Get a fixed price</h3><p>We reply with a short written plan and a price, agreed before any work starts.</p></div>
-      <div class="pillar reveal"><div class="pn">03</div><h3>We build and stay on it</h3><p>Delivered, tested and explained in writing, with support afterwards if you want it.</p></div>
-    </div>
-  </div>
-</header>
-
-<section class="band" id="thesis">
-  <div class="wrap">
-    <div class="thesis-grid">
-      <div class="reveal">
-        <p class="lead">Every job is led by an engineer who has been writing software and building systems for more than 17 years. <b>Anderson designs the system, builds its core and answers for what we deliver.</b></p>
-        <div class="crew">
-          <a class="mate" href="team.html"><img src="brand/founder.jpg" width="92" height="92" alt="Anderson Silva"><span><b>Anderson Silva</b><span>Founder · Lead Engineer</span></span></a>
-          <a class="mate" href="team.html"><span class="k" aria-hidden="true">K</span><span><b>Kaia</b><span>AI Partner · Operations &amp; Engineering</span></span></a>
-        </div>
+  <div class="tl-track" data-tl-track>
+    <div class="tl-view paper intro">
+      <canvas class="tl-canvas" role="img" aria-label="Sequência da obra em 12 etapas; lista das etapas a seguir"></canvas>
+      <div class="tl-sheets" aria-hidden="true"><div class="tl-sheets-in" data-tl-sheets><img class="tl-sheet is-first" src="/assets/tl/sheets/02-planta-tipo.svg" alt="" width="1680" height="1188" fetchpriority="high" decoding="async"></div></div>
+      <svg class="tl-overlay" aria-hidden="true"><g class="tl-ov-ink"></g><g class="tl-ov-white"></g></svg>
+      <div class="tl-scrim" aria-hidden="true"></div>
+      <div class="tl-cap" aria-hidden="true">
+        <p class="tl-step"><span class="tl-step-n">01</span><span class="tl-step-of"></span></p>
+        <p class="tl-title"></p>
+        <p class="tl-sub"></p>
       </div>
-      <div class="body reveal">
-        <p>He works with a small team, and we're open about who is on it. Kaia, our AI partner, and our other AI teammates work alongside him on the code, the 3D models, the reports and the testing, each with a clear role. They're colleagues on the work, and we name them as AI because you should know who you're working with.</p>
-        <p>Anderson also brings close to a decade in information security and strategic intelligence, as a consultant and instructor, which is where our security reviews come from.</p>
-        <p>For you it means <strong>shorter waits and lower prices</strong> than a traditional agency, a fixed quote before anything starts, and every step written down so nothing depends on a meeting you missed.</p>
-      </div>
-    </div>
-    <div class="metrics reveal">
-      <div class="metric"><div class="v">17+</div><div class="k">Years writing software and building systems</div></div>
-      <div class="metric"><div class="v">9</div><div class="k">Years in security and intelligence</div></div>
-      <div class="metric"><div class="v">7</div><div class="k">Lucentive products he worked across</div></div>
-      <div class="metric"><div class="v">4</div><div class="k">Services we deliver</div></div>
+      <div class="tl-bar" aria-hidden="true"><div class="tl-bar-fill"></div><div class="tl-ticks"></div></div>
+      <p class="tl-loading" aria-hidden="true"></p>
+      <a class="tl-skipv" href="#modelo">Pular a obra <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
     </div>
   </div>
+  <ol class="tl-static"><li><img class="sheet" src="/assets/tl/sheets/02-planta-tipo.svg" alt="" loading="lazy" width="1680" height="1188"><p class="t">Planta do pavimento tipo · 1:100</p><p class="s">4 apartamentos por andar · 60,74 m² privativos + varanda · núcleo de escada e elevadores em concreto</p></li><li><picture><source media="(max-aspect-ratio: 9/10)" srcset="/assets/tl/frames/m/0040.webp"><img src="/assets/tl/frames/d/0040.webp" alt="" loading="lazy" width="1600" height="900"></picture><p class="t">Fundação · 56 estacas hélice contínua Ø50 cm</p><p class="s">840 m perfurados · 164,9 m³ de concreto C30 · 1.100 kN por estaca · prova de carga estática prevista (NBR 16903)</p></li><li><picture><source media="(max-aspect-ratio: 9/10)" srcset="/assets/tl/frames/m/0089.webp"><img src="/assets/tl/frames/d/0089.webp" alt="" loading="lazy" width="1600" height="900"></picture><p class="t">Estrutura · fôrma, armação e concretagem por pavimento</p><p class="s">Laje maciça 12 cm · 2,88 m de piso a piso · núcleo de escada e elevadores em concreto · bandejas NR‑18</p></li><li><picture><source media="(max-aspect-ratio: 9/10)" srcset="/assets/tl/frames/m/0108.webp"><img src="/assets/tl/frames/d/0108.webp" alt="" loading="lazy" width="1600" height="900"></picture><p class="t">Alvenaria · blocos cerâmicos 14 e 9 cm</p><p class="s">57.800 blocos · 4.626 m² de vedação · prumadas nos shafts</p></li><li><picture><source media="(max-aspect-ratio: 9/10)" srcset="/assets/tl/frames/m/0135.webp"><img src="/assets/tl/frames/d/0135.webp" alt="" loading="lazy" width="1600" height="900"></picture><p class="t">Fachada · reboco, pintura e esquadrias</p><p class="s">Chapisco, emboço e textura de cima para baixo em balancins · alumínio e vidro laminado</p></li><li><picture><source media="(max-aspect-ratio: 9/10)" srcset="/assets/tl/frames/m/0161.webp"><img src="/assets/tl/frames/d/0161.webp" alt="" loading="lazy" width="1600" height="900"></picture><p class="t">Entrega · paisagismo e acabamento</p><p class="s">3.820 m² construídos · 40 unidades de 60,7 m² privativos + varanda</p></li></ol>
+  <ol class="tl-sr" aria-label="Etapas da obra"><li>Projeto · sondagem e implantação no terreno: 3 furos SPT até 20,5 m · lote fictício de 2.400 m² · 40 apartamentos de 2 dormitórios</li><li>Canteiro · tapume, limpeza e locação: Tapume de 2,20 m · escritório e almoxarifado fora da área de queda · gabarito nos eixos 1-8 / A-D</li><li>Terraplenagem · platô na cota 100,00: Corte 274 m³ · aterro compactado 347 m³ · raspagem 480 m³</li><li>Fundação · 56 estacas hélice contínua Ø50 cm: 840 m perfurados · 164,9 m³ de concreto C30 · 1.100 kN por estaca · prova de carga estática prevista (NBR 16903)</li><li>Blocos de coroamento e vigas baldrame: 26 blocos · 65,8 m³ · baldrames 20×50 cm · 15,3 m³ · laje de piso estrutural</li><li>Térreo · grua e primeiros pilares: Grua de lança 40 m, altura sob gancho 42 m · 26 pilares C35</li><li>Estrutura · fôrma, armação e concretagem por pavimento: Laje maciça 12 cm · 2,88 m de piso a piso · núcleo de escada e elevadores em concreto · bandejas NR‑18</li><li>Alvenaria · blocos cerâmicos 14 e 9 cm: 57.800 blocos · 4.626 m² de vedação · prumadas nos shafts</li><li>Cobertura · reservatório e platibanda: Reservatório superior de 40,0 m³ (consumo + reserva de incêndio) · cisterna de 38,4 m³ · platibanda 1,10 m</li><li>Fachada · reboco, pintura e esquadrias: Chapisco, emboço e textura de cima para baixo em balancins · alumínio e vidro laminado</li><li>Desmobilização · grua, cremalheira e bandejas: Estrutura: 1.097 m³ de concreto · 90,0 t de aço CA-50/60</li><li>Entrega · paisagismo e acabamento: 3.820 m² construídos · 40 unidades de 60,7 m² privativos + varanda</li></ol>
+</section>
+<noscript><style>.tl .tl-track{display:none}.tl .tl-static{display:grid}.tl-hero .tl-intro{position:static;height:auto}.tl-hero .tl-copy{padding:140px 0 56px;background:none}</style></noscript>
+<script>(function(){var v=document.querySelector('.tl-view'),w=document.querySelector('[data-tl-sheets]'),cp=document.querySelector('[data-tl-copy]'),im=w&&w.querySelector('.tl-sheet');if(!v||!w||!cp||!im)return;
+function pose(){var vw=v.clientWidth,vh=innerHeight,r=cp.getBoundingClientRect(),sec=v.closest('.tl').getBoundingClientRect(),top=r.top-sec.top,bot=r.bottom-sec.top,m=Math.max(20,Math.min(72,vw*.042)),T;
+var ar=1188/1680,desk=vw>=900&&vw/vh>=.9;
+if(desk){var x0=Math.max(r.right+40,vw*.47),x1=vw-m,y0=88,y1=vh-40,tw=Math.min(x1-x0,(y1-y0)/ar);T={x:x0+(x1-x0-tw)/2,y:y0+(y1-y0-tw*ar)/2,w:tw}}
+else{var tw2=vw-2*m;T={x:m,y:Math.max(bot+18,vh*.5),w:tw2}}
+w.style.transform='none';var b=im.getBoundingClientRect(),vb=v.getBoundingClientRect();var s=T.w/b.width;
+var P={s:s,x:T.x-s*(b.left-vb.left),y:T.y-s*(b.top-vb.top)};w._pose=P;window.__tlK=window.__tlK||0;apply(window.__tlK)}
+function apply(k){var P=w._pose;if(!P)return;var e=1-k,s=1+(P.s-1)*e;w.style.transform='translate('+(P.x*e).toFixed(1)+'px,'+(P.y*e).toFixed(1)+'px) scale('+s.toFixed(4)+')'}
+window.__tlIntro={pose:pose,apply:apply};pose();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(pose);addEventListener('resize',pose);if(!im.complete)im.addEventListener('load',pose)})();</script>
+
+<section class="after wrap" id="modelo" tabindex="-1" aria-labelledby="af-h">
+  <p class="label">Um único modelo</p>
+  <div class="intro-g"><h2 id="af-h" class="big" data-reveal>Os desenhos, as imagens e os números saem do mesmo modelo.</h2><p class="body-l" data-reveal>As 56 estacas da planta de locação são as que a perfuratriz executa no filme, e os 1.097 m³ de concreto são o que o modelo mede. É assim que trabalhamos em cada projeto: um modelo só, conferido, de onde sai todo o resto.</p></div>
+  <ul class="facts"><li><b>56</b><span>estacas hélice contínua Ø50</span></li><li><b>1.097 m³</b><span>de concreto, levantados do modelo</span></li><li><b>90 t</b><span>de aço</span></li><li><b>10</b><span>pavimentos, 40 apartamentos</span></li></ul>
+  <p class="cap">Estudo residencial fictício, sem endereço, feito pela N6C para demonstração. As quantidades saem do mesmo modelo que gerou os desenhos e as imagens; não substituem projeto executivo.</p>
 </section>
 
-<section class="band" id="services">
-  <div class="wrap">
-    <div class="core-top">
-      <div class="core-head reveal">
-        <div class="lead-label">What we do</div>
-        <h2 class="h2">Four things we do <b>well.</b></h2>
-        <p class="note">Not sure which one you need? Describe the problem and we'll tell you honestly whether we can help.</p>
-      </div>
-      <figure class="core-fig reveal"><img src="brand/work/acesa-day.jpg" width="1600" height="770" loading="lazy" alt="Acesa render: the Boa Viagem seafront in the afternoon, with the 3D-modelled towers, palm trees and the promenade"><figcaption>Acesa 3D site model by day · with the Kanzen team</figcaption></figure>
-    </div>
-    <div class="core">
-      <div class="node reveal"><h3>WhatsApp assistants and automations</h3><p>An assistant on your WhatsApp or website that answers the common questions, understands voice notes, takes files and passes the rest to someone on your team. Behind it, automations for the dull steps between the tools you already use: sorting email, filling sheets, sending reports.</p></div>
-      <div class="node reveal"><h3>Custom software and dashboards</h3><p>Internal tools, client portals, websites, Android and Mac apps. Dashboards that turn your spreadsheets or ERP exports into something you can read at a glance, updated on their own.</p></div>
-      <div class="node reveal"><h3>3D site models and showcases</h3><p>For developers and architects. We turn your CAD or DWG drawings into a 3D model of the site with renders, or into an interactive showcase buyers can walk through in the browser.</p></div>
-      <div class="node reveal"><h3>Written security reviews</h3><p>With your written permission, we check whether your email domain can be spoofed, test your website or web app for the common weaknesses, and look at what anyone can find about your company online. You get a plain-language report with the fixes. It's a review, not a certified pentest.</p></div>
-    </div>
-  </div>
+<section class="intro wrap" aria-labelledby="in-h">
+  <p class="label">A N6C</p>
+  <div class="intro-g"><h2 id="in-h" class="big" data-reveal>Um estúdio pequeno de engenharia e design. Cada trabalho tem um engenheiro responsável do começo ao fim.</h2><p class="body-l" data-reveal>Trabalhamos com quem vende e constrói: loteadoras, incorporadoras, construtoras, imobiliárias, escritórios de arquitetura e as empresas que atendem esse mercado. Você fala com quem faz, e tudo o que for combinado fica por escrito.</p></div>
+  <ul class="facts"><li><b>17+</b><span>anos de engenharia de software</span></li><li><b>Preço fechado</b><span>antes de qualquer trabalho começar</span></li><li><b>50 / 50</b><span>metade no início, metade na entrega</span></li><li><b>PT · EN</b><span>atendimento em português e inglês</span></li></ul>
 </section>
 
-<section class="band" id="how">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="lead-label">How we work</div>
-      <h2 class="h2">No meetings to sit through. <b>Everything in writing.</b></h2>
-    </div>
-    <div class="stance">
-      <div class="s reveal"><h3>Start with the problem</h3><p>Tell us what happens today and what you'd like to stop doing. The clearer the headache, the better the fix, and you don't have to name a technology.</p></div>
-      <div class="s reveal"><h3>A fixed price first</h3><p>You get a short plan and one price before we start. Half up front, half on delivery. If the scope changes, we agree the change in writing first.</p></div>
-      <div class="s reveal"><h3>Systems that keep running</h3><p>What we build doesn't end at delivery. We can look after it for a monthly fee, and you always know who to write to when something needs changing.</p></div>
-    </div>
-  </div>
+<section class="services wrap" id="servicos" aria-labelledby="sv-h">
+  <div class="sec-h"><p class="label">Serviços</p><h2 id="sv-h" class="h2">Do desenho à conversa com o seu cliente.</h2>
+    <a class="tlink" href="/servicos">Todos os serviços em detalhe <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
+  <div class="svc-g"><article class="svc" data-reveal>
+      <a class="svc-a" href="/servicos#imoveis">
+        <div class="svc-m m-render"><img class="cover" src="/assets/img/maq-light-close-1600.webp" srcset="/assets/img/maq-light-close-800.webp 800w, /assets/img/maq-light-close-1600.webp 1600w" sizes="(min-width: 901px) 50vw, 100vw" alt="Maquete digital do Vale do Araçá (fictício), feita pela N6C a partir do desenho." width=1600 height=1100 loading=lazy decoding=async></div>
+        <div class="svc-t"><span class="svc-n">01</span><h3>3D para o mercado imobiliário</h3><p>Espelho de vendas, maquete digital e imagens fotorrealistas a partir do seu DWG.</p>
+        <span class="status"><i></i>Demonstração aberta</span><span class="more">Ver o serviço <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span></div></a></article><article class="svc" data-reveal>
+      <a class="svc-a" href="/servicos#atendimento">
+        <div class="svc-m m-chat"><div class="media-chat"><div class="chat" role="img" aria-label="Vale do Araçá · vendas: atendimento N6C · demonstração">
+  <div class="chat-h"><span class="av" aria-hidden="true">VA</span><span><b>Vale do Araçá · vendas</b><small>atendimento N6C · demonstração</small></span></div>
+  <div class="chat-b"><div class="msg in">Oi! O lote C02 ainda está disponível?</div><div class="msg out">Está sim. O C02 tem 375 m², 12,5 × 30 m, frente norte, na Rua das Aroeiras. Valor: R$ 222.500.</div><div class="msg in"><span class="aud"><b class="play" aria-hidden="true"></b><span class="wave" aria-hidden="true"><i style="--h:4"></i><i style="--h:7"></i><i style="--h:10"></i><i style="--h:6"></i><i style="--h:12"></i><i style="--h:9"></i><i style="--h:5"></i><i style="--h:11"></i><i style="--h:8"></i><i style="--h:13"></i><i style="--h:6"></i><i style="--h:9"></i><i style="--h:4"></i><i style="--h:10"></i><i style="--h:7"></i><i style="--h:12"></i><i style="--h:5"></i><i style="--h:8"></i><i style="--h:6"></i><i style="--h:4"></i><i style="--h:9"></i><i style="--h:7"></i></span><span class="t">0:14</span></span></div><div class="msg out"><span class="aud"><b class="play" aria-hidden="true"></b><span class="wave" aria-hidden="true"><i style="--h:4"></i><i style="--h:7"></i><i style="--h:10"></i><i style="--h:6"></i><i style="--h:12"></i><i style="--h:9"></i><i style="--h:5"></i><i style="--h:11"></i><i style="--h:8"></i><i style="--h:13"></i><i style="--h:6"></i><i style="--h:9"></i><i style="--h:4"></i><i style="--h:10"></i><i style="--h:7"></i><i style="--h:12"></i><i style="--h:5"></i><i style="--h:8"></i><i style="--h:6"></i><i style="--h:4"></i><i style="--h:9"></i><i style="--h:7"></i></span><span class="t">0:21</span></span></div><div class="msg out"><span class="file"><b>PDF</b><span><span class="fn">ficha-lote-C02.pdf</span><span class="fm">PDF · 2 páginas</span></span></span></div><div class="msg in">Perfeito. Dá para visitar no sábado?</div><div class="msg out">Dá sim. Vou passar para a equipe de vendas confirmar o horário com você.</div></div>
+</div></div></div>
+        <div class="svc-t"><span class="svc-n">02</span><h3>Atendimento no WhatsApp e automações</h3><p>Responde ao que se repete, por texto e por áudio, e passa para a sua equipe o que pede uma pessoa.</p>
+        <span class="status"><i></i>Em uso no nosso dia a dia</span><span class="more">Ver o serviço <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span></div></a></article><article class="svc" data-reveal>
+      <a class="svc-a" href="/servicos#sites">
+        <div class="svc-m m-site"><img class="cover" src="/assets/img/site-n6c-1800.webp" srcset="/assets/img/site-n6c-900.webp 900w, /assets/img/site-n6c-1800.webp 1800w" sizes="(min-width: 901px) 50vw, 100vw" alt="Este site, no computador e no celular, feito pela N6C." width=1800 height=1200 loading=lazy decoding=async></div>
+        <div class="svc-t"><span class="svc-n">03</span><h3>Sites e sistemas sob medida</h3><p>Sites que passam confiança na primeira tela, e sistemas internos, portais e painéis.</p>
+        <span class="status"><i></i>Este site é um exemplo</span><span class="more">Ver o serviço <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span></div></a></article><article class="svc" data-reveal>
+      <a class="svc-a" href="/servicos#revisao">
+        <div class="svc-m m-review"><div class="media-review"><svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Revisão · planta térreo">
+<rect width="640" height="460" fill="#fbfaf7"/>
+<g stroke="#a9b0b8" stroke-width=".5" opacity=".6"><line x1="20" y1="0" x2="20" y2="460"/><line x1="60" y1="0" x2="60" y2="460"/><line x1="100" y1="0" x2="100" y2="460"/><line x1="140" y1="0" x2="140" y2="460"/><line x1="180" y1="0" x2="180" y2="460"/><line x1="220" y1="0" x2="220" y2="460"/><line x1="260" y1="0" x2="260" y2="460"/><line x1="300" y1="0" x2="300" y2="460"/><line x1="340" y1="0" x2="340" y2="460"/><line x1="380" y1="0" x2="380" y2="460"/><line x1="420" y1="0" x2="420" y2="460"/><line x1="460" y1="0" x2="460" y2="460"/><line x1="500" y1="0" x2="500" y2="460"/><line x1="540" y1="0" x2="540" y2="460"/><line x1="580" y1="0" x2="580" y2="460"/><line x1="620" y1="0" x2="620" y2="460"/><line x1="0" y1="20" x2="640" y2="20"/><line x1="0" y1="60" x2="640" y2="60"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="140" x2="640" y2="140"/><line x1="0" y1="180" x2="640" y2="180"/><line x1="0" y1="220" x2="640" y2="220"/><line x1="0" y1="260" x2="640" y2="260"/><line x1="0" y1="300" x2="640" y2="300"/><line x1="0" y1="340" x2="640" y2="340"/><line x1="0" y1="380" x2="640" y2="380"/><line x1="0" y1="420" x2="640" y2="420"/></g>
+<g fill="none" stroke="#1b2430" stroke-linecap="square">
+ <rect x="70" y="70" width="380" height="290" stroke-width="7"/>
+ <line x1="250" y1="70" x2="250" y2="230" stroke-width="4"/><line x1="70" y1="230" x2="210" y2="230" stroke-width="4"/>
+ <line x1="290" y1="230" x2="450" y2="230" stroke-width="4"/><line x1="340" y1="230" x2="340" y2="360" stroke-width="4"/>
+ <line x1="250" y1="160" x2="330" y2="160" stroke-width="4"/>
+ <path d="M210 230 A40 40 0 0 1 250 190" stroke-width="1.2"/><line x1="250" y1="190" x2="250" y2="230" stroke-width="1.2"/>
+ <path d="M300 230 A38 38 0 0 0 338 268" stroke-width="1.2"/>
+ <rect x="350" y="240" width="90" height="26" stroke-width="1.2"/><circle cx="395" cy="253" r="8" stroke-width="1"/>
+ <rect x="90" y="250" width="120" height="16" stroke-width="1"/>
+ <line x1="160" y1="360" x2="230" y2="360" stroke="#fbfaf7" stroke-width="9"/><line x1="160" y1="356" x2="230" y2="356" stroke-width="1"/><line x1="160" y1="364" x2="230" y2="364" stroke-width="1"/>
+</g>
+<g stroke="#1b2430" stroke-width=".8" fill="#1b2430" font-family="ui-monospace,Menlo,monospace" font-size="11">
+ <line x1="70" y1="398" x2="450" y2="398"/><line x1="70" y1="390" x2="70" y2="406"/><line x1="450" y1="390" x2="450" y2="406"/>
+ <text x="246" y="392" stroke="none" text-anchor="middle">12,40</text>
+ <line x1="492" y1="70" x2="492" y2="360"/><line x1="484" y1="70" x2="500" y2="70"/><line x1="484" y1="360" x2="500" y2="360"/>
+ <text x="508" y="219" stroke="none">9,15</text>
+ <text x="150" y="150" stroke="none" text-anchor="middle" opacity=".8">SALA</text><text x="150" y="166" stroke="none" text-anchor="middle" opacity=".6" font-size="10">24,6 m²</text>
+ <text x="350" y="120" stroke="none" text-anchor="middle" opacity=".8">QUARTO</text>
+ <text x="395" y="300" stroke="none" text-anchor="middle" opacity=".8">BWC</text>
+ <text x="140" y="300" stroke="none" text-anchor="middle" opacity=".8">COZINHA</text>
+</g>
+<g font-family="ui-sans-serif,system-ui,sans-serif" font-weight="600" font-size="14">
+ <circle cx="492" cy="150" r="17" fill="none" stroke="#d4472a" stroke-width="2.5"/><circle cx="530" cy="122" r="12" fill="#d4472a"/><text x="530" y="127" text-anchor="middle" fill="#fff">1</text><line x1="505" y1="140" x2="521" y2="129" stroke="#d4472a" stroke-width="2"/>
+ <circle cx="372" cy="248" r="30" fill="none" stroke="#d4472a" stroke-width="2.5"/><circle cx="416" cy="206" r="12" fill="#d4472a"/><text x="416" y="211" text-anchor="middle" fill="#fff">2</text><line x1="394" y1="227" x2="408" y2="214" stroke="#d4472a" stroke-width="2"/>
+ <circle cx="150" cy="160" r="30" fill="none" stroke="#d4472a" stroke-width="2.5"/><circle cx="110" cy="112" r="12" fill="#d4472a"/><text x="110" y="117" text-anchor="middle" fill="#fff">3</text><line x1="130" y1="137" x2="118" y2="122" stroke="#d4472a" stroke-width="2"/>
+</g>
+<g font-family="ui-monospace,Menlo,monospace" fill="#1b2430" font-size="10.5">
+ <rect x="70" y="18" width="380" height="30" fill="none" stroke="#1b2430" stroke-width=".8"/>
+ <text x="80" y="37">REVISÃO · PLANTA TÉRREO</text>
+</g>
+</svg><ol class="rv-list"><li><b>1</b>Cota da fachada não confere com o corte AA</li><li><b>2</b>Porta do banheiro abre sobre a bancada</li><li><b>3</b>Área da sala diferente do quadro de áreas</li></ol></div></div>
+        <div class="svc-t"><span class="svc-n">04</span><h3>Desenho técnico e revisão de projeto</h3><p>Desenhos prontos para obra e aprovação, e revisão do que não fecha antes da obra.</p>
+        <span class="status"><i></i>Disponível para contratar</span><span class="more">Ver o serviço <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span></div></a></article><article class="svc" data-reveal>
+      <a class="svc-a" href="/servicos#seguranca">
+        <div class="svc-m m-security"><div class="media-review"><svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Verificação de e-mail · exemplo-construtora.com.br">
+<rect width="640" height="460" fill="#ece9e2"/>
+<rect x="36" y="30" width="568" height="404" fill="#fbfaf7" stroke="#d9d5cc"/>
+<g font-family="ui-sans-serif,system-ui,sans-serif">
+<text x="56" y="70" font-size="12" letter-spacing="1.2" fill="#59616a">VERIFICAÇÃO DE E-MAIL</text>
+<text x="56" y="98" font-size="20" font-family="ui-monospace,Menlo,monospace" fill="#1b2430">exemplo-construtora.com.br</text>
+<line x1="56" y1="116" x2="584" y2="116" stroke="#1b2430" stroke-width="1"/>
+<circle cx="82" cy="148" r="17" fill="none" stroke="#2f5fd0" stroke-width="1.5"/><path d="M0 0 l6 6 l12 -13" transform="translate(73 144)" fill="none" stroke="#2f5fd0" stroke-width="2.6"/><text x="116" y="144" font-size="15" font-weight="600" fill="#1b2430">SPF</text><text x="116" y="163" font-size="13" fill="#59616a">Publicado, com os servidores certos</text><line x1="56" y1="180" x2="584" y2="180" stroke="#d9d5cc"/><circle cx="82" cy="210" r="17" fill="none" stroke="#2f5fd0" stroke-width="1.5"/><path d="M0 0 l6 6 l12 -13" transform="translate(73 206)" fill="none" stroke="#2f5fd0" stroke-width="2.6"/><text x="116" y="206" font-size="15" font-weight="600" fill="#1b2430">DKIM</text><text x="116" y="225" font-size="13" fill="#59616a">Assinatura válida</text><line x1="56" y1="242" x2="584" y2="242" stroke="#d9d5cc"/><circle cx="82" cy="272" r="17" fill="none" stroke="#b3361d" stroke-width="1.5"/><g transform="translate(76 265)" stroke="#b3361d" stroke-width="2.6"><line x1="0" y1="0" x2="14" y2="14"/><line x1="14" y1="0" x2="0" y2="14"/></g><text x="116" y="268" font-size="15" font-weight="600" fill="#1b2430">DMARC</text><text x="116" y="287" font-size="13" fill="#b3361d">p=none: o domínio pode ser falsificado</text><line x1="56" y1="304" x2="584" y2="304" stroke="#d9d5cc"/><circle cx="82" cy="334" r="17" fill="none" stroke="#2f5fd0" stroke-width="1.5"/><path d="M0 0 l6 6 l12 -13" transform="translate(73 330)" fill="none" stroke="#2f5fd0" stroke-width="2.6"/><text x="116" y="330" font-size="15" font-weight="600" fill="#1b2430">MX</text><text x="116" y="349" font-size="13" fill="#59616a">Recebimento configurado</text><line x1="56" y1="366" x2="584" y2="366" stroke="#d9d5cc"/>
+<rect x="56" y="392" width="528" height="28" fill="#f6e3de"/>
+<text x="68" y="411" font-size="13" fill="#b3361d">Correção: publicar DMARC com p=quarantine, depois p=reject.</text>
+</g></svg></div></div>
+        <div class="svc-t"><span class="svc-n">05</span><h3>Revisão de segurança</h3><p>Seu domínio pode ser falsificado? O seu site tem falhas comuns? Um relatório claro, com as correções.</p>
+        <span class="status"><i></i>Só com autorização por escrito</span><span class="more">Ver o serviço <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span></div></a></article></div>
 </section>
 
-<section class="band" id="work">
+<section class="demo" id="demos" aria-labelledby="dm-h">
   <div class="wrap">
-    <div class="reveal">
-      <div class="lead-label">Work</div>
-      <h2 class="h2">Things we've <b>built and run.</b></h2>
-    </div>
-    <div class="proj reveal">
-      <div class="proj-visual" aria-hidden="true">
-        <div class="g"></div>
-        <svg viewBox="0 0 640 440" fill="none" preserveAspectRatio="xMidYMid meet" font-family="Inter, system-ui, sans-serif">
-          <defs>
-            <radialGradient id="chalo" cx="62%" cy="30%" r="60%"><stop offset="0" stop-color="#5b9bc8" stop-opacity="0.18"/><stop offset="1" stop-color="#5b9bc8" stop-opacity="0"/></radialGradient>
-          </defs>
-          <rect width="640" height="440" fill="url(#chalo)"/>
-          <g>
-            <rect x="96" y="58" width="300" height="58" rx="16" fill="#1c252e" stroke="#2b3742"/>
-            <text x="118" y="84" font-size="15" fill="#dfe8ef">Hi! Is the two-bedroom unit</text>
-            <text x="118" y="104" font-size="15" fill="#dfe8ef">still available?</text>
-          </g>
-          <g>
-            <rect x="248" y="134" width="296" height="58" rx="16" fill="#2f6f9c"/>
-            <text x="270" y="160" font-size="15" fill="#ffffff">Yes, unit 704 is free. Shall I</text>
-            <text x="270" y="180" font-size="15" fill="#ffffff">send you the floor plan?</text>
-          </g>
-          <g>
-            <rect x="96" y="210" width="236" height="50" rx="16" fill="#1c252e" stroke="#2b3742"/>
-            <circle cx="122" cy="235" r="11" fill="#7fa8cc"/>
-            <path d="M119 230 l8 5 -8 5 z" fill="#1c252e"/>
-            <g stroke="#9cbfdc" stroke-width="3" stroke-linecap="round">
-              <path d="M146 235 v0"/><path d="M154 231 v8"/><path d="M162 227 v16"/><path d="M170 230 v10"/><path d="M178 224 v22"/><path d="M186 229 v12"/><path d="M194 232 v6"/><path d="M202 227 v16"/><path d="M210 230 v10"/><path d="M218 233 v4"/><path d="M226 229 v12"/><path d="M234 231 v8"/><path d="M242 234 v2"/>
-            </g>
-            <text x="262" y="240" font-size="13" fill="#8a99a6">0:12</text>
-          </g>
-          <g>
-            <rect x="300" y="278" width="244" height="58" rx="16" fill="#2f6f9c"/>
-            <rect x="318" y="292" width="24" height="30" rx="4" fill="#ffffff" fill-opacity="0.92"/>
-            <path d="M323 302 h14 M323 308 h14 M323 314 h9" stroke="#2f6f9c" stroke-width="2" stroke-linecap="round"/>
-            <text x="354" y="304" font-size="15" fill="#ffffff">floor-plan-704.pdf</text>
-            <text x="354" y="323" font-size="12.5" fill="#cfe2f0">PDF · 1.2 MB</text>
-          </g>
-          <g>
-            <rect x="96" y="354" width="268" height="40" rx="14" fill="#1c252e" stroke="#2b3742"/>
-            <text x="118" y="379" font-size="15" fill="#dfe8ef">Perfect, thank you!</text>
-          </g>
-        </svg>
-      </div>
-      <div class="proj-body">
-        <div class="proj-top"><span class="proj-name">WhatsApp assistant</span><span class="proj-badge">In daily use</span></div>
-        <p class="proj-desc">Our own WhatsApp line runs on an assistant we built. It answers text, understands and sends voice notes, sends files and hands longer jobs to the rest of the team. We run our own day on it. For clients we set it up on the official WhatsApp Business API, so your number stays safe.</p>
-        <div class="proj-chips">Text · Voice notes · Files · Any AI model</div>
-      </div>
-    </div>
-    <div class="proj flip reveal">
-      <a class="proj-visual" href="https://hendril.dev/acesa/" target="_blank" rel="noopener" aria-label="Open the Acesa showcase">
-        <img src="brand/work/acesa-night.jpg" width="1400" height="970" loading="lazy" alt="The Acesa showcase at dusk: the Maré Alta tower with its available apartments lit in warm light among the Boa Viagem skyline">
-        <span class="cap">Live in the browser · dusk lighting</span>
-      </a>
-      <div class="proj-body">
-        <div class="proj-top"><span class="proj-name">Acesa</span><span class="proj-badge">3D showcase</span></div>
-        <p class="proj-desc">An interactive apartment showcase that runs in the browser, built in partnership with the Kanzen team. We built the furniture, the day and night lighting, the neighbourhood around the building and the guided tour.</p>
-        <div class="shots">
-          <figure><img src="brand/work/acesa-suite.jpg" width="1200" height="789" loading="lazy" alt="Inside the guided tour: the main bedroom with a sea view"><figcaption>Guided tour, main bedroom</figcaption></figure>
-          <figure><img src="brand/work/acesa-balcony.jpg" width="1200" height="789" loading="lazy" alt="Inside the guided tour: the balcony looking over the beach"><figcaption>The balcony, late morning</figcaption></figure>
-        </div>
-        <a class="proj-link" href="https://hendril.dev/acesa/" target="_blank" rel="noopener">Open the showcase <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-
-    <div class="prev">
-      <div class="reveal">
-        <div class="lead-label">Before N6C</div>
-        <h3 class="prev-h">Anderson's <b>previous work.</b></h3>
-        <p class="prev-intro">Before N6C, Anderson was the lead backend engineer at Lucentive (remote, April to September 2026), working across the whole product line: Icarus, which he conceived and built, the Intuitive Agent System (IAS), Aura, Lucentive One, Lucentive Spaces, LucidMatch and Loop. Four of them are below. They were built for Lucentive, not for N6C clients, and everything here is already public on his portfolio.</p>
-      </div>
-      <div class="proj flip reveal">
-        <div class="proj-visual" aria-hidden="true">
-          <div class="g"></div>
-          <svg viewBox="0 0 640 440" fill="none" preserveAspectRatio="xMidYMid meet" font-family="Inter, system-ui, sans-serif">
-            <defs>
-              <radialGradient id="ihalo" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#5b9bc8" stop-opacity="0.16"/><stop offset="1" stop-color="#5b9bc8" stop-opacity="0"/></radialGradient>
-            </defs>
-            <rect width="640" height="440" fill="url(#ihalo)"/>
-            <g stroke="#3a4e60" stroke-width="1.5">
-              <path d="M150 220 H196"/>
-              <path d="M300 220 C320 220 320 120 344 120"/><path d="M300 220 H344"/><path d="M300 220 C320 220 320 320 344 320"/>
-              <path d="M456 120 C476 120 476 190 492 200"/><path d="M456 220 H492"/><path d="M456 320 C476 320 476 250 492 240"/>
-            </g>
-            <g>
-              <rect x="50" y="192" width="100" height="56" rx="12" fill="#1c252e" stroke="#2b3742"/>
-              <text x="100" y="216" font-size="13" fill="#8a99a6" text-anchor="middle">idea</text>
-              <text x="100" y="235" font-size="15" fill="#dfe8ef" text-anchor="middle">Request</text>
-            </g>
-            <g>
-              <rect x="196" y="188" width="104" height="64" rx="12" fill="#2f6f9c"/>
-              <text x="248" y="215" font-size="12.5" fill="#cfe2f0" text-anchor="middle">orchestrator</text>
-              <text x="248" y="236" font-size="15" fill="#ffffff" text-anchor="middle">Icarus</text>
-            </g>
-            <g font-size="14" fill="#dfe8ef" text-anchor="middle">
-              <rect x="344" y="96" width="112" height="48" rx="12" fill="#1c252e" stroke="#2b3742"/><text x="400" y="125">Model A</text>
-              <rect x="344" y="196" width="112" height="48" rx="12" fill="#1c252e" stroke="#2b3742"/><text x="400" y="225">Model B</text>
-              <rect x="344" y="296" width="112" height="48" rx="12" fill="#1c252e" stroke="#2b3742"/><text x="400" y="325">Model C</text>
-            </g>
-            <g>
-              <rect x="492" y="172" width="104" height="96" rx="12" fill="#1c252e" stroke="#2b3742"/>
-              <text x="544" y="198" font-size="14" fill="#dfe8ef" text-anchor="middle">Build</text>
-              <path d="M510 210 H578" stroke="#2b3742"/>
-              <circle cx="520" cy="236" r="9" fill="#7fa8cc"/>
-              <path d="M515.5 236 l3.2 3.2 6-6.4" stroke="#1c252e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="536" y="241" font-size="14" fill="#dfe8ef">Verify</text>
-            </g>
-            <g>
-              <path d="M544 268 V318" stroke="#3a4e60" stroke-width="1.5"/>
-              <rect x="486" y="318" width="116" height="44" rx="12" fill="#2f6f9c"/>
-              <text x="544" y="345" font-size="14" fill="#ffffff" text-anchor="middle">App delivered</text>
-            </g>
-          </svg>
-        </div>
-        <div class="proj-body">
-          <div class="proj-top"><span class="proj-name">Icarus</span><span class="proj-badge">Lucentive · 2026</span></div>
-          <p class="proj-desc">An AI platform that generates complete applications. The idea and the build are Anderson's, in partnership with the Lucentive team. He built its core: orchestration that works with models from different providers, and build and verify gates, so whatever the models generate is checked before it's delivered. The repository history backs this up: Anderson made its first commit on 29 May 2026 and wrote 72 of its 74 commits.</p>
-          <div class="proj-chips">Lead backend engineer · Multi-model orchestration · LLM systems · Quality gates</div>
-        </div>
-      </div>
-      <div class="stance more">
-        <div class="s reveal"><h3>Aura · Agent-to-agent client</h3><p>Lets AI agents find each other, prove who they are and talk over a live stream. Anderson built the signed discovery, the JWS and JWKS checks that refuse anything they can't verify, and JSON-RPC over SSE. The protocol checks are covered by 33 adversarial tests.</p><div class="chips">TypeScript · JWS / JWKS · JSON-RPC · SSE</div></div>
-        <div class="s reveal"><h3>Lucentive One · Identity</h3><p>The identity provider for Lucentive's family of apps, which Anderson designed: one sign-in across all of them with OIDC, and passwordless login with passkeys.</p><div class="chips">OIDC · SSO · WebAuthn · Passkeys</div></div>
-        <div class="s reveal"><h3>Lucentive Loop · Campaigns</h3><p>AI-assisted campaign production, from the brief through content generation, review and approval to social publishing. Anderson worked on the pipeline, where preview and dry-run modes keep a generated draft apart from what actually goes live.</p><div class="chips">TypeScript · Next.js · AI orchestration</div></div>
-      </div>
-      <div class="sub-label reveal">Other engineering</div>
-      <div class="stance more">
-        <div class="s reveal"><h3>TagSmith · macOS app</h3><p>A native editor for media metadata that never re-encodes the file. It plans each write for the format, protects the audio, video or image data and reads the result back to check it, updating in place where the container allows and rebuilding the file atomically where it doesn't.</p><div class="chips">Swift · macOS · Binary formats</div></div>
-        <div class="s reveal"><h3>LucidMatch · Web product</h3><p>An AI-assisted coach for dating profiles: photos, profile prompts and practical next steps. Anderson worked on the web product and its AI workflows, including the frontend and the sign-in, data and payment integrations. It started out as UpMatch.</p><div class="chips">JavaScript · TypeScript · Supabase</div></div>
-        <div class="s reveal"><h3>Lua · Voice assistant</h3><p>A private voice assistant for the Mac. The language model and the text-to-speech both run on the machine itself, offline.</p><div class="chips">Local LLM · Text-to-speech · macOS</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap reveal">
-    <div class="lead-label" style="text-align:center">Contact</div>
-    <h2>What's costing you time or money?</h2>
-    <p>A few lines are enough: what happens today, and what you'd like to stop doing. We reply in writing with what we'd build and what it costs, in English or Portuguese.</p>
-    <a class="btn btn-p" href="mailto:hello@n6c.org">hello@n6c.org</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-b">
-        <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <polygon points="20,4 33.86,12 33.86,28 20,36 6.14,28 6.14,12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="20" cy="4" r="1.7"/><circle cx="33.86" cy="12" r="1.7"/><circle cx="33.86" cy="28" r="1.7"/><circle cx="20" cy="36" r="1.7"/><circle cx="6.14" cy="28" r="1.7"/><circle cx="6.14" cy="12" r="1.7"/></g>
-          <circle cx="20" cy="20" r="3" fill="var(--accent)"/>
-        </svg>
-        <p>A small engineering team led by Anderson Silva. Some of our teammates are AI, and we say so.</p>
-      </div>
-      <div class="foot-col"><h4>Navigate</h4><a href="#services">Services</a><a href="#how">How we work</a><a href="#work">Work</a><a href="team.html">Team</a><a href="#contact">Contact</a></div>
-      <div class="foot-col"><h4>Node-Six Cybernetics</h4><address>Paju tn 1a<br>50603 Tartu, Tartu Maakond<br>Estonia<br><br><a href="mailto:hello@n6c.org">hello@n6c.org</a></address></div>
-    </div>
-    <div class="foot-bot">
-      <span>© 2026 Node-Six Cybernetics · Tartu, Estonia</span>
-      <span>Assistants · Software · 3D · Security reviews</span>
-    </div>
-  </div>
-</footer>
-
-<div class="langhint" id="langhint" lang="pt-BR" role="region" aria-label="Versão em português" hidden><div class="wrap"><div class="row"><span>Prefere ler em português?</span><a href="/pt/" hreflang="pt-BR"><span aria-hidden="true">🇧🇷</span> Ver o site em português</a></div><button type="button" aria-label="Fechar">×</button></div></div>
-
-<div class="tourctl" id="tourctl">
-  <button class="tc-btn" id="tcUp" aria-label="Previous section"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></button>
-  <button class="tc-btn" id="tcDown" aria-label="Next section"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="sec-h"><p class="label">Demonstrações</p><h2 id="dm-h" class="h2">Dois trabalhos completos, com dados inventados para você poder ver tudo.</h2></div>
+    <div class="demo-head"><span class="svc-n">Demonstração 01</span><h3 class="h2s">Espelho de vendas do Vale do Araçá</h3></div>
+    <div class="cmp" data-cmp style="--p:50%">
+  <div class="cmp-model"><img class="" src="/assets/img/maq-light-top-1900.webp" srcset="/assets/img/maq-light-top-950.webp 950w, /assets/img/maq-light-top-1900.webp 1900w" sizes="100vw" alt="" width=1900 height=1720 loading=lazy decoding=async></div>
+  <div class="cmp-draw"><svg viewBox="-10.0 -2.0 380.0 344.0" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="-10.0" y="-2.0" width="380.0" height="344.0" fill="#fbfaf7"/><g stroke="#b9c4b2" stroke-width=".25" opacity=".55"><line x1="0" y1="-2.0" x2="0" y2="342.0"/><line x1="50" y1="-2.0" x2="50" y2="342.0"/><line x1="100" y1="-2.0" x2="100" y2="342.0"/><line x1="150" y1="-2.0" x2="150" y2="342.0"/><line x1="200" y1="-2.0" x2="200" y2="342.0"/><line x1="250" y1="-2.0" x2="250" y2="342.0"/><line x1="300" y1="-2.0" x2="300" y2="342.0"/><line x1="350" y1="-2.0" x2="350" y2="342.0"/><line x1="-10.0" y1="0" x2="370.0" y2="0"/><line x1="-10.0" y1="50" x2="370.0" y2="50"/><line x1="-10.0" y1="100" x2="370.0" y2="100"/><line x1="-10.0" y1="150" x2="370.0" y2="150"/><line x1="-10.0" y1="200" x2="370.0" y2="200"/><line x1="-10.0" y1="250" x2="370.0" y2="250"/><line x1="-10.0" y1="300" x2="370.0" y2="300"/></g><g fill="none" stroke="#b9c4b2" stroke-width=".35"><polyline points="362.0,308.7 346.7,311.0 343.4,312.0 341.5,313.0 340.9,314.0 341.3,315.0 344.1,317.0 362.0,324.3" stroke-width="0.3"/><polyline points="362.0,303.7 331.0,305.6 300.0,309.7 286.0,311.0 274.0,311.3 254.0,310.5 248.0,310.6 245.0,311.3 244.1,312.0 244.0,313.0 244.7,314.0 247.0,316.0 254.5,320.0 263.0,322.9 271.0,324.3 277.0,324.8 284.0,324.7 307.0,322.6 316.0,322.2 326.0,322.6 335.0,324.0 345.0,326.6 353.6,330.0 358.8,333.0 361.0,335.0 362.0,336.4" stroke-width="0.3"/><polyline points="362.0,341.2 360.9,343.0 358.1,346.0 349.8,352.0" stroke-width="0.3"/><polyline points="240.9,352.0 231.0,351.0 222.0,350.7 213.0,351.1 204.9,352.0" stroke-width="0.3"/><polyline points="362.0,299.1 330.0,300.7 294.0,305.1 280.0,306.1 263.0,305.5 229.0,301.9 220.0,301.9 212.8,303.0 210.2,304.0 209.1,305.0 209.1,306.0 209.9,307.0 212.8,309.0 231.0,319.0 244.0,327.0 251.3,332.0 253.2,334.0 253.3,335.0 252.0,336.0 247.0,336.9 218.0,338.3 209.0,339.2 200.0,340.7 191.0,342.8 183.0,345.4 175.0,348.5 167.6,352.0" stroke-width="0.3"/><polyline points="308.1,332.0 318.0,331.8 325.8,333.0 330.1,335.0 331.1,336.0 331.5,338.0 331.0,339.1 329.1,341.0 323.0,343.9 315.0,345.8 307.0,346.4 298.0,345.9 287.9,344.0 280.1,341.0 278.8,340.0 278.5,339.0 279.4,338.0 285.5,336.0 300.0,333.1 308.1,332.0" stroke-width="0.3"/><polyline points="362.0,293.5 330.0,295.9 293.0,300.7 277.0,301.8 260.0,301.0 224.0,296.7 215.0,296.2 206.0,296.4 196.0,297.3 184.4,299.0 169.3,302.0 156.8,305.0 148.4,308.0 147.2,309.0 146.7,310.0 147.1,311.0 148.2,312.0 151.0,313.3 159.0,315.2 168.0,316.0 187.0,316.6 195.0,317.7 199.0,318.9 201.2,320.0 202.5,321.0 203.1,322.0 203.2,323.0 201.5,325.0 197.6,327.0 178.0,334.3 166.0,339.8 156.0,345.3 145.5,352.0" stroke-width="0.3"/><polyline points="362.0,284.1 296.4,295.0 278.0,296.9 269.0,297.1 259.0,296.6 219.0,292.3 209.0,292.1 198.0,292.7 182.0,294.7 122.0,305.0 118.9,306.0 117.0,307.0 116.0,308.0 115.9,309.0 117.5,311.0 125.1,315.0 146.7,324.0 149.7,326.0 150.7,327.0 151.5,329.0 150.5,332.0 146.7,336.0 125.8,352.0" stroke-width="0.6"/><polyline points="362.0,266.0 353.0,267.9 344.0,270.4 314.9,281.0 302.4,285.0 291.0,287.9 282.0,289.6 271.0,290.9 260.0,291.3 249.0,290.9 216.0,288.4 205.0,288.4 194.0,289.2 183.0,290.7 149.0,296.3 111.0,300.0 99.0,301.8 89.3,304.0 79.7,307.0 71.9,310.0 65.9,313.0 65.6,314.0 67.0,314.2 88.0,314.3 95.0,315.0 102.0,316.3 109.0,318.2 116.5,321.0 121.0,323.2 124.9,326.0 126.5,328.0 127.1,330.0 126.9,332.0 125.3,335.0 119.3,341.0 105.2,352.0" stroke-width="0.3"/><polyline points="362.0,246.6 354.0,247.1 347.0,248.1 340.0,249.7 333.0,251.9 320.9,257.0 295.9,270.0 284.0,275.6 271.9,280.0 259.6,283.0 252.0,284.0 244.0,284.5 214.0,284.2 199.0,284.8 185.0,286.5 146.0,292.6 102.0,296.2 85.6,299.0 51.0,308.2 36.0,310.8 28.0,311.4 20.0,311.4 -2.0,309.5" stroke-width="0.3"/><polyline points="-2.0,325.9 7.0,328.5 15.0,330.1 22.0,330.9 30.0,331.0 43.0,329.6 72.0,323.7 79.0,323.0 85.0,322.8 90.0,323.2 95.0,324.2 99.7,326.0 102.4,328.0 103.4,330.0 103.4,332.0 102.6,334.0 100.2,337.0 95.5,341.0 90.0,345.0 77.8,352.0" stroke-width="0.3"/><polyline points="362.0,228.4 353.0,228.2 344.0,229.0 335.0,230.9 327.0,233.5 320.0,236.6 313.0,240.2 285.0,257.4 271.2,265.0 255.0,271.9 240.8,276.0 228.0,277.9 194.0,280.7 145.0,288.1 109.0,290.9 96.0,292.4 80.0,295.6 50.0,303.6 36.6,306.0 28.0,306.7 20.0,306.7 11.0,306.1 -2.0,304.7" stroke-width="0.3"/><polyline points="362.0,211.6 351.0,211.0 341.0,211.8 331.0,213.9 322.0,217.2 314.0,221.0 306.0,225.7 276.4,246.0 261.5,255.0 253.0,259.2 244.0,263.1 235.0,266.3 225.6,269.0 210.3,272.0 151.1,281.0 134.9,283.0 107.0,285.6 94.0,287.4 80.0,290.4 50.0,298.7 37.0,301.2 28.8,302.0 20.0,302.2 11.0,301.8 -2.0,300.5" stroke-width="0.3"/><polyline points="362.0,196.1 350.0,195.3 339.0,196.2 328.0,198.6 318.0,202.4 310.0,206.4 301.0,212.0 269.0,235.5 254.0,245.1 245.0,249.9 236.0,253.9 227.0,257.3 217.0,260.4 202.0,263.9 184.0,267.1 164.0,269.7 120.0,274.8 98.0,278.2 80.0,282.5 49.5,292.0 36.0,295.1 28.0,296.1 19.0,296.7 10.0,296.6 -2.0,295.9" stroke-width="0.6"/><polyline points="362.0,181.6 349.0,180.9 337.0,182.0 325.0,184.9 314.0,189.1 305.0,193.9 295.0,200.3 263.0,224.9 249.0,234.4 241.0,239.0 232.0,243.4 223.0,247.1 214.0,250.0 196.0,254.4 175.0,257.3 154.0,258.7 112.0,259.7 101.0,260.6 92.0,262.0 82.0,264.3 72.0,267.6 41.0,280.9 29.0,285.2 22.0,287.0 14.0,288.5 -2.0,289.8" stroke-width="0.3"/><polyline points="362.0,167.9 348.0,167.6 335.0,169.0 322.0,172.2 310.0,177.0 300.0,182.4 290.0,189.0 257.0,214.9 243.0,224.7 235.0,229.4 227.0,233.4 219.0,236.7 211.0,239.4 201.0,242.1 190.0,244.2 179.0,245.5 168.0,246.1 157.0,246.1 146.0,245.7 113.0,242.6 102.0,242.0 91.0,242.2 81.0,243.4 71.0,245.9 61.0,249.7 52.0,254.1 30.4,266.0 20.0,271.3 9.0,276.0 -2.0,279.6" stroke-width="0.3"/><polyline points="362.0,154.9 347.0,155.0 333.0,156.8 319.0,160.4 306.0,165.6 296.0,171.0 285.0,178.2 275.0,185.8 251.3,205.0 238.0,214.4 230.2,219.0 223.0,222.7 216.0,225.7 208.0,228.5 198.0,231.1 188.0,232.8 177.0,233.8 166.0,233.9 156.0,233.3 145.0,232.0 112.0,226.0 100.0,224.3 88.0,223.8 77.0,224.9 71.0,226.2 65.0,228.0 53.0,233.3 43.0,239.0 15.0,256.8 6.0,261.7 -2.0,265.6" stroke-width="0.3"/><polyline points="362.0,142.4 346.0,143.1 330.0,145.5 315.0,149.6 301.6,155.0 291.0,160.6 279.6,168.0 269.0,176.0 246.0,194.6 233.0,203.8 226.0,208.0 219.0,211.6 212.0,214.6 204.9,217.0 196.0,219.3 186.0,220.8 176.0,221.4 166.0,221.2 156.0,220.1 146.0,218.4 113.0,210.3 101.0,208.0 88.0,207.0 81.0,207.2 75.0,208.0 68.0,209.5 62.0,211.4 55.0,214.3 48.0,217.8 36.0,225.3 9.6,244.0 -2.0,251.2" stroke-width="0.3"/><polyline points="362.0,130.4 343.0,132.0 326.0,135.0 311.0,139.1 296.3,145.0 285.0,150.9 274.0,158.0 264.0,165.4 240.0,184.3 228.0,192.7 215.0,199.8 209.0,202.3 202.0,204.7 194.0,206.7 185.0,208.0 176.0,208.3 167.0,207.9 158.0,206.7 149.0,204.9 116.0,195.9 103.0,193.1 95.0,192.0 88.0,191.6 81.0,191.8 74.0,192.6 66.0,194.3 59.0,196.5 52.0,199.5 44.0,203.7 31.0,212.1 8.0,229.6 -2.0,236.7" stroke-width="0.6"/><polyline points="362.0,118.6 340.0,121.3 322.0,124.8 306.0,129.3 291.2,135.0 279.2,141.0 267.9,148.0 257.0,155.8 235.0,172.6 223.0,180.7 211.0,187.1 199.0,191.4 192.0,193.1 184.0,194.1 176.0,194.4 168.0,193.9 160.0,192.8 151.3,191.0 119.0,182.0 105.0,179.0 97.0,178.0 89.0,177.5 81.0,177.7 74.0,178.4 65.0,180.3 57.0,182.7 49.0,186.1 41.0,190.2 34.0,194.6 26.0,200.2 -2.0,222.1" stroke-width="0.3"/><polyline points="362.0,107.0 336.0,111.2 317.0,115.0 300.0,119.7 285.0,125.2 273.0,130.9 261.0,137.8 251.0,144.5 229.0,160.4 218.0,167.4 207.0,173.0 197.0,176.5 190.0,178.1 183.0,179.0 176.0,179.3 169.0,178.9 154.0,176.6 122.0,168.5 106.0,165.4 97.0,164.5 89.0,164.2 81.0,164.5 73.0,165.5 64.0,167.3 55.0,170.0 46.0,173.7 38.0,177.8 30.0,182.7 22.0,188.3 -2.0,207.5" stroke-width="0.3"/><polyline points="362.0,95.5 308.0,106.2 292.0,110.4 278.4,115.0 266.0,120.3 254.0,126.6 243.5,133.0 222.0,147.2 211.0,153.5 200.0,158.3 189.0,161.4 177.0,162.7 164.0,162.2 152.0,160.4 119.0,153.9 109.0,152.5 99.0,151.8 89.0,151.7 79.0,152.3 70.0,153.6 61.0,155.6 53.1,158.0 46.0,160.7 38.8,164.0 31.0,168.3 16.5,178.0 -2.0,192.8" stroke-width="0.3"/><polyline points="362.0,83.9 342.0,88.6 293.0,98.3 280.0,101.5 268.5,105.0 257.0,109.3 245.0,114.7 214.0,132.0 205.0,136.6 195.0,140.6 185.0,143.2 174.0,144.6 162.0,144.7 151.0,143.8 119.0,140.2 98.0,139.4 88.0,139.7 78.0,140.7 68.0,142.3 59.0,144.3 44.0,149.2 36.0,152.7 29.0,156.3 15.0,165.0 -2.0,178.1" stroke-width="0.3"/><polyline points="362.0,72.3 349.0,76.1 334.0,79.5 276.0,89.4 264.0,91.9 253.0,94.7 242.4,98.0 232.0,102.0 204.0,114.9 194.4,119.0 185.0,122.2 176.0,124.4 166.0,125.9 155.0,126.7 113.0,126.9 94.0,127.7 75.0,129.8 58.0,133.1 42.0,138.0 27.0,144.5 13.0,152.6 -2.0,163.3" stroke-width="0.6"/><polyline points="362.0,60.5 353.0,63.7 343.0,66.6 322.0,71.0 300.0,73.9 253.0,78.4 242.0,80.0 232.1,82.0 223.0,84.4 213.0,87.8 185.0,99.4 175.0,103.1 165.0,106.2 154.0,108.8 135.0,111.8 83.0,117.5 69.0,119.8 56.0,122.5 40.0,127.1 25.0,132.9 11.2,140.0 -2.0,148.4" stroke-width="0.3"/><polyline points="362.0,48.4 351.0,52.8 339.0,56.4 326.0,59.3 313.0,61.2 300.0,62.3 287.0,62.7 237.0,62.3 225.0,63.2 214.9,65.0 207.0,67.2 198.0,70.4 163.0,86.9 154.0,90.6 144.1,94.0 133.0,97.2 120.6,100.0 67.0,109.4 43.0,114.8 30.0,118.8 19.0,122.9 8.0,128.0 -2.0,133.5" stroke-width="0.3"/><polyline points="362.0,35.9 350.0,41.3 337.0,45.5 323.0,48.4 309.0,50.0 296.0,50.3 282.0,49.7 269.0,48.4 243.0,45.0 231.0,44.0 219.0,44.2 208.0,45.9 199.0,48.5 189.0,52.7 180.0,57.4 159.0,69.7 149.2,75.0 138.0,80.3 126.0,84.9 114.0,88.6 100.0,92.2 51.0,101.9 32.0,106.4 14.0,111.9 -2.0,118.6" stroke-width="0.3"/><polyline points="362.0,22.9 349.0,29.3 336.0,33.8 322.0,36.8 308.0,38.0 295.0,37.8 282.0,36.4 269.0,34.2 242.0,28.4 230.0,26.7 217.0,26.3 211.0,26.8 205.0,27.9 195.0,30.8 184.0,35.7 173.0,42.1 150.7,57.0 139.3,64.0 126.0,70.9 113.0,76.3 101.0,80.2 87.0,83.9 71.0,87.4 25.0,96.2 11.0,99.6 -2.0,103.6" stroke-width="0.3"/><polyline points="362.0,9.2 349.0,16.2 336.0,21.2 323.0,24.2 309.0,25.4 297.0,24.9 284.0,23.1 272.0,20.5 244.0,13.2 231.0,10.7 224.0,10.1 217.0,9.9 210.0,10.4 203.0,11.6 197.0,13.1 191.0,15.2 179.0,20.9 167.0,28.5 142.9,46.0 130.8,54.0 117.0,61.6 103.0,67.6 87.0,72.8 68.0,77.3 53.0,80.0 14.0,85.8 -2.0,88.6" stroke-width="0.6"/><polyline points="196.5,-2.0 185.0,2.1 173.0,8.4 161.0,16.4 136.0,35.6 124.0,44.0 110.2,52.0 96.0,58.4 87.0,61.5 77.0,64.4 67.0,66.6 56.0,68.6 33.0,71.3 -2.0,73.7" stroke-width="0.3"/><polyline points="356.7,-2.0 345.0,4.2 333.0,8.6 321.0,11.2 309.0,12.0 297.0,11.3 285.0,9.3 243.1,-2.0" stroke-width="0.3"/><polyline points="165.8,-2.0 155.0,5.6 129.2,26.0 117.0,34.8 110.0,39.1 102.0,43.5 87.0,49.9 78.0,52.8 68.0,55.3 58.0,57.2 47.0,58.5 36.0,59.3 25.0,59.6 -2.0,58.7" stroke-width="0.3"/><polyline points="145.7,-2.0 122.0,17.1 108.0,27.0 101.0,31.2 93.0,35.3 85.0,38.7 77.0,41.4 69.0,43.6 60.0,45.4 51.0,46.6 41.0,47.2 31.0,47.2 21.0,46.7 -2.0,43.8" stroke-width="0.3"/><polyline points="127.7,-2.0 111.0,11.1 97.0,20.2 90.0,23.9 83.0,27.0 76.0,29.5 68.0,31.8 60.0,33.4 52.0,34.4 44.0,34.9 36.0,34.8 19.0,33.2 -2.0,28.9" stroke-width="0.3"/><polyline points="109.1,-2.0 96.0,6.9 84.0,13.4 71.0,18.2 58.0,21.1 45.0,22.1 31.0,21.4 16.0,18.8 -2.0,14.1" stroke-width="0.6"/><polyline points="86.2,-2.0 77.0,2.3 67.0,5.7 57.0,7.7 47.0,8.5 37.0,8.2 26.0,6.7 14.0,4.0 -2.0,-0.6" stroke-width="0.3"/></g><g fill="none" stroke="#7d8794" stroke-width=".45"><polygon points="6.0,256.3 26.0,257.4 43.0,257.9 60.0,258.0 69.0,257.8 78.0,257.5 93.0,256.8 109.0,255.7 124.0,254.4 161.0,251.1 181.0,249.6 191.0,249.0 201.0,248.5 211.0,248.2 220.0,248.0 230.0,248.0 240.0,248.2 250.0,248.5 261.0,249.0 272.0,249.6 284.0,250.5 314.0,253.1 314.0,43.7 314.1,42.9 314.3,41.7 315.0,40.3 315.8,39.4 316.4,38.9 317.4,38.3 318.2,38.0 318.9,37.8 320.0,37.7 341.5,39.5 358.6,40.7 374.7,41.5 389.9,41.9 390.1,27.9 381.2,27.7 371.3,27.4 361.4,26.9 350.5,26.2 331.6,24.7 289.6,20.9 268.4,19.4 250.3,18.5 233.1,18.0 221.9,18.0 209.8,18.2 198.7,18.6 186.6,19.2 175.5,20.0 163.4,20.9 120.4,24.7 102.5,26.1 83.7,27.3 74.8,27.6 65.9,27.9 55.0,28.0 45.1,27.9 34.2,27.7 23.3,27.3 12.4,26.7 0.5,25.8 -29.4,23.3 -30.6,37.2 -10.0,39.0 6.0,40.3"/><polygon points="226.0,82.0 226.0,82.0 226.0,82.0"/><polygon points="53.0,42.0 53.0,42.0 53.0,42.0"/><polygon points="226.0,156.0 226.0,156.0 226.0,156.0"/><polygon points="53.0,106.0 53.0,106.0 53.0,106.0"/><polygon points="53.0,180.0 53.0,180.0 53.0,180.0"/><polygon points="226.0,234.0 226.0,234.0 226.0,234.0"/></g><polyline points="-10.0,312.2 -7.0,312.8 -4.0,313.5 -1.0,314.1 2.0,314.8 5.0,315.4 8.0,316.0 11.0,316.5 14.0,316.9 17.0,317.3 20.0,317.6 23.0,317.8 26.0,317.9 29.0,317.9 32.0,317.9 35.0,317.7 38.0,317.4 41.0,317.1 44.0,316.6 47.0,316.1 50.0,315.5 53.0,314.9 56.0,314.2 59.0,313.5 62.0,312.7 65.0,312.0 68.0,311.2 71.0,310.5 74.0,309.8 77.0,309.2 80.0,308.6 83.0,308.0 86.0,307.5 89.0,307.1 92.0,306.8 95.0,306.5 98.0,306.3 101.0,306.2 104.0,306.1 107.0,306.1 110.0,306.1 113.0,306.2 116.0,306.3 119.0,306.4 122.0,306.5 125.0,306.7 128.0,306.8 131.0,306.9 134.0,307.0 137.0,307.0 140.0,307.0 143.0,307.0 146.0,306.9 149.0,306.8 152.0,306.6 155.0,306.3 158.0,306.0 161.0,305.6 164.0,305.3 167.0,304.8 170.0,304.4 173.0,303.9 176.0,303.5 179.0,303.1 182.0,302.6 185.0,302.3 188.0,301.9 191.0,301.6 194.0,301.4 197.0,301.3 200.0,301.2 203.0,301.2 206.0,301.4 209.0,301.6 212.0,301.9 215.0,302.3 218.0,302.7 221.0,303.3 224.0,303.9 227.0,304.6 230.0,305.4 233.0,306.2 236.0,307.0 239.0,307.8 242.0,308.7 245.0,309.5 248.0,310.3 251.0,311.1 254.0,311.8 257.0,312.5 260.0,313.1 263.0,313.6 266.0,314.1 269.0,314.5 272.0,314.7 275.0,314.9 278.0,315.1 281.0,315.1 284.0,315.1 287.0,315.0 290.0,314.8 293.0,314.6 296.0,314.4 299.0,314.1 302.0,313.8 305.0,313.5 308.0,313.2 311.0,312.9 314.0,312.7 317.0,312.4 320.0,312.3 323.0,312.1 326.0,312.0 329.0,312.0 332.0,312.0 335.0,312.0 338.0,312.1 341.0,312.3 344.0,312.5 347.0,312.7 350.0,312.9 353.0,313.1 356.0,313.4 359.0,313.6 362.0,313.8 365.0,314.0 368.0,314.2" fill="none" stroke="#3567e0" stroke-width=".9" stroke-dasharray="4 2"/><polygon points="6.0,40.3 16.0,40.9 25.0,41.3 34.0,41.7 42.0,41.9 51.0,42.0 59.0,42.0 68.0,41.8 77.0,41.5 84.0,41.2 92.0,40.8 100.0,40.3 108.0,39.7 116.0,39.1 124.0,38.4 151.0,36.0 162.0,35.0 173.0,34.2 183.0,33.5 194.0,32.8 200.0,32.6 205.0,32.4 211.0,32.2 216.0,32.1 221.0,32.0 226.0,32.0 231.0,32.0 237.0,32.1 242.0,32.2 248.0,32.4 253.0,32.6 259.0,32.9 265.0,33.2 271.0,33.6 280.0,34.2 289.0,34.9 300.0,35.9 323.0,37.9 333.0,38.8 344.0,39.7 354.0,40.4 354.0,313.2 345.0,312.5 339.0,312.2 336.0,312.1 333.0,312.0 330.0,312.0 327.0,312.0 322.0,312.2 319.0,312.3 316.0,312.5 310.0,313.0 296.0,314.4 292.0,314.7 288.0,314.9 284.0,315.1 280.0,315.1 276.0,315.0 272.0,314.7 268.0,314.3 264.0,313.8 260.0,313.1 256.0,312.3 252.0,311.3 248.0,310.3 234.0,306.4 229.0,305.1 224.0,303.9 220.0,303.1 217.0,302.6 215.0,302.3 212.0,301.9 210.0,301.7 207.0,301.4 205.0,301.3 203.0,301.2 200.0,301.2 197.0,301.3 194.0,301.4 191.0,301.6 187.0,302.0 184.0,302.4 180.0,302.9 167.0,304.8 161.0,305.6 157.0,306.1 154.0,306.4 151.0,306.6 148.0,306.8 145.0,306.9 142.0,307.0 139.0,307.1 135.0,307.0 129.0,306.8 114.0,306.2 110.0,306.1 107.0,306.1 103.0,306.1 99.0,306.2 95.0,306.5 92.0,306.8 89.0,307.1 85.0,307.7 81.0,308.4 77.0,309.2 74.0,309.8 70.0,310.8 59.0,313.5 55.0,314.4 51.0,315.3 48.0,315.9 44.0,316.6 41.0,317.1 38.0,317.4 35.0,317.7 33.0,317.8 31.0,317.9 28.0,317.9 25.0,317.9 23.0,317.8 21.0,317.7 18.0,317.4 14.0,316.9 10.0,316.3 6.0,315.6" fill="none" stroke="#b5562e" stroke-width=".8" stroke-dasharray="6 2 1 2"/><g fill="none" stroke="#3567e0" stroke-width=".7"><polygon points="26.3,41.4 25.5,41.4 25.1,41.5 24.7,41.5 24.0,41.8 23.6,41.9 22.9,42.2 22.6,42.5 22.0,42.9 21.7,43.2 21.2,43.8 20.8,44.4 20.6,44.8 20.3,45.5 20.2,45.9 20.1,46.2 20.0,47.0 20.0,85.8 20.1,86.6 20.3,87.3 20.6,88.1 20.8,88.4 21.3,89.1 21.8,89.7 22.4,90.2 23.1,90.6 23.4,90.8 24.2,91.1 24.9,91.3 25.7,91.4 32.0,91.6 39.0,91.8 45.0,91.9 50.0,92.0 55.0,92.0 60.0,92.0 69.0,91.8 79.0,91.5 89.0,91.0 100.0,90.3 109.0,89.7 119.0,88.8 131.0,87.8 144.9,86.5 145.7,86.3 146.4,86.1 147.1,85.7 147.4,85.5 148.0,85.0 148.6,84.5 149.0,83.9 149.4,83.2 149.7,82.5 149.9,81.7 149.9,81.4 150.0,80.6 150.0,42.2 149.9,41.9 149.8,41.1 149.5,40.3 149.2,39.6 148.7,38.9 148.5,38.6 147.9,38.1 147.3,37.6 146.6,37.2 145.8,36.9 145.4,36.8 144.7,36.7 144.2,36.6 143.5,36.7 121.0,38.7 113.0,39.3 105.0,40.0 98.0,40.4 91.0,40.9 84.0,41.2 77.0,41.5 70.0,41.8 64.0,41.9 58.0,42.0 52.0,42.0 46.0,42.0 39.0,41.8 33.0,41.7"/><polygon points="182.0,33.5 173.2,34.2 172.4,34.3 171.7,34.6 171.0,34.9 170.6,35.1 170.3,35.4 169.7,35.9 169.2,36.5 168.8,37.1 168.6,37.5 168.4,37.8 168.2,38.6 168.1,38.9 168.0,39.7 168.0,78.5 168.1,79.2 168.3,80.0 168.6,80.7 169.0,81.4 169.5,82.0 170.1,82.6 170.4,82.8 171.0,83.3 171.7,83.6 172.5,83.9 172.9,84.0 173.7,84.1 174.0,84.1 183.0,83.5 191.0,83.0 199.0,82.6 206.0,82.3 214.0,82.1 221.0,82.0 228.0,82.0 235.0,82.1 241.0,82.2 248.0,82.4 255.0,82.7 262.0,83.0 268.0,83.4 275.0,83.8 284.0,84.5 293.5,85.3 294.3,85.3 295.1,85.2 295.8,85.0 296.6,84.7 296.9,84.6 297.6,84.1 298.2,83.6 298.7,83.0 299.2,82.3 299.5,81.6 299.7,81.3 299.8,80.9 299.9,80.1 300.0,79.3 300.0,41.0 299.9,40.2 299.7,39.5 299.4,38.8 299.2,38.4 298.8,37.8 298.3,37.2 297.7,36.6 297.4,36.4 296.7,36.0 296.0,35.7 295.3,35.5 294.5,35.4 287.0,34.8 276.0,33.9 265.0,33.2 257.0,32.8 249.0,32.4 241.0,32.2 234.0,32.0 227.0,32.0 220.0,32.0 213.0,32.1 205.0,32.4 198.0,32.6 190.0,33.0"/><polygon points="26.3,105.4 25.5,105.4 25.1,105.5 24.3,105.6 24.0,105.8 23.3,106.1 22.9,106.2 22.6,106.5 22.0,106.9 21.4,107.5 21.2,107.8 21.0,108.1 20.6,108.8 20.4,109.1 20.2,109.9 20.1,110.2 20.0,111.0 20.0,159.8 20.1,160.6 20.3,161.3 20.6,162.1 21.0,162.8 21.5,163.4 22.1,163.9 22.7,164.4 23.1,164.6 23.8,165.0 24.6,165.2 24.9,165.3 25.7,165.4 34.0,165.7 40.0,165.8 46.0,165.9 52.0,166.0 57.0,166.0 66.0,165.9 76.0,165.6 86.0,165.2 97.0,164.5 107.0,163.8 117.0,163.0 129.0,162.0 144.9,160.5 145.7,160.3 146.4,160.1 147.1,159.7 147.7,159.3 148.3,158.8 148.8,158.2 149.2,157.6 149.6,156.8 149.7,156.5 149.9,155.7 150.0,155.0 150.0,154.6 150.0,106.2 149.9,105.5 149.7,104.7 149.4,104.0 149.0,103.3 148.5,102.6 147.9,102.1 147.3,101.6 146.9,101.4 146.2,101.1 145.8,100.9 145.1,100.7 144.2,100.7 143.5,100.7 121.0,102.7 113.0,103.3 105.0,104.0 97.0,104.5 90.0,104.9 83.0,105.3 76.0,105.6 69.0,105.8 63.0,105.9 57.0,106.0 51.0,106.0 45.0,105.9 39.0,105.8 33.0,105.7"/><polygon points="173.6,98.1 172.8,98.2 172.4,98.3 172.0,98.4 171.3,98.7 171.0,98.9 170.3,99.4 169.7,99.9 169.2,100.5 169.0,100.8 168.6,101.5 168.4,101.8 168.2,102.6 168.1,102.9 168.0,103.7 168.0,152.5 168.1,153.2 168.3,154.0 168.6,154.7 169.0,155.4 169.5,156.0 170.1,156.6 170.7,157.1 171.4,157.5 172.1,157.8 172.9,158.0 173.7,158.1 174.0,158.1 183.0,157.5 191.0,157.0 199.0,156.6 206.0,156.3 214.0,156.1 221.0,156.0 228.0,156.0 235.0,156.1 241.0,156.2 248.0,156.4 255.0,156.7 262.0,157.0 268.0,157.4 275.0,157.8 284.0,158.5 293.5,159.3 294.3,159.3 295.1,159.2 295.8,159.0 296.6,158.7 297.3,158.3 297.9,157.9 298.5,157.3 299.0,156.7 299.4,156.0 299.5,155.6 299.7,155.3 299.9,154.5 299.9,154.1 300.0,153.3 300.0,105.0 299.9,104.2 299.7,103.5 299.4,102.8 299.0,102.1 298.6,101.5 298.3,101.2 297.7,100.7 297.1,100.2 296.4,99.9 296.0,99.7 295.3,99.5 294.5,99.4 280.0,98.2 273.0,97.7 267.0,97.3 259.0,96.9 251.0,96.5 243.0,96.2 235.0,96.1 227.0,96.0 220.0,96.0 213.0,96.1 205.0,96.4 198.0,96.6 190.0,97.0 182.0,97.5"/><polygon points="33.0,179.7 25.9,179.4 25.1,179.5 24.3,179.6 24.0,179.8 23.3,180.1 22.9,180.2 22.6,180.5 22.0,180.9 21.4,181.5 21.2,181.8 20.8,182.4 20.6,182.8 20.4,183.1 20.2,183.9 20.1,184.6 20.0,185.0 20.0,237.8 20.1,238.6 20.3,239.3 20.6,240.1 21.0,240.8 21.5,241.4 22.1,241.9 22.7,242.4 23.4,242.8 24.2,243.1 24.9,243.3 25.3,243.3 29.0,243.5 36.0,243.8 42.0,243.9 48.0,244.0 54.0,244.0 63.0,243.9 73.0,243.7 83.0,243.3 93.0,242.8 104.0,242.0 115.0,241.2 128.0,240.1 144.9,238.5 145.7,238.3 146.4,238.1 147.1,237.7 147.4,237.5 148.0,237.1 148.6,236.5 149.0,235.9 149.4,235.2 149.7,234.5 149.8,234.1 149.9,233.4 150.0,232.6 150.0,180.2 149.9,179.4 149.7,178.7 149.4,177.9 149.0,177.3 148.5,176.6 147.9,176.1 147.3,175.6 146.6,175.2 145.8,174.9 145.1,174.7 144.2,174.7 143.5,174.7 120.0,176.8 112.0,177.4 104.0,178.0 96.0,178.6 89.0,179.0 82.0,179.3 75.0,179.6 69.0,179.8 63.0,179.9 57.0,180.0 51.0,180.0 45.0,179.9 39.0,179.8"/><polygon points="173.6,172.1 172.8,172.2 172.4,172.3 171.7,172.6 171.0,172.9 170.6,173.1 170.0,173.6 169.7,173.9 169.2,174.5 169.0,174.8 168.6,175.5 168.3,176.2 168.2,176.6 168.1,176.9 168.0,177.7 168.0,230.5 168.1,231.2 168.3,232.0 168.6,232.7 169.0,233.4 169.5,234.0 170.1,234.6 170.7,235.1 171.4,235.5 172.1,235.8 172.9,236.0 173.7,236.1 174.0,236.1 183.0,235.5 191.0,235.0 199.0,234.6 206.0,234.3 214.0,234.1 221.0,234.0 228.0,234.0 235.0,234.1 241.0,234.2 248.0,234.4 255.0,234.7 262.0,235.0 269.0,235.4 276.0,235.9 284.0,236.5 293.9,237.3 294.7,237.3 295.5,237.1 296.2,236.9 296.9,236.6 297.3,236.3 297.9,235.9 298.5,235.3 299.0,234.7 299.4,234.0 299.7,233.3 299.9,232.5 299.9,232.1 300.0,231.3 300.0,179.0 299.9,178.2 299.7,177.5 299.4,176.8 299.0,176.1 298.6,175.4 298.0,174.9 297.4,174.4 296.7,174.0 296.4,173.9 295.7,173.6 294.9,173.4 294.5,173.4 282.0,172.4 270.0,171.5 261.0,171.0 253.0,170.6 244.0,170.3 236.0,170.1 228.0,170.0 221.0,170.0 214.0,170.1 206.0,170.3 198.0,170.6 190.0,171.0 182.0,171.5"/></g><g fill="none" stroke="#1b2430" stroke-width=".4"><polygon points="20.0,66.1 28.6,66.5 35.0,66.7 35.0,41.7 26.3,41.4 25.5,41.4 24.7,41.5 24.0,41.8 23.6,41.9 23.3,42.1 22.6,42.5 22.3,42.7 21.7,43.2 21.2,43.8 20.8,44.4 20.4,45.1 20.2,45.9 20.1,46.6 20.0,47.4"/><polygon points="35.0,66.7 41.2,66.9 47.5,67.0 47.5,42.0 41.0,41.9 35.0,41.7"/><polygon points="47.5,67.0 53.8,67.0 60.0,67.0 60.0,42.0 54.0,42.0 47.5,42.0"/><polygon points="60.0,67.0 66.2,66.9 72.5,66.7 72.5,41.7 66.0,41.9 60.0,42.0"/><polygon points="72.5,66.7 78.8,66.5 85.0,66.2 85.0,41.2 79.0,41.5 72.5,41.7"/><polygon points="85.0,66.2 91.2,65.9 97.5,65.5 97.5,40.5 91.0,40.9 85.0,41.2"/><polygon points="97.5,65.5 110.0,64.6 110.0,39.6 97.5,40.5"/><polygon points="110.0,64.6 122.5,63.5 122.5,38.5 110.0,39.6"/><polygon points="122.5,63.5 135.0,62.4 135.0,37.4 122.5,38.5"/><polygon points="135.0,62.4 150.0,61.1 150.0,42.6 149.9,41.9 149.8,41.1 149.5,40.3 149.4,40.0 149.0,39.3 148.5,38.6 147.9,38.1 147.3,37.6 146.6,37.2 145.8,36.9 145.4,36.8 144.7,36.7 143.9,36.6 135.0,37.4"/><polygon points="150.0,61.1 135.0,62.4 135.0,87.4 144.5,86.6 145.3,86.5 145.7,86.3 146.4,86.1 146.8,85.9 147.1,85.7 147.7,85.3 148.3,84.8 148.6,84.5 148.8,84.2 149.2,83.5 149.6,82.8 149.8,82.1 149.9,81.4 150.0,80.6"/><polygon points="135.0,62.4 122.5,63.5 122.5,88.5 135.0,87.4"/><polygon points="122.5,63.5 110.0,64.6 110.0,89.6 122.5,88.5"/><polygon points="110.0,64.6 97.5,65.5 97.5,90.5 110.0,89.6"/><polygon points="97.5,65.5 91.2,65.9 85.0,66.2 85.0,91.2 91.0,90.9 97.5,90.5"/><polygon points="85.0,66.2 78.8,66.5 72.5,66.7 72.5,91.7 79.0,91.5 85.0,91.2"/><polygon points="72.5,66.7 66.2,66.9 60.0,67.0 60.0,92.0 66.0,91.9 72.5,91.7"/><polygon points="60.0,67.0 53.8,67.0 47.5,67.0 47.5,92.0 54.0,92.0 60.0,92.0"/><polygon points="47.5,67.0 41.2,66.9 35.0,66.7 35.0,91.7 41.0,91.9 47.5,92.0"/><polygon points="35.0,66.7 28.6,66.5 20.0,66.1 20.0,85.4 20.1,86.2 20.2,87.0 20.5,87.7 20.8,88.4 21.3,89.1 21.8,89.7 22.1,90.0 22.7,90.4 23.4,90.8 23.8,91.0 24.6,91.2 25.3,91.3 29.0,91.5 35.0,91.7"/><polygon points="168.0,59.5 176.8,58.9 183.2,58.5 183.2,33.5 173.6,34.1 173.2,34.2 172.4,34.3 171.7,34.6 171.3,34.7 171.0,34.9 170.3,35.4 169.7,35.9 169.5,36.2 169.2,36.5 168.8,37.1 168.4,37.8 168.2,38.6 168.1,39.3 168.0,40.1"/><polygon points="183.2,58.5 189.6,58.1 195.9,57.7 195.9,32.7 190.0,33.0 183.2,33.5"/><polygon points="195.9,57.7 202.3,57.5 208.6,57.2 208.6,32.2 202.0,32.5 195.9,32.7"/><polygon points="208.6,57.2 215.0,57.1 221.3,57.0 221.3,32.0 215.0,32.1 208.6,32.2"/><polygon points="221.3,57.0 227.7,57.0 234.0,57.0 234.0,32.0 228.0,32.0 221.3,32.0"/><polygon points="234.0,57.0 240.3,57.2 246.7,57.3 246.7,32.3 240.0,32.2 234.0,32.0"/><polygon points="246.7,57.3 253.0,57.6 259.4,57.9 259.4,32.9 253.0,32.6 246.7,32.3"/><polygon points="259.4,57.9 265.7,58.2 272.1,58.6 272.1,33.6 266.0,33.2 259.4,32.9"/><polygon points="272.1,58.6 284.8,59.6 284.8,34.6 272.1,33.6"/><polygon points="284.8,59.6 300.0,60.9 300.0,41.4 299.9,40.6 299.8,39.8 299.6,39.1 299.2,38.4 298.8,37.8 298.3,37.2 297.7,36.6 297.4,36.4 296.7,36.0 296.0,35.7 295.3,35.5 294.9,35.4 284.8,34.6"/><polygon points="300.0,60.9 284.8,59.6 284.8,84.6 293.5,85.3 294.3,85.3 294.7,85.3 295.5,85.1 295.8,85.0 296.6,84.7 297.3,84.3 297.9,83.9 298.2,83.6 298.5,83.3 299.0,82.7 299.4,82.0 299.7,81.3 299.9,80.5 300.0,79.7"/><polygon points="284.8,59.6 272.1,58.6 272.1,83.6 284.8,84.6"/><polygon points="272.1,58.6 265.7,58.2 259.4,57.9 259.4,82.9 266.0,83.2 272.1,83.6"/><polygon points="259.4,57.9 253.0,57.6 246.7,57.3 246.7,82.3 253.0,82.6 259.4,82.9"/><polygon points="246.7,57.3 240.3,57.2 234.0,57.0 234.0,82.0 240.0,82.2 246.7,82.3"/><polygon points="234.0,57.0 227.7,57.0 221.3,57.0 221.3,82.0 228.0,82.0 234.0,82.0"/><polygon points="221.3,57.0 215.0,57.1 208.6,57.2 208.6,82.2 215.0,82.1 221.3,82.0"/><polygon points="208.6,57.2 202.3,57.5 195.9,57.7 195.9,82.7 202.0,82.5 208.6,82.2"/><polygon points="195.9,57.7 189.6,58.1 183.2,58.5 183.2,83.5 190.0,83.0 195.9,82.7"/><polygon points="183.2,58.5 176.8,58.9 168.0,59.5 168.0,78.1 168.1,78.9 168.1,79.2 168.3,80.0 168.6,80.7 169.0,81.4 169.5,82.0 170.1,82.6 170.7,83.1 171.4,83.5 171.7,83.6 172.5,83.9 173.3,84.0 174.0,84.1 183.2,83.5"/><polygon points="20.0,135.1 28.6,135.5 35.0,135.7 35.0,105.7 26.3,105.4 25.5,105.4 24.7,105.5 24.0,105.8 23.3,106.1 22.9,106.2 22.3,106.7 22.0,106.9 21.4,107.5 21.0,108.1 20.6,108.8 20.3,109.5 20.1,110.2 20.1,110.6 20.0,111.4"/><polygon points="35.0,135.7 41.2,135.9 47.5,136.0 47.5,106.0 41.0,105.9 35.0,105.7"/><polygon points="47.5,136.0 53.8,136.0 60.0,136.0 60.0,106.0 54.0,106.0 47.5,106.0"/><polygon points="60.0,136.0 66.2,135.9 72.5,135.7 72.5,105.7 66.0,105.9 60.0,106.0"/><polygon points="72.5,135.7 78.8,135.5 85.0,135.2 85.0,105.2 79.0,105.5 72.5,105.7"/><polygon points="85.0,135.2 91.2,134.9 97.5,134.5 97.5,104.5 91.0,104.9 85.0,105.2"/><polygon points="97.5,134.5 110.0,133.6 110.0,103.6 97.5,104.5"/><polygon points="110.0,133.6 122.5,132.6 122.5,102.5 110.0,103.6"/><polygon points="122.5,132.6 135.0,131.4 135.0,101.4 122.5,102.5"/><polygon points="135.0,131.4 150.0,130.1 150.0,106.6 149.9,105.8 149.8,105.1 149.5,104.3 149.2,103.6 148.7,102.9 148.2,102.3 147.6,101.8 146.9,101.4 146.2,101.1 145.8,100.9 145.1,100.7 144.2,100.7 143.9,100.6 135.0,101.4"/><polygon points="150.0,130.1 135.0,131.4 135.0,161.4 144.5,160.6 145.3,160.4 145.7,160.3 146.4,160.1 147.1,159.7 147.7,159.3 148.0,159.1 148.3,158.8 148.8,158.2 149.0,157.9 149.4,157.2 149.7,156.5 149.8,156.1 149.9,155.4 150.0,154.6"/><polygon points="135.0,131.4 122.5,132.6 122.5,162.6 135.0,161.4"/><polygon points="122.5,132.6 110.0,133.6 110.0,163.6 122.5,162.6"/><polygon points="110.0,133.6 97.5,134.5 97.5,164.5 110.0,163.6"/><polygon points="97.5,134.5 91.2,134.9 85.0,135.2 85.0,165.2 91.0,164.9 97.5,164.5"/><polygon points="85.0,135.2 78.8,135.5 72.5,135.7 72.5,165.7 79.0,165.5 85.0,165.2"/><polygon points="72.5,135.7 66.2,135.9 60.0,136.0 60.0,166.0 66.0,165.9 72.5,165.7"/><polygon points="60.0,136.0 53.8,136.0 47.5,136.0 47.5,166.0 54.0,166.0 60.0,166.0"/><polygon points="47.5,136.0 41.2,135.9 35.0,135.7 35.0,165.7 41.0,165.9 47.5,166.0"/><polygon points="35.0,135.7 28.6,135.5 20.0,135.1 20.0,159.4 20.1,160.2 20.2,161.0 20.5,161.7 20.8,162.4 21.3,163.1 21.8,163.7 22.4,164.2 23.1,164.6 23.8,165.0 24.6,165.2 24.9,165.3 25.7,165.4 35.0,165.7"/><polygon points="168.0,128.6 176.8,127.9 183.2,127.5 183.2,97.5 173.6,98.1 172.8,98.2 172.4,98.3 172.0,98.4 171.3,98.7 171.0,98.9 170.3,99.4 169.7,99.9 169.2,100.5 169.0,100.8 168.6,101.5 168.3,102.2 168.1,102.9 168.0,103.7 168.0,104.1"/><polygon points="183.2,127.5 189.6,127.1 195.9,126.7 195.9,96.7 190.0,97.0 183.2,97.5"/><polygon points="195.9,126.7 202.3,126.5 208.6,126.2 208.6,96.2 202.0,96.5 195.9,96.7"/><polygon points="208.6,126.2 215.0,126.1 221.3,126.0 221.3,96.0 215.0,96.1 208.6,96.2"/><polygon points="221.3,126.0 227.7,126.0 234.0,126.0 234.0,96.0 228.0,96.0 221.3,96.0"/><polygon points="234.0,126.0 240.3,126.2 246.7,126.3 246.7,96.3 240.0,96.2 234.0,96.0"/><polygon points="246.7,126.3 253.0,126.6 259.4,126.9 259.4,96.9 253.0,96.6 246.7,96.3"/><polygon points="259.4,126.9 265.7,127.2 272.1,127.6 272.1,97.6 266.0,97.2 259.4,96.9"/><polygon points="272.1,127.6 284.8,128.6 284.8,98.6 272.1,97.6"/><polygon points="284.8,128.6 300.0,129.9 300.0,105.4 299.9,104.6 299.8,103.8 299.6,103.1 299.2,102.4 298.8,101.8 298.3,101.2 297.7,100.7 297.1,100.2 296.4,99.9 296.0,99.7 295.3,99.5 294.5,99.4 284.8,98.6"/><polygon points="300.0,129.9 284.8,128.6 284.8,158.6 293.5,159.3 294.3,159.3 295.1,159.2 295.8,159.0 296.6,158.7 296.9,158.6 297.6,158.1 297.9,157.9 298.5,157.3 299.0,156.7 299.4,156.0 299.7,155.3 299.9,154.5 299.9,154.1 300.0,153.3"/><polygon points="284.8,128.6 272.1,127.6 272.1,157.6 284.8,158.6"/><polygon points="272.1,127.6 265.7,127.2 259.4,126.9 259.4,156.9 266.0,157.2 272.1,157.6"/><polygon points="259.4,126.9 253.0,126.6 246.7,126.3 246.7,156.3 253.0,156.6 259.4,156.9"/><polygon points="246.7,126.3 240.3,126.2 234.0,126.0 234.0,156.1 240.0,156.2 246.7,156.3"/><polygon points="234.0,126.0 227.7,126.0 221.3,126.0 221.3,156.0 228.0,156.0 234.0,156.1"/><polygon points="221.3,126.0 215.0,126.1 208.6,126.2 208.6,156.2 215.0,156.1 221.3,156.0"/><polygon points="208.6,126.2 202.3,126.5 195.9,126.7 195.9,156.7 202.0,156.5 208.6,156.2"/><polygon points="195.9,126.7 189.6,127.1 183.2,127.5 183.2,157.4 190.0,157.0 195.9,156.7"/><polygon points="183.2,127.5 176.8,127.9 168.0,128.6 168.0,152.1 168.1,152.9 168.2,153.6 168.5,154.4 168.8,155.1 169.2,155.7 169.8,156.3 170.4,156.8 171.0,157.3 171.7,157.6 172.1,157.8 172.9,158.0 173.7,158.1 174.0,158.1 183.2,157.4"/><polygon points="20.0,211.1 30.9,211.6 38.6,211.8 38.6,179.8 32.0,179.6 26.3,179.4 25.9,179.4 25.1,179.5 24.3,179.6 24.0,179.8 23.3,180.1 22.6,180.5 22.0,180.9 21.4,181.5 21.2,181.8 20.8,182.4 20.4,183.1 20.2,183.9 20.1,184.6 20.0,185.4"/><polygon points="38.6,211.8 46.3,212.0 54.0,212.0 54.0,180.0 46.0,179.9 38.6,179.8"/><polygon points="54.0,212.0 61.8,211.9 69.5,211.8 69.5,179.8 62.0,179.9 54.0,180.0"/><polygon points="69.5,211.8 77.3,211.5 85.0,211.2 85.0,179.2 77.0,179.6 69.5,179.8"/><polygon points="85.0,211.2 92.7,210.8 100.5,210.3 100.5,178.3 93.0,178.8 85.0,179.2"/><polygon points="100.5,210.3 108.2,209.7 116.0,209.1 116.0,177.1 108.0,177.7 100.5,178.3"/><polygon points="116.0,209.1 131.4,207.8 131.4,175.8 116.0,177.1"/><polygon points="131.4,207.8 150.0,206.1 150.0,180.6 149.9,179.8 149.8,179.1 149.5,178.3 149.2,177.6 148.7,176.9 148.2,176.3 147.9,176.1 147.3,175.6 146.6,175.2 145.8,174.9 145.1,174.7 144.7,174.7 143.9,174.6 131.4,175.8"/><polygon points="150.0,206.1 131.4,207.8 131.4,239.8 144.5,238.6 145.3,238.4 145.7,238.3 146.4,238.1 147.1,237.7 147.4,237.5 148.0,237.1 148.3,236.8 148.8,236.2 149.2,235.6 149.6,234.8 149.8,234.1 149.9,233.4 150.0,232.6"/><polygon points="131.4,207.8 116.0,209.1 116.0,241.1 131.4,239.8"/><polygon points="116.0,209.1 108.2,209.7 100.5,210.3 100.5,242.3 108.0,241.7 116.0,241.1"/><polygon points="100.5,210.3 92.7,210.8 85.0,211.2 85.0,243.2 93.0,242.8 100.5,242.3"/><polygon points="85.0,211.2 77.3,211.5 69.5,211.8 69.5,243.8 77.0,243.6 85.0,243.2"/><polygon points="69.5,211.8 61.8,211.9 54.0,212.0 54.0,244.0 62.0,243.9 69.5,243.8"/><polygon points="54.0,212.0 46.3,212.0 38.6,211.8 38.6,243.8 46.0,243.9 54.0,244.0"/><polygon points="38.6,211.8 33.4,211.7 28.3,211.5 20.0,211.1 20.0,237.4 20.1,238.2 20.1,238.6 20.3,239.3 20.6,240.1 21.0,240.8 21.5,241.4 22.1,241.9 22.7,242.4 23.4,242.8 24.2,243.1 24.6,243.2 24.9,243.3 25.7,243.4 32.0,243.6 38.6,243.8"/><polygon points="168.0,204.6 179.0,203.7 186.9,203.2 186.9,171.2 177.0,171.9 173.6,172.1 172.8,172.2 172.4,172.3 171.7,172.6 171.0,172.9 170.6,173.1 170.0,173.6 169.5,174.2 169.2,174.5 168.8,175.1 168.4,175.8 168.2,176.6 168.1,177.3 168.0,178.1"/><polygon points="186.9,203.2 194.7,202.8 202.6,202.4 202.6,170.4 195.0,170.8 186.9,171.2"/><polygon points="202.6,202.4 210.4,202.2 218.3,202.1 218.3,170.1 210.0,170.2 202.6,170.4"/><polygon points="218.3,202.1 226.1,202.0 234.0,202.1 234.0,170.1 226.0,170.0 218.3,170.1"/><polygon points="234.0,202.1 241.9,202.2 249.7,202.4 249.7,170.4 242.0,170.2 234.0,170.1"/><polygon points="249.7,202.4 257.6,202.8 265.4,203.2 265.4,171.2 257.0,170.8 249.7,170.4"/><polygon points="265.4,203.2 273.3,203.7 281.1,204.3 281.1,172.3 273.0,171.7 265.4,171.2"/><polygon points="281.1,204.3 289.0,204.9 300.0,205.9 300.0,179.4 299.9,178.6 299.8,177.8 299.6,177.1 299.2,176.4 298.8,175.8 298.6,175.4 298.0,174.9 297.4,174.4 296.7,174.0 296.4,173.9 295.7,173.6 294.9,173.4 294.5,173.4 281.1,172.3"/><polygon points="300.0,205.9 289.0,204.9 281.1,204.3 281.1,236.3 293.5,237.3 294.3,237.3 294.7,237.3 295.5,237.1 295.8,237.0 296.6,236.7 297.3,236.3 297.9,235.9 298.5,235.3 299.0,234.7 299.2,234.3 299.5,233.6 299.8,232.9 299.9,232.1 300.0,231.3"/><polygon points="281.1,204.3 273.3,203.7 265.4,203.2 265.4,235.2 273.0,235.7 281.1,236.3"/><polygon points="265.4,203.2 257.6,202.8 249.7,202.4 249.7,234.4 257.0,234.8 265.4,235.2"/><polygon points="249.7,202.4 241.9,202.2 234.0,202.1 234.0,234.1 242.0,234.2 249.7,234.4"/><polygon points="234.0,202.1 226.1,202.0 218.3,202.1 218.3,234.1 226.0,234.0 234.0,234.1"/><polygon points="218.3,202.1 210.4,202.2 202.6,202.4 202.6,234.4 210.0,234.2 218.3,234.1"/><polygon points="202.6,202.4 194.7,202.8 186.9,203.2 186.9,235.2 195.0,234.8 202.6,234.4"/><polygon points="186.9,203.2 176.4,203.9 168.0,204.6 168.0,230.1 168.1,230.9 168.1,231.2 168.3,232.0 168.6,232.7 169.0,233.4 169.5,234.0 170.1,234.6 170.7,235.1 171.4,235.5 172.1,235.8 172.9,236.0 173.7,236.1 174.0,236.1 186.9,235.2"/></g><g fill="none" stroke="#1b2430" stroke-width=".2" stroke-dasharray="1 1" opacity=".6"><polygon points="22.0,45.2 27.8,45.5 33.5,45.7 33.5,63.7 27.8,63.5 22.0,63.2"/><polygon points="36.5,45.8 46.0,46.0 46.0,64.0 36.5,63.8"/><polygon points="49.0,46.0 58.5,46.0 58.5,64.0 49.0,64.0"/><polygon points="61.5,46.0 71.0,45.8 71.0,63.8 61.5,64.0"/><polygon points="74.0,45.6 83.5,45.3 83.5,63.3 74.0,63.6"/><polygon points="86.5,45.1 96.0,44.6 96.0,62.6 86.5,63.1"/><polygon points="99.0,44.4 108.5,43.7 108.5,61.7 99.0,62.4"/><polygon points="111.5,43.5 121.0,42.7 121.0,60.7 111.5,61.5"/><polygon points="124.0,42.4 133.5,41.6 133.5,59.6 124.0,60.4"/><polygon points="136.5,41.3 148.0,40.3 148.0,58.3 136.5,59.3"/><polygon points="136.5,83.3 148.0,82.3 148.0,64.3 136.5,65.3"/><polygon points="124.0,84.4 133.5,83.6 133.5,65.6 124.0,66.4"/><polygon points="111.5,85.5 121.0,84.7 121.0,66.7 111.5,67.5"/><polygon points="99.0,86.4 108.5,85.7 108.5,67.7 99.0,68.4"/><polygon points="86.5,87.1 96.0,86.6 96.0,68.6 86.5,69.1"/><polygon points="74.0,87.7 83.5,87.3 83.5,69.3 74.0,69.7"/><polygon points="61.5,88.0 71.0,87.8 71.0,69.8 61.5,70.0"/><polygon points="49.0,88.0 58.5,88.0 58.5,70.0 49.0,70.0"/><polygon points="36.5,87.8 46.0,88.0 46.0,70.0 36.5,69.8"/><polygon points="22.0,87.2 27.8,87.5 33.5,87.7 33.5,69.7 27.8,69.5 22.0,69.2"/><polygon points="170.0,38.4 181.7,37.5 181.7,55.5 170.0,56.4"/><polygon points="184.7,37.4 194.4,36.8 194.4,54.8 184.7,55.4"/><polygon points="197.4,36.7 207.1,36.3 207.1,54.3 197.4,54.7"/><polygon points="210.1,36.2 219.8,36.0 219.8,54.0 210.1,54.2"/><polygon points="222.8,36.0 232.5,36.0 232.5,54.0 222.8,54.0"/><polygon points="235.5,36.1 245.2,36.3 245.2,54.3 235.5,54.1"/><polygon points="248.2,36.4 257.9,36.8 257.9,54.8 248.2,54.4"/><polygon points="260.9,37.0 270.6,37.5 270.6,55.5 260.9,55.0"/><polygon points="273.6,37.7 283.3,38.5 283.3,56.5 273.6,55.7"/><polygon points="286.3,38.7 298.0,39.7 298.0,57.7 286.3,56.7"/><polygon points="286.3,80.7 298.0,81.7 298.0,63.7 286.3,62.7"/><polygon points="273.6,79.7 283.3,80.5 283.3,62.5 273.6,61.7"/><polygon points="260.9,79.0 270.6,79.5 270.6,61.5 260.9,61.0"/><polygon points="248.2,78.4 257.9,78.8 257.9,60.8 248.2,60.4"/><polygon points="235.5,78.1 245.2,78.3 245.2,60.3 235.5,60.1"/><polygon points="222.8,78.0 232.5,78.0 232.5,60.0 222.8,60.0"/><polygon points="210.1,78.2 219.8,78.0 219.8,60.0 210.1,60.2"/><polygon points="197.4,78.7 207.1,78.3 207.1,60.3 197.4,60.7"/><polygon points="184.7,79.3 194.4,78.8 194.4,60.8 184.7,61.4"/><polygon points="170.0,80.4 181.7,79.5 181.7,61.5 170.0,62.4"/><polygon points="22.0,109.2 27.8,109.5 33.5,109.7 33.5,132.7 27.8,132.5 22.0,132.2"/><polygon points="36.5,109.8 46.0,110.0 46.0,132.9 36.5,132.8"/><polygon points="49.0,110.0 58.5,110.0 58.5,133.0 49.0,133.0"/><polygon points="61.5,110.0 71.0,109.8 71.0,132.8 61.5,132.9"/><polygon points="74.0,109.7 83.5,109.3 83.5,132.3 74.0,132.7"/><polygon points="86.5,109.1 96.0,108.6 96.0,131.6 86.5,132.1"/><polygon points="99.0,108.4 108.5,107.7 108.5,130.7 99.0,131.4"/><polygon points="111.5,107.5 121.0,106.7 121.0,129.7 111.5,130.5"/><polygon points="124.0,106.4 133.5,105.6 133.5,128.6 124.0,129.4"/><polygon points="136.5,105.3 148.0,104.3 148.0,127.3 136.5,128.3"/><polygon points="136.5,157.3 148.0,156.3 148.0,133.3 136.5,134.3"/><polygon points="124.0,158.4 133.5,157.6 133.5,134.6 124.0,135.4"/><polygon points="111.5,159.5 121.0,158.7 121.0,135.7 111.5,136.5"/><polygon points="99.0,160.4 108.5,159.7 108.5,136.7 99.0,137.4"/><polygon points="86.5,161.1 96.0,160.6 96.0,137.6 86.5,138.1"/><polygon points="74.0,161.7 83.5,161.3 83.5,138.3 74.0,138.7"/><polygon points="61.5,161.9 71.0,161.8 71.0,138.8 61.5,138.9"/><polygon points="49.0,162.0 58.5,162.0 58.5,139.0 49.0,139.0"/><polygon points="36.5,161.8 46.0,161.9 46.0,138.9 36.5,138.8"/><polygon points="22.0,161.2 27.8,161.5 33.5,161.7 33.5,138.7 27.8,138.5 22.0,138.2"/><polygon points="170.0,102.4 181.7,101.5 181.7,124.5 170.0,125.4"/><polygon points="184.7,101.3 194.4,100.8 194.4,123.8 184.7,124.3"/><polygon points="197.4,100.7 207.1,100.3 207.1,123.3 197.4,123.7"/><polygon points="210.1,100.2 219.8,100.0 219.8,123.0 210.1,123.2"/><polygon points="222.8,100.0 232.5,100.0 232.5,123.0 222.8,123.0"/><polygon points="235.5,100.1 245.2,100.3 245.2,123.3 235.5,123.1"/><polygon points="248.2,100.4 257.9,100.8 257.9,123.8 248.2,123.4"/><polygon points="260.9,101.0 270.6,101.5 270.6,124.5 260.9,124.0"/><polygon points="273.6,101.7 283.3,102.5 283.3,125.5 273.6,124.7"/><polygon points="286.3,102.7 298.0,103.7 298.0,126.7 286.3,125.7"/><polygon points="286.3,154.7 298.0,155.7 298.0,132.7 286.3,131.7"/><polygon points="273.6,153.7 283.3,154.5 283.3,131.5 273.6,130.7"/><polygon points="260.9,153.0 270.6,153.5 270.6,130.5 260.9,130.0"/><polygon points="248.2,152.4 257.9,152.8 257.9,129.8 248.2,129.4"/><polygon points="235.5,152.1 245.2,152.3 245.2,129.3 235.5,129.1"/><polygon points="222.8,152.0 232.5,152.0 232.5,129.0 222.8,129.0"/><polygon points="210.1,152.2 219.8,152.0 219.8,129.0 210.1,129.2"/><polygon points="197.4,152.7 207.1,152.3 207.1,129.3 197.4,129.7"/><polygon points="184.7,153.3 194.4,152.8 194.4,129.8 184.7,130.3"/><polygon points="170.0,154.4 181.7,153.6 181.7,130.6 170.0,131.4"/><polygon points="22.0,183.2 29.5,183.5 37.1,183.8 37.1,208.8 29.5,208.5 22.0,208.2"/><polygon points="40.1,183.8 46.3,184.0 52.5,184.0 52.5,209.0 46.3,209.0 40.1,208.8"/><polygon points="55.5,184.0 61.8,183.9 68.0,183.8 68.0,208.8 61.8,208.9 55.5,209.0"/><polygon points="71.0,183.8 77.3,183.5 83.5,183.3 83.5,208.3 77.3,208.5 71.0,208.8"/><polygon points="86.5,183.1 92.7,182.8 99.0,182.4 99.0,207.4 92.7,207.8 86.5,208.1"/><polygon points="102.0,182.2 114.5,181.2 114.5,206.2 102.0,207.2"/><polygon points="117.5,181.0 129.9,179.9 129.9,204.9 117.5,206.0"/><polygon points="132.9,179.6 148.0,178.3 148.0,203.3 132.9,204.6"/><polygon points="132.9,235.6 148.0,234.3 148.0,209.3 132.9,210.6"/><polygon points="117.5,237.0 129.9,235.9 129.9,210.9 117.5,212.0"/><polygon points="102.0,238.2 114.5,237.2 114.5,212.2 102.0,213.2"/><polygon points="86.5,239.1 92.7,238.8 99.0,238.4 99.0,213.4 92.7,213.8 86.5,214.1"/><polygon points="71.0,239.8 77.3,239.5 83.5,239.3 83.5,214.3 77.3,214.5 71.0,214.8"/><polygon points="55.5,240.0 61.8,239.9 68.0,239.8 68.0,214.8 61.8,214.9 55.5,215.0"/><polygon points="40.1,239.8 46.3,240.0 52.5,240.0 52.5,215.0 46.3,215.0 40.1,214.8"/><polygon points="22.0,239.2 29.5,239.5 37.1,239.8 37.1,214.8 29.5,214.5 22.0,214.2"/><polygon points="170.0,176.4 177.7,175.8 185.4,175.3 185.4,200.3 177.7,200.8 170.0,201.4"/><polygon points="188.4,175.1 194.7,174.8 201.1,174.5 201.1,199.5 194.7,199.8 188.4,200.1"/><polygon points="204.1,174.4 210.4,174.2 216.8,174.1 216.8,199.1 210.4,199.2 204.1,199.4"/><polygon points="219.8,174.0 226.1,174.0 232.5,174.0 232.5,199.0 226.1,199.0 219.8,199.0"/><polygon points="235.5,174.1 241.9,174.2 248.2,174.4 248.2,199.4 241.9,199.2 235.5,199.1"/><polygon points="251.2,174.5 257.6,174.8 263.9,175.1 263.9,200.1 257.6,199.8 251.2,199.5"/><polygon points="266.9,175.3 273.3,175.7 279.6,176.2 279.6,201.2 273.3,200.7 266.9,200.3"/><polygon points="282.6,176.4 298.0,177.7 298.0,202.7 282.6,201.4"/><polygon points="282.6,232.4 298.0,233.7 298.0,208.7 282.6,207.4"/><polygon points="266.9,231.3 273.3,231.7 279.6,232.2 279.6,207.2 273.3,206.7 266.9,206.3"/><polygon points="251.2,230.5 257.6,230.8 263.9,231.1 263.9,206.1 257.6,205.8 251.2,205.5"/><polygon points="235.5,230.1 241.9,230.2 248.2,230.4 248.2,205.4 241.9,205.2 235.5,205.1"/><polygon points="219.8,230.0 226.1,230.0 232.5,230.0 232.5,205.0 226.1,205.0 219.8,205.0"/><polygon points="204.1,230.4 210.4,230.2 216.8,230.1 216.8,205.1 210.4,205.2 204.1,205.4"/><polygon points="188.4,231.1 194.7,230.8 201.1,230.5 201.1,205.5 194.7,205.8 188.4,206.1"/><polygon points="170.0,232.4 177.7,231.8 185.4,231.3 185.4,206.3 177.7,206.8 170.0,207.4"/></g><g fill="#1b2430" font-family="ui-monospace,Menlo,monospace" font-size="3.1" text-anchor="middle"><text x="27.5" y="57.75">A01</text><text x="41.25" y="55.35">A02</text><text x="53.75" y="55.48">A03</text><text x="66.25" y="55.33">A04</text><text x="78.75" y="54.95">A05</text><text x="91.25" y="54.34">A06</text><text x="103.75" y="53.53">A07</text><text x="116.25" y="52.56">A08</text><text x="128.75" y="51.49">A09</text><text x="142.5" y="52.86">A10</text><text x="142.5" y="72.51">A11</text><text x="128.75" y="76.49">A12</text><text x="116.25" y="77.56">A13</text><text x="103.75" y="78.53">A14</text><text x="91.25" y="79.34">A15</text><text x="78.75" y="79.95">A16</text><text x="66.25" y="80.33">A17</text><text x="53.75" y="80.48">A18</text><text x="41.25" y="80.35">A19</text><text x="27.5" y="77.05">A20</text><text x="175.62" y="50.28">B01</text><text x="189.58" y="46.59">B02</text><text x="202.27" y="46.0">B03</text><text x="214.96" y="45.64">B04</text><text x="227.65" y="45.53">B05</text><text x="240.35" y="45.7">B06</text><text x="253.04" y="46.11">B07</text><text x="265.73" y="46.76">B08</text><text x="278.42" y="47.61">B09</text><text x="292.38" y="51.47">B10</text><text x="292.38" y="71.09">B11</text><text x="278.42" y="72.61">B12</text><text x="265.73" y="71.76">B13</text><text x="253.04" y="71.11">B14</text><text x="240.35" y="70.7">B15</text><text x="227.65" y="70.53">B16</text><text x="214.96" y="70.64">B17</text><text x="202.27" y="71.0">B18</text><text x="189.58" y="71.59">B19</text><text x="175.62" y="69.81">B20</text><text x="27.5" y="124.25">C01</text><text x="41.25" y="121.85">C02</text><text x="53.75" y="121.98">C03</text><text x="66.25" y="121.83">C04</text><text x="78.75" y="121.45">C05</text><text x="91.25" y="120.84">C06</text><text x="103.75" y="120.03">C07</text><text x="116.25" y="119.06">C08</text><text x="128.75" y="117.99">C09</text><text x="142.5" y="119.36">C10</text><text x="142.5" y="144.01">C11</text><text x="128.75" y="147.99">C12</text><text x="116.25" y="149.06">C13</text><text x="103.75" y="150.03">C14</text><text x="91.25" y="150.84">C15</text><text x="78.75" y="151.45">C16</text><text x="66.25" y="151.83">C17</text><text x="53.75" y="151.98">C18</text><text x="41.25" y="151.85">C19</text><text x="27.5" y="148.55">C20</text><text x="175.62" y="116.78">D01</text><text x="189.58" y="113.09">D02</text><text x="202.27" y="112.5">D03</text><text x="214.96" y="112.14">D04</text><text x="227.65" y="112.03">D05</text><text x="240.35" y="112.2">D06</text><text x="253.04" y="112.61">D07</text><text x="265.73" y="113.26">D08</text><text x="278.42" y="114.11">D09</text><text x="292.38" y="117.97">D10</text><text x="292.38" y="142.59">D11</text><text x="278.42" y="144.11">D12</text><text x="265.73" y="143.26">D13</text><text x="253.04" y="142.61">D14</text><text x="240.35" y="142.2">D15</text><text x="227.65" y="142.03">D16</text><text x="214.96" y="142.14">D17</text><text x="202.27" y="142.5">D18</text><text x="189.58" y="143.09">D19</text><text x="175.62" y="141.31">D20</text><text x="29.29" y="199.25">E01</text><text x="46.31" y="196.91">E02</text><text x="61.79" y="196.89">E03</text><text x="77.26" y="196.49">E04</text><text x="92.74" y="195.74">E05</text><text x="108.21" y="194.69">E06</text><text x="123.69" y="193.43">E07</text><text x="140.71" y="194.36">E08</text><text x="140.71" y="221.17">E09</text><text x="123.69" y="225.43">E10</text><text x="108.21" y="226.69">E11</text><text x="92.74" y="227.74">E12</text><text x="77.26" y="228.49">E13</text><text x="61.79" y="228.89">E14</text><text x="46.31" y="228.91">E15</text><text x="29.29" y="225.6">E16</text><text x="177.43" y="191.66">F01</text><text x="194.71" y="187.84">F02</text><text x="210.43" y="187.25">F03</text><text x="226.14" y="187.03">F04</text><text x="241.86" y="187.25">F05</text><text x="257.57" y="187.84">F06</text><text x="273.29" y="188.76">F07</text><text x="290.57" y="192.83">F08</text><text x="290.57" y="219.59">F09</text><text x="273.29" y="220.76">F10</text><text x="257.57" y="219.84">F11</text><text x="241.86" y="219.25">F12</text><text x="226.14" y="219.03">F13</text><text x="210.43" y="219.25">F14</text><text x="194.71" y="219.84">F15</text><text x="177.43" y="218.31">F16</text></g><g fill="#3567e0" font-family="ui-monospace,Menlo,monospace" font-size="9" text-anchor="middle" opacity=".9"><text x="85.0" y="68.3">A</text><text x="234.0" y="61.1">B</text><text x="85.0" y="137.3">C</text><text x="234.0" y="130.1">D</text><text x="85.0" y="213.3">E</text><text x="234.0" y="206.1">F</text></g><g font-family="ui-monospace,Menlo,monospace" fill="#1b2430"><rect x="262" y="318" width="102" height="20" fill="#fbfaf7" stroke="#1b2430" stroke-width=".4"/><text x="266" y="326" font-size="4.2">VALE DO ARAÇÁ · FICTÍCIO</text><text x="266" y="333.5" font-size="3.4" opacity=".75">IMPLANTAÇÃO · 1:500 · 112 LOTES</text></g></svg></div>
+  <span class="cmp-tag l">Desenho</span><span class="cmp-tag r">Maquete</span>
+  <span class="cmp-line" aria-hidden="true"><b></b></span>
+  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o desenho técnico com a maquete digital">
 </div>
+    <p class="cap">Na maquete: em azul, os lotes disponíveis; em azul-claro, os reservados; com casa, os vendidos.</p>
+    <div class="demo-g">
+      <div class="demo-t"><p class="body-l">O Vale do Araçá é um loteamento fictício que desenhamos do zero. A mesma planta, com 112 lotes, gerou o desenho técnico, a maquete digital e um espelho de vendas que funciona no navegador.</p><dl class="sheet"><div><dt>Loteamento</dt><dd>Vale do Araçá (fictício)</dd></div><div><dt>Gleba</dt><dd>9,5 hectares</dd></div><div><dt>Lotes</dt><dd>112, em 6 quadras</dd></div><div><dt>Situação na demonstração</dt><dd>49 disponíveis, 16 reservados, 47 vendidos</dd></div><div><dt>Entregas</dt><dd>Espelho de vendas, maquete digital, imagens</dd></div></dl>
+        <a class="btn btn-line" href="/demos/espelho-de-vendas/" target="_blank" rel="noopener">Abrir o espelho de vendas <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="vh"> (abre em nova aba)</span></a></div>
+      <figure class="demo-ph" data-reveal><img class="" src="/assets/img/espelho-phones-1600.webp" srcset="/assets/img/espelho-phones-800.webp 800w, /assets/img/espelho-phones-1600.webp 1600w" sizes="(min-width: 901px) 50vw, 100vw" alt="Espelho de vendas do Vale do Araçá no celular: mapa de lotes coloridos por situação e a ficha de um lote." width=1600 height=1000 loading=lazy decoding=async><figcaption class="cap">No celular, o comprador toca no lote e vê área, preço, situação e o botão de WhatsApp.</figcaption></figure>
+    </div>
+    <div class="demo2">
+      <div class="demo-head"><span class="svc-n">Demonstração 02</span><h3 class="h2s">Revisão de projeto</h3></div>
+      <div class="demo-g">
+        <figure class="demo-rv" data-reveal><svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Revisão · planta térreo">
+<rect width="640" height="460" fill="#fbfaf7"/>
+<g stroke="#a9b0b8" stroke-width=".5" opacity=".6"><line x1="20" y1="0" x2="20" y2="460"/><line x1="60" y1="0" x2="60" y2="460"/><line x1="100" y1="0" x2="100" y2="460"/><line x1="140" y1="0" x2="140" y2="460"/><line x1="180" y1="0" x2="180" y2="460"/><line x1="220" y1="0" x2="220" y2="460"/><line x1="260" y1="0" x2="260" y2="460"/><line x1="300" y1="0" x2="300" y2="460"/><line x1="340" y1="0" x2="340" y2="460"/><line x1="380" y1="0" x2="380" y2="460"/><line x1="420" y1="0" x2="420" y2="460"/><line x1="460" y1="0" x2="460" y2="460"/><line x1="500" y1="0" x2="500" y2="460"/><line x1="540" y1="0" x2="540" y2="460"/><line x1="580" y1="0" x2="580" y2="460"/><line x1="620" y1="0" x2="620" y2="460"/><line x1="0" y1="20" x2="640" y2="20"/><line x1="0" y1="60" x2="640" y2="60"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="140" x2="640" y2="140"/><line x1="0" y1="180" x2="640" y2="180"/><line x1="0" y1="220" x2="640" y2="220"/><line x1="0" y1="260" x2="640" y2="260"/><line x1="0" y1="300" x2="640" y2="300"/><line x1="0" y1="340" x2="640" y2="340"/><line x1="0" y1="380" x2="640" y2="380"/><line x1="0" y1="420" x2="640" y2="420"/></g>
+<g fill="none" stroke="#1b2430" stroke-linecap="square">
+ <rect x="70" y="70" width="380" height="290" stroke-width="7"/>
+ <line x1="250" y1="70" x2="250" y2="230" stroke-width="4"/><line x1="70" y1="230" x2="210" y2="230" stroke-width="4"/>
+ <line x1="290" y1="230" x2="450" y2="230" stroke-width="4"/><line x1="340" y1="230" x2="340" y2="360" stroke-width="4"/>
+ <line x1="250" y1="160" x2="330" y2="160" stroke-width="4"/>
+ <path d="M210 230 A40 40 0 0 1 250 190" stroke-width="1.2"/><line x1="250" y1="190" x2="250" y2="230" stroke-width="1.2"/>
+ <path d="M300 230 A38 38 0 0 0 338 268" stroke-width="1.2"/>
+ <rect x="350" y="240" width="90" height="26" stroke-width="1.2"/><circle cx="395" cy="253" r="8" stroke-width="1"/>
+ <rect x="90" y="250" width="120" height="16" stroke-width="1"/>
+ <line x1="160" y1="360" x2="230" y2="360" stroke="#fbfaf7" stroke-width="9"/><line x1="160" y1="356" x2="230" y2="356" stroke-width="1"/><line x1="160" y1="364" x2="230" y2="364" stroke-width="1"/>
+</g>
+<g stroke="#1b2430" stroke-width=".8" fill="#1b2430" font-family="ui-monospace,Menlo,monospace" font-size="11">
+ <line x1="70" y1="398" x2="450" y2="398"/><line x1="70" y1="390" x2="70" y2="406"/><line x1="450" y1="390" x2="450" y2="406"/>
+ <text x="246" y="392" stroke="none" text-anchor="middle">12,40</text>
+ <line x1="492" y1="70" x2="492" y2="360"/><line x1="484" y1="70" x2="500" y2="70"/><line x1="484" y1="360" x2="500" y2="360"/>
+ <text x="508" y="219" stroke="none">9,15</text>
+ <text x="150" y="150" stroke="none" text-anchor="middle" opacity=".8">SALA</text><text x="150" y="166" stroke="none" text-anchor="middle" opacity=".6" font-size="10">24,6 m²</text>
+ <text x="350" y="120" stroke="none" text-anchor="middle" opacity=".8">QUARTO</text>
+ <text x="395" y="300" stroke="none" text-anchor="middle" opacity=".8">BWC</text>
+ <text x="140" y="300" stroke="none" text-anchor="middle" opacity=".8">COZINHA</text>
+</g>
+<g font-family="ui-sans-serif,system-ui,sans-serif" font-weight="600" font-size="14">
+ <circle cx="492" cy="150" r="17" fill="none" stroke="#d4472a" stroke-width="2.5"/><circle cx="530" cy="122" r="12" fill="#d4472a"/><text x="530" y="127" text-anchor="middle" fill="#fff">1</text><line x1="505" y1="140" x2="521" y2="129" stroke="#d4472a" stroke-width="2"/>
+ <circle cx="372" cy="248" r="30" fill="none" stroke="#d4472a" stroke-width="2.5"/><circle cx="416" cy="206" r="12" fill="#d4472a"/><text x="416" y="211" text-anchor="middle" fill="#fff">2</text><line x1="394" y1="227" x2="408" y2="214" stroke="#d4472a" stroke-width="2"/>
+ <circle cx="150" cy="160" r="30" fill="none" stroke="#d4472a" stroke-width="2.5"/><circle cx="110" cy="112" r="12" fill="#d4472a"/><text x="110" y="117" text-anchor="middle" fill="#fff">3</text><line x1="130" y1="137" x2="118" y2="122" stroke="#d4472a" stroke-width="2"/>
+</g>
+<g font-family="ui-monospace,Menlo,monospace" fill="#1b2430" font-size="10.5">
+ <rect x="70" y="18" width="380" height="30" fill="none" stroke="#1b2430" stroke-width=".8"/>
+ <text x="80" y="37">REVISÃO · PLANTA TÉRREO</text>
+</g>
+</svg><ol class="rv-list"><li><b>1</b>Cota da fachada não confere com o corte AA</li><li><b>2</b>Porta do banheiro abre sobre a bancada</li><li><b>3</b>Área da sala diferente do quadro de áreas</li></ol><figcaption class="cap">Ilustração com uma planta desenhada para demonstração. A revisão não é laudo nem substitui o responsável técnico pelo projeto.</figcaption></figure>
+        <div class="demo-t"><p class="body-l">Antes de modelar ou de ir para a obra, conferimos planta, corte, implantação e quadro de áreas entre si. Cada ponto vem numerado no desenho e explicado num relatório em PDF, com o que conferir e com quem.</p>
+          <div class="lists one"><div><h4>O que vem no relatório</h4><ul><li>Os pontos marcados e numerados sobre o desenho</li><li>Para cada ponto: o que não confere, onde e por que importa</li><li>Prioridade: crítico, atenção ou observação</li><li>O que foi conferido e está certo, também</li></ul></div></div>
+          <a class="btn btn-line" href="/servicos#revisao">Ver o serviço de revisão <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script>
-const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+<section class="how wrap" id="como" aria-labelledby="hw-h">
+  <div class="sec-h"><p class="label">Como trabalhamos</p><h2 id="hw-h" class="h2">Sem reunião arrastada. Tudo por escrito.</h2></div>
+  <ol class="steps"><li data-reveal><span class="st-n">01</span><h3>Conte o problema</h3><p>Por WhatsApp ou e-mail, em poucas linhas, por texto ou áudio. Mande o que já tiver: DWG, PDF, planilha, fotos. Você não precisa entender de tecnologia.</p></li><li data-reveal><span class="st-n">02</span><h3>Preço fechado antes de começar</h3><p>Você recebe um plano curto por escrito e um preço único. Metade adiantada, metade na entrega. Se o escopo mudar, a mudança é combinada por escrito antes.</p></li><li data-reveal><span class="st-n">03</span><h3>Entrega e acompanhamento</h3><p>Entregue, testado e explicado por escrito. Depois, se você quiser, a gente cuida de tudo por uma mensalidade, e você sabe sempre para quem escrever.</p></li></ol>
+</section>
 
-/* ---------- theme (light default, remembers choice) ---------- */
-const root=document.documentElement;
-try{ const saved=localStorage.getItem('n6c-theme'); if(saved) root.dataset.theme=saved; }catch(e){}
-document.getElementById('themeBtn').addEventListener('click',()=>{
-  const next = root.dataset.theme==='dark' ? 'light' : 'dark';
-  root.dataset.theme=next;
-  try{ localStorage.setItem('n6c-theme',next); }catch(e){}
-  if(window.__setFieldTheme) window.__setFieldTheme(next);
-});
-
-/* ---------- nav + progress ---------- */
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',(scrollY||0)>12); },{passive:true});
-const links=document.getElementById('navlinks'),burger=document.getElementById('burger');
-burger.onclick=()=>links.classList.toggle('open');
-links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
-
-/* ---------- guided-tour scroll: one section per gesture, footer as final stop ---------- */
-(function(){
-  const getSecs=()=>[...document.querySelectorAll('.hero,.band,.contact')];
-  let els=getSecs(), active=false, idx=0, animating=false, raf=0;
-  const maxScroll=()=>Math.max(0, document.documentElement.scrollHeight - innerHeight);
-  /* stops: each section's top, extra stops inside sections taller than the screen, then the page bottom */
-  let stops=[0];
-  function buildStops(){ const vh=innerHeight, m=maxScroll(), stp=Math.round(vh*.8), s=[];
-    els.forEach(el=>{ const top=Math.min(m,Math.round(el.offsetTop)), end=Math.min(m,top+el.offsetHeight-vh);
-      s.push(top);
-      for(let y=top+stp; y<end; y+=stp) s.push(y);
-      if(end>top){ if(end-s[s.length-1]>=vh*.25) s.push(end); else if(s[s.length-1]!==top) s[s.length-1]=end; } });
-    s.push(m); stops=[...new Set(s)].sort((a,b)=>a-b); }
-  const stopCount=()=>stops.length;
-  const targetY=(i)=> stops[Math.max(0,Math.min(stops.length-1,i))];
-  const stopFor=(y)=>{ let b=0,bd=1e9; stops.forEach((v,i)=>{ const d=Math.abs(v-y); if(d<bd){bd=d;b=i;} }); return b; };
-  const ease=(p)=> 1-Math.pow(1-p,3);   // ease-out: moves immediately, settles softly
-  function animateTo(y,dur){ dur=dur||430; const start=scrollY, dist=y-start;
-    if(Math.abs(dist)<2){ return; } animating=true; const t0=performance.now(); cancelAnimationFrame(raf);
-    function step(now){ const p=Math.min(1,(now-t0)/dur); scrollTo(0, start+dist*ease(p));
-      if(p<1){ raf=requestAnimationFrame(step); } else { setTimeout(()=>{animating=false;},70); } }
-    raf=requestAnimationFrame(step);
-  }
-  function nearest(){ const y=scrollY; let b=0,bd=1e9; for(let i=0;i<stopCount();i++){ const d=Math.abs(targetY(i)-y); if(d<bd){bd=d;b=i;} } return b; }
-  function recompute(){ els=getSecs(); active = !reduce && matchMedia('(min-width:921px) and (min-height:560px)').matches; buildStops(); }
-  const tcUp=document.getElementById('tcUp'), tcDown=document.getElementById('tcDown');
-  function updateCtl(){ if(tcUp) tcUp.disabled = idx<=0; if(tcDown) tcDown.disabled = idx>=stopCount()-1; }
-  function step(dir){ const ni=Math.max(0,Math.min(stopCount()-1, idx+dir)); if(ni!==idx){ idx=ni; animateTo(targetY(ni)); } updateCtl(); }
-  function goto(i){ idx=Math.max(0,Math.min(stopCount()-1,i)); animateTo(targetY(idx)); updateCtl(); }
-  if(tcUp) tcUp.addEventListener('click',()=>step(-1));
-  if(tcDown) tcDown.addEventListener('click',()=>step(1));
-  recompute(); idx=nearest(); updateCtl();
-  addEventListener('resize',()=>{ recompute(); if(!animating){ idx=nearest(); updateCtl(); } });
-  addEventListener('load',()=>{ recompute(); if(!animating){ idx=nearest(); updateCtl(); } });
-  /* one flick = one section: hold a lock until the wheel goes quiet, so momentum can't double-step */
-  /* trackpad/mouse aware: move on a fresh or accelerating gesture; ignore the decaying inertia tail */
-  let scrollings=[], canScroll=true, lastWheelT=0;
-  const avg=(arr,n)=>{ const c=Math.min(n,arr.length); if(!c) return 0; let s=0; for(let i=arr.length-c;i<arr.length;i++) s+=arr[i]; return s/c; };
-  addEventListener('wheel',e=>{ if(!active) return; e.preventDefault();
-    if(Math.abs(e.deltaY)<3) return;
-    const now=performance.now();
-    if(now-lastWheelT>250) scrollings=[];               // gap between gestures -> fresh history
-    lastWheelT=now;
-    scrollings.push(Math.abs(e.deltaY)); if(scrollings.length>80) scrollings.shift();
-    if(!canScroll) return;
-    if(avg(scrollings,10) >= avg(scrollings,70)){        // accelerating/fresh (not the decaying tail)
-      canScroll=false; step(e.deltaY>0?1:-1);
-      setTimeout(()=>{ canScroll=true; }, 480);
-    } },{passive:false});
-  addEventListener('keydown',e=>{ if(!active) return; if(e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
-    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){ e.preventDefault(); step(1); }
-    else if(e.key==='ArrowUp'||e.key==='PageUp'){ e.preventDefault(); step(-1); }
-    else if(e.key==='Home'){ e.preventDefault(); goto(0); }
-    else if(e.key==='End'){ e.preventDefault(); goto(stopCount()-1); } });
-  addEventListener('scroll',()=>{ if(!animating){ idx=nearest(); updateCtl(); } },{passive:true});
-  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
-    const id=a.getAttribute('href').slice(1);
-    const el=id?document.getElementById(id):null;
-    e.preventDefault(); let si = el ? els.findIndex(s=>s===el||s.contains(el)) : 0; if(si<0) si=0;
-    goto(stopFor(Math.round(els[si].offsetTop))); links.classList.remove('open');
-  }));
-})();
-
-/* ---------- language: switch keeps the section, and a quiet PT suggestion (never a redirect) ---------- */
-document.querySelectorAll('.lang a').forEach(a=>a.addEventListener('click',()=>{
-  try{ localStorage.setItem('n6c-lang',a.lang.slice(0,2)); }catch(e){}
-  if(location.hash) a.href=a.getAttribute('href').split('#')[0]+location.hash;
-}));
-(function(){
-  const hint=document.getElementById('langhint'); if(!hint) return;
-  let chosen=null; try{ chosen=localStorage.getItem('n6c-lang'); }catch(e){}
-  const langs=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];
-  if(chosen || !langs.some(l=>/^pt\b/i.test(l))) return;
-  const root=document.documentElement;
-  setTimeout(()=>{ hint.hidden=false; root.classList.add('lh-on'); requestAnimationFrame(()=>requestAnimationFrame(()=>hint.classList.add('in'))); },1000);
-  hint.querySelector('a').addEventListener('click',()=>{ try{ localStorage.setItem('n6c-lang','pt'); }catch(e){} });
-  hint.querySelector('button').addEventListener('click',()=>{
-    hint.classList.remove('in'); root.classList.remove('lh-on');
-    setTimeout(()=>{ hint.hidden=true; },matchMedia('(prefers-reduced-motion:reduce)').matches?0:500);
-    try{ localStorage.setItem('n6c-lang','en'); }catch(e){}
-  });
-})();
-
-/* ---------- gentle reveals (content visible by default; JS only enhances) ---------- */
-if(window.gsap && window.ScrollTrigger && !reduce){
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.set('.hero h1 .l>span',{yPercent:110});
-  gsap.set('.hero .sub',{opacity:0,y:16});
-  const tl=gsap.timeline({delay:.15});
-  tl.to('.hero h1 .l>span',{yPercent:0,duration:1.0,ease:'power4.out',stagger:.1})
-    .to('.hero .sub',{opacity:1,y:0,duration:.8,ease:'power3.out'},'-=.6');
-  gsap.utils.toArray('.reveal').forEach(el=>{
-    gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
-  });
-} else {
-  document.querySelectorAll('.reveal').forEach(e=>{e.style.opacity=1;e.style.transform='none';});
-}
-
-/* ---------- muted, theme-aware flow field ---------- */
-(function(){
-  const cv=document.getElementById('gl'); if(!window.THREE||!cv)return;
-  let renderer; try{ renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true,powerPreference:'high-performance'}); }catch(e){ return; }
-  renderer.setClearColor(0x000000,0);
-  const scene=new THREE.Scene();
-  const cam=new THREE.PerspectiveCamera(52,1,.1,300);
-  cam.position.set(0,7.2,27); cam.lookAt(0,-2,-16);
-
-  const SEGX=200, SEGZ=140, W=170, D=120, nx=SEGX+1, nz=SEGZ+1;
-  const verts=new Float32Array(nx*nz*3); let v=0;
-  for(let j=0;j<nz;j++)for(let i=0;i<nx;i++){ verts[v++]=(i/SEGX-0.5)*W; verts[v++]=0; verts[v++]=(j/SEGZ-0.5)*D; }
-  const idx=[]; for(let j=0;j<SEGZ;j++)for(let i=0;i<SEGX;i++){ const a=j*nx+i,b=a+1,c=a+nx,d=c+1; idx.push(a,c,b,b,c,d); }
-  const geo=new THREE.BufferGeometry();
-  geo.setAttribute('position',new THREE.BufferAttribute(verts,3)); geo.setIndex(idx);
-
-  const PAL={
-    light:{deep:[0.90,0.93,0.96],mid:[0.70,0.80,0.88],hot:[0.50,0.66,0.79],bg:[0.961,0.969,0.976]},
-    dark: {deep:[0.07,0.10,0.12],mid:[0.16,0.26,0.32],hot:[0.42,0.58,0.71],bg:[0.051,0.059,0.071]}
-  };
-  const uniforms={ uTime:{value:0}, uAmp:{value:2.5},
-    uDeep:{value:new THREE.Vector3()}, uMid:{value:new THREE.Vector3()}, uHot:{value:new THREE.Vector3()}, uBg:{value:new THREE.Vector3()} };
-  function apply(t){ const p=PAL[t==='dark'?'dark':'light'];
-    uniforms.uDeep.value.fromArray(p.deep); uniforms.uMid.value.fromArray(p.mid);
-    uniforms.uHot.value.fromArray(p.hot); uniforms.uBg.value.fromArray(p.bg); }
-  apply(root.dataset.theme||'light');
-  window.__setFieldTheme=apply;
-
-  const SNOISE=`
-    vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
-    vec4 mod289(vec4 x){return x-floor(x*(1.0/289.0))*289.0;}
-    vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
-    vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
-    float snoise(vec3 v){
-      const vec2 C=vec2(1.0/6.0,1.0/3.0); const vec4 D=vec4(0.0,0.5,1.0,2.0);
-      vec3 i=floor(v+dot(v,C.yyy)); vec3 x0=v-i+dot(i,C.xxx);
-      vec3 g=step(x0.yzx,x0.xyz); vec3 l=1.0-g; vec3 i1=min(g.xyz,l.zxy); vec3 i2=max(g.xyz,l.zxy);
-      vec3 x1=x0-i1+C.xxx; vec3 x2=x0-i2+C.yyy; vec3 x3=x0-D.yyy;
-      i=mod289(i);
-      vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));
-      float n_=0.142857142857; vec3 ns=n_*D.wyz-D.xzx;
-      vec4 j=p-49.0*floor(p*ns.z*ns.z);
-      vec4 x_=floor(j*ns.z); vec4 y_=floor(j-7.0*x_);
-      vec4 x=x_*ns.x+ns.yyyy; vec4 y=y_*ns.x+ns.yyyy; vec4 h=1.0-abs(x)-abs(y);
-      vec4 b0=vec4(x.xy,y.xy); vec4 b1=vec4(x.zw,y.zw);
-      vec4 s0=floor(b0)*2.0+1.0; vec4 s1=floor(b1)*2.0+1.0; vec4 sh=-step(h,vec4(0.0));
-      vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy; vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
-      vec3 p0=vec3(a0.xy,h.x); vec3 p1=vec3(a0.zw,h.y); vec3 p2=vec3(a1.xy,h.z); vec3 p3=vec3(a1.zw,h.w);
-      vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
-      p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;
-      vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0); m=m*m;
-      return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));
-    }
-    float flow(vec2 P,float t){
-      float h=snoise(vec3(P*0.040, t*0.5));
-      h+=0.5*snoise(vec3(P*0.10+7.0, t*0.7));
-      h+=0.20*snoise(vec3(P*0.22+3.0, t*1.0));
-      return h;
-    }`;
-  const vert=`
-    uniform float uTime; uniform float uAmp;
-    varying float vH; varying float vFog; varying float vFres;
-    ${SNOISE}
-    void main(){
-      vec3 p=position; float t=uTime;
-      float h=flow(p.xz,t); p.y=h*uAmp;
-      float e=0.8;
-      float hL=flow(p.xz+vec2(-e,0.0),t), hR=flow(p.xz+vec2(e,0.0),t);
-      float hD=flow(p.xz+vec2(0.0,-e),t), hU=flow(p.xz+vec2(0.0,e),t);
-      vec3 nrm=normalize(vec3((hL-hR)*uAmp, 2.0*e, (hD-hU)*uAmp));
-      vec4 world=modelMatrix*vec4(p,1.0);
-      vec3 viewDir=normalize(cameraPosition-world.xyz);
-      vFres=pow(1.0-clamp(dot(nrm,viewDir),0.0,1.0),3.0);
-      vH=clamp(h*0.5+0.5,0.0,1.0);
-      vec4 mv=modelViewMatrix*vec4(p,1.0);
-      vFog=smoothstep(120.0,10.0,-mv.z);
-      gl_Position=projectionMatrix*mv;
-    }`;
-  const frag=`
-    precision highp float;
-    varying float vH; varying float vFog; varying float vFres;
-    uniform vec3 uDeep; uniform vec3 uMid; uniform vec3 uHot; uniform vec3 uBg;
-    void main(){
-      vec3 col=mix(uDeep,uMid,smoothstep(0.32,0.62,vH));
-      col=mix(col,uHot,smoothstep(0.68,0.98,vH));
-      col=mix(col, uHot, vFres*0.18);
-      col=mix(uBg,col,vFog);
-      gl_FragColor=vec4(col,1.0);
-    }`;
-  const mat=new THREE.ShaderMaterial({uniforms,vertexShader:vert,fragmentShader:frag,depthWrite:true,side:THREE.DoubleSide});
-  const surf=new THREE.Mesh(geo,mat); scene.add(surf);
-
-  function resize(){
-    let w=cv.clientWidth,h=cv.clientHeight;
-    if(!w||!h){ const r=cv.getBoundingClientRect(); w=Math.round(r.width)||innerWidth; h=Math.round(r.height)||innerHeight; }
-    renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
-    renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix();
-  }
-  addEventListener('resize',resize); resize(); requestAnimationFrame(resize);
-  if(window.ResizeObserver){ try{ new ResizeObserver(resize).observe(cv); }catch(e){} }
-  const clock=new THREE.Clock(); let running=true,rafId=0;
-  function anim(){ if(!running){rafId=0;return;}
-    uniforms.uTime.value=reduce?4.0:clock.getElapsedTime()*0.55;
-    cam.lookAt(0,-2,-16); renderer.render(scene,cam); rafId=requestAnimationFrame(anim); }
-  anim();
-  if(reduce){ running=false; renderer.render(scene,cam); }
-  if('IntersectionObserver' in window){
-    const hero=document.querySelector('.hero');
-    if(hero) new IntersectionObserver(es=>{ const vis=es[0].isIntersecting;
-      if(vis){ if(!running && !reduce){ running=true; clock.start(); if(!rafId) anim(); } }
-      else if(running){ running=false; clock.stop(); } },{threshold:0}).observe(hero);
-  }
-})();
-</script>
+<section class="team wrap" id="equipe" aria-labelledby="tm-h">
+  <div class="sec-h"><p class="label">Quem responde</p><h2 id="tm-h" class="h2">Um engenheiro responsável por cada trabalho.</h2></div>
+  <div class="team-g">
+    <figure class="founder" data-reveal><img src="/assets/img/founder-768.webp" width="768" height="960" alt="Anderson Silva, fundador da N6C" loading="lazy" decoding="async">
+      <figcaption><b>Anderson Silva</b><span>Fundador e engenheiro-chefe</span></figcaption></figure>
+    <div class="team-t"><p>Escreve software e constrói sistemas há mais de 17 anos, com quase uma década em segurança da informação. Projeta cada sistema, constrói o núcleo e responde pelo que a N6C entrega.</p><a class="tlink" href="/sobre">Sobre a N6C e o Anderson <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
+  </div>
+</section>
+<section class="cta-band" aria-labelledby="cta-h"><div class="wrap cta-in">
+  <h2 id="cta-h" class="big">Conte o que está custando tempo ou dinheiro.</h2>
+  <div><p class="body-l">Umas poucas linhas bastam. A gente responde por escrito com o que faria e quanto custa, em português ou inglês.</p>
+  <div class="ctas"><a class="btn btn-solid" href="https://wa.me/5511927666162?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20N6C%20e%20queria%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg><span>Conversar no WhatsApp</span><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="vh"> (abre em nova aba)</span></a><a class="btn btn-line" href="/contato">Outras formas de contato</a></div>
+  <p class="cta-mail">ou escreva para <a href="mailto:hello@n6c.org">hello@n6c.org</a></p></div>
+</div></section>
+</main><footer class="foot">
+  <div class="wrap foot-g">
+    <div class="foot-b"><a class="brand" href="/"><img src="/assets/img/n6c-mark-128.png" width="30" height="30" alt="" loading="lazy"><span>N6C</span></a>
+      <p>Estúdio de engenharia e design. 3D para o mercado imobiliário, atendimento no WhatsApp, sites e sistemas, revisão de projeto e de segurança.</p>
+      <div class="ctas"><a class="btn btn-wa btn-sm" href="https://wa.me/5511927666162?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20N6C%20e%20queria%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg><span>Conversar no WhatsApp</span><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="vh"> (abre em nova aba)</span></a></div></div>
+    <nav aria-labelledby="fn-h"><h2 class="foot-h" id="fn-h">Navegação</h2><ul><li><a href="/servicos">Serviços</a></li><li><a href="/#demos">Demonstrações</a></li><li><a href="/#como">Como trabalhamos</a></li><li><a href="/sobre">Sobre</a></li><li><a href="/contato">Contato</a></li><li><a href="/privacidade">Privacidade</a></li></ul></nav>
+    <div><h2 class="foot-h">Contato</h2><ul>
+      <li><a href="https://wa.me/5511927666162?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20N6C%20e%20queria%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">WhatsApp <span class="nw">(11) 92766-6162</span><span class="vh"> (abre em nova aba)</span></a></li>
+      <li><a href="mailto:hello@n6c.org">hello@n6c.org</a></li></ul></div>
+    <div><h2 class="foot-h">Empresa</h2><address>Node-Six Cybernetics<br>Paju tn 1a<br>50603 Tartu, Estônia</address></div>
+  </div>
+  <div class="wrap foot-l"><span>© 2026 Node-Six Cybernetics</span><span>O Vale do Araçá e o estudo residencial são fictícios: terreno, ruas, lotes, preços e situações foram inventados para demonstração.</span></div>
+<a class="wa-float" data-wafloat href="https://wa.me/5511927666162?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20N6C%20e%20queria%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" aria-label="Conversar com a N6C no WhatsApp (abre em nova aba)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg></a>
+</footer><script src="/assets/site.js?v=24" defer></script><script src="/assets/tl/tl.js?v=24" defer></script>
 </body>
 </html>

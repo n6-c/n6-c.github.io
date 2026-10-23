@@ -1,0 +1,851 @@
+{
+ "n": 162,
+ "no_blend": [
+  0,
+  23
+ ],
+ "stages": [
+  {
+   "key": "plan",
+   "n0": 0,
+   "n1": 23,
+   "pt": "Projeto · sondagem e implantação no terreno",
+   "en": "Design · soil survey and site layout",
+   "sub_pt": "3 furos SPT até 20,5 m · lote fictício de 2.400 m² · 40 apartamentos de 2 dormitórios",
+   "sub_en": "3 SPT boreholes to 20.5 m · fictional 2,400 m² lot · 40 two-bedroom flats"
+  },
+  {
+   "key": "site",
+   "n0": 24,
+   "n1": 29,
+   "pt": "Canteiro · tapume, limpeza e locação",
+   "en": "Site setup · hoarding, clearing, setting out",
+   "sub_pt": "Tapume de 2,20 m · escritório e almoxarifado fora da área de queda · gabarito nos eixos 1-8 / A-D",
+   "sub_en": "2.20 m hoarding · site office and store outside the fall zone · batter boards on grid 1-8 / A-D"
+  },
+  {
+   "key": "earth",
+   "n0": 30,
+   "n1": 35,
+   "pt": "Terraplenagem · platô na cota 100,00",
+   "en": "Earthworks · pad at level 100.00",
+   "sub_pt": "Corte 274 m³ · aterro compactado 347 m³ · raspagem 480 m³",
+   "sub_en": "Cut 274 m³ · compacted fill 347 m³ · topsoil strip 480 m³"
+  },
+  {
+   "key": "piles",
+   "n0": 36,
+   "n1": 45,
+   "pt": "Fundação · 56 estacas hélice contínua Ø50 cm",
+   "en": "Foundations · 56 continuous flight auger piles Ø50 cm",
+   "sub_pt": "840 m perfurados · 164,9 m³ de concreto C30 · 1.100 kN por estaca · prova de carga estática prevista (NBR 16903)",
+   "sub_en": "840 m drilled · 164.9 m³ of C30 concrete · 1,100 kN per pile · static load test specified (NBR 16903)"
+  },
+  {
+   "key": "caps",
+   "n0": 46,
+   "n1": 53,
+   "pt": "Blocos de coroamento e vigas baldrame",
+   "en": "Pile caps and ground beams",
+   "sub_pt": "26 blocos · 65,8 m³ · baldrames 20×50 cm · 15,3 m³ · laje de piso estrutural",
+   "sub_en": "26 caps · 65.8 m³ · 20×50 cm ground beams · 15.3 m³ · structural ground slab"
+  },
+  {
+   "key": "ground",
+   "n0": 54,
+   "n1": 59,
+   "pt": "Térreo · grua e primeiros pilares",
+   "en": "Ground floor · tower crane, first columns",
+   "sub_pt": "Grua de lança 40 m, altura sob gancho 42 m · 26 pilares C35",
+   "sub_en": "40 m jib tower crane, 42 m under hook · 26 C35 columns"
+  },
+  {
+   "key": "frame",
+   "n0": 60,
+   "n1": 119,
+   "pt": "Estrutura · fôrma, armação e concretagem por pavimento",
+   "en": "Structure · formwork, rebar and pour, floor by floor",
+   "sub_pt": "Laje maciça 12 cm · 2,88 m de piso a piso · núcleo de escada e elevadores em concreto · bandejas NR‑18",
+   "sub_en": "12 cm flat slab · 2.88 m floor to floor · concrete stair and lift core · NR-18 safety fans"
+  },
+  {
+   "key": "masonry",
+   "n0": 88,
+   "n1": 129,
+   "pt": "Alvenaria · blocos cerâmicos 14 e 9 cm",
+   "en": "Masonry · 14 and 9 cm ceramic blocks",
+   "sub_pt": "57.800 blocos · 4.626 m² de vedação · prumadas nos shafts",
+   "sub_en": "57,800 blocks · 4,626 m² of infill walls · risers in the shafts"
+  },
+  {
+   "key": "roof",
+   "n0": 120,
+   "n1": 129,
+   "pt": "Cobertura · reservatório e platibanda",
+   "en": "Roof · water tank and parapet",
+   "sub_pt": "Reservatório superior de 40,0 m³ (consumo + reserva de incêndio) · cisterna de 38,4 m³ · platibanda 1,10 m",
+   "sub_en": "40.0 m³ upper tank (supply + fire reserve) · 38.4 m³ cistern · 1.10 m parapet"
+  },
+  {
+   "key": "facade",
+   "n0": 130,
+   "n1": 141,
+   "pt": "Fachada · reboco, pintura e esquadrias",
+   "en": "Facade · render, paint and windows",
+   "sub_pt": "Chapisco, emboço e textura de cima para baixo em balancins · alumínio e vidro laminado",
+   "sub_en": "Spatterdash, render and textured finish top-down from cradles · aluminium and laminated glass"
+  },
+  {
+   "key": "demob",
+   "n0": 142,
+   "n1": 149,
+   "pt": "Desmobilização · grua, cremalheira e bandejas",
+   "en": "Demobilisation · crane, hoist and fans",
+   "sub_pt": "Estrutura: 1.097 m³ de concreto · 90,0 t de aço CA-50/60",
+   "sub_en": "Structure: 1,097 m³ of concrete · 90.0 t of CA-50/60 steel"
+  },
+  {
+   "key": "handover",
+   "n0": 150,
+   "n1": 161,
+   "pt": "Entrega · paisagismo e acabamento",
+   "en": "Handover · landscaping and finishes",
+   "sub_pt": "3.820 m² construídos · 40 unidades de 60,7 m² privativos + varanda",
+   "sub_en": "3,820 m² built · 40 flats of 60.7 m² net + balcony"
+  }
+ ],
+ "sheets": [
+  {
+   "src": "sheets/02-planta-tipo.svg",
+   "focus": [
+    0.27,
+    0.56
+   ],
+   "focus_m": [
+    0.3,
+    0.5
+   ],
+   "zoom": 2.3,
+   "pt": "Planta do pavimento tipo · 1:100",
+   "en": "Typical floor plan · 1:100",
+   "sub_pt": "4 apartamentos por andar · 60,74 m² privativos + varanda · núcleo de escada e elevadores em concreto",
+   "sub_en": "4 flats per floor · 60.74 m² net + balcony · concrete stair and lift core"
+  },
+  {
+   "src": "sheets/03-corte-aa.svg",
+   "focus": [
+    0.72,
+    0.3
+   ],
+   "focus_m": [
+    0.27,
+    0.45
+   ],
+   "zoom": 2.3,
+   "pt": "Corte AA e quantitativos · 1:200",
+   "en": "Section AA and quantities · 1:200",
+   "sub_pt": "Térreo + 10 pavimentos · 1.097 m³ de concreto · 90,0 t de aço, levantados do modelo",
+   "sub_en": "Ground + 10 floors · 1,097 m³ of concrete · 90.0 t of steel, taken off the model"
+  },
+  {
+   "src": "sheets/04-locacao-estacas.svg",
+   "focus": [
+    0.3,
+    0.42
+   ],
+   "focus_m": [
+    0.33,
+    0.45
+   ],
+   "zoom": 2.3,
+   "pt": "Locação de estacas e blocos · 1:100",
+   "en": "Pile and cap setting-out · 1:100",
+   "sub_pt": "56 estacas hélice contínua Ø50 cm em 26 blocos · espaçamento mínimo de 3 diâmetros",
+   "sub_en": "56 CFA piles Ø50 cm in 26 caps · minimum spacing of 3 diameters"
+  },
+  {
+   "src": "sheets/01-implantacao.svg",
+   "focus": [
+    0.33,
+    0.55
+   ],
+   "focus_m": [
+    0.36,
+    0.52
+   ],
+   "zoom": 1.0,
+   "lot_mm": [
+    73.333,
+    60.0,
+    206.667,
+    260.0
+   ],
+   "pt": "Implantação · 1:300",
+   "en": "Site plan · 1:300",
+   "sub_pt": "Lote fictício de 2.400 m² · 41 vagas · cisterna de 38,4 m³",
+   "sub_en": "Fictional 2,400 m² lot · 41 parking spaces · 38.4 m³ cistern"
+  }
+ ],
+ "overlay": {
+  "lot": [
+   [
+    -8.0,
+    -36.0
+   ],
+   [
+    32.0,
+    -36.0
+   ],
+   [
+    32.0,
+    24.0
+   ],
+   [
+    -8.0,
+    24.0
+   ]
+  ],
+  "fp": [
+   [
+    0,
+    0
+   ],
+   [
+    24.0,
+    0
+   ],
+   [
+    24.0,
+    14.4
+   ],
+   [
+    14.4,
+    14.4
+   ],
+   [
+    14.4,
+    10.8
+   ],
+   [
+    9.6,
+    10.8
+   ],
+   [
+    9.6,
+    14.4
+   ],
+   [
+    0,
+    14.4
+   ]
+  ],
+  "gx": [
+   0.0,
+   3.2,
+   6.0,
+   9.6,
+   14.4,
+   18.0,
+   20.8,
+   24.0
+  ],
+  "gy": [
+   0,
+   7.2,
+   14.4
+  ],
+  "piles": [
+   [
+    0.25,
+    14.3
+   ],
+   [
+    3.2,
+    13.55
+   ],
+   [
+    3.2,
+    15.05
+   ],
+   [
+    6.0,
+    13.55
+   ],
+   [
+    6.0,
+    15.05
+   ],
+   [
+    9.6,
+    14.3
+   ],
+   [
+    14.4,
+    14.3
+   ],
+   [
+    18.0,
+    13.55
+   ],
+   [
+    18.0,
+    15.05
+   ],
+   [
+    20.8,
+    13.55
+   ],
+   [
+    20.8,
+    15.05
+   ],
+   [
+    23.75,
+    14.3
+   ],
+   [
+    9.6,
+    9.8
+   ],
+   [
+    9.6,
+    11.3
+   ],
+   [
+    14.4,
+    9.8
+   ],
+   [
+    14.4,
+    11.3
+   ],
+   [
+    0.1,
+    6.45
+   ],
+   [
+    0.1,
+    7.95
+   ],
+   [
+    3.633,
+    6.45
+   ],
+   [
+    3.633,
+    7.95
+   ],
+   [
+    2.334,
+    7.2
+   ],
+   [
+    5.567,
+    6.45
+   ],
+   [
+    5.567,
+    7.95
+   ],
+   [
+    6.866,
+    7.2
+   ],
+   [
+    8.85,
+    6.45
+   ],
+   [
+    10.35,
+    6.45
+   ],
+   [
+    8.85,
+    7.95
+   ],
+   [
+    10.35,
+    7.95
+   ],
+   [
+    13.65,
+    6.45
+   ],
+   [
+    15.15,
+    6.45
+   ],
+   [
+    13.65,
+    7.95
+   ],
+   [
+    15.15,
+    7.95
+   ],
+   [
+    18.433,
+    6.45
+   ],
+   [
+    18.433,
+    7.95
+   ],
+   [
+    17.134,
+    7.2
+   ],
+   [
+    20.367,
+    6.45
+   ],
+   [
+    20.367,
+    7.95
+   ],
+   [
+    21.666,
+    7.2
+   ],
+   [
+    23.9,
+    6.45
+   ],
+   [
+    23.9,
+    7.95
+   ],
+   [
+    0.25,
+    0.1
+   ],
+   [
+    3.2,
+    -0.65
+   ],
+   [
+    3.2,
+    0.85
+   ],
+   [
+    6.0,
+    -0.65
+   ],
+   [
+    6.0,
+    0.85
+   ],
+   [
+    9.167,
+    -0.65
+   ],
+   [
+    9.167,
+    0.85
+   ],
+   [
+    10.466,
+    0.1
+   ],
+   [
+    14.833,
+    -0.65
+   ],
+   [
+    14.833,
+    0.85
+   ],
+   [
+    13.534,
+    0.1
+   ],
+   [
+    18.0,
+    -0.65
+   ],
+   [
+    18.0,
+    0.85
+   ],
+   [
+    20.8,
+    -0.65
+   ],
+   [
+    20.8,
+    0.85
+   ],
+   [
+    23.75,
+    0.1
+   ]
+  ],
+  "var": [
+   [
+    6.25,
+    -1.4,
+    9.35,
+    0.0
+   ],
+   [
+    6.25,
+    14.4,
+    9.35,
+    15.8
+   ],
+   [
+    14.65,
+    -1.4,
+    17.75,
+    0.0
+   ],
+   [
+    14.65,
+    14.4,
+    17.75,
+    15.8
+   ]
+  ],
+  "stalls": [
+   [
+    -7.8,
+    -35.5,
+    -30.5
+   ],
+   [
+    -5.4,
+    -35.5,
+    -30.5
+   ],
+   [
+    -3.0,
+    -35.5,
+    -30.5
+   ],
+   [
+    -0.6,
+    -35.5,
+    -30.5
+   ],
+   [
+    1.8,
+    -35.5,
+    -30.5
+   ],
+   [
+    4.2,
+    -35.5,
+    -30.5
+   ],
+   [
+    6.6,
+    -35.5,
+    -30.5
+   ],
+   [
+    9.0,
+    -35.5,
+    -30.5
+   ],
+   [
+    11.4,
+    -35.5,
+    -30.5
+   ],
+   [
+    13.8,
+    -35.5,
+    -30.5
+   ],
+   [
+    16.2,
+    -35.5,
+    -30.5
+   ],
+   [
+    18.6,
+    -35.5,
+    -30.5
+   ],
+   [
+    21.0,
+    -35.5,
+    -30.5
+   ],
+   [
+    23.4,
+    -35.5,
+    -30.5
+   ],
+   [
+    -7.8,
+    -25.0,
+    -20.0
+   ],
+   [
+    -5.4,
+    -25.0,
+    -20.0
+   ],
+   [
+    -3.0,
+    -25.0,
+    -20.0
+   ],
+   [
+    -0.6,
+    -25.0,
+    -20.0
+   ],
+   [
+    1.8,
+    -25.0,
+    -20.0
+   ],
+   [
+    4.2,
+    -25.0,
+    -20.0
+   ],
+   [
+    6.6,
+    -25.0,
+    -20.0
+   ],
+   [
+    9.0,
+    -25.0,
+    -20.0
+   ],
+   [
+    11.4,
+    -25.0,
+    -20.0
+   ],
+   [
+    13.8,
+    -25.0,
+    -20.0
+   ],
+   [
+    16.2,
+    -25.0,
+    -20.0
+   ],
+   [
+    18.6,
+    -25.0,
+    -20.0
+   ],
+   [
+    21.0,
+    -25.0,
+    -20.0
+   ],
+   [
+    23.4,
+    -25.0,
+    -20.0
+   ],
+   [
+    -7.8,
+    -20.0,
+    -15.0
+   ],
+   [
+    -3.0,
+    -20.0,
+    -15.0
+   ],
+   [
+    -0.6,
+    -20.0,
+    -15.0
+   ],
+   [
+    1.8,
+    -20.0,
+    -15.0
+   ],
+   [
+    4.2,
+    -20.0,
+    -15.0
+   ],
+   [
+    6.6,
+    -20.0,
+    -15.0
+   ],
+   [
+    9.0,
+    -20.0,
+    -15.0
+   ],
+   [
+    11.4,
+    -20.0,
+    -15.0
+   ],
+   [
+    13.8,
+    -20.0,
+    -15.0
+   ],
+   [
+    16.2,
+    -20.0,
+    -15.0
+   ],
+   [
+    18.6,
+    -20.0,
+    -15.0
+   ],
+   [
+    21.0,
+    -20.0,
+    -15.0
+   ],
+   [
+    23.4,
+    -20.0,
+    -15.0
+   ]
+  ]
+ },
+ "reg": {
+  "d": {
+   "w": 1600,
+   "h": 900,
+   "pts": {
+    "lot_sw": {
+     "model": [
+      -8.0,
+      -36.0
+     ],
+     "px": [
+      853.1793594360352,
+      -83.66475105285645
+     ]
+    },
+    "lot_se": {
+     "model": [
+      32.0,
+      -36.0
+     ],
+     "px": [
+      327.41074562072754,
+      195.35558223724365
+     ]
+    },
+    "lot_nw": {
+     "model": [
+      -8.0,
+      24.0
+     ],
+     "px": [
+      1268.7777519226074,
+      702.5165677070618
+     ]
+    },
+    "b_sw": {
+     "model": [
+      0,
+      0
+     ],
+     "px": [
+      998.7133026123047,
+      444.99950408935547
+     ]
+    },
+    "b_ne": {
+     "model": [
+      24.0,
+      14.4
+     ],
+     "px": [
+      784.9627017974854,
+      799.513278901577
+     ]
+    }
+   }
+  },
+  "m": {
+   "w": 720,
+   "h": 1280,
+   "pts": {
+    "lot_sw": {
+     "model": [
+      -8.0,
+      -36.0
+     ],
+     "px": [
+      398.2735776901245,
+      255.8515167236328
+     ]
+    },
+    "lot_se": {
+     "model": [
+      32.0,
+      -36.0
+     ],
+     "px": [
+      19.823639541864395,
+      456.7253875732422
+     ]
+    },
+    "lot_nw": {
+     "model": [
+      -8.0,
+      24.0
+     ],
+     "px": [
+      697.5702095031738,
+      821.8578338623047
+     ]
+    },
+    "b_sw": {
+     "model": [
+      0,
+      0
+     ],
+     "px": [
+      503.06525230407715,
+      636.4152526855469
+     ]
+    },
+    "b_ne": {
+     "model": [
+      24.0,
+      14.4
+     ],
+     "px": [
+      349.1636610031128,
+      891.6911697387695
+     ]
+    }
+   }
+  }
+ },
+ "size": {
+  "d": [
+   1600,
+   900
+  ],
+  "m": [
+   720,
+   1280
+  ]
+ },
+ "facts": {
+  "pt": {
+   "piles": "56",
+   "concrete": "1.097"
+  },
+  "en": {
+   "piles": "56",
+   "concrete": "1,097"
+  }
+ }
+}

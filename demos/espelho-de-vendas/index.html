@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vale do Araçá · Espelho de vendas (demonstração N6C, empreendimento fictício)</title>
+<meta name="description" content="Demonstração do espelho de vendas da N6C: mapa de lotes de um loteamento fictício, com situação de cada lote, ficha, o que cabe no terreno e WhatsApp com a mensagem pronta.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f2efe7">
+<meta property="og:title" content="Vale do Araçá · Espelho de vendas (demonstração N6C)">
+<meta property="og:description" content="Loteamento fictício. Toque num lote e veja preço, situação, o que cabe no terreno e fale no WhatsApp.">
+<meta property="og:image" content="assets/og.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/touch-icon.png">
+<link rel="preload" href="assets/fonts/archivo-latin-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="data/vale-do-araca.json" as="fetch" crossorigin>
+<link rel="preload" href="assets/terrain-sm.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#lista">Ir para a lista de lotes</a>
+
+<header class="top">
+  <a class="brand" href="#" aria-label="Vale do Araçá, início">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 21c5-1 8-4 10-9 2 5 5 8 10 9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 24.5h24" stroke="currentColor" stroke-width="1.5"/></svg>
+    <span class="brand-name">Vale do Araçá</span>
+  </a>
+  <p class="fic"><span class="fic-tag">Fictício</span><span class="fic-long">Empreendimento inventado pela N6C para demonstração</span></p>
+  <a class="btn btn-ink top-cta" data-wa="geral" href="#" target="_blank" rel="noopener" aria-label="Falar com um corretor no WhatsApp">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.6 7.9c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.6.8c-.1.2-.2.3 0 .6.6 1 1.6 2 2.7 2.6.3.2.4.1.6-.1l.8-.9c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.4.4 0 .7-.3 1.4-.9 1.8-.6.4-1.5.6-2.6.2-2.6-.9-4.6-2.9-5.6-5.2-.4-1-.3-2 .3-2.4Z" fill="currentColor"/></svg>
+    <span class="top-cta-long">Falar com um corretor</span>
+  </a>
+</header>
+
+<main id="main">
+  <section class="app" aria-label="Espelho de vendas">
+    <div class="map-wrap" id="mapWrap">
+      <h1 class="map-title">Lotes à venda no Vale do Araçá</h1>
+      <div class="map-stage" id="mapStage">
+      <svg id="map" class="map" viewBox="0 12 360 312" role="img" aria-label="Mapa do loteamento Vale do Araçá com os lotes coloridos pela situação de venda. A lista de lotes abaixo traz as mesmas informações."><image href="assets/terrain-sm.webp" x="0" y="0" width="360" height="350" preserveAspectRatio="none" fetchpriority="high"/></svg>
+      <div class="map-ui">
+        <div class="zoom" role="group" aria-label="Zoom do mapa">
+          <button type="button" class="zbtn" data-zoom="in" aria-label="Aproximar"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.8"/></svg></button>
+          <button type="button" class="zbtn" data-zoom="out" aria-label="Afastar"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12" stroke="currentColor" stroke-width="1.8"/></svg></button>
+          <button type="button" class="zbtn" data-zoom="fit" aria-label="Ver o loteamento inteiro"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 7.5v-4h4M12.5 3.5h4v4M16.5 12.5v4h-4M7.5 16.5h-4v-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+        </div>
+      </div>
+      <p class="map-hint" id="mapHint"></p>
+      </div>
+    </div>
+
+    <div class="panel" id="panel">
+      <div class="view-all" id="viewAll">
+        <div class="status-head">
+          <h2 class="h-panel">Situação dos lotes</h2>
+          <p class="updated">Atualizado em <time id="updated"></time></p>
+        </div>
+        <div class="bar" id="bar" aria-hidden="true"></div>
+        <fieldset class="legend" id="legend">
+          <legend class="sr">Mostrar lotes por situação</legend>
+        </fieldset>
+
+        <div class="filters">
+          <fieldset class="f-group">
+            <legend class="f-label">Área do lote</legend>
+            <div class="chips" id="areaChips"></div>
+          </fieldset>
+          <div class="f-group">
+            <label class="f-label" for="price">Preço máximo: <output id="priceOut" for="price"></output></label>
+            <input type="range" id="price" min="175000" max="395000" step="5000">
+          </div>
+          <fieldset class="f-group">
+            <legend class="f-label">Só lotes</legend>
+            <div class="chips" id="flagChips"></div>
+          </fieldset>
+        </div>
+
+        <div class="list-head">
+          <h2 class="h-panel" id="lista" tabindex="-1"><span id="count"></span></h2>
+          <label class="sort"><span>Ordenar</span>
+            <select id="sort">
+              <option value="id">por número</option>
+              <option value="price">menor preço</option>
+              <option value="area">maior área</option>
+            </select>
+          </label>
+        </div>
+        <ul class="list" id="list"></ul>
+        <p class="empty" id="empty" hidden>Nenhum lote com esses filtros. <button type="button" class="linkbtn" id="clear">Limpar filtros</button></p>
+      </div>
+
+      <section class="lot" id="lot" hidden aria-labelledby="lotTitle">
+        <div class="lot-bar">
+          <button type="button" class="back" id="back"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Todos os lotes</span></button>
+          <span class="grip" aria-hidden="true"></span>
+          <button type="button" class="close" id="close" aria-label="Fechar a ficha"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8"/></svg></button>
+        </div>
+        <div class="lot-scroll" id="lotScroll">
+          <p class="lot-q" id="lotQ"></p>
+          <h2 class="lot-title" id="lotTitle" tabindex="-1"></h2>
+          <p class="pill" id="lotStatus"></p>
+          <div class="price" id="lotPrice"></div>
+          <div class="cta" id="lotCta"></div>
+          <figure class="plan">
+            <svg id="plan" viewBox="0 0 340 250" role="img"></svg>
+            <figcaption id="planCap"></figcaption>
+          </figure>
+          <dl class="facts" id="lotFacts"></dl>
+          <div class="similar" id="similar" hidden></div>
+          <p class="fine" id="lotFine"></p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="aboutTitle">
+    <div class="wrap">
+      <p class="label">O loteamento (fictício)</p>
+      <h2 class="h2" id="aboutTitle">Cento e doze lotes numa encosta voltada para o córrego.</h2>
+      <div class="about-grid">
+        <p class="lead">Ruas de 14 m, uma avenida de 18 m com canteiro central e quase 2 ha de área verde e mata ciliar ao fundo. Quem compra na Rua das Pitangueiras tem a área verde em frente; quem compra numa frente norte tem sol na fachada.</p>
+        <dl class="sheet" id="sheet"></dl>
+      </div>
+      <figure class="section-fig">
+        <svg id="profile" role="img" aria-labelledby="profCap"></svg>
+        <figcaption id="profCap">Corte norte–sul pelas quadras A, C e E: o terreno desce da Estrada do Araçá até o córrego. Alturas exageradas 4 vezes para mostrar o caimento.</figcaption>
+      </figure>
+      <h3 class="h3">Regras de construção (fictícias)</h3>
+      <dl class="rules" id="rules"></dl>
+    </div>
+  </section>
+
+  <section class="n6c" aria-labelledby="n6cTitle">
+    <div class="wrap n6c-grid">
+      <div>
+        <p class="label">Demonstração N6C</p>
+        <h2 class="h2" id="n6cTitle">Este é o espelho de vendas que a N6C monta para a sua loteadora.</h2>
+      </div>
+      <div class="n6c-copy">
+        <p>Partimos da planta aprovada do seu loteamento (DWG ou PDF) e desenhamos cada lote com a área e as medidas da planta. O cliente abre o link no celular, vê o que está disponível agora e toca no lote que quer: a ficha mostra preço, sol, caimento do terreno e quanto dá para construir.</p>
+        <p>O botão de WhatsApp já leva o número do lote na mensagem, então o corretor sabe do que se trata na primeira linha. Cada lote tem link próprio, para mandar no grupo de corretores. Quando o seu time manda a planilha de vendas, a gente atualiza as cores.</p>
+        <p class="n6c-actions">
+          <a class="btn btn-paper" href="mailto:hello@n6c.org?subject=Espelho%20de%20vendas%20para%20o%20meu%20loteamento">Quero o espelho do meu loteamento</a>
+          <a class="textlink" href="https://n6c.org" target="_blank" rel="noopener">n6c.org</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <p><strong>Vale do Araçá não existe.</strong> Terreno, ruas, lotes, preços, reservas e vendas foram inventados pela N6C para esta demonstração. O mapa foi desenhado por nós; não há fotos nem imagens de terceiros.</p>
+    <p>Num loteamento de verdade, este rodapé traz a razão social e o CNPJ da loteadora, o número do registro do loteamento e o cartório (Lei 6.766/79, art. 18) e o CRECI de quem anuncia.</p>
+    <p class="made">Espelho de vendas por <a href="https://n6c.org" target="_blank" rel="noopener">N6C</a> · hello@n6c.org · 2026</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js" defer></script>
+</body>
+</html>
