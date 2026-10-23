@@ -2270,7 +2270,7 @@
 <text x="334.000" y="139.800" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">CIRCULAÇÃO</text>
 <text x="406.000" y="139.800" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">3,85 m²</text>
 <line x1="334.000" y1="141.000" x2="406.000" y2="141.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="334.000" y="144.600" font-size="2.3" text-anchor="start" font-weight="700" fill="#111">ÁREA PRIVATIVA ÚTIL</text>
+<text x="334.000" y="144.600" font-size="2.3" text-anchor="start" font-weight="700" fill="#111">ÁREA ÚTIL</text>
 <text x="406.000" y="144.600" font-size="2.3" text-anchor="end" font-weight="700" fill="#111">60,74 m²</text>
 <text x="334.000" y="149.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">VARANDA (útil)</text>
 <text x="406.000" y="149.000" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">4,05 m²</text>

@@ -11,13 +11,11 @@ A = '/assets/'
 V = '24'  # bump to bust caches of site.css / site.js / tl.*
 TL = json.load(open(os.path.join(ROOT, 'assets/tl/data.json')))
 DATA = json.load(open(os.path.join(ROOT, 'demos/espelho-de-vendas/data/vale-do-araca.json')))
-STEEL_T = '90'  # model.json q.steel_t of the construction study (timelapse/model in n6c-site-mockups)
 OTHER = {'pt': EN, 'en': PT}
 
 
 def facts(c):
-    f = dict(TL['facts'][c['short']]); f['steel'] = STEEL_T
-    return f
+    return dict(TL['facts'][c['short']])
 
 
 def fill(s, c):
@@ -64,7 +62,7 @@ def review_svg(c):
  <line x1="290" y1="230" x2="450" y2="230" stroke-width="4"/><line x1="340" y1="230" x2="340" y2="360" stroke-width="4"/>
  <line x1="250" y1="160" x2="330" y2="160" stroke-width="4"/>
  <path d="M210 230 A40 40 0 0 1 250 190" stroke-width="1.2"/><line x1="250" y1="190" x2="250" y2="230" stroke-width="1.2"/>
- <path d="M300 230 A38 38 0 0 0 338 268" stroke-width="1.2"/>
+ <line x1="346" y1="230" x2="384" y2="230" stroke="{paper}" stroke-width="6"/><line x1="346" y1="231" x2="346" y2="268" stroke-width="1.2"/><path d="M384 230 A38 38 0 0 1 346 268" stroke-width="1.2"/>
  <rect x="350" y="240" width="90" height="26" stroke-width="1.2"/><circle cx="395" cy="253" r="8" stroke-width="1"/>
  <rect x="90" y="250" width="120" height="16" stroke-width="1"/>
  <line x1="160" y1="360" x2="230" y2="360" stroke="{paper}" stroke-width="9"/><line x1="160" y1="356" x2="230" y2="356" stroke-width="1"/><line x1="160" y1="364" x2="230" y2="364" stroke-width="1"/>
@@ -138,8 +136,8 @@ def header(c, page, alt_href):
     nav = ''.join(f'<a href="{link(c, k)}"{CUR if k == page else ""}>{E(t)}</a>' for k, t in c['nav'])
     pt_on = c['short'] == 'pt'
     langs = (f'<div class="lang" role="group" aria-label="{E(c["lang_label"])}">'
-             f'<a href="{PT["pages"][page] if not pt_on else "#"}" data-setlang="pt" lang="pt-BR" hreflang="pt-BR"{CT if pt_on else ""}>PT</a>'
-             f'<a href="{EN["pages"][page] if pt_on else "#"}" data-setlang="en" lang="en" hreflang="en"{CT if not pt_on else ""}>EN</a></div>')
+             f'<a href="{PT["pages"][page]}" data-setlang="pt" lang="pt-BR" hreflang="pt-BR"{CT if pt_on else ""}>PT</a>'
+             f'<a href="{EN["pages"][page]}" data-setlang="en" lang="en" hreflang="en"{CT if not pt_on else ""}>EN</a></div>')
     return f'''<a class="skip" href="#main">{E(c["skip"])}</a>
 <header class="top" data-top>
   <a class="brand" href="{c["pages"]["index"]}" aria-label="N6C, Node-Six Cybernetics"><img src="{A}img/n6c-mark-128.png" width="30" height="30" alt=""><span>N6C</span></a>
@@ -205,6 +203,13 @@ def service_media(s, c):
     if m == 'security':
         return f'<div class="media-review">{security_svg(c)}</div>'
 
+def card_media(s, c):
+    # the review illustration is shown in full in Demonstração 02, so its home card shows a sheet of the study instead
+    if s['media'] == 'review':
+        alt = 'Corte AA do estudo residencial fictício da N6C' if c['short'] == 'pt' else 'Section AA of the fictional N6C residential study'
+        return f'<img class="sheetimg" src="{A}tl/sheets/03-corte-aa.svg" alt="{alt}" width="1680" height="1188" loading="lazy" decoding="async">'
+    return service_media(s, c)
+
 def slider(c):
     return f'''<div class="cmp" data-cmp style="--p:50%">
   <div class="cmp-model">{picture("maq-light-top", [950, 1900], "", "", 1900, 1720)}</div>
@@ -239,7 +244,7 @@ def head(c, page, extra='', noindex=False):
 {'<meta name="robots" content="noindex">' if noindex else f'<link rel="canonical" href="{url}">'}
 <link rel="alternate" hreflang="pt-BR" href="{SITE}{PT["pages"][page]}"><link rel="alternate" hreflang="en" href="{SITE}{EN["pages"][page]}"><link rel="alternate" hreflang="x-default" href="{SITE}{PT["pages"][page]}">
 <meta property="og:title" content="{E(c["titles"][page])}"><meta property="og:description" content="{E(c["descs"][page])}"><meta property="og:type" content="website">
-<meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}/brand/og.png"><meta property="og:locale" content="{c["lang"].replace("-", "_")}"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}/brand/og{"-en" if c["short"] == "en" else ""}.png"><meta property="og:locale" content="{c["lang"].replace("-", "_")}"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f3f1ec">
 <link rel="icon" href="{A}img/n6c-mark-128.png"><link rel="apple-touch-icon" href="{A}img/n6c-mark-128.png">
 {detect}
@@ -276,12 +281,12 @@ def home(c):
     s0 = TL['sheets'][0]
     cards = ''.join(f'''<article class="svc" data-reveal>
       <a class="svc-a" href="{c["pages"]["servicos"]}#{s["id"]}">
-        <div class="svc-m m-{s["media"]}">{service_media(s, c)}</div>
+        <div class="svc-m m-{s["media"]}">{card_media(s, c)}</div>
         <div class="svc-t"><span class="svc-n">{s["n"]}</span><h3>{E(s["name"])}</h3><p>{E(s["short"])}</p>
         <span class="status"><i></i>{E(s["status"])}</span><span class="more">{E(c["sv_more"])} {arrow()}</span></div></a></article>''' for s in c['services'])
     dfacts = ''.join(f'<div><dt>{E(a)}</dt><dd>{E(b)}</dd></div>' for a, b in c['dm_facts'])
     steps = ''.join(f'<li data-reveal><span class="st-n">0{k + 1}</span><h3>{E(t)}</h3><p>{E(b)}</p></li>' for k, (t, b) in enumerate(c['steps']))
-    in_facts = ''.join(f'<li><b>{E(a)}</b><span>{E(b)}</span></li>' for a, b in c['facts'])
+
     af = ''.join(f'<li><b>{E(fill(a, c))}</b><span>{E(b)}</span></li>' for a, b in c['after_facts'])
     rv = next(s for s in c['services'] if s['id'] == 'revisao')
     d2 = ''.join(f'<li>{E(x)}</li>' for x in c['dm2_list'])
@@ -317,7 +322,7 @@ def home(c):
   <ol class="tl-static">{tl_static(c)}</ol>
   <ol class="tl-sr" aria-label="{E("Etapas da obra" if L == "pt" else "Construction stages")}">{"".join(f"<li>{E(s[L])}: {E(s['sub_' + L])}</li>" for s in TL["stages"])}</ol>
 </section>
-<noscript><style>.tl .tl-track{{display:none}}.tl .tl-static{{display:grid}}.tl-hero .tl-intro{{position:static;height:auto}}.tl-hero .tl-copy{{padding:140px 0 56px;background:none}}</style></noscript>
+<noscript><style>.tl .tl-track{{display:none}}.tl .tl-static{{display:grid}}.tl-hero .tl-intro{{position:static;height:auto}}.tl-hero .tl-copy{{padding:140px 0 56px;background:none}}.tl .tl-hint{{display:none}}</style></noscript>
 <script>{INTRO_JS}</script>
 
 <section class="after wrap" id="modelo" tabindex="-1" aria-labelledby="af-h">
@@ -330,7 +335,6 @@ def home(c):
 <section class="intro wrap" aria-labelledby="in-h">
   <p class="label">{E(c["in_label"])}</p>
   <div class="intro-g"><h2 id="in-h" class="big" data-reveal>{E(c["in_h"])}</h2><p class="body-l" data-reveal>{E(c["in_body"])}</p></div>
-  <ul class="facts">{in_facts}</ul>
 </section>
 
 <section class="services wrap" id="servicos" aria-labelledby="sv-h">
@@ -372,7 +376,7 @@ def home(c):
   <div class="team-g">
     <figure class="founder" data-reveal><img src="{A}img/founder-768.webp" width="768" height="960" alt="{E(c["founder_alt"])}" loading="lazy" decoding="async">
       <figcaption><b>{E(c["founder_name"])}</b><span>{E(c["founder_role"])}</span></figcaption></figure>
-    <div class="team-t"><p>{E(c["founder_short"])}</p><a class="tlink" href="{c["pages"]["sobre"]}">{E(c["tm_more"])} {arrow()}</a></div>
+    <div class="team-t"><p>{E(c["founder_short"])}</p><ul class="facts three">{"".join(f"<li><b>{E(a)}</b><span>{E(b)}</span></li>" for a, b in c["founder_facts"])}</ul><a class="tlink" href="{c["pages"]["sobre"]}">{E(c["tm_more"])} {arrow()}</a></div>
   </div>
 </section>
 {cta_band(c)}
@@ -385,8 +389,8 @@ var ar=1188/1680,desk=vw>=900&&vw/vh>=.9;
 if(desk){var x0=Math.max(r.right+40,vw*.47),x1=vw-m,y0=88,y1=vh-40,tw=Math.min(x1-x0,(y1-y0)/ar);T={x:x0+(x1-x0-tw)/2,y:y0+(y1-y0-tw*ar)/2,w:tw}}
 else{var tw2=vw-2*m;T={x:m,y:Math.max(bot+18,vh*.5),w:tw2}}
 w.style.transform='none';var b=im.getBoundingClientRect(),vb=v.getBoundingClientRect();var s=T.w/b.width;
-var P={s:s,x:T.x-s*(b.left-vb.left),y:T.y-s*(b.top-vb.top)};w._pose=P;window.__tlK=window.__tlK||0;apply(window.__tlK)}
-function apply(k){var P=w._pose;if(!P)return;var e=1-k,s=1+(P.s-1)*e;w.style.transform='translate('+(P.x*e).toFixed(1)+'px,'+(P.y*e).toFixed(1)+'px) scale('+s.toFixed(4)+')'}
+var P={s:s,x:T.x-s*(b.left-vb.left),y:T.y-s*(b.top-vb.top)};w._pose=P;apply(lastK)}
+var lastK=0;function apply(k){lastK=k;var P=w._pose;if(!P)return;var e=1-k,s=1+(P.s-1)*e;w.style.transform='translate('+(P.x*e).toFixed(1)+'px,'+(P.y*e).toFixed(1)+'px) scale('+s.toFixed(4)+')';cp.style.opacity=String(Math.max(0,1-k/.3))}
 window.__tlIntro={pose:pose,apply:apply};pose();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(pose);addEventListener('resize',pose);if(!im.complete)im.addEventListener('load',pose)})();"""
 
 # ---------------------------------------------------------------- services page
@@ -496,7 +500,7 @@ def contact_page(c):
     <label for="f-msg"><span>{E(c["f_msg"])} <small>({E(c["req"])})</small></span></label><textarea id="f-msg" name="msg" rows="5" required placeholder="{E(c["f_msg_ph"])}" aria-describedby="e-msg"></textarea><p class="f-err" id="e-msg" hidden>{E(c["f_err_msg"])}</p>
     <div class="f-btns"><button class="btn btn-solid" type="submit" value="wa">{icon_wa()}<span>{E(c["f_send"])}</span>{arrow()}</button>
     <button class="btn btn-line" type="submit" value="mail" data-mail>{icon_mail()}<span>{E(c["f_send_mail"])}</span></button></div>
-    <p class="f-note">{E(c["f_note"])}</p>
+    <p class="f-note">{E(c["f_note"])} <a href="{c["pages"]["privacidade"]}">{E(c["f_privacy"])}</a></p>
   </form>
 </section>
 </main>'''

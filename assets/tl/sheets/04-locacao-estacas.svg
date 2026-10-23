@@ -22,24 +22,19 @@
 <polygon points="227.500,68.500 236.500,68.500 236.500,45.500 227.500,45.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="255.500,68.500 264.500,68.500 264.500,45.500 255.500,45.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="285.000,61.500 294.000,61.500 294.000,52.500 285.000,52.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
-<polygon points="143.500,106.000 152.500,106.000 152.500,83.000 143.500,83.000" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
-<polygon points="191.500,106.000 200.500,106.000 200.500,83.000 191.500,83.000" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="48.500,139.500 57.500,139.500 57.500,116.500 48.500,116.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="71.330,139.500 92.330,139.500 92.330,116.500 71.330,116.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="103.670,139.500 124.670,139.500 124.670,116.500 103.670,116.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
-<polygon points="136.500,139.500 159.500,139.500 159.500,116.500 136.500,116.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
-<polygon points="184.500,139.500 207.500,139.500 207.500,116.500 184.500,116.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="219.330,139.500 240.330,139.500 240.330,116.500 219.330,116.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="251.670,139.500 272.670,139.500 272.670,116.500 251.670,116.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="286.500,139.500 295.500,139.500 295.500,116.500 286.500,116.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="50.000,203.500 59.000,203.500 59.000,194.500 50.000,194.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="79.500,210.500 88.500,210.500 88.500,187.500 79.500,187.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="107.500,210.500 116.500,210.500 116.500,187.500 107.500,187.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
-<polygon points="139.670,210.500 160.670,210.500 160.670,187.500 139.670,187.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
-<polygon points="183.330,210.500 204.330,210.500 204.330,187.500 183.330,187.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="227.500,210.500 236.500,210.500 236.500,187.500 227.500,187.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="255.500,210.500 264.500,210.500 264.500,187.500 255.500,187.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="285.000,203.500 294.000,203.500 294.000,194.500 285.000,194.500" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
+<polygon points="144.000,204.000 200.000,204.000 200.000,88.000 144.000,88.000" fill="#fff" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
 <polygon points="52.000,58.000 57.000,58.000 57.000,56.000 52.000,56.000" fill="#111" stroke="#111" stroke-width="0.35" stroke-linejoin="miter"/>
 <polygon points="81.500,58.000 86.500,58.000 86.500,56.000 81.500,56.000" fill="#111" stroke="#111" stroke-width="0.35" stroke-linejoin="miter"/>
 <polygon points="109.500,58.000 114.500,58.000 114.500,56.000 109.500,56.000" fill="#111" stroke="#111" stroke-width="0.35" stroke-linejoin="miter"/>
@@ -102,18 +97,6 @@
 <circle cx="289.500" cy="57.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
 <line x1="286.300" y1="57.000" x2="292.700" y2="57.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <line x1="289.500" y1="60.200" x2="289.500" y2="53.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="148.000" cy="102.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="144.800" y1="102.000" x2="151.200" y2="102.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="148.000" y1="105.200" x2="148.000" y2="98.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="148.000" cy="87.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="144.800" y1="87.000" x2="151.200" y2="87.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="148.000" y1="90.200" x2="148.000" y2="83.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="196.000" cy="102.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="192.800" y1="102.000" x2="199.200" y2="102.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="196.000" y1="105.200" x2="196.000" y2="98.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="196.000" cy="87.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="192.800" y1="87.000" x2="199.200" y2="87.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="196.000" y1="90.200" x2="196.000" y2="83.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <circle cx="53.000" cy="135.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
 <line x1="49.800" y1="135.500" x2="56.200" y2="135.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <line x1="53.000" y1="138.700" x2="53.000" y2="132.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
@@ -138,30 +121,6 @@
 <circle cx="120.660" cy="128.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
 <line x1="117.460" y1="128.000" x2="123.860" y2="128.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <line x1="120.660" y1="131.200" x2="120.660" y2="124.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="140.500" cy="135.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="137.300" y1="135.500" x2="143.700" y2="135.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="140.500" y1="138.700" x2="140.500" y2="132.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="155.500" cy="135.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="152.300" y1="135.500" x2="158.700" y2="135.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="155.500" y1="138.700" x2="155.500" y2="132.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="140.500" cy="120.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="137.300" y1="120.500" x2="143.700" y2="120.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="140.500" y1="123.700" x2="140.500" y2="117.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="155.500" cy="120.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="152.300" y1="120.500" x2="158.700" y2="120.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="155.500" y1="123.700" x2="155.500" y2="117.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="188.500" cy="135.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="185.300" y1="135.500" x2="191.700" y2="135.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="188.500" y1="138.700" x2="188.500" y2="132.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="203.500" cy="135.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="200.300" y1="135.500" x2="206.700" y2="135.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="203.500" y1="138.700" x2="203.500" y2="132.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="188.500" cy="120.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="185.300" y1="120.500" x2="191.700" y2="120.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="188.500" y1="123.700" x2="188.500" y2="117.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="203.500" cy="120.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="200.300" y1="120.500" x2="206.700" y2="120.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="203.500" y1="123.700" x2="203.500" y2="117.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <circle cx="236.330" cy="135.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
 <line x1="233.130" y1="135.500" x2="239.530" y2="135.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <line x1="236.330" y1="138.700" x2="236.330" y2="132.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
@@ -201,24 +160,6 @@
 <circle cx="112.000" cy="191.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
 <line x1="108.800" y1="191.500" x2="115.200" y2="191.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <line x1="112.000" y1="194.700" x2="112.000" y2="188.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="143.670" cy="206.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="140.470" y1="206.500" x2="146.870" y2="206.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="143.670" y1="209.700" x2="143.670" y2="203.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="143.670" cy="191.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="140.470" y1="191.500" x2="146.870" y2="191.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="143.670" y1="194.700" x2="143.670" y2="188.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="156.660" cy="199.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="153.460" y1="199.000" x2="159.860" y2="199.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="156.660" y1="202.200" x2="156.660" y2="195.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="200.330" cy="206.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="197.130" y1="206.500" x2="203.530" y2="206.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="200.330" y1="209.700" x2="200.330" y2="203.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="200.330" cy="191.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="197.130" y1="191.500" x2="203.530" y2="191.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="200.330" y1="194.700" x2="200.330" y2="188.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<circle cx="187.340" cy="199.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
-<line x1="184.140" y1="199.000" x2="190.540" y2="199.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<line x1="187.340" y1="202.200" x2="187.340" y2="195.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <circle cx="232.000" cy="206.500" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
 <line x1="228.800" y1="206.500" x2="235.200" y2="206.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <line x1="232.000" y1="209.700" x2="232.000" y2="203.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
@@ -234,6 +175,78 @@
 <circle cx="289.500" cy="199.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
 <line x1="286.300" y1="199.000" x2="292.700" y2="199.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <line x1="289.500" y1="202.200" x2="289.500" y2="195.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="148.000" cy="200.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="144.800" y1="200.000" x2="151.200" y2="200.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="148.000" y1="203.200" x2="148.000" y2="196.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="148.000" cy="184.570" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="144.800" y1="184.570" x2="151.200" y2="184.570" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="148.000" y1="187.770" x2="148.000" y2="181.370" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="148.000" cy="169.140" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="144.800" y1="169.140" x2="151.200" y2="169.140" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="148.000" y1="172.340" x2="148.000" y2="165.940" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="148.000" cy="153.710" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="144.800" y1="153.710" x2="151.200" y2="153.710" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="148.000" y1="156.910" x2="148.000" y2="150.510" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="148.000" cy="138.290" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="144.800" y1="138.290" x2="151.200" y2="138.290" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="148.000" y1="141.490" x2="148.000" y2="135.090" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="148.000" cy="122.860" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="144.800" y1="122.860" x2="151.200" y2="122.860" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="148.000" y1="126.060" x2="148.000" y2="119.660" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="148.000" cy="107.430" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="144.800" y1="107.430" x2="151.200" y2="107.430" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="148.000" y1="110.630" x2="148.000" y2="104.230" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="148.000" cy="92.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="144.800" y1="92.000" x2="151.200" y2="92.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="148.000" y1="95.200" x2="148.000" y2="88.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="172.000" cy="200.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="168.800" y1="200.000" x2="175.200" y2="200.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="172.000" y1="203.200" x2="172.000" y2="196.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="172.000" cy="184.570" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="168.800" y1="184.570" x2="175.200" y2="184.570" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="172.000" y1="187.770" x2="172.000" y2="181.370" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="172.000" cy="169.140" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="168.800" y1="169.140" x2="175.200" y2="169.140" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="172.000" y1="172.340" x2="172.000" y2="165.940" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="172.000" cy="153.710" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="168.800" y1="153.710" x2="175.200" y2="153.710" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="172.000" y1="156.910" x2="172.000" y2="150.510" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="172.000" cy="138.290" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="168.800" y1="138.290" x2="175.200" y2="138.290" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="172.000" y1="141.490" x2="172.000" y2="135.090" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="172.000" cy="122.860" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="168.800" y1="122.860" x2="175.200" y2="122.860" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="172.000" y1="126.060" x2="172.000" y2="119.660" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="172.000" cy="107.430" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="168.800" y1="107.430" x2="175.200" y2="107.430" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="172.000" y1="110.630" x2="172.000" y2="104.230" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="172.000" cy="92.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="168.800" y1="92.000" x2="175.200" y2="92.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="172.000" y1="95.200" x2="172.000" y2="88.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="196.000" cy="200.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="192.800" y1="200.000" x2="199.200" y2="200.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="196.000" y1="203.200" x2="196.000" y2="196.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="196.000" cy="184.570" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="192.800" y1="184.570" x2="199.200" y2="184.570" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="196.000" y1="187.770" x2="196.000" y2="181.370" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="196.000" cy="169.140" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="192.800" y1="169.140" x2="199.200" y2="169.140" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="196.000" y1="172.340" x2="196.000" y2="165.940" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="196.000" cy="153.710" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="192.800" y1="153.710" x2="199.200" y2="153.710" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="196.000" y1="156.910" x2="196.000" y2="150.510" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="196.000" cy="138.290" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="192.800" y1="138.290" x2="199.200" y2="138.290" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="196.000" y1="141.490" x2="196.000" y2="135.090" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="196.000" cy="122.860" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="192.800" y1="122.860" x2="199.200" y2="122.860" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="196.000" y1="126.060" x2="196.000" y2="119.660" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="196.000" cy="107.430" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="192.800" y1="107.430" x2="199.200" y2="107.430" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="196.000" y1="110.630" x2="196.000" y2="104.230" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<circle cx="196.000" cy="92.000" r="2.500" fill="url(#hatch)" stroke="#111" stroke-width="0.35"/>
+<line x1="192.800" y1="92.000" x2="199.200" y2="92.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<line x1="196.000" y1="95.200" x2="196.000" y2="88.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <text x="60.500" y="51.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B1</text>
 <text x="90.000" y="44.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B2</text>
 <text x="118.000" y="44.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B3</text>
@@ -242,24 +255,19 @@
 <text x="238.000" y="44.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B6</text>
 <text x="266.000" y="44.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B7</text>
 <text x="295.500" y="51.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B8</text>
-<text x="154.000" y="81.500" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B9</text>
-<text x="202.000" y="81.500" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B10</text>
 <text x="59.000" y="115.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B11</text>
 <text x="93.830" y="115.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B12</text>
 <text x="126.170" y="115.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B13</text>
-<text x="161.000" y="115.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B14</text>
-<text x="209.000" y="115.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B15</text>
 <text x="241.830" y="115.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B16</text>
 <text x="274.170" y="115.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B17</text>
 <text x="297.000" y="115.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B18</text>
 <text x="60.500" y="193.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B19</text>
 <text x="90.000" y="186.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B20</text>
 <text x="118.000" y="186.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B21</text>
-<text x="162.170" y="186.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B22</text>
-<text x="205.830" y="186.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B23</text>
 <text x="238.000" y="186.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B24</text>
 <text x="266.000" y="186.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B25</text>
 <text x="295.500" y="193.000" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">B26</text>
+<text x="201.500" y="86.500" font-size="1.8" text-anchor="start" font-weight="700" fill="#111">BN</text>
 <line x1="52.000" y1="222.000" x2="52.000" y2="27.600" stroke="#111" stroke-width="0.09" stroke-dasharray="4 1 0.6 1" stroke-linecap="butt"/>
 <circle cx="52.000" cy="24.000" r="3.600" fill="#fff" stroke="#111" stroke-width="0.35"/>
 <text x="52.000" y="25.250" font-size="3.4" text-anchor="middle" font-weight="700" fill="#111">1</text>
@@ -352,22 +360,22 @@
 <text x="326.000" y="56.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">B-2E</text>
 <text x="341.000" y="56.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">2</text>
 <text x="354.000" y="56.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">2,30 × 0,90 × 0,90</text>
-<text x="400.000" y="56.000" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">12</text>
+<text x="400.000" y="56.000" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">10</text>
 <line x1="326.000" y1="57.300" x2="400.000" y2="57.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <text x="326.000" y="61.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">B-3E</text>
 <text x="341.000" y="61.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">3</text>
 <text x="354.000" y="61.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">2,30 × 2,10 × 1,00</text>
-<text x="400.000" y="61.000" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">6</text>
+<text x="400.000" y="61.000" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">4</text>
 <line x1="326.000" y1="62.300" x2="400.000" y2="62.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="326.000" y="66.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">B-4E</text>
-<text x="341.000" y="66.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">4</text>
-<text x="354.000" y="66.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">2,30 × 2,30 × 1,00</text>
-<text x="400.000" y="66.000" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">2</text>
+<text x="326.000" y="66.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">B-24E (núcleo)</text>
+<text x="341.000" y="66.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">24</text>
+<text x="354.000" y="66.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">5,60 × 11,60 × 1,50</text>
+<text x="400.000" y="66.000" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">1</text>
 <line x1="326.000" y1="67.300" x2="400.000" y2="67.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="326.000" y="75.000" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">56 estacas hélice contínua</text>
+<text x="326.000" y="75.000" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">62 estacas hélice contínua</text>
 <text x="326.000" y="79.400" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">monitorada Ø50 cm · C30 · slump 22 ± 3 cm</text>
 <text x="326.000" y="83.800" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Comprimento útil 15,0 m</text>
-<text x="326.000" y="88.200" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">840 m perfurados · 164,9 m³</text>
+<text x="326.000" y="88.200" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">930 m de estaca · 182,6 m³ teóricos</text>
 <text x="326.000" y="92.600" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Carga admissível 1100 kN por estaca</text>
 <text x="326.000" y="97.000" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">(NBR 6122:2019, perfil SP-01)</text>
 <text x="326.000" y="101.400" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Armadura 6 Ø16 mm, L = 6,0 m + espiral</text>

@@ -20,8 +20,8 @@
    "n1": 29,
    "pt": "Canteiro · tapume, limpeza e locação",
    "en": "Site setup · hoarding, clearing, setting out",
-   "sub_pt": "Tapume de 2,20 m · escritório e almoxarifado fora da área de queda · gabarito nos eixos 1-8 / A-D",
-   "sub_en": "2.20 m hoarding · site office and store outside the fall zone · batter boards on grid 1-8 / A-D"
+   "sub_pt": "Tapume de 2,20 m · escritório e almoxarifado fora da área de queda · gabarito nos eixos 1–8 / A–D",
+   "sub_en": "2.20 m hoarding · site office and store outside the fall zone · batter boards on grid 1–8 / A–D"
   },
   {
    "key": "earth",
@@ -36,10 +36,10 @@
    "key": "piles",
    "n0": 36,
    "n1": 45,
-   "pt": "Fundação · 56 estacas hélice contínua Ø50 cm",
-   "en": "Foundations · 56 continuous flight auger piles Ø50 cm",
-   "sub_pt": "840 m perfurados · 164,9 m³ de concreto C30 · 1.100 kN por estaca · prova de carga estática prevista (NBR 16903)",
-   "sub_en": "840 m drilled · 164.9 m³ of C30 concrete · 1,100 kN per pile · static load test specified (NBR 16903)"
+   "pt": "Fundação · 62 estacas hélice contínua Ø50 cm",
+   "en": "Foundations · 62 continuous flight auger piles Ø50 cm",
+   "sub_pt": "930 m de estaca (comprimento útil 15 m) · 182,6 m³ teóricos de concreto C30 · carga admissível de 1.100 kN por estaca · prova de carga estática prevista (NBR 16903)",
+   "sub_en": "930 m of pile (15 m useful length) · 182.6 m³ theoretical C30 concrete · 1,100 kN allowable load per pile · static load test specified (NBR 16903)"
   },
   {
    "key": "caps",
@@ -47,8 +47,8 @@
    "n1": 53,
    "pt": "Blocos de coroamento e vigas baldrame",
    "en": "Pile caps and ground beams",
-   "sub_pt": "26 blocos · 65,8 m³ · baldrames 20×50 cm · 15,3 m³ · laje de piso estrutural",
-   "sub_en": "26 caps · 65.8 m³ · 20×50 cm ground beams · 15.3 m³ · structural ground slab"
+   "sub_pt": "21 blocos, um deles sob o núcleo · 139,3 m³ · baldrames 20×50 cm · 10,1 m³ · laje de piso estrutural de 12 cm",
+   "sub_en": "21 caps, one under the core · 139.3 m³ · 20×50 cm ground beams · 10.1 m³ · 12 cm structural ground slab"
   },
   {
    "key": "ground",
@@ -66,7 +66,7 @@
    "pt": "Estrutura · fôrma, armação e concretagem por pavimento",
    "en": "Structure · formwork, rebar and pour, floor by floor",
    "sub_pt": "Laje maciça 12 cm · 2,88 m de piso a piso · núcleo de escada e elevadores em concreto · bandejas NR‑18",
-   "sub_en": "12 cm flat slab · 2.88 m floor to floor · concrete stair and lift core · NR-18 safety fans"
+   "sub_en": "12 cm solid slabs on beams · 2.88 m floor to floor · concrete stair and lift core · NR-18 safety fans"
   },
   {
    "key": "masonry",
@@ -101,8 +101,8 @@
    "n1": 149,
    "pt": "Desmobilização · grua, cremalheira e bandejas",
    "en": "Demobilisation · crane, hoist and fans",
-   "sub_pt": "Estrutura: 1.097 m³ de concreto · 90,0 t de aço CA-50/60",
-   "sub_en": "Structure: 1,097 m³ of concrete · 90.0 t of CA-50/60 steel"
+   "sub_pt": "Estrutura e fundação: 1.222 m³ de concreto · cerca de 98 t de aço CA-50/60, estimadas por taxas",
+   "sub_en": "Structure and foundations: 1,222 m³ of concrete · about 98 t of CA-50/60 steel, estimated from rates"
   },
   {
    "key": "handover",
@@ -110,8 +110,8 @@
    "n1": 161,
    "pt": "Entrega · paisagismo e acabamento",
    "en": "Handover · landscaping and finishes",
-   "sub_pt": "3.820 m² construídos · 40 unidades de 60,7 m² privativos + varanda",
-   "sub_en": "3,820 m² built · 40 flats of 60.7 m² net + balcony"
+   "sub_pt": "3.820 m² construídos · 40 apartamentos de 60,74 m² de área útil + varanda",
+   "sub_en": "3,820 m² built · 40 flats of 60.74 m² usable floor area + balcony"
   }
  ],
  "sheets": [
@@ -128,8 +128,8 @@
    "zoom": 2.3,
    "pt": "Planta do pavimento tipo · 1:100",
    "en": "Typical floor plan · 1:100",
-   "sub_pt": "4 apartamentos por andar · 60,74 m² privativos + varanda · núcleo de escada e elevadores em concreto",
-   "sub_en": "4 flats per floor · 60.74 m² net + balcony · concrete stair and lift core"
+   "sub_pt": "Estudo fictício da N6C · 4 apartamentos por andar · 60,74 m² de área útil + varanda · núcleo de escada e elevadores em concreto",
+   "sub_en": "Fictional N6C study · 4 flats per floor · 60.74 m² usable floor area + balcony · concrete stair and lift core · sheets in Portuguese, as issued in Brazil"
   },
   {
    "src": "sheets/03-corte-aa.svg",
@@ -144,8 +144,8 @@
    "zoom": 2.3,
    "pt": "Corte AA e quantitativos · 1:200",
    "en": "Section AA and quantities · 1:200",
-   "sub_pt": "Térreo + 10 pavimentos · 1.097 m³ de concreto · 90,0 t de aço, levantados do modelo",
-   "sub_en": "Ground + 10 floors · 1,097 m³ of concrete · 90.0 t of steel, taken off the model"
+   "sub_pt": "Térreo + 10 pavimentos · 1.222 m³ de concreto levantados do modelo · cerca de 98 t de aço, estimadas por taxas",
+   "sub_en": "Ground + 10 upper floors · 1,222 m³ of concrete taken off the model · about 98 t of steel, estimated from rates"
   },
   {
    "src": "sheets/04-locacao-estacas.svg",
@@ -160,8 +160,8 @@
    "zoom": 2.3,
    "pt": "Locação de estacas e blocos · 1:100",
    "en": "Pile and cap setting-out · 1:100",
-   "sub_pt": "56 estacas hélice contínua Ø50 cm em 26 blocos · espaçamento mínimo de 3 diâmetros",
-   "sub_en": "56 CFA piles Ø50 cm in 26 caps · minimum spacing of 3 diameters"
+   "sub_pt": "62 estacas hélice contínua Ø50 cm em 21 blocos, um deles sob o núcleo · espaçamento mínimo de 3 diâmetros",
+   "sub_en": "62 CFA piles Ø50 cm in 21 caps, one under the core · minimum spacing of 3 diameters"
   },
   {
    "src": "sheets/01-implantacao.svg",
@@ -304,22 +304,6 @@
     14.3
    ],
    [
-    9.6,
-    9.8
-   ],
-   [
-    9.6,
-    11.3
-   ],
-   [
-    14.4,
-    9.8
-   ],
-   [
-    14.4,
-    11.3
-   ],
-   [
     0.1,
     6.45
    ],
@@ -350,38 +334,6 @@
    [
     6.866,
     7.2
-   ],
-   [
-    8.85,
-    6.45
-   ],
-   [
-    10.35,
-    6.45
-   ],
-   [
-    8.85,
-    7.95
-   ],
-   [
-    10.35,
-    7.95
-   ],
-   [
-    13.65,
-    6.45
-   ],
-   [
-    15.15,
-    6.45
-   ],
-   [
-    13.65,
-    7.95
-   ],
-   [
-    15.15,
-    7.95
    ],
    [
     18.433,
@@ -436,30 +388,6 @@
     0.85
    ],
    [
-    9.167,
-    -0.65
-   ],
-   [
-    9.167,
-    0.85
-   ],
-   [
-    10.466,
-    0.1
-   ],
-   [
-    14.833,
-    -0.65
-   ],
-   [
-    14.833,
-    0.85
-   ],
-   [
-    13.534,
-    0.1
-   ],
-   [
     18.0,
     -0.65
    ],
@@ -478,6 +406,102 @@
    [
     23.75,
     0.1
+   ],
+   [
+    9.6,
+    0.0
+   ],
+   [
+    9.6,
+    1.543
+   ],
+   [
+    9.6,
+    3.086
+   ],
+   [
+    9.6,
+    4.629
+   ],
+   [
+    9.6,
+    6.171
+   ],
+   [
+    9.6,
+    7.714
+   ],
+   [
+    9.6,
+    9.257
+   ],
+   [
+    9.6,
+    10.8
+   ],
+   [
+    12.0,
+    0.0
+   ],
+   [
+    12.0,
+    1.543
+   ],
+   [
+    12.0,
+    3.086
+   ],
+   [
+    12.0,
+    4.629
+   ],
+   [
+    12.0,
+    6.171
+   ],
+   [
+    12.0,
+    7.714
+   ],
+   [
+    12.0,
+    9.257
+   ],
+   [
+    12.0,
+    10.8
+   ],
+   [
+    14.4,
+    0.0
+   ],
+   [
+    14.4,
+    1.543
+   ],
+   [
+    14.4,
+    3.086
+   ],
+   [
+    14.4,
+    4.629
+   ],
+   [
+    14.4,
+    6.171
+   ],
+   [
+    14.4,
+    7.714
+   ],
+   [
+    14.4,
+    9.257
+   ],
+   [
+    14.4,
+    10.8
    ]
   ],
   "var": [
@@ -840,12 +864,14 @@
  },
  "facts": {
   "pt": {
-   "piles": "56",
-   "concrete": "1.097"
+   "piles": "62",
+   "concrete": "1.222",
+   "steel": "98"
   },
   "en": {
-   "piles": "56",
-   "concrete": "1,097"
+   "piles": "62",
+   "concrete": "1,222",
+   "steel": "98"
   }
  }
 }

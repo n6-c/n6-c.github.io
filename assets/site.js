@@ -79,7 +79,7 @@
       var okN = check(f.name), okM = check(f.msg);
       if (!okN || !okM) { (okN ? f.msg : f.name).focus(); return; }
       var name = f.name.value.trim(), msg = f.msg.value.trim(), co = f.company.value.trim(), topic = f.topic.value;
-      var text = f.dataset.intro + ' ' + name + (co ? ' ' + f.dataset.from + ' ' + co : '') + '.\n' + f.dataset.about + ': ' + topic + '\n\n' + msg;
+      var text = f.dataset.intro + ' ' + name + (co ? f.dataset.from + ' ' + co : '') + '.\n' + f.dataset.about + ': ' + topic + '\n\n' + msg;
       var viaMail = ev.submitter ? ev.submitter.value === 'mail' : false;
       if (viaMail) location.href = 'mailto:' + f.dataset.email + '?subject=' + encodeURIComponent(f.dataset.subject + ': ' + topic) + '&body=' + encodeURIComponent(text);
       else window.open('https://wa.me/' + f.dataset.phone + '?text=' + encodeURIComponent(text), '_blank', 'noopener');

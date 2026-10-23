@@ -21,6 +21,7 @@
     root.querySelectorAll('[data-pt]').forEach((el) => { el.textContent = el.dataset[lang].replace(/\{(\w+)\}/g, (m, k) => facts[k] ?? m); });
     root.querySelectorAll('[data-label-pt]').forEach((el) => el.setAttribute('aria-label', el.dataset[lang === 'en' ? 'labelEn' : 'labelPt']));
     $('.tl-sr').innerHTML = D.stages.map((s) => `<li>${s[lang]}: ${L(s, 'sub')}</li>`).join('');
+    const intro = window.__tlIntro;
     if (reduce.matches) { root.classList.add('is-static'); if (intro) intro.apply(1); return; }
     reduce.addEventListener?.('change', (e) => root.classList.toggle('is-static', e.matches));
 
@@ -32,7 +33,6 @@
     const ofTxt = lang === 'en' ? ` of ${pad2(total)}` : ` de ${pad2(total)}`;
 
       const sheetsIn = $('[data-tl-sheets]') || sheetsBox, first = sheetsIn.querySelector('.tl-sheet.is-first');
-    const intro = window.__tlIntro;
     const sheets = D.sheets.map((s, i) => {
       if (i === 0 && first) return first;
       const im = new Image(); im.className = 'tl-sheet'; im.alt = ''; im.decoding = 'async'; im.src = base + s.src;
@@ -73,23 +73,26 @@
       try {
         const b = blobs[i];
         const bmp = ('createImageBitmap' in window) ? await createImageBitmap(b) : await new Promise((res, rej) => {
-          const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = URL.createObjectURL(b);
+          const im = new Image(), u = URL.createObjectURL(b);
+          im.onload = () => { URL.revokeObjectURL(u); res(im); }; im.onerror = (e) => { URL.revokeObjectURL(u); rej(e); }; im.src = u;
         });
-        if (g === gen && Math.abs(i - cur) <= 14) bms.set(i, bmp); else if (bmp.close) bmp.close();
+        if (g === gen && Math.abs(i - cur) <= win() + 2) bms.set(i, bmp); else if (bmp.close) bmp.close();
       } catch (e) { /* undecodable frame: skipped */ }
       pending.delete(i); want(); schedule();
     }
     function want() {
-      for (let d = 0; d <= 10 && pending.size < 4; d++) {
+      const R = win();
+      for (let d = 0; d <= R && pending.size < 4; d++) {
         for (const i of [cur + d, cur - d]) {
           if (i >= 0 && i < N && blobs[i] && !bms.has(i) && !pending.has(i) && pending.size < 4) decodeOne(i);
         }
       }
-      for (const [i, b] of bms) if (Math.abs(i - cur) > 14) { if (b.close) b.close(); bms.delete(i); }
+      for (const [i, b] of bms) if (Math.abs(i - cur) > R + 2) { if (b.close) b.close(); bms.delete(i); }
     }
+    function win() { return set === 'm' ? 5 : 8; }   // decoded frames kept either side of the playhead (memory on phones)
     function nearest(i) {
       if (bms.has(i)) return i;
-      for (let d = 1; d < 15; d++) { if (bms.has(i - d)) return i - d; if (bms.has(i + d)) return i + d; }
+      for (let d = 1; d < 11; d++) { if (bms.has(i - d)) return i - d; if (bms.has(i + d)) return i + d; }
       return -1;
     }
 
@@ -97,11 +100,19 @@
     let vw = 0, vh = 0, dpr = 1, lastKey = '', raf = 0;
     function fit() {
       const [w, h] = D.size[set];
-      const s = Math.max(vw / w, vh / h);
-      return { s, ox: (vw - w * s) * (set === 'm' ? 0.68 : 0.5), oy: (vh - h * s) / 2 };
+      const hb = set === 'd' ? 64 : 0;                     // fixed header height: frame the image below it
+      const s = Math.max(vw / w, (vh - hb) / h);
+      return { s, ox: (vw - w * s) * (set === 'm' ? 0.68 : 0.5), oy: hb + (vh - hb - h * s) / 2 };
     }
+    let lastQ = -1;                                      // track progress at the last render
     function resize() {
+      const w0 = vw;
       vw = view.clientWidth; vh = view.clientHeight;
+      // rotation: the track is in vh, so the same scrollY would land elsewhere; put the visitor back at the same point
+      if (w0 && vw !== w0 && lastQ > 0 && lastQ < 1) {
+        const r1 = track.getBoundingClientRect();
+        scrollTo(0, scrollY + r1.top + lastQ * (r1.height - vh));
+      }
       const s = pickSet();
       if (s !== set) { set = s; if (started) load(); }
       dpr = Math.min(devicePixelRatio || 1, 2, Math.max(1, 1 / fit().s));
@@ -193,14 +204,17 @@
     }
 
     // ---------------- captions ----------------
-    let capKey = '';
+    let capKey = '', capT = 0;
+    const nS = pad2(D.sheets.length);
     function setCaption(key, step, t, s) {
       if (key === capKey) return;
       capKey = key;
       cap.classList.add('swap');
-      setTimeout(() => {
-        stepN.textContent = pad2(step);
-        stepOf.textContent = ofTxt + (key.startsWith('sheet') ? (lang === 'en' ? ' · Design' : ' · Projeto') : '');
+      clearTimeout(capT);
+      capT = setTimeout(() => {
+        const sheet = key.startsWith('sheet');
+        stepN.textContent = pad2(sheet ? +key.slice(5) + 1 : step);
+        stepOf.textContent = sheet ? (lang === 'en' ? ` of ${nS} · Drawing sheets` : ` de ${nS} · Pranchas do projeto`) : ofTxt;
         title.textContent = t; sub.textContent = s; cap.classList.remove('swap');
       }, 160);
     }
@@ -209,13 +223,14 @@
     // the first viewport of scroll is the intro; the rest of the track is the film
     function progress() {
       const r = track.getBoundingClientRect(), span = r.height - vh, q = clamp(-r.top / span), pi = vh / span;
+      lastQ = q;
       return { k: clamp(q / pi), p: clamp((q - pi) / (1 - pi)) };
     }
     function sheetTransform(im, sd, e) {
       // desktop: push in towards the sheet's focus point; portrait: the sheet is already large, pan to the focus
       const desk = set === 'd';
       const z = desk ? 1 + (sd.zoom - 1) * e : 1;
-      const g = desk ? e : 0.35 + 0.65 * e;
+      const g = desk ? e : 0.65 * e;
       const fo = desk ? sd.focus : (sd.focus_m || sd.focus);
       const dx = (fo[0] - 0.5) * im.offsetWidth * g, dy = (fo[1] - 0.5) * im.offsetHeight * g;
       im.style.transform = `translate(-50%, -50%) scale(${z.toFixed(4)}) translate(${(-dx).toFixed(1)}px, ${(-dy).toFixed(1)}px)`;
@@ -280,7 +295,8 @@
       ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach((t) => removeEventListener(t, go));
     };
     ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach((t) => addEventListener(t, go, { passive: true }));
-    const later = () => setTimeout(go, 2500);
+    // phones and metered connections wait for the visitor to scroll; desktops prefetch a moment after load
+    const later = () => { if (set === 'd' && !lite && !(conn && conn.type === 'cellular')) setTimeout(go, 2500); };
     if (document.readyState === 'complete') later(); else addEventListener('load', later, { once: true });
 
     addEventListener('scroll', schedule, { passive: true });

@@ -6,18 +6,6 @@
 <line x1="52.000" y1="244.500" x2="192.000" y2="244.500" stroke="#111" stroke-width="0.13" stroke-dasharray="5 1 1 1" stroke-linecap="butt"/>
 <polygon points="151.250,228.000 155.750,228.000 155.750,224.000 151.250,224.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
 <polygon points="152.250,244.500 154.750,244.500 154.750,228.000 152.250,228.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="129.000,228.500 140.500,228.500 140.500,224.000 129.000,224.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="129.750,244.500 132.250,244.500 132.250,228.500 129.750,228.500" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="137.250,244.500 139.750,244.500 139.750,228.500 137.250,228.500" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="112.250,229.000 123.750,229.000 123.750,224.000 112.250,224.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="113.000,244.500 115.500,244.500 115.500,229.000 113.000,229.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="113.000,244.500 115.500,244.500 115.500,229.000 113.000,229.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="120.500,244.500 123.000,244.500 123.000,229.000 120.500,229.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="120.500,244.500 123.000,244.500 123.000,229.000 120.500,229.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="76.750,229.000 88.250,229.000 88.250,224.000 76.750,224.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="77.500,244.500 80.000,244.500 80.000,229.000 77.500,229.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="85.000,244.500 87.500,244.500 87.500,229.000 85.000,229.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
-<polygon points="81.250,244.500 83.750,244.500 83.750,229.000 81.250,229.000" fill="#fff" stroke="#111" stroke-width="0.18" stroke-dasharray="1.6 0.8" stroke-linejoin="miter"/>
 <text x="66.000" y="237.000" font-size="1.8" text-anchor="middle" font-weight="400" fill="#111">ESTACAS HCM Ø50</text>
 <text x="66.000" y="240.000" font-size="1.6" text-anchor="middle" font-weight="400" fill="#111">L = 15,0 m (interrompidas)</text>
 <polygon points="82.000,222.500 154.000,222.500 154.000,222.000 82.000,222.000" fill="#111" stroke="#111" stroke-width="0.5" stroke-linejoin="miter"/>
@@ -409,73 +397,76 @@
 <text x="218.000" y="38.500" font-size="2.3" text-anchor="start" font-weight="700" fill="#111">FUNDAÇÃO</text>
 <line x1="218.000" y1="39.900" x2="398.000" y2="39.900" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
 <text x="218.000" y="43.700" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Estacas hélice contínua Ø50 cm, L = 15,0 m</text>
-<text x="398.000" y="43.700" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">56 un · 840 m</text>
+<text x="398.000" y="43.700" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">62 un · 930 m</text>
 <line x1="218.000" y1="45.000" x2="398.000" y2="45.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <text x="218.000" y="48.500" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Concreto das estacas (C30)</text>
-<text x="398.000" y="48.500" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">164,9 m³</text>
+<text x="398.000" y="48.500" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">182,6 m³</text>
 <line x1="218.000" y1="49.800" x2="398.000" y2="49.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="53.300" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Blocos de coroamento (26 un)</text>
-<text x="398.000" y="53.300" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">65,8 m³</text>
+<text x="218.000" y="53.300" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Blocos de coroamento (21 un)</text>
+<text x="398.000" y="53.300" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">139,3 m³</text>
 <line x1="218.000" y1="54.600" x2="398.000" y2="54.600" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
 <text x="218.000" y="58.100" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Vigas baldrame 20 × 50 cm</text>
-<text x="398.000" y="58.100" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">15,3 m³</text>
+<text x="398.000" y="58.100" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">10,1 m³</text>
 <line x1="218.000" y1="59.400" x2="398.000" y2="59.400" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="64.400" font-size="2.3" text-anchor="start" font-weight="700" fill="#111">SUPERESTRUTURA (C35)</text>
-<line x1="218.000" y1="65.800" x2="398.000" y2="65.800" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
-<text x="218.000" y="69.600" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Lajes maciças 12 cm (11 lajes)</text>
-<text x="398.000" y="69.600" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">430,0 m³</text>
-<line x1="218.000" y1="70.900" x2="398.000" y2="70.900" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="74.400" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Vigas</text>
-<text x="398.000" y="74.400" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">169,8 m³</text>
+<text x="218.000" y="62.900" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Laje de piso estrutural 12 cm</text>
+<text x="398.000" y="62.900" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">39,4 m³</text>
+<line x1="218.000" y1="64.200" x2="398.000" y2="64.200" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<text x="218.000" y="69.200" font-size="2.3" text-anchor="start" font-weight="700" fill="#111">SUPERESTRUTURA (C35)</text>
+<line x1="218.000" y1="70.600" x2="398.000" y2="70.600" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<text x="218.000" y="74.400" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Lajes maciças 12 cm (11 lajes)</text>
+<text x="398.000" y="74.400" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">430,0 m³</text>
 <line x1="218.000" y1="75.700" x2="398.000" y2="75.700" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="79.200" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Pilares (26 por pavimento)</text>
-<text x="398.000" y="79.200" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">102,4 m³</text>
+<text x="218.000" y="79.200" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Vigas</text>
+<text x="398.000" y="79.200" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">169,8 m³</text>
 <line x1="218.000" y1="80.500" x2="398.000" y2="80.500" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="84.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Núcleo: pilares-parede 20 cm (escada, elevadores)</text>
-<text x="398.000" y="84.000" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">113,8 m³</text>
+<text x="218.000" y="84.000" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Pilares (26 por pavimento)</text>
+<text x="398.000" y="84.000" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">102,4 m³</text>
 <line x1="218.000" y1="85.300" x2="398.000" y2="85.300" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="88.800" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Escadas e reservatório</text>
-<text x="398.000" y="88.800" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">34,6 m³</text>
+<text x="218.000" y="88.800" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Núcleo: pilares-parede 20 cm (escada, elevadores)</text>
+<text x="398.000" y="88.800" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">113,8 m³</text>
 <line x1="218.000" y1="90.100" x2="398.000" y2="90.100" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="95.100" font-size="2.3" text-anchor="start" font-weight="700" fill="#111">TOTAIS</text>
-<line x1="218.000" y1="96.500" x2="398.000" y2="96.500" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
-<text x="218.000" y="100.300" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Concreto total</text>
-<text x="398.000" y="100.300" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">1.096,6 m³</text>
-<line x1="218.000" y1="101.600" x2="398.000" y2="101.600" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="105.100" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Aço CA-50/60 (total)</text>
-<text x="398.000" y="105.100" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">90,0 t</text>
+<text x="218.000" y="93.600" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Escadas e reservatório</text>
+<text x="398.000" y="93.600" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">34,6 m³</text>
+<line x1="218.000" y1="94.900" x2="398.000" y2="94.900" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<text x="218.000" y="99.900" font-size="2.3" text-anchor="start" font-weight="700" fill="#111">TOTAIS</text>
+<line x1="218.000" y1="101.300" x2="398.000" y2="101.300" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<text x="218.000" y="105.100" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Concreto total</text>
+<text x="398.000" y="105.100" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">1.222,0 m³</text>
 <line x1="218.000" y1="106.400" x2="398.000" y2="106.400" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="109.900" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Taxa de aço na superestrutura</text>
-<text x="398.000" y="109.900" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">94,8 kg/m³</text>
+<text x="218.000" y="109.900" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Aço CA-50/60 (estimado por taxas)</text>
+<text x="398.000" y="109.900" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">97,7 t</text>
 <line x1="218.000" y1="111.200" x2="398.000" y2="111.200" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="114.700" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Espessura média de concreto (sem / com núcleo)</text>
-<text x="398.000" y="114.700" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">19,3 / 22,3 cm</text>
+<text x="218.000" y="114.700" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Taxa de aço na superestrutura</text>
+<text x="398.000" y="114.700" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">94,8 kg/m³</text>
 <line x1="218.000" y1="116.000" x2="398.000" y2="116.000" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="119.500" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Fôrmas (área de contato)</text>
-<text x="398.000" y="119.500" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">8.956 m²  (10,5 m²/m³)</text>
+<text x="218.000" y="119.500" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Espessura média de concreto (sem / com núcleo)</text>
+<text x="398.000" y="119.500" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">19,3 / 22,3 cm</text>
 <line x1="218.000" y1="120.800" x2="398.000" y2="120.800" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="124.300" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Alvenaria de vedação</text>
-<text x="398.000" y="124.300" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">4.626 m² · 57.800 blocos</text>
+<text x="218.000" y="124.300" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Fôrmas (área de contato)</text>
+<text x="398.000" y="124.300" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">8.956 m²  (10,5 m²/m³)</text>
 <line x1="218.000" y1="125.600" x2="398.000" y2="125.600" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="129.100" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Área construída</text>
-<text x="398.000" y="129.100" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">3.819,7 m²</text>
+<text x="218.000" y="129.100" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Alvenaria de vedação</text>
+<text x="398.000" y="129.100" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">4.626 m² · 57.800 blocos</text>
 <line x1="218.000" y1="130.400" x2="398.000" y2="130.400" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
-<text x="218.000" y="136.900" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Cargas de serviço: 12 kN/m² por pavimento, 10 kN/m² na cobertura, reservatório 955 kN.</text>
-<text x="218.000" y="140.900" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Estacas: 1.100 kN (perfil SPT fictício, SP-01), com prova de carga estática (NBR 16903).</text>
-<text x="218.000" y="144.900" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Taxas de aço adotadas: lajes 78, vigas 110, pilares 140, núcleo 95, blocos 65 kg/m³.</text>
-<text x="218.000" y="148.900" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Referência: 88 a 100 kg/m³ e 16 a 20 cm de espessura média acima de 10 pavimentos;</text>
-<text x="218.000" y="152.900" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">o núcleo rígido acrescenta cerca de 3 cm. Estabilidade global (γz ≤ 1,3) no projeto estrutural.</text>
-<text x="218.000" y="160.900" font-size="2.4" text-anchor="start" font-weight="700" fill="#111">PERFIL DE SONDAGEM SP-01 (FICTÍCIO)</text>
-<polygon points="218.000,163.900 228.000,163.900 228.000,167.900 218.000,167.900" fill="#eee" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
-<text x="231.000" y="166.700" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">0,0 – 1,5 m · Aterro: argila arenosa marrom, mole · NSPT 3-5</text>
-<polygon points="218.000,167.900 228.000,167.900 228.000,172.400 218.000,172.400" fill="url(#soil)" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
-<text x="231.000" y="170.950" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">1,5 – 6,0 m · Areia fina siltosa, pouco compacta · NSPT 6-9</text>
-<polygon points="218.000,172.400 228.000,172.400 228.000,178.400 218.000,178.400" fill="url(#soil)" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
-<text x="231.000" y="176.200" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">6,0 – 12,0 m · Silte arenoso residual, medianamente compacto · NSPT 12-20</text>
-<polygon points="218.000,178.400 228.000,178.400 228.000,184.400 218.000,184.400" fill="url(#soil)" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
-<text x="231.000" y="182.200" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">12,0 – 18,0 m · Silte arenoso, compacto · NSPT 22-35</text>
-<polygon points="218.000,184.400 228.000,184.400 228.000,188.400 218.000,188.400" fill="url(#soil)" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
-<text x="231.000" y="187.200" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">18,0 – 20,5 m · Silte arenoso muito compacto (limite da sondagem) · NSPT >40</text>
+<text x="218.000" y="133.900" font-size="2.2" text-anchor="start" font-weight="400" fill="#111">Área construída</text>
+<text x="398.000" y="133.900" font-size="2.2" text-anchor="end" font-weight="400" fill="#111">3.819,7 m²</text>
+<line x1="218.000" y1="135.200" x2="398.000" y2="135.200" stroke="#111" stroke-width="0.09" stroke-linecap="butt"/>
+<text x="218.000" y="141.700" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Cargas de serviço: 12 kN/m² por pavimento, 10 kN/m² na cobertura, reservatório 955 kN.</text>
+<text x="218.000" y="145.700" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Estacas: 1.100 kN (perfil SPT fictício, SP-01), com prova de carga estática (NBR 16903).</text>
+<text x="218.000" y="149.700" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Taxas de aço adotadas: lajes 78, vigas 110, pilares 140, núcleo 95, blocos 65 kg/m³.</text>
+<text x="218.000" y="153.700" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">Referência: 88 a 100 kg/m³ e 16 a 20 cm de espessura média acima de 10 pavimentos;</text>
+<text x="218.000" y="157.700" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">o núcleo rígido acrescenta cerca de 3 cm. Estabilidade global (γz ≤ 1,3) no projeto estrutural.</text>
+<text x="218.000" y="165.700" font-size="2.4" text-anchor="start" font-weight="700" fill="#111">PERFIL DE SONDAGEM SP-01 (FICTÍCIO)</text>
+<polygon points="218.000,168.700 228.000,168.700 228.000,172.700 218.000,172.700" fill="#eee" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
+<text x="231.000" y="171.500" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">0,0 – 1,5 m · Aterro: argila arenosa marrom, mole · NSPT 3-5</text>
+<polygon points="218.000,172.700 228.000,172.700 228.000,177.200 218.000,177.200" fill="url(#soil)" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
+<text x="231.000" y="175.750" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">1,5 – 6,0 m · Areia fina siltosa, pouco compacta · NSPT 6-9</text>
+<polygon points="218.000,177.200 228.000,177.200 228.000,183.200 218.000,183.200" fill="url(#soil)" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
+<text x="231.000" y="181.000" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">6,0 – 12,0 m · Silte arenoso residual, medianamente compacto · NSPT 12-20</text>
+<polygon points="218.000,183.200 228.000,183.200 228.000,189.200 218.000,189.200" fill="url(#soil)" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
+<text x="231.000" y="187.000" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">12,0 – 18,0 m · Silte arenoso, compacto · NSPT 22-35</text>
+<polygon points="218.000,189.200 228.000,189.200 228.000,193.200 218.000,193.200" fill="url(#soil)" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
+<text x="231.000" y="192.000" font-size="2.0" text-anchor="start" font-weight="400" fill="#111">18,0 – 20,5 m · Silte arenoso muito compacto (limite da sondagem) · NSPT >40</text>
 <rect x="10" y="10" width="400.0" height="277.0" fill="none" stroke="#111" stroke-width="0.5"/>
 <rect x="295.0" y="235.0" width="115" height="52" fill="#fff" stroke="#111" stroke-width="0.35"/>
 <line x1="295.0" y1="250.0" x2="410.0" y2="250.0" stroke="#111" stroke-width="0.13"/>
