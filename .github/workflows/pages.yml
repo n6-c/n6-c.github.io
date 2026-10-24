@@ -27,7 +27,7 @@ jobs:
       - name: Collect the public files
         run: |
           mkdir _site _site/brand
-          cp -R *.html en pt assets demos CNAME robots.txt sitemap.xml _site/
+          cp -R *.html en pt assets demos midia CNAME robots.txt sitemap.xml _site/
           cp brand/og.png brand/og-en.png brand/n6c-mark.png brand/founder.jpg _site/brand/
       - uses: actions/upload-pages-artifact@v3
         with:
